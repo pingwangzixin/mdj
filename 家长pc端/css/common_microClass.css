@@ -1,0 +1,60 @@
+html{font:normal normal 62.5% "Microsoft YaHei";color:#222222;}/*加上是--1rem等于10px*/
+body{min-width:1200px;}
+.handType{cursor:pointer;}
+.commMicroWrap{padding:96px 0 66px;}
+.boshiWrap{width:92%;position:relative;margin:0 auto;}
+.commMicroWrap .mainR_ConBorder{overflow:hidden;padding:20px 15px 46px;}
+.commMicroMusicBox{width:100%; 
+   overflow:hidden;position:relative;
+    border-radius: 5px;
+    border: 9px solid rgba(191,225,251,.6);
+    border-top-left-radius: 6%;
+    border-top-right-radius: 6%;
+    border-bottom-left-radius: 7%;
+    border-bottom-right-radius: 7%;
+    background: #eaf4fc;box-sizing:border-box;margin:0 auto;}
+/*音乐开始左半部分-------------------------------------*/
+.commMicroMusicLWrap{float:left;overflow:hidden;width:67%;}
+.musicTitle{height:50px;line-height:50px;font-size:1.6rem;color:#6699ff;}
+.commMusic{width:100%;height:500px;background:#ecf2fa;border:1px solid #fff;position:relative;box-sizing:border-box;overflow:auto;}
+.textName{padding-bottom:12px;color:#333;font-size:1.2rem;text-align:center;width:100%;position:absolute;bottom:0;left:0;}
+.bigPic{width:100%;margin:80px auto 80px;display:block;}
+.smallPic{width:200px;margin:20px auto 20px;display:block;}
+#quanping{position:absolute;right:2px;bottom:3px;z-index:9;}
+.downWrap{width:180px;padding-top:10px;}
+.down,.collection{height:22px;}
+.commSourDetaiL{width:66%;font-size:1.2rem;line-height:30px;color:#333;padding:5px 0 6px 0;box-sizing:border-box;float:left;}
+.sourceTit{padding-bottom:4px;}
+.sourceItem{overflow:hidden;padding-left:2px;line-height: 30px;}
+.commSourDetailWrap{width:100%;overflow:hidden;}
+.sourceVote .sourceItem{float:left;}
+.sourceVote .sourceItem:nth-child(2){margin-left:28px;}
+.sourceVote .sourceNam{display:inline-block;}
+.bofangqi{height:398px;width: 100%;background: #ecf2fa;border: 1px solid #fff;position: relative;box-sizing: border-box;}
+/*右边二维码---------*/
+.commSourDetaiR{width:34%;float:right;}
+.commSourDetaiR .erwmWrap{width:100%;height:120px;margin-bottom:20px;}
+.commSourDetaiR img{height:120px;margin:0 auto;display:block;}
+.commSourDetaiR .btnWrap{width:80%;margin:0 auto;height:32px;text-align:center;}
+.commSourDetaiR .btnWrap span{float:left;width:78px;height:32px;background:#5093e1;color:#fff;font-size:1.4rem;line-height:32px;text-align:center;margin:0 2% 0 2%;border-radius:8px;cursor:pointer;}
+.commSourDetaiR .handType{float:right!important;}
+.commSourDetaiR .btnWrap .handType2{float:none;margin:0 auto;display:inline-block;}
+
+/*回复开始----------------------------------*/
+.commMicroMusicRWrap{float:right;width:30%;}
+.messageWrap{height:50px;width:100%;overflow:auto;line-height:50px;font-size:1.4rem;color:#333;}
+.messagePerson{padding-left:14%;float:right;}
+.messagePerson>span{color:#ff6666;}
+.messageNum{float:right;padding-left:7%;background:url(../img/eye.png) no-repeat left center;margin-left:6%;color:#5093e1;}
+.messageNum2{background-image:url(../img/parentLoad.png);background-position:left 16px;background-size:16px;color:#00cc99;}
+.messageBox{border:1px solid #fff;border-radius:2px;position:relative;padding-bottom:48px;background:#f0f7fd;}
+.messageBox ul{overflow:auto;min-height:100px;}
+.messageBox li{line-height:28px;font-size:1.4rem;color:#333;padding:0 8px;border-bottom:1px dashed #fff;}
+.messageBox li .huifu{padding:0 2px 0 5px;}
+.messageBox li .mesageName{color:#5093e1;white-space:nowrap;word-wrap:break-word;cursor: pointer;}
+.messageBox li .content{word-break:break-all;word-wrap:break-word;}
+.moreHf{font-size:1.4rem;color:#5093e1;line-height:28px;padding-right:8px;text-align:right;padding-bottom:17px;}
+/*留言内容------------*/
+#messageForm{padding:0 8px;}
+.messageContent{width:100%;height:174px;box-sizing:border-box;overflow:auto;outline:none;border:1px solid #dce0e3;background:#f8fbfe;line-height:20px;font-size:1.4rem;color:#333;padding:7px 9px 0 9px;}
+#messageForm input{position:absolute;right:8px;bottom:16px;width:68px;height:30px;background:#00cc99;color:#fff;font-size:1.4rem;text-align:center;line-height:30px;border-radius:5px;border:none;outline:none;}

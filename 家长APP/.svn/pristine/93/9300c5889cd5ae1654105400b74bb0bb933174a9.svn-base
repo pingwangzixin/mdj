@@ -1,0 +1,126 @@
+﻿/*﻿----------- 清除默认样式  --------*/
+html{font-size: 50px;-webkit-tap-highlight-color: transparent;-webkit-user-select:none}/*除以的比例是100*/
+html,body{font-family: "microsoft yahei";width: 100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+  margin:0;
+  padding:0;
+}
+body {
+  background:#eee;
+  color:#333;
+  font-size:0.24rem;
+}
+em,i{font-style: normal;}
+input::-webkit-input-placeholder{
+    color:#333;
+    font-size: 0.24rem;
+}
+input,textarea,button{outline: none;border:none 0;}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+  font-size:100%;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+/*a,input,textarea,button{-webkit-appearance: none;}*/
+a,input,span{-webkit-tap-highlight-color:rgba(2,2,2,0);}/*清除a标签点击之后的阴影*/
+a {
+  text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
+  color:#333;
+}
+a:hover {
+  text-decoration:none;
+}
+img {
+  border:none;
+}
+ol,ul,li {
+  list-style:none;
+}
+input, textarea, select, button {
+  font:"microsoft yahei",Arial,sans-serif;
+}
+table {
+  border-collapse:collapse;
+}
+/* css common */
+.clearfix:after {
+  content: " ";
+  display: block;
+  height:0;
+  clear:both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom:1;
+}
+.fl{float: left;}
+.fr{float: right;}
+
+
+/*加载样式=====================*/
+.loading{text-align:center;display:none;background: #eee;}
+.loading span{
+	display: inline-block;
+	height: 0.8rem;
+	background:url(../img/loading.gif) no-repeat left center;
+	background-size:0.6rem 0.6rem;
+	padding-left: 0.7rem;
+  font-size: 0.28rem;
+	color:#545454;
+	line-height:0.8rem;
+}
+
+
+/*返回顶部样式=====================*/
+a.scrollTop{
+	width:.8rem;
+	height:.8rem;
+	border-radius: 50%;
+	background: url(../img/scrollTop-icon.png) no-repeat center center;
+	background-size:.8rem;
+	position: fixed;
+	right:.2rem;
+	bottom:1rem;
+	z-index:10;
+	overflow: hidden;
+	display: none;
+}
+
+/*--------------弹出提示---------------*/
+.del_down{
+    text-align: center;
+}
+.del_down .hide{
+    position: fixed;
+    z-index: 101;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0.6;
+    background: rgba(0,0,0,0.6);
+}
+.del_down .con{
+    background-color: #fff;
+    position: fixed;
+    top: 30%;
+    left: 50% ; 
+    -webkit-transform: translate(-50% , -50% ); 
+    -ms-transform: translate(-50% , -50% );
+    transform: translate(-50% , -50% );
+    z-index:103;
+    border-radius: 5px;
+    opacity: 1;
+    -webkit-box-shadow: 0 0 6px #ccc;
+    -moz-box-shadow: 0 0 6px #ccc;
+    box-shadow: 0 0 6px #ccc;
+}
+/*---------------
+	注意写的时候 z-index值 你们不要超过100，不要乱写值；
+	弹层的大小，宽高 自己根据图纸定义
+ ------------------*/
+

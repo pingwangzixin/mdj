@@ -1,0 +1,316 @@
+/*
+* resource core content
+*/
+body {
+    font-family: "微软雅黑", Arial, sans-serif;
+    position: relative;
+}
+.main_right .right_sort {
+    background: #fff;
+}
+.main_right .right_con {
+    background: #edf1f2;
+}
+.content-left {
+    position: relative;
+    float:left;
+    width: 73%;
+    margin-right: 1.7%;
+}
+.content-right {
+    float: right;
+    width: 25.3%;
+    background: #fff;
+    border-radius: 5px;
+    height: 750px;
+}
+.content-left .conleft-list {
+    height: 40px;
+    overflow: hidden;
+}
+.content-left .conleft-list ul {
+    float: left;
+}
+.content-left .conleft-list p {
+    display: inline-block;
+    width: 120px;
+    float: right;
+    line-height: 32px;
+}
+.content-left .conleft-list p span {
+    color: #4AC5C8;
+}
+.content-left .conleft-list ul li  {
+    float: left;
+    width: 100px;
+    height: 32px;
+    background: #b5c2ca;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+}
+.content-left .conleft-list ul li.active {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px 5px 0 0;
+    background: #fff;
+    color: #212121;
+}
+.content-left .conleft-tbody {
+    background: #fff;
+    height: 710px;
+}
+.content-left .conleft-tbody p.select-nav {
+    height: 54px;
+    border-bottom: 1px solid #ccc;
+    line-height: 64px;
+}
+.content-left .conleft-tbody p.select-nav span button {
+    cursor: pointer;
+}
+.content-left .conleft-tbody p.select-nav .btn {
+    float: right;
+    margin-right: 88px;
+    height: 55px;
+}
+.content-left .conleft-tbody p.select-nav .btn button {
+    width: 80px;
+    text-align: center;
+    line-height: 25px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #FD514D;
+}
+.content-left .conleft-tbody p.select-nav .not-publicly {
+    float: right;
+    height: 50px;
+    margin-right: 86px;
+}
+.content-left .conleft-tbody p.select-nav .not-publicly button {
+    width: 80px;
+    text-align: center;
+    line-height: 25px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #3BC1C3;
+    outline: none;
+}
+.content-left .conleft-tbody p.select-nav .already-open {
+    float: right;
+    height: 50px;
+    margin-right: 86px;
+}
+.content-left .conleft-tbody p.select-nav .already-open button {
+    width: 80px;
+    text-align: center;
+    line-height: 25px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #FDBB29;
+}
+.content-left .conleft-tbody p.select-nav .btn button.adopt {
+    background: #4DBD73;
+    margin-right: 20px;
+}
+.content-left .conleft-tbody p.select-nav input {
+    width: 79px;
+    border: none;
+    background: #fff;
+    outline: none;
+    height: 30px;
+    background: url("../img/delete.png") no-repeat left center;
+    cursor: pointer;
+    color: #2F373D;
+}
+.content-left .conleft-tbody p.select-nav input#select {
+    width:13px;
+    height: 13px;
+    margin: -2px 8px 0 25px;
+    vertical-align: middle;
+}
+.content-left .conleft-tbody p.select-nav label {
+    margin-right: 25px;
+    cursor: pointer;
+    color: #2F373D;
+}
+.content-left .conleft-tbody table {
+    width: 100%;
+    text-align: center;
+}
+.content-left .conleft-tbody table tr th {
+    height: 55px;
+    color: #212121;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.content-left .conleft-tbody table tr td {
+    height: 53px;
+    color: #555555;
+    font-size: 14px;
+}
+.content-left .conleft-tbody table tr th.curename {
+    width: 35%;
+}
+.content-left .conleft-tbody table tr td .checkone {
+    vertical-align: middle;
+    margin-top: -12px;
+    margin-right: 24px;
+}
+.content-left .conleft-tbody table tr td span.look {
+    margin-right: 20px;
+}
+.content-left .conleft-tbody table tr td span.bianji img {
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.content-left .conleft-tbody table tr td span img {
+    margin-right: 9px;
+}
+.content-left .conleft-tbody table tr:nth-of-type(even) {
+    background: #f9f9f9;
+}
+.content-left .conleft-tbody table tr td label {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 72%;
+}
+.content-left .conleft-tbody table tr .openstate {
+    cursor: pointer;
+}
+.content-left .conleft-tbody table tr .yiopen {
+    cursor: pointer;
+    color: #4DBD73;
+}
+.content-left .conleft-tbody table tr .audit {
+    cursor: pointer;
+    color: #FDBB29;
+}
+.content-left .conleft-tbody table tr .audit-not-passed {
+    cursor: pointer;
+    color: #FD514D;
+}
+/*分页*/
+/* CSS 代码 */
+div.digg {
+    position: absolute;
+    bottom: 24px;
+    left: 35%;
+    text-align: center;
+}
+div.digg span {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+}
+div.digg a {
+    padding: 3px 8px;
+    margin: 0 2px;
+}
+div.digg .current {
+    background: #4DBD73;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 3px;
+}
+div.digg span.disabled {
+    background: url("../img/page-left.png") no-repeat center center;
+}
+
+/*弹窗*/
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.popup .nav {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -135px;
+    margin-left: -175px;
+    width: 350px;
+    height: 217px;
+    background: #fff;
+    box-shadow: 2px 2px 10px #DFDFDF;
+    border-radius: 10px;
+}
+.popup .nav p {
+    text-align: center;
+    font-size: 16px;
+    color: #212121;
+    margin: 68px 0 10px 0;
+}
+
+/*右侧的图表样式*/
+.ziyuan-youtit{position:relative;padding:20px;font-weight:bold;height:25px;line-height:25px;}
+.ziyuan-youtit:before{position:absolute;content:"";left:0;width:3px;height:25px;background:#4dbd73;}
+.ziyuan-tot{width:90%;margin:0 auto;border-bottom:1px solid #ebeff2;text-align:center;}
+.zynum{color:#4dbd73;margin:10px auto;font-size:16px;font-weight:bold;}
+.zyzongnum{font-size:16px;font-weight:bold;margin:0 auto 10px;}
+.zilx{width:90%;height:200px;margin:10px auto 20px;border-bottom:1px solid #ebeff2;}
+.zilx:after{content:"资源类型模式信息图";position:absolute;left:50%;bottom:8px;font-weight:bold;margin-left:-60px;}
+.zygeshi{width:90%;height:200px;margin:10px auto;}
+.zygeshi:after{content:"资源格式模式信息图";position:absolute;left:50%;bottom:5px;font-weight:bold;margin-left:-60px;}
+
+/*确认删除的弹窗样式*/
+.delreswrap{width:546px;height:320px;background:#fff;position:fixed;left:50%;top:50%;margin-left:-273px;margin-top:-160px;border:1px solid #ddd;box-shadow:2px 2px 10px #ccc;border-radius:5px;display:none;}
+.delrestit{width:100%;height:50px;background:#1d2b36;border-top-left-radius:5px;border-top-right-radius:5px;line-height:50px;color:#fff;}
+.restips{margin-left:20px;}
+.delresclose{margin-right:20px;cursor:pointer;}
+.suredelres{width:100%;height:200px;line-height:200px;text-align:center;font-size:16px;font-weight:bold;}
+.delresbtn{width:100%;height:50px;line-height:50px;text-align:center;}
+.delresbtn button{width:100px;height:30px;margin:10px;border:none;outline:none;color:#fff;cursor:pointer;}
+.suredel-res{background:#4dbd75;}
+.nodel-res{background:#3bc1c4;}
+
+/*删除提示*/
+.delrestixi{width:300px;height:150px;position:fixed;background:#fff;border:1px solid #ddd;box-shadow:2px 2px 10px #ccc;left:50%;top:50%;margin-left:-150px;margin-top:-75px;font-size:16px;border-radius:5px;display:none;}
+.deltixi-tit{width:100%;height:30px;background:#1d2b36;color:#fff;line-height:30px;overflow:hidden;border-top-left-radius:5px;border-top-right-radius:5px;}
+.tixing{margin-left:10px;}
+.tipscon{width:100%;height:120px;text-align:center;line-height:120px;font-weight:bold}
+
+/*查看资源*/
+#seeresource{width:800px;height:500px;background:#fff;box-shadow:2px 2px 10px #ccc;z-index:10000;position:fixed;left:50%;top:50%;margin-left:-400px;margin-top:-250px;border-radius:5px;}
+.seeres-tit{width:100%;height:25px;padding:10px 0;background:#1d2b36;overflow:hidden;color:#fff;border-top-left-radius:5px;border-top-right-radius:5px;font-size:16px;}
+.seeshipin{padding-left:20px;}
+.seeclose{padding-right:20px;cursor:pointer;}
+.seevideo{width:780px;height:420px;margin:10px auto 0;}
+
+/*编辑资源*/
+#editores{width:800px;height:500px;background:#fff;box-shadow:2px 2px 10px #ccc;z-index:10000;position:fixed;left:50%;top:50%;margin-left:-400px;margin-top:-250px;border-radius:5px;}
+.editor-tit{width:100%;height:25px;padding:10px 0;background:#1d2b36;overflow:hidden;color:#fff;border-top-left-radius:5px;border-top-right-radius:5px;font-size:16px;}
+.editorzy{padding-left:20px;}
+.editorclose{padding-right:20px;cursor:pointer;}
+.editor-con{width:90%;height:360px;margin:20px auto;overflow: hidden;}
+.resourename{width:600px;height:30px;border:1px solid #ddd;outline:none}
+.editor-con ul li{display:inline-block;cursor:pointer;}
+.zyming{font-size:18px;}
+.resleibie{width:700px;height:30px;margin:20px auto;}
+.resleibie li{width:90px;height:30px;line-height:30px;margin-left:30px;text-align:center;border:1px solid #ddd;border-radius:3px;}
+.reslbactive{background:#4dbd73;color:#fff;border:none;}
+.resxueduan{margin:20px 0}
+.editor-con select{width:127px;border:1px solid #ddd;outline:none;}
+.reskeys{margin:20px 0}
+.clear{clear:both;}
+.resdec{margin:20px 0;display:block;background:#f9f9f9;padding:10px;}
+.editorbtn{width:400px;height:50px;margin:0 auto;text-align:center;}
+.editorbtn button{width:140px;height:30px;border:none;outline:none;color:#fff;cursor:pointer;margin:10px;}
+.editorsure{background:#4dbd75;}
+.editorquite{background:#3bc1c4;}
+.keysli li{margin-left:10px;}
+/*灰色蒙层*/
+#mengceng{position:fixed;left:0;top:0;bottom:0;right:0;background:rgba(0,0,0,.3);z-index:666;}

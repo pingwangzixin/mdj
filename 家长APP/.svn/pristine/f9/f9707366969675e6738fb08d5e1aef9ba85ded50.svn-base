@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>公共资源-查看资源</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<script src="../common/jquery-1.11.2.min.js"></script>
+		<script src="../common/dataTimes/mui.min.js"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--我的css、js-->
+		<link rel="stylesheet" type="text/css" href="../common/dataTimes/mui.previewimages.css" />
+		<link rel="stylesheet" type="text/css" href="../css/class_look.css" />
+		<script src="../js/class_look.js"></script>
+	</head>
+
+	<body>
+		<!--返回顶部-->
+		<a href="javascript:scroll(0,0)" class="scrollTop"></a>
+		
+		<div class="videoBox">
+			<!--默认图片缩略图-->
+			<div class="sliderImgBox mui-content-padded" style="overflow: hidden;">
+				<a href="JavaScript:;" class="rgbaImg" data-preview-src="" data-preview-group="1">查看更多<i></i></a>
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/20.jpg" data-preview-src="" data-preview-group="1" />
+				<img src="../img/33.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/44.jpg" data-preview-src="" data-preview-group="1" />
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/2.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/3.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/2.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/3.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+			</div>
+			<!--这里是加载图片样式-->
+			<script src="../common/dataTimes/mui.zoom.js"></script>
+			<script src="../common/dataTimes/mui.previewimage.js"></script>
+			<script type="text/javascript">
+				mui.previewImage();
+			</script>
+			<!--这里是加载图片样式 end-->
+		</div>
+		
+		<div class="main">
+			<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+				<!--添加id和class-->
+				<div class="mui-scroll">
+					<!--添加class-->
+					<div class="mui-table-view mui-table-view-chevron">
+						<!--添加class-->
+			
+
+						<div class="resourcesName">资源名称：十五种诗歌写作技巧十五种诗歌写作技巧十五种诗歌写作技巧十五种诗歌写作技巧</div>
+						<div class="authorBox">
+							<div class="authorText clearfix">
+								<span>作者：李小三</span>
+								<span>上传时间：2016-06-12</span>
+							</div>
+							<p class="school">所属学校：海淀区第二中学海淀区第二中学海淀区第二中学海淀区第二中学海</p>
+						</div>
+						<div class="commentAll" id="pullLoad">
+							<div class="commentAllTitle">全部评论</div>
+							<ul>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰郑存杰郑存杰郑存杰</strong>
+												<i>1楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">海上生</strong>
+												<strong class="hf">回复</strong>
+												<strong class="names">郑存杰郑存杰郑存杰郑存杰</strong>
+												<i>2楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+									<div class="commentBox">
+										<div class="userName">
+											<div class="namesBox">
+												<strong class="names">郑存杰</strong>
+												<i>3楼</i>
+											</div>
+											<p class="time">02月22日 16:22</p>
+										</div>
+										<div class="commentText">
+											对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩 子的内心应该最善良不过，最重要的就是家长的引导和家庭 的教育，还是有很多值得我们思考的地方！！！
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--底部固定-->
+		<div class="footer">
+			<ul>
+				<li class="collect"><span class="active">收藏</span></li>
+				<li class="comment"><span>112</span></li>
+				<li class="share"><span>分享</span></li>
+			</ul>
+		</div>
+		<!--评论的弹层 -->
+		<!--del_down为公用clss名不要动，后面起自己控制的class,比如现在的warn-->
+		<div class="del_down  commentMask" style="display: none;">
+			<div class="hide"></div>
+			<!-- 这个是黑色遮罩 -->
+			<div class="con">
+				<!-- 这的弹层大小 自己设置宽高 其他的不用设置  -->
+				<!-- 这里写弹层的内容 -->
+				<input type="text" name="" id="" value="" placeholder="评论，说出你的想法吧....." />
+				<div class="btn">
+					<a href="JavaScript:;" class="confirm">确认</a>
+					<a href="JavaScript:;" class="cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		<!--删除评论弹框 -->
+		<div class="del_down  deleteMask" style="display: none;">
+			<div class="hide"></div>
+			<div class="con">
+				<!-- 这里写弹层的内容 -->
+				<p class="texts">确认删除该条评论？</p>
+				<div class="btn">
+					<a href="JavaScript:;" class="confirm">确认</a>
+					<a href="JavaScript:;" class="cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//返回到上一级
+			$(document).on("tap", ".videoBox a.back", function() {
+				window.history.go(-1);
+			});
+
+			function Share(e) {
+				alert(e);
+			}
+			$(document).on("tap", ".footer ul li.share span", function() {
+				Share(100);
+			});
+		</script>
+		<script>
+			//默认初始化--不需要修改
+			mui.init({
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						height: 50, //可选,默认50.触发下拉刷新拖动距离,
+						auto: false, //可选,默认false.自动下拉刷新一次
+						contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+						contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+						contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+						callback: pullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: pullfresh2 //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+
+			//上拉加载
+			var count = 0
+
+			function pullfresh2() {
+				//业务逻辑代码，比如通过ajax从服务器获取新数据；
+				setTimeout(function() {
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh((++count > 2));
+					var table = document.body.querySelector('.mainbody');
+
+					//注意：
+					//1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
+					//2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
+				}, 1000)
+			}
+
+			//下拉刷新
+			function pullfresh() {
+				//业务逻辑代码，比如通过ajax从服务器获取新数据；
+				//注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后\n
+				setTimeout(function() {
+					mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+				}, 1000)
+
+			};
+		</script>
+	</body>
+
+</html>

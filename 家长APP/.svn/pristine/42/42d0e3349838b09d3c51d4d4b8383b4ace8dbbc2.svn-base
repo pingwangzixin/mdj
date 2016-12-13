@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>学业发展水平</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/zhpj.css" />
+		<script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/zepto.js"></script>
+		<script src="../js/zhpj.js"></script>
+		<style>
+			body{overflow: hidden;}
+			.nobody{background:#fff;width:100%;height:100%;text-align:center;}
+			.nobodyimg{width:3.47rem;margin-top:2.22rem;}
+		</style>
+	</head>
+	<body>
+		<!--内容开始-->
+		<div class="xyfzhead mbot">
+			<div class="kemuulwrap">
+				<ul class="ml kemuul">
+					<li class="active">语文</li>
+					<li>数学</li>
+					<li>英语</li>
+					<li>物理</li>
+					<li>化学</li>
+					<li>历史</li>
+					<li>政治</li>
+					<li>地理</li>
+					<li>心理<span class="reddoat"></span></li>
+					<li>生理</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="nobody mt">
+			<img src="../img/nobody.png" alt="" class="nobodyimg"/>
+		</div>
+	</body>
+</html>

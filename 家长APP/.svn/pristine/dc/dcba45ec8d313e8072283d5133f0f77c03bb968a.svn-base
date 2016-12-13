@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>课堂记录</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+		<!--日历插件-->
+		<link rel="stylesheet" type="text/css" href="../common/dataTimes/mui.picker.min.css">
+		<script src="../common/dataTimes/mui.min.js"></script>
+		<script src="../common/dataTimes/mui.picker.min.js"></script>
+		<!--我的css、js-->
+		<link rel="stylesheet" type="text/css" href="../css/class_look.css"/>
+		<script src="../js/class_look.js"></script>
+	</head>
+	
+	<body>
+		<div class="main" >
+			<div class="head afters">
+				<a href="JavaScript:;" class="toLeft fl"></a>
+				<a href="JavaScript:;" class="toRight fr"></a>
+				<div class="dataBox">
+					<button id="datas">选择日期 ...</button>
+					<span>当前第<i>12</i>周</span>
+				</div>
+			</div>
+			<div class="tableBox">
+				<table>
+					<thead>
+						<tr>
+							<td>周一</td>
+							<td>周二</td>
+							<td>周三</td>
+							<td>周四</td>
+							<td>周五</td>
+							<td>周六</td>
+							<td>周日</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">数学</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">英语</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">政治</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">历史</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">地理</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">物理</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">化学</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">生物</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">数学</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="active">
+									<span class="times">19:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p class="active">
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span class="times">8:00</span>
+									<span class="subject">语文</span>
+								</p>
+							</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="annalBox">
+					<span class="annalLeft fl">表示有实录</span>
+					<span class="annalRight fr">表示无实录</span>
+				</div>
+			</div>
+			
+			<div class="classroomBox">
+				<h4 class="afters">课堂实录</h4>
+				<ul class="ktsl">
+					<li><a href="JavaScript:;">2016—06—09T09:00(一).mp4</a></li>
+					<li><a href="JavaScript:;">2016—06—09T09:00(一).mp4</a></li>
+					<li><a href="JavaScript:;">2016—06—09T09:00(一)2016—06—09T09:00(一)2016—06—09T09:00(一).mp4</a></li>
+					<li><a href="JavaScript:;">2016—06—09T09:00(一)2016—06—09T09:00(一)2016—06—09T09:00(一).mp4</a></li>
+				</ul>
+			</div>
+			<div class="classroomBox">
+				<h4 class="afters">课堂互动记录</h4>
+				<ul class="kthdjl">
+					<li><a href="JavaScript:;">教师下发<span>测验(一) 学生提交答案学生提交答案学生提交答案学生提交答案学生提交答案学生提交答案</span></a></li>
+					<li><a href="JavaScript:;">教师下发<span>秋天的雪.PPT</span></a></li>
+					<li><a href="JavaScript:;">学生提问<span>测验(一) </span></a></li>
+					<li><a href="JavaScript:;">学生提问<span>秋天的雪</span></a></li>
+				</ul>
+				<!--<img class="noRecord" src="../img/noRecord-icon.png" alt="" />-->
+			</div>
+			<div class="classroomBox">
+				<h4 class="afters">课堂评价</h4>
+				<div class="evaluation">
+					<p><span>学生状态：</span><i class="yx">优秀</i></p>
+					<p><span>教师评语：</span>课堂中表现不够活跃，如果能够主动表达你的想法，让教师知道。</p>
+				</div>
+			</div>
+			
+		</div>
+		<!--视频播放弹窗-->
+		<div class="del_down  videoMask" style="display: none;">
+		    <div class="hide"></div>
+		    <div class="con">
+		    	<!-- 这里写弹层的内容 -->
+		    	<video width="100%" height="100%" controls="controls">
+					<source src="../video/mov_bbb.mp4" type="video/mp4"></source>
+					<source src="../video/mov_bbb.ogv" type="video/ogg"></source>
+					<source src="../video/mov_bbb.webm" type="video/webm"></source>
+					<object width="" height="" type="application/x-shockwave-flash" data="mov_bbb.swf">
+						<param name="movie" value="mov_bbb.swf" />
+						<param name="flashvars" value="autostart=true&amp;file=mov_bbb.swf" />
+					</object>
+					当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+			</video>
+		    </div>
+		</div>
+		<!--这里是加载图片样式-->
+		<div class="sliderMaskClassroomBox" style="display: none;">
+			<div class="mui-slider">
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<img src="../img/1.png" />
+					</div>
+					<div class="mui-slider-item">
+						<img src="../img/2.png" />
+					</div>
+					<div class="mui-slider-item">
+						<img src="../img/3.png" />
+					</div>
+					<div class="mui-slider-item">
+						<img src="../img/4.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--这里是加载图片样式 end-->
+		
+		<script type="text/javascript">
+		window.onload=function(){
+			
+			
+			//获取当前时间
+			document.querySelector('#datas').innerText = CurentTime();
+			//获取当前周
+			getweeks();
+			//调用手机端日历
+			(function($) {
+				$.init();
+				$(document).on("tap","#datas",function(){
+					newdatas();
+				});
+				
+			})(mui);
+		}
+			
+		</script>
+	</body>
+	
+</html>

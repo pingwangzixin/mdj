@@ -1,0 +1,32 @@
+
+/*弹出提示*/
+.del_down{
+   text-align: center;
+}
+.del_down .hide{
+  position: fixed;
+  z-index: 1002;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  opacity: 0.3;
+  background: rgba(0,0,0,1);
+}
+.del_down .con{
+	position: fixed;
+	top:0;
+	left:0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+  z-index:1003;
+  width:328px;
+  height: 180px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  opacity: 1;
+  -webkit-box-shadow: 0 0 6px #ccc;
+  -moz-box-shadow: 0 0 6px #ccc;
+  box-shadow: 0 0 6px #ccc;
+}

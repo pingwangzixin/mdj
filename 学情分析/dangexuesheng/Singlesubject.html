@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单科班级均分</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="../css/personSubject.css" />
+    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="../common/dataTable/datatables.min.js"></script>
+    <script type="text/javascript" src="../common/js/LAB.min.js"></script>
+    <script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $LAB.setGlobalDefaults({
+            CacheBust: true // 是否加上尾巴(清缓存)，true 加尾巴无缓存
+        });
+    </script>
+  
+</head>
+<body>
+
+<header  class="header clearfix"></header>
+<!--中心内容-->
+<div class="main clearfix">
+    <!--左侧-->
+	<div  class="left fl"></div>
+	
+    <!--右侧-->
+    <div class="main_right fr">
+		<div class="topBar nianjiWrap clearfix boxShadow">
+            <div class="nianji fl"><span>二年（1）班：</span><span>乔伟</span></div>
+            <a class="nianjiBack fr" href="../shouye/class_single.html"><img src="../img/back.png"/>返回</a>
+        </div>
+        <div class="topBar subjectsWrap clearfix boxShadow">
+            <div class="subject">学科：</div>
+            <span class="cur">语文</span>
+        </div>
+        <!-- 折线图 ======================-->
+        <div class="ichartWrap subsSingleIchart boxShadow">
+            <div class="ichatTitWrap clearfix">
+                <p class="icharTit">历次考试变化趋势</p>
+                <!-- <div class="chakan fr">
+                    <img src="../img/quanping.png"/>放大查看
+                </div> -->
+            </div>
+            <div class="bigChart">
+                <img src="../img/close.png" class="closeZX" style="display:none;"/>
+                <ul class="ichartTits clearfix">
+                    <li class="cur">班级均分</li>
+                    <li>年级均分</li>
+                    <li>班级排名</li>
+                    <li>年级排名</li>
+                </ul>
+                
+                <!-- 加载图片 ==================-->
+                <div class="loadingWrap" style="display:none;">
+                    <img src="../img/jiazai.gif" class="loadingImg"/>
+                </div>
+                <ul class="icharts">
+                        <li class="zhexian">
+                            <div id="chart-list">
+                                <div data-highcharts-chart="3" class="chart-line chart-column-line-global charts-btb" style="height:350px;"> </div>
+                            </div>
+                        </li>
+                    </ul> 
+                    <script>
+                        $LAB
+                            .script('../common/js/highcharts.js')
+                            .script('../common/js/highcharts-functions.js')
+                            .wait(function(){
+                                var type = 1;
+                                var chart_line_data = {"categories":["2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u4e2d\u8003\u8bd5","2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u672b\u8003\u8bd5","2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5","2015-2016\u521d\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5"],"ytitle":"\u6bd4\u7387","data":[{"name":"\u5f97\u5206","data":[{"y":-0.3,"score":510},{"y":-3.1,"score":510},{"y":-14.6,"score":482},{"y":-3.7,"score":280}]}]};
+                                var reversed = 0;
+                                chart_line('.chart-line', chart_line_data.title, chart_line_data.categories, chart_line_data.ytitle, chart_line_data.data, '',false , type , reversed);
+                                $('.highcharts-legend').remove();
+                            });
+                    </script>
+            </div>
+
+
+            <!-- 点击操作 ========================================-->
+            <script>
+                $LAB
+                    .script('../common/js/highcharts.js')
+                    .script('../common/js/highcharts-functions.js')
+                    .wait(function(){
+                        $('.ichartTits > li').click(function (){
+                            var obj = $(this),
+                                url = obj.attr("data-url"),
+                                showid = obj.attr("data-name"),
+                                p = obj.closest('.btb-chart');
+            
+                            obj.siblings().removeClass('cur');
+                            obj.addClass('cur');
+                            $('.tabcon[data-name]').hide();
+            
+                            if ( $('.tabcon[data-name="'+showid+'"]').length == 1 ) {
+                                $('.tabcon[data-name="'+showid+'"]').show();
+                                doReflow(p);
+                            } else {
+                                $.ajax({
+                                    url: url,
+                                    dataType: 'html',
+                                    beforeSend: function(){
+                                        $('.btb-chart .exam-chart').append('<div id="chart-list" class="tabcon" data-name="'+showid+'"></div>');
+                                        $('.tabcon[data-name="'+showid+'"]').html('<div style="padding: 50px 0px;text-align: center"><i class="icon-spin5 animate-spin"></i></div>');
+                                    }
+                                }).done(function(html){
+
+                                    $LAB
+                                    .script('../common/js/highcharts.js')
+                                    .script('../common/js/highcharts-functions.js')
+                                    .wait(function(){
+                                        var type = 1;
+                                        var chart_line_data = {"categories":["2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u4e2d\u8003\u8bd5","2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u672b\u8003\u8bd5","2014-2015\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5","2015-2016\u521d\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5"],"ytitle":"\u6bd4\u7387","data":[{"name":"\u5f97\u5206","data":[{"y":-0.3,"score":510},{"y":-3.1,"score":510},{"y":-14.6,"score":482},{"y":-3.7,"score":280}]}]};
+                                        var reversed = 0;
+                                        chart_line('.chart-line', chart_line_data.title, chart_line_data.categories, chart_line_data.ytitle, chart_line_data.data, '',false , type , reversed);
+                                        $('.highcharts-legend').remove();
+                                        $('##chart-list g text').css('color','#000');
+                                    });
+                                    //提交成功
+                                    $('.tabcon[data-name="'+showid+'"]').html(html);
+                                    doReflow(p);
+                                });
+                            }
+            
+                        });
+                        
+                        
+                        $('.ichartTits > li').on('click','.exam-list-item',function(){
+                           var url = $(this).data('url');
+                            window.open(url);
+                        });
+                        
+                        $(function () {
+                            $('.ichartTits > li:first').trigger('click');
+                        });
+            
+                        
+                    });
+            </script>
+
+
+
+
+           <!--  图标注释========================= -->
+            <div class="notesWrap" style="display:block;">
+                <div class="note">注释：</div>
+                <div class="note">→本图表明学生学科得分在历次考试中与班级平均分的对比变化情况；</div>
+                <div class="note">→图中X轴零刻度线表示班级总分均分线；Y轴为均分比例，表示每次考试学生总分与班级总分均分的绝对差，以正负值进行表示；</div>
+                <div class="note">→横向为不同次的考试，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据。</div>
+            </div>
+            <!-- 年级均分注释===================== -->
+            <div class="notesWrap" style="display:none;">
+                <div class="note">注释：</div>
+                <div class="note">→本图表明学生学科得分在历次考试中与年级平均分的对比变化情况；</div>
+                <div class="note">→图中X轴零刻度线表示年级学科均分线；Y轴为均分比例，表示每次考试学生学科得分与年级学科均分的绝对差，以正负值进行表示；</div>
+                <div class="note">→横向为不同次的考试，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据。</div>
+            </div>
+            <!-- 班级排名注释================ -->
+            <div class="notesWrap" style="display:none;">
+                <div class="note">注释：</div>
+                <div class="note">→本图表明历次考试中学生学科得分在班级中的排名变化情况；</div>
+                <div class="note">→图中X轴零刻度线表示班级总人数；Y轴为排名，表示每次考试学生学科得分在班级中的排名；</div>
+                <div class="note">→横向为不同次的考试，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据。.</div>
+            </div>
+            <!-- 年级排名注释================ -->
+            <div class="notesWrap" style="display:none;">
+                <div class="note">注释：</div>
+                <div class="note">→本图表明历次考试中学生学科得分在年级中的排名变化情况；</div>
+                <div class="note">→图中X轴零刻度线表示年级总人数；Y轴为排名，表示每次考试学生学科得分在年级中的排名；</div>
+                <div class="note">→横向为不同次的考试，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据。</div>
+            </div>
+        </div>
+      
+        <div class="ichartWrap boxShadow">
+            <!-- 考试列表 ==============-->
+            <div class="ichatTitWrap testListTit">
+                <p class="icharTit">单次考试列表</p>
+            </div>
+            <ul class="testListWrap">
+                <li>
+                    <div class="listLeft fl">
+                        <img src="../img/iconA.png"/>
+                    </div>
+                    <div class="listRight fl">
+                        <div class="listR_top">
+                            <span class="fl listR_top_tit">2015—2016学年第二学期期末考试</span>
+                            <div class="fr" style="margin-right:54px;"><span>考试时间：</span><span>2016-05-09</span></div>
+                        </div>
+                        <div class="listR_bottom">
+                            <div class="score">
+                                得分：601 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="dengjiImg"><img src="../img/A.png" /></b>
+                            </div>
+                            <div class="score">
+                                班级均分：<span>587.12</span>
+                            </div>
+                            <div class="score">
+                                班级排名：<span>12</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                            <div class="score">
+                                年级均分：<span>590.15</span>
+                            </div>
+                            <div class="score">
+                                年级排名：<span>36</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="queryAll.html" target="_blank">
+                        <div  class="chakanfenxi">查看分析</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="listLeft fl">
+                        <img src="../img/iconB.png"/>
+                    </div>
+                    <div class="listRight fl">
+                        <div class="listR_top">
+                            <span class="fl listR_top_tit">2015—2016学年第二学期期末考试</span>
+                            <div class="fr"><span>考试时间：</span><span>2016-05-09</span></div>
+                        </div>
+                        <div class="listR_bottom">
+                            <div class="score">
+                                得分：601 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="dengjiImg"><img src="../img/B.png" /></b>
+                            </div>
+                            <div class="score">
+                                班级均分：<span>587.12</span>
+                            </div>
+                            <div class="score">
+                                班级排名：<span>12</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                            <div class="score">
+                                年级均分：<span>590.15</span>
+                            </div>
+                            <div class="score">
+                                年级排名：<span>36</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="queryAll.html" target="_blank">
+                        <div  class="chakanfenxi">查看分析</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="listLeft fl">
+                        <img src="../img/iconC.png"/>
+                    </div>
+                    <div class="listRight fl">
+                        <div class="listR_top">
+                            <span class="fl listR_top_tit">2015—2016学年第二学期期末考试</span>
+                            <div class="fr"><span>考试时间：</span><span>2016-05-09</span></div>
+                        </div>
+                        <div class="listR_bottom">
+                            <div class="score">
+                                得分：601 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="dengjiImg"><img src="../img/C.png" /></b>
+                            </div>
+                            <div class="score">
+                                班级均分：<span>587.12</span>
+                            </div>
+                            <div class="score">
+                                班级排名：<span>12</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                            <div class="score">
+                                年级均分：<span>590.15</span>
+                            </div>
+                            <div class="score">
+                                年级排名：<span>36</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="queryAll.html" target="_blank">
+                        <div  class="chakanfenxi">查看分析</div>
+                    </a>
+                </li>
+                <li>
+                    <div class="listLeft fl">
+                        <img src="../img/iconD.png"/>
+                    </div>
+                    <div class="listRight fl">
+                        <div class="listR_top">
+                            <span class="fl listR_top_tit">2015—2016学年第二学期期末考试</span>
+                            <div class="fr"><span>考试时间：</span><span>2016-05-09</span></div>
+                        </div>
+                        <div class="listR_bottom">
+                            <div class="score">
+                                得分：601 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="dengjiImg"><img src="../img/D.png" /></b>
+                            </div>
+                            <div class="score">
+                                班级均分：<span>587.12</span>
+                            </div>
+                            <div class="score">
+                                班级排名：<span>12</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                            <div class="score">
+                                年级均分：<span>590.15</span>
+                            </div>
+                            <div class="score">
+                                年级排名：<span>36</span>  
+                                <span class="red"><img src="../img/icon-down-arrow.png" />6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="queryAll.html" target="_blank">
+                        <div  class="chakanfenxi">查看分析</div>
+                    </a>
+                </li>
+            </ul>
+            <!-- 加载更多 -->
+            <div class="loadMore">
+                <img src="../img/more.png" />
+            </div>
+
+        </div>
+    
+
+    </div>
+</div>
+
+
+
+<!--弹层 -->
+<!--del_down为公用clss名不要动，后面起自己控制的class-->
+<div class="del_down warn" style="display: none;">
+    <div class="hide"></div>
+    <div class="con">
+    	<!--  写弹层的内容 -->
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../js/personSubject.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+.right_con {
+        background: none!important
+}
+
+.conleft {
+        width: 60%;
+        height: auto;
+        background: #fff;
+        position: relative;
+        min-width: 500px;
+}
+
+.conright {
+        width: 38%;
+        height: 735px;
+        background: #fff;
+        margin-left: 2%;
+}
+
+.bgtitle {
+        padding: 20px;
+        font-size: 16px;
+}
+
+.bgtitle .fl h2:before {
+        content: "";
+        width: 3px;
+        height: 25px;
+        background: #4dbd73;
+        position: absolute;
+        left: 0
+}
+
+h2 {
+        font-size: 16px;
+}
+
+h2 span img {
+        margin-right: 6px;
+}
+
+.tablelist {
+        border-collapse: collapse;
+        clear: both;
+        border: 1px solid #d1eedb;
+        margin: 40px auto 12px;
+        width: 90%;
+}
+
+.tablelist td {
+        border: 1px solid #d1eedb
+}
+
+tbody .odd {
+        background: #f5fbf7;
+        height: 30px!important;
+}
+
+tbody .odd td {
+        height: 40px;
+}
+
+td span {
+        display: inline-block;
+        width: 75px;
+        height: 25px;
+        color: #000;
+        line-height: 25px;
+        text-align: center;
+        border: 1px solid #4dbd73;
+}
+
+.tbactive {
+        background: #4dbd73;
+        color: #fff
+}
+/*表格左侧点击后改变背景色*/
+
+.zuobiao {
+        width: 113px;
+        text-align: center;
+}
+
+.zuobiao span {
+        cursor: pointer;
+}
+
+thead tr {
+        height: 40px;
+        font-weight: bold;
+}
+
+thead {
+        background: #f5fbf7
+}
+
+tbody tr {
+        height: 60px;
+}
+
+.tablelist ul {
+        list-style: none;
+        min-width: 350px;
+        width: auto;
+        margin: 0;
+        padding-left: 20px;
+}
+
+.tablelist ul li {
+        display: inline-block;
+        width: 50px;
+        cursor: pointer;
+}
+
+.tablelist ul li.xzactive {
+        color: #3bc1c4;
+        font-weight: bold;
+}
+
+input {
+        outline: none;
+}
+
+.conright {
+        position: relative
+}
+
+.rttit h2 {
+        padding: 20px;
+}
+
+.rttit h2:before {
+        content: "";
+        width: 3px;
+        height: 25px;
+        background: #4dbd73;
+        position: absolute;
+        left: 0;
+}
+
+.cxid {
+        width: 265px;
+        height: 30px;
+        border-radius: 5px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        text-indent: 10px;
+}
+
+.seache {
+        position: relative;
+        height: 50px;
+        margin-bottom: 80px;
+}
+
+.seache img {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        cursor: pointer;
+}
+
+.cxshow {
+        width: 95%;
+        height: 331px;
+        background: #f9f9f9;
+        clear: both;
+        border-radius: 5px;
+        margin: 50px auto;
+        position: relative;
+}
+
+.idshow {
+        width: 290px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -145px;
+        font-weight: bold;
+        line-height: 50px;
+        margin-top: -25px;
+}
+
+.idshow input {
+        width: 150px;
+        height: 25px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        text-align: center;
+        border-radius: 3px;
+        margin-left: 10px;
+}
+
+.zhuyi {
+        position: absolute;
+        width: 100px;
+        height: 30px;
+        left: 50%;
+        bottom: 10px;
+        margin-left: -50px;
+        color: #fff;
+        background:#4dbd73;
+        line-height:30px;
+        text-align:center;
+        cursor:pointer;
+}
+
+.youid {
+        width: 13px;
+        height: 11px;
+        border: none;
+        background: url('../img/youid.png');
+        margin-left: 3px;
+}
+
+.wuid {
+        width: 13px;
+        height: 11px;
+        border: none;
+        background: url('../img/wuid.png')
+}
+
+.right_footer {
+        clear: both;
+}
+
+.inputbg {
+        background: #fff;
+}
+
+#saveid {
+        width: 130px;
+        height: 35px;
+        background: #3bc1c4;
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        text-align: center;
+        line-height: 35px;
+        color: #fff;
+        margin-left: -65px;
+        display: none;
+        cursor: pointer;
+}
+
+#tcdui {
+        position: fixed;
+        width: 351px;
+        height: 218px;
+        line-height: 100px;
+        font-weight: bold;
+        background: #fff;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        margin-left: -175px;
+        margin-top: -109px;
+        z-index: 999;
+        box-shadow: 2px 2px 20px #ccc;
+        display: none;
+        border: 1px solid #ddd;
+}
+
+.tckong {
+        position: fixed;
+        width: 545px;
+        height: 319px;
+        font-weight: bold;
+        background: #fff;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        margin-left: -175px;
+        border-radius: 5px;
+        margin-top: -109px;
+        z-index: 999;
+        box-shadow: 2px 2px 20px #ccc;
+        display: none;
+        border: 1px solid #ddd;
+}
+
+.tckong .kongtit {
+        background: #1d2b36;
+        width: 545px;
+        height: 43px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        position: relative;
+        color: #fff
+}
+
+.tckong .kongtit .tip,
+.close {
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+}
+
+.tckong .sure {
+        margin-top: 70px;
+        font-size: 16px;
+}
+
+.tckong .sure button {
+        margin: 90px 50px 50px;
+        width: 145px;
+        height: 40px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+}
+
+.tckong .sure .btzuo {
+        background: #4dbd75;
+}
+
+.tckong .sure .btyou {
+        background: #3bc1c4;
+}

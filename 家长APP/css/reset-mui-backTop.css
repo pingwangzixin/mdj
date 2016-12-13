@@ -1,0 +1,292 @@
+﻿/*﻿----------- 清除默认样式  --------*/
+html{font-size: 50px;-webkit-tap-highlight-color: transparent;-webkit-user-select:none}/*除以的比例是100*/
+html,body{font-family: "microsoft yahei";width: 100% ;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+  margin:0;
+  padding:0;
+}
+body {
+  background:#eee;
+  color:#333;
+  font-size:0.24rem;
+}
+em,i{font-style: normal;}
+input::-webkit-input-placeholder{
+    color:#333;
+    font-size: 0.24rem;
+}
+input,textarea,button{outline: none;border:none 0;}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+  font-size:100%;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style:normal;
+  font-weight:normal;
+}
+/*a,input,textarea,button{-webkit-appearance: none;}*/
+a,input,span{-webkit-tap-highlight-color:rgba(2,2,2,0);}/*清除a标签点击之后的阴影*/
+a {
+  text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
+  color:#333;
+}
+a:hover {
+  text-decoration:none;
+}
+img {
+  border:none;
+}
+ol,ul,li {
+  list-style:none;
+}
+input, textarea, select, button {
+  font:"microsoft yahei",Arial,sans-serif;
+}
+table {
+  border-collapse:collapse;
+}
+/* css common */
+.clearfix:after {
+  content: " ";
+  display: block;
+  height:0;
+  clear:both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom:1;
+}
+.fl{float: left;}
+.fr{float: right;}
+
+
+/*加载样式=====================*/
+.loading{text-align:center;display:none;background: #eee;}
+.loading span{
+	display: inline-block;
+	height: 0.8rem;
+	background:url(../img/loading.gif) no-repeat left center;
+	background-size:0.6rem 0.6rem;
+	padding-left: 0.7rem;
+  font-size: 0.28rem;
+	color:#545454;
+	line-height:0.8rem;
+}
+
+
+/*返回顶部样式=====================*/
+.hide {
+    display: none;
+}
+.backTop {
+		background: url(../img/scrollTop-icon.png) no-repeat center center;
+    background-size:.8rem;
+    border-radius: 50%;
+    position: fixed;
+    right:.2rem;
+	  bottom:1rem;
+   	width:.8rem;
+		height:.8rem;
+    z-index:101;
+    border:0.5px solid #ccc;
+}
+
+/*--------------弹出提示---------------*/
+.del_down{
+    text-align: center;
+}
+.del_down .hide{
+    position: fixed;
+    z-index: 101;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0.6;
+    background: rgba(0,0,0,0.6);
+}
+.del_down .con{
+    background-color: #fff;
+    position: fixed;
+    top: 30%;
+    left: 50% ; 
+    -webkit-transform: translate(-50% , -50% ); 
+    -ms-transform: translate(-50% , -50% );
+    transform: translate(-50% , -50% );
+    z-index:103;
+    border-radius: 5px;
+    opacity: 1;
+    -webkit-box-shadow: 0 0 6px #ccc;
+    -moz-box-shadow: 0 0 6px #ccc;
+    box-shadow: 0 0 6px #ccc;
+}
+/*---------------
+	注意写的时候 z-index值 你们不要超过100，不要乱写值；
+	弹层的大小，宽高 自己根据图纸定义
+ ------------------*/
+
+
+/*加载刷新样式*/
+@font-face {
+	font-family: Muiicons;
+	font-weight: 400;
+	font-style: normal;
+	src: url(../fonts/mui.ttf) format('truetype');
+}
+
+.mui-scroll-wrapper {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%
+}
+.mui-scroll {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0)
+}
+.mui-pull-bottom-pocket,
+.mui-pull-top-pocket {
+	position: absolute;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	overflow: hidden;
+	width: 100%;
+	height: 50px
+}
+.mui-pull {
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	left: 0;
+	text-align: center;
+	color: #777
+}
+.mui-icon {
+	font-family: Muiicons;
+	font-size: 24px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1;
+	display: inline-block;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased
+}
+.mui-pull-loading {
+	margin-right: 10px;
+	-webkit-transition: -webkit-transform .4s;
+	transition: transform .4s;
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;
+	vertical-align: middle
+}
+.mui-icon-pulldown:before {
+	content: '\e588'
+}
+.mui-pull-caption {
+	font-size: 15px;
+	line-height: 24px;
+	position: relative;
+	display: inline-block;
+	overflow: visible;
+	margin-top: 0;
+	vertical-align: middle
+}
+.mui-table-view {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+.mui-table-view:before {
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: 0px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #fff;
+	top: -1px;
+}
+.mui-table-view:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 0px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #fff;
+}
+.mui-visibility {
+	visibility: visible!important
+}
+.mui-pull-bottom-pocket,
+.mui-pull-top-pocket {
+	position: absolute;
+	left: 0;
+	display: block;
+	visibility: hidden;
+	overflow: hidden;
+	width: 100%;
+	height: 50px
+}
+
+.mui-plus-pullrefresh .mui-pull-bottom-pocket,
+.mui-plus-pullrefresh .mui-pull-top-pocket {
+	display: none;
+	visibility: visible
+}
+.mui-loading .mui-spinner {
+	display: block;
+	margin: 0 auto
+}
+
+.mui-spinner {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	-webkit-animation: spinner-spin 1s step-end infinite;
+	animation: spinner-spin 1s step-end infinite
+}
+
+.mui-spinner:after {
+	display: block;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox=\'0 0 120 120\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\'><defs><line id=\'l\' x1=\'60\' x2=\'60\' y1=\'7\' y2=\'27\' stroke=\'%236c6c6c\' stroke-width=\'11\' stroke-linecap=\'round\'/></defs><g><use xlink:href=\'%23l\' opacity=\'.27\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(30 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(60 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(90 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(120 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(150 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.37\' transform=\'rotate(180 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.46\' transform=\'rotate(210 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.56\' transform=\'rotate(240 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.66\' transform=\'rotate(270 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.75\' transform=\'rotate(300 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.85\' transform=\'rotate(330 60,60)\'/></g></svg>');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: 100%
+}
+.mui-pull-bottom-pocket {
+	position: relative;
+	bottom: 0;
+	height: 40px
+}
+.mui-hidden {
+	display: none!important
+}
+.mui-icon-pulldown:before {
+	content: '\e588'
+}
+.mui-block {
+	display: block!important
+}
+.mui-pull-bottom-pocket .mui-pull-loading {
+	visibility: hidden
+}

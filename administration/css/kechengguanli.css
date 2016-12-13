@@ -1,0 +1,116 @@
+
+/*右侧--主题内容*/
+.main_right .right_con{
+	height: 710px;
+	background: #fff;
+	border-radius: 10px;
+}
+.right_con .classroom_head{
+	height: 40px;
+	padding-top: 14px;
+	margin-bottom: 16px;
+}
+.right_con .classroom_head h3{
+	height: 26px;
+	line-height: 26px;
+	padding-left: 17px;
+	border-left: 3px solid #4dbd73;
+	font-size: 16px;
+	color:#333;
+	font-weight: bold;
+}
+.right_con .classroom_head span.btn{
+	display:block;
+	width: 100px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	margin-right: 115px;
+	font-size: 16px;
+	color:#fff;
+	background-color: #33cccc;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.classroom_time{width: 100%;}
+.classroom_time .time{width: 50%;text-align: center;margin: 0 auto;}
+.classroom_time .time_box{padding:0 52px 0 116px ;}
+.classroom_time .time_border{border:1px solid #ccc;padding: 36px 0 10px 0;border-radius: 6px;text-align: center;margin: 0 auto;position:relative}
+.classroom_time .tit{
+	padding-left: 66px;
+	height: 46px;
+	line-height: 46px;
+	color:#333;
+	font-size: 16px;
+}
+
+.classroom_time .box_input{
+	color:#333;
+	font-size: 14px;
+}
+.classroom_time  .box_input li{margin-bottom: 14px;}
+.classroom_time  .box_input input{
+	width: 42%;
+	height: 39px;
+	border:1px solid #dcdcdc;
+	outline: none;
+	border-radius: 6px;
+	text-indent: 10px;
+}
+
+.classroom_time .add_border .add_box{border:1px dashed #dedede;width:60%;margin:50px auto;padding:50px 0}
+.classroom_time .add_border .add_box .btn{
+	padding: 30px;
+	cursor:pointer;
+	display: block;
+	width:47px;
+	height: 46px;
+	background:#f1f1f1 url(../img/tianjias.png) no-repeat center;
+	margin: 10px auto;
+}
+
+.ofile{
+	position:absolute;
+	clip:rect(0 0 0 0);
+}
+
+
+.datetime{margin-left:-30px;}
+.showkcb{height:80px;}
+.lessonmb{position:absolute;left:10px;bottom:10px;}
+.showlesson{width:75px;height:25px;background:#f3f3f3;line-height:25px;text-align:center;cursor:pointer;}
+.cklesson{position:absolute;left:115px;bottom:10px;}
+.xzlesson{position:absolute;left:195px;bottom:10px;vertical-align:middle}
+
+/*右侧--尾部*/
+.main_right .right_footer{
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 12px;
+	color:#545454;
+}
+.main_right .right_footer li{line-height: 26px;}
+.main_right .right_footer li span{margin-right: 55px;}
+
+.active{background:#ccc}
+
+#tcdui{position:fixed;width:351px;height:218px;line-height:100px;font-weight:bold;background:#fff;text-align:center;left:50%;top:50%;margin-left:-175px;margin-top:-109px;z-index:999;box-shadow:2px 2px 20px #ccc;display:none;border:1px solid #ddd;}
+.upsuccess{width:100%;min-height:235px;display:none;}
+.uptable{width:100%;margin-bottom:100px;}
+.uptable thead{background:#f5fbf7;height:40px;font-weight:bold;}
+.uptable thead tr{height:40px;}
+.uptable tbody tr{height:30px;}
+.uptable tbody td a{color:#33cccc;}
+.seelesson{width:932px;height:568px;background:#fff;position:fixed;left:50%;top:50%;margin-left:-466px;margin-top:-284px;box-shadow:2px 2px 10px #ccc;border-radius:10px;display:none;text-align: center;border:1px solid #ccc}
+.seelesson h1{text-align:center;font-size:18px;font-weight: bold;margin-top:30px;}
+.seedjkcb{width:90%;margin:50px auto;text-align:center;border:1px solid #ddd;}
+.thead{height:50px;font-weight:bold;}
+.seedjkcb tr,td{height:40px;border:1px solid #ccc}
+.kcbbbtn{width:143px;height:37px;background:#3bc1c4;border:none;text-align:center;line-height:37px;color:#fff;margin:-20px 20px 0;}
+.bggay{background:#f9f9f9}
+.bold{font-weight:bold;}
+td.hover{background:#ecfdfd;}
+td input{padding:0;height:38px;width:80px;background:#ecfdfd;border:none;outline:none;}
+.kechengnum{width:45px;}
+.savelesson{display:none;}

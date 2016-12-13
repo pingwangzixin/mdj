@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>教材管理</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/jiaocaiguanli.css">
+	<script type="text/javascript" src="common/js/jquery.1.8.2.min.js"></script>
+	<script src="common/js/jiaocaiguanli.js"></script>
+</head>
+
+<body>
+	<!-- 外层框架  -->
+	<div class="mian">
+		<div class="main_left">
+			<h3>宜宾智慧教育平台</h3>
+			<ul class="left_list">
+				<a href="resource.html">
+					<li><em></em>资源管理</li>
+				</a>
+				<a class="list_active" href="jiaocaiguanli.html">
+					<li><em></em>教材管理</li>
+				</a>
+				<a href="kechengguanli.html">
+					<li><em></em>课程管理</li>
+				</a>
+				<a href="shebeiguanli.html">
+					<li><em></em>设备管理</li>
+				</a>
+			</ul>
+		</div>
+		<div class="main_right">
+
+			<div class="right_head clearfix">
+				<p class="fl">教材管理//Teaching material management</p>
+				<div class="btn fr">
+					<em>张燕霞</em>
+					<img src="img/xia_green.png" alt="" />
+					<span>[已登录]</span>
+				</div>
+			</div>
+
+			<div class="right_con">
+				<!--教材管理开始-->
+				<div class="box-main">
+					<div class="main-left fl">
+						<div class="con">
+							<div class="main-tit">
+								<span class="text">学段、年级、学科信息</span>
+							</div>
+							<div class="table">
+								<table border="" cellspacing="" cellpadding="">
+									<tr>
+										<th class="l">学段</th>
+										<th class="c">学科</th>
+										<th class="r">版本</th>
+									</tr>
+									<tr>
+										<td class="section">
+											<div>小学</div>
+										</td>
+										<td class="grade xiaoxuexk">
+											<div class="xxxk xiao-xk">
+												<span><input class="checkone" id="xueke1" type="checkbox" value="" name="check[]"/><label for="xueke1">语文数学</label></span>
+												<span><input class="checkone" id="xueke2" type="checkbox" value="" name="check[]"/><label for="xueke2">语文</label></span>
+												<span><input class="checkone" id="xueke3" type="checkbox" value="" name="check[]"/><label for="xueke3">语文</label></span>
+												<span><input class="checkone" id="xueke4" type="checkbox" value="" name="check[]"/><label for="xueke4">语文</label></span>
+												<span><input class="checkone" id="xueke5" type="checkbox" value="" name="check[]"/><label for="xueke5">语文</label></span>
+												<span><input class="checkone" id="xueke6" type="checkbox" value="" name="check[]"/><label for="xueke6">语文</label></span>
+											</div>
+											<div class="tjtupian">
+												<img class="xkadd xkposition xxaddxk" src="./img/nianjiadd.png" alt="" onclick="banbenadd(this)"> <img class="xkdel xkposition tcscxk xiaoxk" src="./img/nianjidel.png" alt="">
+											</div>
+										</td>
+										<td class="subject">
+											<div class="jcverban xiaoxue">
+												<span><input class="checkone" id="check1" type="checkbox" value="" name="check[]"/><label for="check1">人教版</label></span>
+												<span><input class="checkone" id="check2" type="checkbox" value="" name="check[]"/><label for="check2">人教版</label></span>
+												<span><input class="checkone" id="check3" type="checkbox" value="" name="check[]"/><label for="check3">人教版</label></span>
+												<span><input class="checkone" id="check4" type="checkbox" value="" name="check[]"/><label for="check4">人教版</label></span>
+												<span><input class="checkone" id="check5" type="checkbox" value="" name="check[]"/><label for="check5">人教版</label></span>
+												<span><input class="checkone" id="check6" type="checkbox" value="" name="check[]"/><label for="check6">人教版</label></span>
+												<span><input class="checkone" id="check7" type="checkbox" value="" name="check[]"/><label for="check7">人教版</label></span>
+												<span><input class="checkone" id="check8" type="checkbox" value="" name="check[]"/><label for="check8">人教版</label></span>
+											</div>
+											<div class="jcbbimg">
+												<img class="xkadd xkposition addxxbb" src="./img/subject-add.png" alt="" onclick="tianjiabanben()"> <img class="xkdel xkposition tcscbb xiaoxuedel" src="./img/addbanben.png" alt="">
+											</div>
+										</td>
+									</tr>
+
+									<tr class="chuzhong">
+										<td class="section">
+											<div>初中</div>
+										</td>
+										<td class="grade chuzhongxk">
+											<div class="xxxk chu-xk">
+												<span><input class="checkone" id="czxueke1" type="checkbox" value="" name="check[]"/><label for="czxueke1">语文</label></span>
+												<span><input class="checkone" id="czxueke2" type="checkbox" value="" name="check[]"/><label for="czxueke2">语文</label></span>
+												<span><input class="checkone" id="czxueke3" type="checkbox" value="" name="check[]"/><label for="czxueke3">语文</label></span>
+												<span><input class="checkone" id="czxueke4" type="checkbox" value="" name="check[]"/><label for="czxueke4">语文</label></span>
+												<span><input class="checkone" id="czxueke5" type="checkbox" value="" name="check[]"/><label for="czxueke5">语文</label></span>
+												<span><input class="checkone" id="czxueke6" type="checkbox" value="" name="check[]"/><label for="czxueke6">语文</label></span>
+											</div>
+											<div class="tjtupian">
+												<img class="xkadd xkposition czxkadd" src="./img/nianjiadd.png" alt="" onclick="banbenadd(this)"> <img class="xkdel xkposition tcscxk chuxk" src="./img/nianjidel.png" alt="">
+											</div>
+
+										</td>
+										<td class="subject">
+
+											<div class="jcverban chuzhongjc">
+												<span><input class="checkone" id="chuzhong1" type="checkbox" value="" name="check[]"/><label for="chuzhong1">人教版</label></span>
+												<span><input class="checkone" id="chuzhong2" type="checkbox" value="" name="check[]"/><label for="chuzhong2">人教版</label></span>
+												<span><input class="checkone" id="chuzhong3" type="checkbox" value="" name="check[]"/><label for="chuzhong3">人教版</label></span>
+												<span><input class="checkone" id="chuzhong4" type="checkbox" value="" name="check[]"/><label for="chuzhong4">人教版</label></span>
+												<span><input class="checkone" id="chuzhong5" type="checkbox" value="" name="check[]"/><label for="chuzhong5">人教版</label></span>
+												<span><input class="checkone" id="chuzhong6" type="checkbox" value="" name="check[]"/><label for="chuzhong6">人教版</label></span>
+												<span><input class="checkone" id="chuzhong7" type="checkbox" value="" name="check[]"/><label for="chuzhong7">人教版</label></span>
+												<span><input class="checkone" id="chuzhong8" type="checkbox" value="" name="check[]"/><label for="chuzhong8">人教版</label></span>
+											</div>
+
+
+											<div class="jcbbimg">
+												<img class="xkadd xkposition addczbb" src="./img/subject-add.png" alt=""  onclick="tianjiabanben(this)"> <img class="xkdel xkposition tcscbb chuzhongdel" src="./img/addbanben.png" alt="">
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="section">
+											<div>高中</div>
+										</td>
+										<td class="grade gaozhongxk">
+											<div class="xxxk gao-xk">
+												<span><input class="checkone" id="gzxueke1" type="checkbox" value="" name="check[]"/><label for="gzxueke1">语文</label></span>
+												<span><input class="checkone" id="gzxueke2" type="checkbox" value="" name="check[]"/><label for="gzxueke2">语文</label></span>
+												<span><input class="checkone" id="gzxueke3" type="checkbox" value="" name="check[]"/><label for="gzxueke3">语文</label></span>
+												<span><input class="checkone" id="gzxueke4" type="checkbox" value="" name="check[]"/><label for="gzxueke4">语文</label></span>
+												<span><input class="checkone" id="gzxueke5" type="checkbox" value="" name="check[]"/><label for="gzxueke5">语文</label></span>
+												<span><input class="checkone" id="gzxueke6" type="checkbox" value="" name="check[]"/><label for="gzxueke6">语文</label></span>
+											</div>
+											<div class="tjtupian">
+												<img class="xkadd xkposition gzxkadd" src="./img/nianjiadd.png" alt="" onclick="banbenadd(this)"> <img class="xkdel xkposition tcscxk gaoxk" src="./img/nianjidel.png" alt="">
+											</div>
+
+										</td>
+										<td class="subject">
+
+											<div class="jcverban gaozhong">
+												<span><input class="checkone" id="gaozhong1" type="checkbox" value="" name="check[]"/><label for="gaozhong1">人教版</label></span>
+												<span><input class="checkone" id="gaozhong2" type="checkbox" value="" name="check[]"/><label for="gaozhong2">人教版</label></span>
+												<span><input class="checkone" id="gaozhong3" type="checkbox" value="" name="check[]"/><label for="gaozhong3">人教版</label></span>
+												<span><input class="checkone" id="gaozhong4" type="checkbox" value="" name="check[]"/><label for="gaozhong4">人教版</label></span>
+												<span><input class="checkone" id="gaozhong5" type="checkbox" value="" name="check[]"/><label for="gaozhong5">人教版</label></span>
+												<span><input class="checkone" id="gaozhong6" type="checkbox" value="" name="check[]"/><label for="gaozhong6">人教版</label></span>
+												<span><input class="checkone" id="gaozhong7" type="checkbox" value="" name="check[]"/><label for="gaozhong7">人教版</label></span>
+												<span><input class="checkone" id="gaozhong8" type="checkbox" value="" name="check[]"/><label for="gaozhong8">人教版</label></span>
+											</div>
+
+
+											<div class="jcbbimg">
+												<img class="xkadd xkposition addgzbb" src="./img/subject-add.png" alt=""  onclick="tianjiabanben(this)"> <img class="xkdel tcscbb xkposition gaozhongdel" src="./img/addbanben.png" alt="">
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="con-foot">
+								<span>
+									注：您可以添加或删除各学段的年级和年级所对应的学科。您可以选择全部、学段(小学、初中、高中)、年级(一年级、二年级、三年级...)、学科(语文、数学、英语...)等分别对应的导入全部、学段、年级、学科的教材版本和对应的教材版本目录。
+								</span>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="main-right fl">
+						<div class="con">
+							<div class="main-tit" style="display:none">
+								<span class="text">册别信息</span>
+							</div>
+							<!--版本添加和删除交互部分开始-->
+							<div class="youbanben" style="display:none">
+								<div class="you-tit">
+									版本
+								</div>
+								<div class="jcglul">
+									<ul>
+										<li>
+											<input class="checkone" id="cebie1" type="checkbox" value="" name="check[]" />
+											<label for="cebie1">北京人教版一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie2" type="checkbox" value="" name="check[]" />
+											<label for="cebie2">天津人教版一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie3" type="checkbox" value="" name="check[]" />
+											<label for="cebie3">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie4" type="checkbox" value="" name="check[]" />
+											<label for="cebie4">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie5" type="checkbox" value="" name="check[]" />
+											<label for="cebie5">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie6" type="checkbox" value="" name="check[]" />
+											<label for="cebie6">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie7" type="checkbox" value="" name="check[]" />
+											<label for="cebie7">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie8" type="checkbox" value="" name="check[]" />
+											<label for="cebie8">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie9" type="checkbox" value="" name="check[]" />
+											<label for="cebie9">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie10" type="checkbox" value="" name="check[]" />
+											<label for="cebie10">一年级上册</label>
+										</li>
+										<li>
+											<input class="checkone" id="cebie11" type="checkbox" value="" name="check[]" />
+											<label for="cebie11">一年级上册</label>
+										</li>
+									</ul>
+									<img class="tjbanben" src="./img/addverson.png" alt="" onclick="tjcbadd(this)">
+									<img class="banbenshanchu" src="./img/nianjidel.png" alt="">
+								</div>
+							</div>
+							<!--			版本编辑操作部分				-->
+							<div class="bianjibanben" style="display:none">
+								<div class="bianji-tit">
+									编辑操作
+								</div>
+								<div class="banbenmc">
+									<div class="bbmc fl">版本名称
+										<input type="text" placeholder="人教版" class="rjb">
+									</div>
+									<div class="mlmc fr">目录名称
+										<input type="text" placeholder="小学一年级语文目录" class="mulu">
+									</div>
+								</div>
+								<div class="bjcaozuo clear">
+									<div class="chakan fl btn"><img src="./img/chakan.png" alt="">查看</div>
+									<div class="xiugai fl btn"><img src="./img/edit.png" alt="">修改</div>
+									<div class="xiazai fl btn"><img src="./img/xiazai.png" alt="">下载</div>
+									<div class="shanchu fl btn"><img src="./img/delete.png" alt="">删除</div>
+								</div>
+								<div class="baocun clear btn fr">
+									保存
+								</div>
+							</div>
+							<!--		上传和下载部分开始		-->
+							<div class="uploadwrap">
+								<div class="uploadhead">
+									册别信息
+								</div>
+								<!--添加-->
+								<div class="main-tianjia">
+									<div class="add_box topbox">
+										<label class="btn kcbupload xjupload" for="xFile"></label>
+										<form action="#" method="post" enctype="multipart/form-data">
+											<input class="ofile" type="file" id="xFile" accept=".xls,.xlsx">
+										</form>
+										<p>添加册别</p>
+									</div>
+								</div>
+								<!--下载-->
+								<div class="main-xiazai">
+									<div class="del_box botbox">
+										<div class="downjc">
+											<a href=""><img src="./img/downjc.png" alt=""></a>
+										</div>
+
+										<p>下载导入的Excel模板</p>
+									</div>
+								</div>
+							</div>
+
+
+							<!--底部-->
+							<div class="con-foot">
+								<span>
+									注：您需要按照Excel模板格式进行各年级和各学科的教材版本或者教材目录的导入，如果不按照模板格式进行填写，将可能造成导入不成功或者教材版本或者教材目录显示错误的情况。
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--教材管理结束-->
+			</div>
+			<ul class="right_footer">
+				<li>
+					<span>主办：宜宾市教育体育局</span>
+					<span>承办：宜宾市新宜集团</span>
+					<span>技术支持：有限公司宜宾市科信教育投资股份</span>
+				</li>
+				<li>
+					<span>@2016  宜宾市智慧教育云平台</span>
+					<span>联系电话：0831—83500071</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!--查看教材-->
+	<div class="jiaocaiwrap" style="display:none">
+		<div class="jiaocaitit">
+			人教版一年级语文上册教材目录
+		</div>
+		<div class="jiaocaimain">
+			<div class="jcmainleft fl maiwidth">
+				<div class="diyice">
+					<div class="kcul">
+						<ul class="jieduan jdone">
+							<li>第一章<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="jieduan jdone">
+							<li>第二章<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="jieduan jdone">
+							<li>第三章<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--	左侧的册别结束		-->
+			<!--	右侧的册别开始	-->
+			<div class="jcmainright fl maiwidth">
+
+				<div class="diyice">
+					<div class="kcul">
+						<ul class="jieduan jdone">
+							<li>第一章<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="jieduan jdone">
+							<li>第二章<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="jieduan jdone">
+							<li>第三章</li>
+							<li>1、我的家<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li>2、我会拼图<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span></li>
+							<li class="includson">
+								3、可爱的小动物<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span><span class="addzijie"><img src="./img/addzijie.png" alt=""></span>
+								<ul>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+									<li>3.1、寻隐者不遇<span class="addtongjie"><img src="./img/addtongjie.png" alt=""></span></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<span class="qxckjc">取消</span>
+	</div>
+	<!--查看教材结束-->
+
+	<!--添加版本开始-->
+	<div class="addver bbaddtc" id="tjbanben">
+		<div class="addvertit">
+			<div class="fl adtitl">添加版本</div>
+			<div class="fr adtitr"><img src="./img/close.png" alt=""></div>
+		</div>
+		<div class="vername">
+			<span class="banbenname">版本名称</span>
+			<input type="text" class="baninput" placeholder="请输入版本名称">
+		</div>
+		<div class="addverbtn">
+			<button class="versure">确定</button>
+			<button class="verquit">取消</button>
+		</div>
+	</div>
+	<!--添加版本结束-->
+
+	<!--添加学科开始-->
+	<div class="addver addxueketc" id="tianjiaxktc">
+		<div class="addvertit">
+			<div class="fl adtitl">添加学科</div>
+			<div class="fr adtitr"><img src="./img/close.png" alt=""></div>
+		</div>
+		<div class="vername">
+			<span class="banbenname">学科名称</span>
+			<input type="text" class="xuekeval baninput" placeholder="请输入学科名称" value="">
+		</div>
+		<div class="addverbtn">
+			<button class="versure">确定</button>
+			<button class="verquit">取消</button>
+		</div>
+	</div>
+	<!--添加学科结束-->
+
+	<!--添加册别开始-->
+	<div class="addver addxueketc addcebie" style="display:none" id="cebieadd">
+		<div class="addvertit">
+			<div class="fl adtitl">添加册别</div>
+			<div class="fr adtitr"><img src="./img/close.png" alt=""></div>
+		</div>
+		<div class="vername">
+			<span class="banbenname">册别名称</span>
+			<input type="text" class="xuekeval cebieval" placeholder="请输入册别名称" value="">
+		</div>
+		<div class="addverbtn">
+			<button class="versure cebiesur">确定</button>
+			<button class="verquit">取消</button>
+		</div>
+	</div>
+	<!--添加册别结束-->
+
+	<!--删除提醒弹窗-->
+	<div class="delrestixi" style="display:none;">
+		<div class="deltixi-tit">
+			<div class="tixing">提醒</div>
+		</div>
+		<div class="tipscon">
+			请您先选中资源
+		</div>
+	</div>
+
+	<!--弹窗-->
+	<div class="popup" style="display:none">
+		<div class="nav">
+			<p class="popup-text">已删除</p>
+			<img src="img/success.png" alt="" />
+		</div>
+	</div>
+	<!--  灰色蒙层	-->
+	<div class="mengceng" style="display:none">
+	</div>
+</body>
+<script type="text/javascript" src="common/js/index.js"></script>
+<script type="text/javascript" src="common/js/shebeiguanli.js"></script>
+<script>
+	// (添加学科和版本的弹出)封装函数
+   var xktc=document.getElementById("tianjiaxktc")
+   var bbtc=document.getElementById("tjbanben")
+   var cbtj=document.getElementById("cebieadd")
+   
+   function banbenadd(){
+       show(bbtc)
+   }
+   
+   function tianjiabanben(){
+	   show(xktc)
+   }
+   
+   function tjcbadd(){
+	   show(cbtj)
+   }
+   
+   function show(obj){
+          obj.style.display='block'
+   }
+</script>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>公共资源-查看资源</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<script src="../common/jquery-1.11.2.min.js" ></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/dataTimes/mui.min.js"></script>
+		
+		<!--我的css、js-->
+		<link rel="stylesheet" type="text/css" href="../common/dataTimes/mui.previewimages.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/class_look.css"/>
+		<script src="../js/class_look.js"></script>
+	</head>
+	
+	<body>
+		<!--加载条-->
+        <div class="loading topLoading"><span>正在加载...</span></div>
+		<!--返回顶部-->
+		<a href="javascript:scroll(0,0)" class="scrollTop"></a>
+		<div class="videoBox">
+			<!--默认图片缩略图-->
+			<div class="sliderImgBox mui-content-padded" style="overflow: hidden;">
+				<a href="JavaScript:;" class="rgbaImg" data-preview-src="" data-preview-group="1">查看更多<i></i></a>
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/2.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/3.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/2.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/3.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/1.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/2.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/3.png" data-preview-src="" data-preview-group="1" />
+				<img src="../img/4.png" data-preview-src="" data-preview-group="1" />
+			</div>
+			<!--这里是加载图片样式-->
+			<script src="../common/dataTimes/mui.zoom.js"></script>
+			<script src="../common/dataTimes/mui.previewimage.js"></script>
+			<script type="text/javascript">
+				mui.previewImage();
+			</script>
+			<!--这里是加载图片样式 end-->
+		</div>
+		
+		<div class="main" >
+			<div class="resourcesName">资源名称：十五种诗歌写作技巧十五种诗歌写作技巧十五种诗歌写作技巧十五种诗歌写作技巧</div>
+			<div class="authorBox">
+				<div class="authorText clearfix">
+					<span>作者：李小三</span>
+					<span>上传时间：2016-06-12</span>
+				</div>
+				<p class="school">所属学校：海淀区第二中学海淀区第二中学海淀区第二中学海淀区第二中学海</p>
+			</div>
+			<div class="commentAll" id="pullLoad">
+				<div class="commentAllTitle">全部评论</div>
+				<ul>
+					<li>
+						<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+						<div class="commentBox">
+							<div class="userName">
+								<div class="namesBox">
+									<strong class="names">郑存杰郑存杰郑存杰郑存杰</strong>
+								</div>
+								<p class="time">02月22日 16:22</p>
+							</div>
+							<div class="commentText">
+								对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩
+								子的内心应该最善良不过，最重要的就是家长的引导和家庭
+								的教育，还是有很多值得我们思考的地方！！！
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+						<div class="commentBox">
+							<div class="userName">
+								<div class="namesBox">
+									<strong class="names">海上生</strong>
+									<strong class="hf">回复</strong>
+									<strong class="names">郑存杰郑存杰郑存杰郑存杰</strong>
+								</div>
+								<p class="time">02月22日 16:22</p>
+							</div>
+							<div class="commentText">
+								对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩
+								子的内心应该最善良不过，最重要的就是家长的引导和家庭
+								的教育，还是有很多值得我们思考的地方！！！
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="userImg"><img src="../img/userImg01.png" alt="" /></div>
+						<div class="commentBox">
+							<div class="userName">
+								<div class="namesBox">
+									<strong class="names">郑存杰</strong>
+								</div>
+								<p class="time">02月22日 16:22</p>
+							</div>
+							<div class="commentText">
+								对于孩子们，我们能冷漠么？海上生明月，天涯共此时，孩
+								子的内心应该最善良不过，最重要的就是家长的引导和家庭
+								的教育，还是有很多值得我们思考的地方！！！
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!--加载条-->
+        		<div class="loading bottoLoading"><span>正在加载...</span></div>
+			</div>
+			
+			
+			<div class="footer">
+				<ul>
+					<li class="comment" style="width:50%;"><span>112</span></li>
+					<li class="share" style="width:50%;"><span>分享</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		
+		<!--评论的弹层 -->
+		<!--del_down为公用clss名不要动，后面起自己控制的class,比如现在的warn-->
+		<div class="del_down  commentMask" style="display: none;">
+		    <div class="hide"></div><!-- 这个是黑色遮罩 -->
+		    <div class="con"><!-- 这的弹层大小 自己设置宽高 其他的不用设置  -->
+		    	<!-- 这里写弹层的内容 -->
+		    	<input type="text" name="" id="" value="" placeholder="评论，说出你的想法吧....." />
+		    	<div class="btn">
+		    		<a href="JavaScript:;" class="confirm">确认</a>
+		    		<a href="JavaScript:;"  class="cancel">取消</a>
+		    	</div>
+		    </div>
+		</div>
+		<!--删除评论弹框 -->
+		<div class="del_down  deleteMask" style="display: none;">
+		    <div class="hide"></div>
+		    <div class="con">
+		    	<!-- 这里写弹层的内容 -->
+		    	<p class="texts">确认删除该条评论？</p>
+		    	<div class="btn">
+		    		<a href="JavaScript:;" class="confirm">确认</a>
+		    		<a href="JavaScript:;"  class="cancel">取消</a>
+		    	</div>
+		    </div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//返回到上一级
+			$(document).on("tap",".videoBox a.back",function(){
+				window.history.go(-1);
+			});
+			
+			function Share(e){
+				alert(e);
+			}
+			$(document).on("tap",".footer ul li.share span",function(){
+				Share(100);
+			});
+		</script>
+		<script type="text/javascript">
+		    var startY,endY;
+		    var scrollTopVal=0; 
+		    document.getElementById("pullLoad").addEventListener("touchstart", touchStart, false);
+		    document.getElementById("pullLoad").addEventListener("touchmove", touchMove, false);
+		    document.getElementById("pullLoad").addEventListener("touchend", touchEnd, false);  
+		    function touchStart(event){
+		        var touch = event.touches[0];
+		        startY = touch.pageY;
+		    }   
+		    var flag=false;
+		    var moveStatus = 0;
+		    function touchMove(event){
+		     var touch = event.touches[0];
+		     endY = (startY-touch.pageY);
+		//   console.log(endY);
+		        if(endY>20&&moveStatus==0){
+		        	moveStatus=1;
+		            var totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+		            if($(document).height()-75 <= totalheight){
+		                if(flag!=false){
+		                    //$('.Loading_box').hide();
+		                    return false;
+		                }
+		                flag = true;
+		                $(".loading").show();
+		                //ajax
+		                $.ajax({
+		                    url:"date.json",
+		                    type:'get',
+		                    success:function(date){
+		                        flag=false;
+		                    },
+		                    error:function(){
+		                 		$(".loading").show();
+		                        flag=false;
+		                    }
+		                });
+		                
+		                //模拟效果    可刪除。。。
+		//              setTimeout(function(){
+		//              	$(".loading").hide();
+		//              },1000);
+		            }
+		            console.log(1);
+		        }else if(endY<-20&&moveStatus==0){
+		        	if(parseFloat($(window).scrollTop())===0){
+		        		moveStatus=1;
+		        		$('.topLoading').show()
+        				window.location.reload();
+		        	}
+		        }
+		    }
+		    function touchEnd(event){
+		    	moveStatus=0;
+		    }
+		</script>
+	</body>
+	
+</html>

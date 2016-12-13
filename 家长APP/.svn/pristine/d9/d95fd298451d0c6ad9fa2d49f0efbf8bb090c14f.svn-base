@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="wap-font-scale" content="no">
+        <title></title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/daterangepicker.css" />
+        <link rel="stylesheet" href="../css/common_center.css" />
+        <script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <!--==========日历插件===============-->
+        <link rel="stylesheet" href="../common/dataTimes/mui.min.css">
+        <link rel="stylesheet" type="text/css" href="../common/dataTimes/mui.picker.min.css">
+        <script src="../common/dataTimes/mui.min.js"></script>
+        <script src="../common/dataTimes/mui.picker.min.js"></script>
+        <script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="../js/common_center.js"></script>
+    </head>
+    <style>
+    	.htmlBody{width:100%;height:100%;overflow:hidden;}
+    </style>
+    
+    <body>
+    	<!--加载条-->
+        	<div class="loading topLoading" ><span>正在加载...</span></div>
+        <div class="fold">
+            <span>收起搜索条件</span>
+        </div> 
+        <div class="searchWrap">
+            <div class="searchTitle">输入搜索条件</div>
+            <input type="text" class="searchInp"/>
+            <div class="searchTitle">选择时间范围</div>
+            <div class="searchTimeWrap">
+                <div class="timeSelect fl" id="startTime">开始时间</div>
+                <div class="timeSelect fl" id="endTime">结束时间</div> 
+                <span id="subBtn"></span>
+            </div>
+        </div>
+        <header class="allHeadWrap clearfix">
+            <div><span class="active" id="allSource">全部资源</span></div>
+            <div><span id="weike">微课大赛</span></div>
+            <div><span id="jingpin">精品资源</span></div>
+        </header>
+        <div class="listWrap">
+            <ul>
+                <li class="author">
+                    <div>资源作者：</div>
+                    <span class="all">全部</span>
+                    <span>教师</span>
+                    <span>学生</span>
+                </li>
+                <li class="line"></li>
+                <li class="format">
+                    <div class="swipeLeft">
+                        <div>文件格式：</div>
+                        <span class="all">全部格式</span>
+                        <span>视频</span>
+                        <span>音频</span>
+                        <span>图片</span>
+                        <span>PDF</span>
+                        <span>视频</span>
+                        <span>音频</span>
+                        <span>图片</span>
+                        <span>PDF</span>                    
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="loadDetailWrap">
+            <div class="fl">共有<span>1286</span>条资源</div>
+            <span class="clickNum voteNum fr" style="display:none;">投票量</span>
+            <span class="clickNum fr">点击量</span>
+            <span class="uploadNum fr">上传时间</span>
+        </div>
+        <div class="item_listWrap" id="pullLoad">
+            <ul>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="../img/gifts-icon.png"  class="boutique" />
+                </li>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li onclick="Jump();AndJump();">
+                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+                    <div class="item_list clearfix">
+                        <div class="itemLeft fl">
+                            <img src="../img/line_pic.jpg"/>
+                        </div>
+                        <div class="itemCenter fl">
+                            <div class="itemTxt">
+                                <span>所属学校：</span><span>海淀区第二中学第</span>
+                            </div>
+                            <div class="itemTxt">
+                                <span>上传时间：</span><span>2016-03-12</span>
+                            </div>
+                            <div class="visitNumWrap">
+                                <span class="visitNum">1,262</span>
+                                <span class="starNum">1,262</span>
+                                <span class="vtNum" style="display:none;">1,262</span>
+                            </div>
+                        </div>
+                        <div class="itemRight fr">
+                            <div class="itemR_text">
+                                <span>作者：</span><span>李小三</span>
+                            </div>
+                            <div class="itemR_text">
+                                <span>文件大小：</span><span>12.01M</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--加载条-->
+        	<div class="loading bottoLoading" ><span>正在加载...</span></div>
+        </div>
+        <!--筛选不到结果盒子-->
+        <div class="noResultWrap">
+            <div class="noResultImg"></div>
+            <div class="noResultTxt">没有您需要的资源哦，可以尝试更换下搜索条件哦....</div>
+            <div class="noResultBack">返回公共资源中心</div>
+        </div>
+        
+        
+        
+        <!--底部定位部分-->
+        <div class="bottomFixWrap">
+            <div class="fixed">
+                <div class="fixedLeft">
+                    <div class="nianjiWrap">
+                    	<span class="selectTxt">请选择版本</span>
+                        <span class="nianji">小学</span>
+                        <span class="arr">》</span>
+                        <span class="subject">语文</span>
+                        <span class="arr">》</span>
+                        <span class="version">人教版</span>
+                    </div>
+                </div>
+                <div class="fixedRight">
+                    <div class="nianjiWrap">
+                    	<span class="selectTxt">请选择册别</span>
+                        <span class="nianji">一年级（上）</span>
+                        <span class="arr">》</span>
+                        <span class="subject">第三单元</span>
+                        <span class="arr">》</span>
+                        <span class="version">邓稼先</span>
+                    </div>
+                </div>
+                <div class="fixedLWrap fixedLWrap1" style="display:none;">
+                    <div class="fixedTitle">
+                        <span class="xueduan">学段</span> 
+                        <span class="xueke">学科</span> 
+                        <span>|</span>
+                        <span class="banben">版本</span>    
+                    </div>
+                    <div class="xdWrap">
+                        <ul class="nj">
+                            <li class="active">小学</li>
+                            <li>初中</li>
+                            <li>高中</li>
+                        </ul>
+                        <ul class="subjectWrap">
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">语文</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span class="active">人教版</span>
+                                    <span>苏教版</span>
+                                    <span>北京版</span>
+                                    <span>新课标人教版</span>
+                                    <span>语文S版</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">数学</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span>新课标人教版</span>
+                                    <span>北师大版</span>
+                                    <span>苏教版</span>
+                                    <span>西师大版</span>
+                                    <span>冀教版</span>
+                                    <span>北京版</span>
+                                    <span>沪教版</span>
+                                    <span>浙教版</span>
+                                    <span>青岛版54制</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">英语</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span>人教版</span>
+                                    <span>苏教版</span>
+                                    <span>北京版</span>
+                                    <span>新课标人教版</span>
+                                    <span>语文S版</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fixedLWrap fixedLWrap2" style="display:none;">
+                    <div class="fixedTitle">
+                        <span class="xueduan">册别</span> 
+                        <span class="xueke">章</span> 
+                        <span>|</span>
+                        <span class="banben">节</span>    
+                    </div>
+                    <div class="xdWrap">
+                        <ul class="nj">
+                            <li class="active">一年级上</li>
+                            <li>一年级下</li>
+                            <li>二年级上</li>
+                            <li>二年级下</li>
+                            <li>三年级上</li>
+                            <li>三年级下</li>
+                        </ul>
+                        <ul class="subjectWrap">
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">第一单元</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span class="active">1 社戏</span>
+                                    <span>2 安塞腰鼓</span>
+                                    <span>3 竹影</span>
+                                    <span>4 观舞记</span>
+                                    <span>5 看戏</span>
+                                    <span>6 口技</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">第二单元</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span>7 邓稼先</span>
+                                    <span>8 闻一多先生的说和做</span>
+                                    <span>9 竹影</span>
+                                    <span>10 音乐巨人贝多芬</span>
+                                    <span>11 福楼拜家的星期天</span>
+                                    <span>12 孙权劝学</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="subj clearfix">
+                                    <div class="sub fl">第三单元</div>
+                                    <div class="fr foldArr"></div>
+                                </div>
+                                <div class="ver clearfix">
+                                    <span>人教版</span>
+                                    <span>苏教版</span>
+                                    <span>北京版</span>
+                                    <span>新课标人教版</span>
+                                    <span>语文S版</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="zhezhao" style="display:none;"></div>
+        <!--返回顶部-->
+		<a href="javascript:scroll(0,0)" class="scrollTop"></a>
+    </body>
+</html>
+<script type="text/javascript">
+	/*//下拉加载更多
+    var startY,endY;
+    var scrollTopVal=0; var moveStatus = 0;
+    document.getElementById("pullLoad").addEventListener("touchstart", touchStart, false);
+    document.getElementById("pullLoad").addEventListener("touchmove", touchMove, false);
+    document.getElementById("pullLoad").addEventListener("touchend", touchEnd, false);  
+    function touchStart(event){
+        var touch = event.touches[0];
+        startY = touch.pageY;
+    }   
+    var flag=false;
+    //var page =2;
+    function touchMove(event){
+     var touch = event.touches[0];
+     endY = (startY-touch.pageY);
+        if(endY>100&&moveStatus===0){
+            var totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+            if($(document).height()-75 <= totalheight){
+                moveStatus=1;
+                $('.bottoLoading').show();
+                if(flag!=false){
+                    $('.bottoLoading').hide();
+                    return false;
+                }
+                flag = true;
+                
+                //ajax
+                $.ajax({
+                    url:"date.json",
+                    type:'get',
+                    success:function(date){
+                    	
+                        flag=false;
+                    },
+                    error:function(){
+                       
+                        flag=false;
+                    }
+                })
+            }
+        }else if(endY<=-100&&moveStatus===0){
+        	if($(window).scrollTop()<=5){
+        		moveStatus=1;
+        		$('.topLoading').show();
+        		setTimeout(function(){
+        			$('.topLoading').hide();
+        		},1000)
+        	}
+        }
+    }
+    function touchEnd(event){
+        moveStatus=0;
+    }*/
+    
+    $(function() {
+			//判断版本
+			var Num=100;
+			var userAgent = navigator.userAgent;
+			var index = userAgent.indexOf("Android")
+			if(index >= 0) {
+				var androidVersion = parseFloat(userAgent.slice(index + 8));
+				if(androidVersion <= 4.4) {
+					Num = 10;
+				} else {
+					Num = 100;
+				}
+			}
+			
+			//刷新加载
+			var startY, endY;
+			var scrollTopVal = 0;
+			/*
+		    document.getElementById("pullLoad").addEventListener("touchstart", touchStart, false);
+		    document.getElementById("pullLoad").addEventListener("touchmove", touchMove, false);
+		    document.getElementById("pullLoad").addEventListener("touchend", touchEnd, false); 
+		    */
+		    $('#pullLoad').on('touchstart',touchStart);
+	        $('#pullLoad').on('touchmove',touchMove);
+	        $('#pullLoad').on('touchend',touchEnd);
+		    
+		    function touchStart(event){
+		        var touch = event.originalEvent.targetTouches[0];
+		        startY = touch.pageY;
+		    }   
+		    
+		    var moveStatus = 0;
+		    function touchMove(event){
+			    var touch = event.originalEvent.targetTouches[0];
+			    endY = (startY-touch.pageY);
+		        if(endY>=Num && moveStatus==0){
+		        	startY = touch.pageY
+		        	moveStatus=1;
+		        	//注意  ：  当前节点的高度
+		        	//滑动的低端
+		            var totalheight = parseFloat($(document).height()) + parseFloat($(window).scrollTop());
+		            if($(document).height()-75 <= totalheight){
+		                $(".bottoLoading").show();
+		                //ajax
+		                /*
+		                $.ajax({
+		                    url:"date.json",
+		                    type:'get',
+		                    success:function(date){
+		                        $(".bottoLoading").show();
+		                    },
+		                    error:function(){
+		                 		$(".bottoLoading").show();
+		                    }
+		                });
+		                */
+		                
+		                //模拟效果    可刪除。。。
+		              setTimeout(function(){
+		              	$(".bottoLoading").hide();
+		              	moveStatus=0;
+		              },1000);
+		            }
+		            
+		        }else if(endY<=-Num&&moveStatus==0){
+		        	startY = touch.pageY
+		        	moveStatus=1;
+		        	if(parseFloat($(window).scrollTop())===0){
+		        		$('.topLoading').show();
+//		        		$('.tabcon').css('margin-top',0);
+
+		        	}
+		        	setTimeout(function(){
+		              	$(".topLoading").hide();
+//		              	$('.tabcon').css('margin-top',1+'rem');
+
+		              	moveStatus=0;
+		            },1000);
+		            
+		        }
+		    }
+		    function touchEnd(event){
+		    	moveStatus=0;
+		    }
+	});
+    
+
+</script>
+<script type="text/javascript">
+        //调用手机日历插件
+        window.onload=function(){
+
+            (function(mui) {
+                mui.init();
+                $(document).on("tap","#startTime",function(){
+                    var getTime= document.querySelector('#endTime').innerText;
+                    var endToArr=getTime.replace(/[\u4E00-\u9FA5]+/g,"-").replace(/-$/,'').split('-');
+                    var endArr=endToArr;
+                    var year=Number(endArr[0]);
+                    var month=Number((endArr[1]-1));
+                    var day=Number(endArr[2]);
+                    var dateTime=(endToArr.length!==1)?new Date(year,month,day):new Date();
+                    var picker = new mui.DtPicker({"type": "date","endDate": dateTime}) ;
+                    picker.show(function(rs){
+                        if(endToArr.length===1){
+                            document.querySelector("#startTime").innerText = rs.y.value+'年'+rs.m.value+'月'+rs.d.value+'日';
+                        }else{
+                            var dateStart=new Date(endToArr[0],(endToArr[1]-1),endToArr[2]);
+                            var dateEnd=new Date(rs.y.value,(rs.m.value-1),rs.d.value);
+                            if(dateStart<dateEnd){
+                                document.querySelector("#startTime").innerText='不合理时间';
+                                $("#startTime").css('color','red');
+                            }else{
+                                document.querySelector("#startTime").innerText = rs.y.value+'年'+rs.m.value+'月'+rs.d.value+'日';
+                                $("#startTime").css('color','#666');
+                            }
+                        }
+                        picker.dispose();
+                    });
+                });
+                $(document).on("tap","#endTime",function(){
+                    var getTime= document.querySelector('#startTime').innerText;
+                    var endToArr=getTime.replace(/[\u4E00-\u9FA5]+/g,"-").replace(/-$/,'').split('-');
+                    var endArr=(endToArr.length!==1)?endToArr:[2006,1,1];
+                    var year=Number(endArr[0]);
+                    var month=Number((endArr[1]-1));
+                    var day=Number(endArr[2]);
+                  
+                    var picker = new mui.DtPicker({"type": "date","beginDate":new Date(year,month,day),"endDate":new Date()}) 
+                    picker.show(function(rs){
+                        if(endToArr.length===1){
+                            document.querySelector("#endTime").innerText = rs.y.value+'年'+rs.m.value+'月'+rs.d.value+'日';
+                        }else{
+                            var dateStart=new Date(endToArr[0],(endToArr[1]-1),endToArr[2]);
+                            var dateEnd=new Date(rs.y.value,(rs.m.value-1),rs.d.value);
+                            if(dateStart>dateEnd){
+                                document.querySelector("#endTime").innerText='不合理时间';
+                                $("#endTime").css('color','red');
+                            }else{
+                                document.querySelector("#endTime").innerText = rs.y.value+'年'+rs.m.value+'月'+rs.d.value+'日';
+                                $("#endTime").css('color','#666');
+                            }
+                        }
+                        picker.dispose();
+                    });
+                });
+            })(mui);
+        }
+
+</script>
+
+<script>
+	/*点击全部资源，微课大赛，精品资源切换效果=======================================*/	
+	var obj='<img src="../img/gifts-icon.png" class="boutique">';
+		$('.item_listWrap ul li').each(function(i,item){
+			if(i%2==1)$(this).append(obj);
+	})
+	
+	
+	$('#allSource').on('tap',function(){
+		$('.voteNum,.vtNum').hide();
+		$('.item_listWrap ul li .boutique').remove();
+		$('.format .swipeLeft>div').text('文件格式：');
+		$('.format .swipeLeft span').eq(0).html('全部格式');   
+		$('.format .swipeLeft span').eq(1).html('视频 ');
+		$('.format .swipeLeft span').eq(2).html('音频');
+		$('.format .swipeLeft span').eq(3).html('图片');
+		var obj='<img src="../img/gifts-icon.png" class="boutique">';
+		$('.item_listWrap ul li').each(function(i,item){
+			if(i%2==1)$(this).append(obj);
+		})
+	})
+	$('#weike').on('tap',function(){
+		$('.voteNum,.vtNum').show();
+		$('.item_listWrap ul li .boutique').remove();
+		$('.format .swipeLeft span').eq(0).html('全部');   
+		$('.format .swipeLeft span').eq(1).html('小学 ');
+		$('.format .swipeLeft span').eq(2).html('初中');
+		$('.format .swipeLeft span').eq(3).html('高中');
+		$('.format .swipeLeft>div').html('学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;段：');
+		var obj='<img src="../img/gifts-icon.png" class="boutique">'
+		$('.item_listWrap ul li').each(function(i,item){
+			if(i%3==2)$(this).append(obj);
+		})
+	})
+	$('#jingpin').on('tap',function(){
+		$('.voteNum,.vtNum').hide();
+		$('.format .swipeLeft>div').text('文件格式：');
+		$('.format .swipeLeft span').eq(0).html('全部格式');   
+		$('.format .swipeLeft span').eq(1).html('视频 ');
+		$('.format .swipeLeft span').eq(2).html('音频');
+		$('.format .swipeLeft span').eq(3).html('图片');
+		$('.item_listWrap ul li').append('<img src="../img/gifts-icon.png" class="boutique">');
+	})
+
+    //IOS跳转
+        var log = new Function();
+        function Jump(){
+            alert(1)
+            var str = 'http://4.zyx1988.applinzi.com/gonggongziyuan/viewResource.html';
+            if(typeof(log) == 'function'){
+                log(str);
+            }
+        }
+        //安卓跳转
+        function AndJump() {
+            alert(2)
+            var str = 'http://4.zyx1988.applinzi.com/gerenziyuan/viewResource.html';
+            android.AndJump(str);
+        }
+	
+	
+	 //判断Android  监听软键盘出现盒子位置变化
+	if (/(Android)/i.test(navigator.userAgent)) {
+		var h=$(window).height();
+		$(window).resize(function(){
+			if($(window).height()<h){
+				$('.bottomFixWrap .fixed').hide();
+				
+			}else if($(window).height()===h){
+				$('.bottomFixWrap .fixed').show();
+			}
+		})
+	} 
+</script>
+
+

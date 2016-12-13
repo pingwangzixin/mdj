@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<title>设置</title>
+	<link rel="stylesheet" href="../css/reset.css" />
+	<link rel="stylesheet" href="../css/zhpj.css" />
+	<link rel="stylesheet" href="../css/tanceng.css" />
+	<link rel="stylesheet" href="../css/daterangepicker.css">
+	<link rel="stylesheet" href="../css/chosen.css" />
+	<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/js/jquery.raty.min.js"></script>
+	<script src="../common/js/moment.min.js"></script>
+	<script src="../common/js/jquery.daterangepicker.js"></script>
+	<script src="../js/zhpj.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/js/chosen.jquery.min.js"></script>
+	<style>
+	    .pjselect{width:97%;margin:60px auto 0;min-width:1200px;}
+		.tablesz{width:98%}
+		.tablesz thead tr {height:30px;background:#f9f9f9;}
+		.tablesz tbody td{text-align:center}
+		.dafencon{min-height:500px;}
+		.shezhishow{width:97%;margin:10px auto;min-width:1200px;box-shadow:0 0 10px #ccc;-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-o-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;}
+		.default{width:150px!important;text-align:center!important;cursor:pointer}
+		/*xiugai*/
+		.wx_shuzi{display:inline-block;width:20px;}
+		.wx_guanlian{width:10%;}
+		.wx_pingjianeirong{width:7%;}
+		.xiangqingshow{box-shadow: 0 0 10px #ccc;}
+/*		.wx_pingjiayd{width:55%;}*/
+/*		.wx_pingjiazhibiao{width:20%;}*/
+/*		.wx_xuanzepingjiaren{width:145px;}*/
+	</style>
+</head>
+<body>
+	<!--头部开始-->
+	<div class="header clearfix"></div>
+	<div class="pjselect">
+				<ul class="pingjia">
+					<li class="active"><a href="./zonghepingjia.html">我的评价</a></li>
+					<li><a href="./zhpj_chakanpingjia.html">查看评价</a></li>
+				</ul>
+				<div class="shezhiback">
+							<a href="./zonghepingjia.html"><img src="../img/back.png" alt=""></a>
+				</div>
+	</div>
+	<div class="wx_clear"></div>
+	<!--点击设置弹出页面-->
+					<div class="shezhishow">
+						
+						<div class="biaoti">
+							<span class="zhleft">二年级（4）班学业发展水平数学（下学期）第1次评价</span>
+							<span class="right anniu"><button class="shezhitj">提交</button></span>
+						</div>
+						<div class="dafencon">
+							<div class="contit">
+								<div class="zhleft pjtime">
+									选择评价时间：
+									<input type="text" id="date-range12" size="30" class="timer">
+									<span class="beizhu">备注：选择评价开始和结束时间，任务结束的时间要早于评价结束的时间才可以关联；评价人不能全空。</span>
+								</div>
+								<div class="fuxuan right">
+									<form action="">
+										<input type="checkbox" id="all" class="allselect"/>
+										<label for="all">全选</label>
+										<input type="checkbox" name="shiping" id="shiping" value="sp" onclick="selectAll(this)">
+										<label for="shiping">师评</label>
+										<input type="checkbox" name="huping" id="huping"  value="hp" onclick="selectAll(this)">
+										<label for="huping">互评</label>
+										<input type="checkbox" name="ziping" id="ziping"  value="zp" onclick="selectAll(this)">
+										<label for="ziping">自评</label>
+										<input type="checkbox" name="jiaping" id="jiaping"  value="jp" onclick="selectAll(this)">
+										<label for="jiaping">家评</label>
+									</form>
+								</div>
+							</div>
+							<table border="1" cellpadding="0" cellspacing="0" class="tablesz">
+								<thead>
+									<tr>
+										<th rowspan="2" class="wx_pingjianeirong">评价内容</th>
+										<th colspan="3" rowspan="2" class="wx_pingjiazhibiao">评价指标</th>
+										<th rowspan="2" class="wx_pingjiayd">评价要点</th>
+										<th colspan="2">第一次评价</th>
+									</tr>
+									<tr>
+										<th class="wx_guanlian">关联任务</th>
+										<th class="wx_xuanzepingjiaren">选择评价人</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan="7"><span class="wx_shuzi">学业发展水平</span></td>
+										<td rowspan="7"><span class="wx_shuzi">数学学科</span></td>
+										<td rowspan="4"><span class="wx_shuzi">知识技能</span></td>
+										<td>数与代数</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法;认识万以内数。</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td>图形与几何</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法;认识万</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td>统计与概率</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法;认识万</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td>量的认识</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法;认识万</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">学科思想方法</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">实践能力</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法</td>
+										<td>
+											<select name="" id=""  class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">创新意识</td>
+										<td class="yaodiantd">理解平均分及除法运算的含义，会读写除法算式,知道除道口算;掌握有余数除法的计算方法;认识万以内数。道口算;掌握有余数除法的计算方法</td>
+										<td>
+											<select name="" id="" class="selectrenwu" multiple="multiple" style="width:150px;">
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+												<option value="">课堂测试</option>
+											</select>
+										</td>
+										<td class="checksz">
+											<form action="">
+												<input type="checkbox" name="shiping" value="sp" s="sp">师评
+												<input type="checkbox" name="huping"   value="hp" s="hp">评价
+												<input type="checkbox" name="ziping" value="zp" s="zp">自评
+												<input type="checkbox" name="jiaping" value="jp" s="jp">家评
+											</form>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+<!--设置页面结束-->
+<!--强制结束成功弹窗-->
+	<div class="del_down del_down2" style="display:none">
+		<div class="hide"></div>
+		<div class="con">
+			<img src="../img/success.png">
+			<p class="text-text"></p>
+		</div>
+	</div>
+	<!--页面灰色遮罩	-->
+	<div class="zhezhao" style="display:none"></div>
+	
+<script>
+	$(function(){
+		$(".timer").dateRangePicker({
+		//maxDays:7,
+	    });
+	})
+	//input全选
+	function selectAll(doc){
+		var cs = $(doc).prop("checked");
+		var val = $(doc).val();
+		$("input[s='"+val+"']").each(function(){
+			if(cs){
+				$(this).prop("checked",true);
+			}else{
+				$(this).prop("checked",false);
+			}
+		});
+	}
+	
+	//设置页面提交
+	$(".shezhitj").on("click",function(){
+		$(".del_down").show();
+		$(".zhezhao").show();
+		$(".text-text").html("提交成功")
+		setTimeout(function(){
+			$(".del_down").hide(100);
+			$(".zhezhao").hide();
+			window.location.href="./zonghepingjia.html";
+		},1000)
+	})
+	
+	$(".selectrenwu").chosen()
+</script>
+
+</body>
+</html>

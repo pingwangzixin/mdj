@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/tanceng.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			.del .con.shade{width:408px; height: 200px; background-color: #eaf4fc;opacity: 1; -webkit-box-shadow: 0 0 6px #ccc;-moz-box-shadow: 0 0 6px #ccc; box-shadow: 0 0 6px #ccc;border: 7px solid #bfe1fb;border-radius: 70px;padding: 20px;}
+			.del .con.shade .close{margin: -19px -22px 0 0;}
+			.del .con.shade .sahdeHead{padding:0px 0px 30px 25px; font-size: 20px;text-align:left;}
+			.del .con.shade .sahdeHead img{float: right;}
+			.del .con.shade .shadeWarn p{line-height: 24px; font-size: 16px;}
+			.del .con.shade .shadeWarn img{padding-bottom:14px;}
+			.del .con.shade .shadeWarn p a{color:#f65177;text-decoration:underline ;}
+			.topNote_browser{background: #838383; height: 43px; width: 100%; color: white; padding-left: 40px;line-height: 43px; font-size: 16px; position: fixed; top: 0;}
+			.topNote_browser span a{color: white; text-decoration: underline;}
+			.topNote_browser span{float: left;}
+			.topNote_browser p{position: absolute; right: 56px; top:10px;}
+			.topNote_browser p img:nth-of-type(2){position: absolute; right: 5px;top: 7px;}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script src="../common/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		function shdeNote() {
+			var UserAgent = navigator.userAgent.toLowerCase();
+			if(UserAgent.indexOf('chrome')<=-1 && UserAgent.indexOf('firefox')<=-1){
+			    var html = '<div class="topNote_browser clearfix" style="display: none;"><span>建议您下载使用 <a href="##">火狐 /谷歌</a> 浏览器查看</span><p><img src="../img/36.png"/><img class="closeNote" src="../img/x.png"/></p></div><div class="del_down  del" style="display: block;"><div class="hide"></div> <div class="con shade clearfix"><img id="shadeClose" class="close hand fr" src="../img/rwtcgb.png"/><div class="con_con"><div class="sahdeHead">提示</div><div class="shadeWarn"><img src="../img/warn.png"/><p>为了更好地展现页面效果</p><p>建议您下载使用<a href="##" class="browserLink">火狐 /谷歌</a>浏览器查看。</p></div></div></div></div>';
+			    $('body').append(html);
+			    html='';
+			    $('#shadeClose,.browserLink').on('click',function() {
+			    	$('.del_down').hide().siblings('.topNote_browser').show();
+			    })
+			    $('.closeNote').click(function() {
+			    	$('.topNote_browser').hide()
+			    })
+			}
+		}
+		shdeNote();
+	</script>
+</html>

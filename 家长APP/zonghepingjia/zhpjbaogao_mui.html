@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>综合评价——评价报告</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/zhpj.css" />
+		<script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/dataTimes/mui.min.js"></script>
+		<script src="../common/dataTimes/mui.picker.min.js"></script>
+		<script src="../common/jquery.raty.min.js"></script>
+		<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+		<script src="../common/highcharts-more.js"></script>
+		<script src="../common/highcharts-functions.js"></script>
+		<script src="../js/zhpj.js"></script>
+	</head>
+	<body>
+		<!--内容开始-->
+		<div class="zhpjtbwrap">
+			<div class="xyfzhead mbot pjbaogaoul bdbottom">
+				<div class="kemuulwrap">
+					<ul class="ml2 kemuul">
+						<li class="active">全部</li>
+						<li>第一次</li>
+						<li>第二次</li>
+						<li>第三次</li>
+						<li>第四次</li>
+						<li>第五次</li>
+					</ul>
+				</div>
+			</div>
+			<div class="zhpjbgtb">
+				<ul>
+					<li>
+						<div class="zhpjbgtit ml mt"><img src="../img/evaluate.png" alt="" /><span class="zhpjbgbiaoti ml3">综合评价报告</span></div>
+						<div id="container" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div class="zhpjbgtit ml mt"><img src="../img/evaluate.png" alt="" /><span class="zhpjbgbiaoti ml3">综合评价报告</span></div>
+						<div id="container" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div class="zhpjbgtit ml mt"><img src="../img/evaluate.png" alt="" /><span class="zhpjbgbiaoti ml3">综合评价报告</span></div>
+						<div id="container" style="min-width:98%;height: 4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div class="zhpjbgtit ml mt"><img src="../img/evaluate.png" alt="" /><span class="zhpjbgbiaoti ml3">综合评价报告</span></div>
+						<div id="container" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div class="zhpjbgtit ml mt"><img src="../img/evaluate.png" alt="" /><span class="zhpjbgbiaoti ml3">综合评价报告</span></div>
+						<div id="container" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="zhpjtbwrap mt">
+			<div class="xubaogaoul bdbottom">
+				<ul class="ml2">
+					<li class="active">学业发展</li>
+					<li>兴趣特长</li>
+					<li>品德发展</li>
+					<li>身心健康</li>
+				</ul>
+			</div>
+			<div class="xkpingjiabgtb">
+				<ul>
+					<li>
+						<div id="container2" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div id="container2" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div id="container2" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+					<li class="hidetab">
+						<div id="container2" style="min-width:98%;height:4rem; margin: 0 auto"></div>
+						<p class="mbot ml">注释：本图表示学生在历次综合评价中各评价指标的综合得分情况；</p>
+					</li>
+				</ul>	
+					
+			</div>
+		</div>
+		
+
+		<script>
+			$(function () {
+				//切换图表
+				var $div_li = $(".pjbaogaoul li");
+				$div_li.on("click",function(){
+					$(this).addClass("active").siblings().removeClass("active");
+                	var index = $div_li.index(this);
+                	$(".zhpjbgtb li").eq(index).show().siblings().hide();
+				})
+				
+				
+				$(".xubaogaoul li").on("click",function(){
+					$(this).addClass("active").siblings().removeClass("active");
+//              	var index = $div_li.index(this);
+                	var xkindex=$(".xubaogaoul li").index(this)
+                	$(".xkpingjiabgtb li").eq(xkindex).show().siblings().hide();
+				})
+				
+				//雷达图数据
+			    $('#container').highcharts({
+			        chart: {
+			            polar: true,
+			            type: 'line'
+			        },
+			        title: {
+			            text: '',
+			            x: -80
+			        },
+			        pane: {
+			            size: '60%'
+			        },
+			        xAxis: {
+			            categories: ['学业发展', '兴趣特长', '身心健康', '品德发展'],
+			            tickmarkPlacement: 'on',
+			            lineWidth: 0
+			        },
+			        yAxis: {
+			            gridLineInterpolation: 'polygon',
+			            lineWidth: 0,
+			            min: 0
+			        },
+			        tooltip: {
+			            shared: true,
+			            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+			        },
+			        legend: {
+			            align: 'center',
+			            verticalAlign: 'bottom',
+			            y: 0,
+			            layout: 'vertical',
+			        },
+			        series: [{
+			            name: '',
+			            data: [43000, 19000, 60000, 35000],
+			            pointPlacement: 'on',
+			            showInLegend: false
+			        }]
+			    });
+			    
+			    $('#container2').highcharts({
+			        chart: {
+			            polar: true,
+			            type: 'line'
+			        },
+			        title: {
+			            text: '',
+			            x: -80
+			        },
+			        pane: {
+			            size: '60%'
+			        },
+			        xAxis: {
+			            categories: ['语文', '数学', '英语', '历史', '物理', '化学', '生物', '政治', '地理'],
+			            tickmarkPlacement: 'on',
+			            lineWidth: 0
+			        },
+			        yAxis: {
+			            gridLineInterpolation: 'polygon',
+			            lineWidth: 0,
+			            min: 0
+			        },
+			        tooltip: {
+			            shared: true,
+			            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+			        },
+			        legend: {
+			            align: 'center',
+			            verticalAlign: 'bottom',
+			            y: 0,
+			            layout: 'vertical',
+			        },
+			        series: [{
+			            name: '',
+			            data: [43000, 19000, 60000, 35000,43000, 19000, 60000, 35000,43000],
+			            pointPlacement: 'on',
+			            showInLegend: false
+			        }]
+			    });
+			    
+			    
+			});
+			mui('body').on('tap','a',function(){document.location.href=this.href;});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+
+.main{
+	width:100%;
+	height:80%;
+	min-width:1200px;
+	margin-top:7%;
+}
+.r_border{
+	width:94%;
+	height:100%;
+	margin:0 auto;
+	border:7px solid #bfe1fb;
+	background: #eaf4fc;
+	margin-top:15px;
+	box-sizing: border-box;
+	padding:16px 22px;
+	border-radius: 80px 106px 50px 50px ;
+	position: relative;
+	margin-bottom: 40px;
+}
+.r_border .xiaoboshi{
+	width:113px;
+	height:121px;
+	position: absolute;
+	top:-80px;
+	right:-33px;
+	background: url(../img/xiaoboshi.png) no-repeat center center;
+}
+.r_border_m_b{
+	width:100%;
+	height:100%;
+	min-height:580px;
+	border:1px dashed #fff;
+	padding:30px;
+	box-sizing: border-box;
+	border-radius: 83px 105px 50px 50px ;
+}
+
+.prompt{
+	width:750px;
+	height:260px;
+	margin:0 auto;
+	padding-top:130px;
+}
+.prompt_main{
+	width:475px;
+	height:195px;
+	padding-top:65px;
+	padding-left:275px;
+	background: url(../img/tihsi_img.png) no-repeat left center;
+}
+.prompt_main h2{
+	font-size: 24px;
+	color:#000;
+	height:44px;
+	line-height: 44px;
+}
+.prompt_main p{
+	font-size: 1.4rem;
+	color:#555;
+	height:32px;
+	line-height: 32px;
+}
+.prompt_main a{
+	display: block;
+	margin-top:10px;
+	width:186px;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 24px;
+	color:#fff;
+	border-radius: 10px;
+	background: #5093e1;
+}
+.prompt_main a:hover{
+	background: #a5c7f1;
+}

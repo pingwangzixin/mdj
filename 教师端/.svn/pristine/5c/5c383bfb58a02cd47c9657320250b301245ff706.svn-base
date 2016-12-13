@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="renderer" content="webkit">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+	    <meta name="format-detection" content="telephone=no" />
+
+		<title>查看详情</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
+		<link rel="stylesheet" href="../css/zhpj.css" />
+		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/jquery.raty.min.js"></script>
+		<script src="../common/js/moment.min.js"></script>
+		<script src="../common/js/jquery.daterangepicker.js"></script>
+		<script src="../js/zhpj.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.pjselect{width:97%;margin:60px auto 0;min-width:1200px;}
+			.xiangqingshow{width:97%;margin:10px auto;min-width:1200px}
+			.pingyuing{color:#5093e1;margin-left:20px;cursor: default;}
+			td a{margin-left:20px;cursor: default;}
+			.tit{padding-left:14px}
+			tbody td{position:relative;}
+			.pingyutc{width:300px;height:100px;border:2px solid #78adea;position:absolute;top:30px;left:100px;background:#fff;text-align:left;z-index:999;color:#666;padding:10px;}
+			.wx_wujiaonone{width:106px;display: inline-block;}
+			.wx_pynone{display: inline-block;margin-left:22px}
+			.wx_shuzi{display:inline-block;width:20px}
+			.wx_xuekekuan{width:50px}
+			.xiangqingshow{box-shadow: 0 0 10px #ccc;-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-o-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;}
+		</style>
+	</head>
+	<body>
+		<div  class="header clearfix"></div>
+		<div class="pjselect">
+			<ul class="pingjia">
+				<li><a href="./zonghepingjia.html">我的评价</a></li>
+				<li  class="active"><a href="./zhpj_chakanpingjia.html">查看评价</a></li>
+			</ul>
+			<div class="xiangqingback">
+				<a href="./zhpj_chakanpingjia.html"><img src="../img/back.png" alt=""></a>
+			</div>
+		</div>
+		<div class="wx_clear"></div>
+		<!--	查看评分详情页开始			-->
+		<div class="xiangqingshow">
+			
+			<div class="biaoti">
+				<span class="zhleft tit">一年级数学下学期评价表个人详情——高天泽</span>
+				<span class="zhleft wujiao">学期总评：<span class="wujiaodafen" style="display:inline-block;line-height:23px"></span></span>
+			</div>
+			<div class="dafencon" style="overflow-x: auto;width:97%;margin:0 20px 50px;">
+				<table border="1" cellpadding="0" cellspacing="0" class="xqtable">
+					<thead>
+						<tr>
+							<th rowspan="2">评价内容</th>
+							<th rowspan="2" colspan="3">评价指标</th>
+							<th rowspan="2">评价人</th>
+							<th colspan="4">评价过程</th>
+							<th rowspan="2">学期评价</th>
+						</tr>
+						<tr>
+							<th>第一次</th>
+							<th>第二次</th>
+							<th>第三次</th>
+							<th>第四次</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="28"><span class="wx_shuzi">学业发展水平</span></td>
+							<td rowspan="28" class="wx_xuekekuan"><span class="wx_shuzi">数学学科</span></td>
+							<td rowspan="16" class="wx_xuekekuan"><span class="wx_shuzi">知识技能</span></td>
+							<td rowspan="4">数与代数</td>
+							<td>师评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;" class="pingyuing">评语</a><div class="pingyutc" style="display:none">你很棒，继续加油哈！</div></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;" class="pingyuing">评语</a><div class="pingyutc" style="display:none">继续加油哈！看好你哦！</div></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td rowspan="4"><img src="../img/sanxing.png" alt="" class="wujiaoxing"></td>
+						</tr>
+						<tr>
+							<td>自评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+						</tr>
+						<tr>
+							<td>家评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td>互评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td rowspan="4">图形与几何</td>
+							<td>师评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td rowspan="4"><img src="../img/sanxing.png" alt="" class="wujiaoxing"></td>
+						</tr>
+						<tr>
+							<td>自评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+						</tr>
+						<tr>
+							<td>家评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td>互评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td rowspan="4">量的认识</td>
+							<td>师评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td rowspan="4"><img src="../img/sanxing.png" alt="" class="wujiaoxing"></td>
+						</tr>
+						<tr>
+							<td>自评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+						</tr>
+						<tr>
+							<td>家评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td>互评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+						</tr>
+						<tr>
+							<td rowspan="4">统计与概率</td>
+							<td>师评</td>
+							<td rowspan="4">无</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4"><img src="../img/sanxing.png" alt="" class="wujiaoxing"></td>
+						</tr>
+						<tr>
+							<td>自评</td>
+							<td><img src="../img/sanxing.png" alt="" class="wujiaoxing"> <a href="javascript:;">评语</a></td>
+						</tr>
+						<tr>
+							<td>家评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+				
+							
+						</tr>
+						<tr>
+							<td>互评</td>
+							<td><span class="wx_wujiaonone">无</span><span class="wx_pynone">无</span></td>
+							
+						</tr>
+						<tr>
+							<td colspan="2" rowspan="4">学科思想方法</td>
+							<td>师评</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+						</tr>
+						<tr>
+							<td>自评</td>
+						</tr>
+						<tr>
+							<td>家评</td>
+						</tr>
+						<tr>
+							<td>互评</td>
+						</tr>
+						<tr>
+							<td colspan="2" rowspan="4">实践能力</td>
+							<td>师评</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+						</tr>
+						<tr>
+							<td>自评</td>
+						</tr>
+						<tr>
+							<td>家评</td>
+						</tr>
+						<tr>
+							<td>互评</td>
+						</tr>
+						<tr>
+							<td colspan="2" rowspan="4">创新意识</td>
+							<td>师评</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+							<td rowspan="4">无</td>
+						</tr>
+						<tr>
+							<td>自评</td>
+						</tr>
+						<tr>
+							<td>家评</td>
+						</tr>
+						<tr>
+							<td>互评</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+					
+		<script>
+			$(function(){
+				$(".pingyuing").on("mouseover mouseout",function(event){
+					if(event.type == "mouseover"){
+						$(this).parent().find(".pingyutc").show();
+					}else if(event.type == "mouseout"){
+						$(this).parent().find(".pingyutc").hide();
+					}
+				});
+			});
+			
+			
+			
+			/*table表格超出有滚动条*/
+			function tableScoll(config){
+				var boxW=$(config.boxName).width();
+				var lengths=$(config.lengthsNmae).length;
+				var boxNmae_table=$(config.boxNmae_table);
+				if(lengths>config.num && boxW>config.scw){
+					lengths-=config.num;
+					boxNmae_table.css({"width":config.min_w+lengths*config.tdW});
+				}
+			}
+			tableScoll({
+				"boxName":".dafencon",//外盒子宽度
+				"lengthsNmae":".dafencon table thead tr:last-child th",//具体的需要增加的数据
+				"boxNmae_table":".dafencon table",//当前table表
+				"num":2,//设定不能超过的个数
+				"scw":1100,//设定不能超过的宽度
+				"min_w":1200,//表格最小宽度
+				"tdW":220//超过部分每一个表格的宽度
+			});
+		</script>
+	</body>
+</html>

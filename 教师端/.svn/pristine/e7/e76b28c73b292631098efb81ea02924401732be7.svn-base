@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="renderer" content="webkit">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+	    <meta name="format-detection" content="telephone=no" />
+	    
+		<title>公共资源中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/conmon_center.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common_microClass.css"/>
+		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header  class="header clearfix"></header>
+		<div class="commMicroWrap">
+			<div class="commMicroMusicBox">
+				<div class="commMicroMusicLWrap">
+					<div class="musicTitle">
+						资源名称资源名称：<span>整十数加减整十数.mp4</span>
+					</div>
+					<div class="commMusic">
+						<div class="loadFlashWrap">
+							<img src="../img/loadFlash.png" />
+							<p>您的浏览器还没有安装Flash插件</p>
+							<a href="javascript:;">现在安装</a>
+						</div>
+						<p id="showplayer" style="margin-top: 200px;">正在转码...请转码后欣赏或者 <a>下载</a> 后欣赏</p>
+						<img src="../img/quanping.png" id="quanping" class="handType"/>
+
+					</div>
+					<div class="downWrap">
+						<span class="collection">收藏</span>
+						<span class="down">下载</span>
+					</div>
+
+					<!--资源介绍开始-->
+					<div class="commSourDetailWrap">
+						<div class="commSourDetaiL">
+							<div class="sourceTit">资源描述</div>
+							<div class="sourceItem">
+								<div class="circle"></div>
+								<div class="sourceNam">资源名称：<span>垃圾的分类及.mp4</span></div>
+							</div>
+							<div class="sourceItem">
+								<div class="circle"></div>
+								<div class="sourceNam">上传作者：<span>崔丽萍</span></div>
+							</div>
+							<div class="sourceItem">
+								<div class="circle"></div>
+								<div class="sourceNam">所属学校：<span>林口县第三小学</span></div>
+							</div>
+							<div class="sourceItem">
+								<div class="circle"></div>
+								<div class="sourceNam">添加时间：<span>2016-06-12  03:41:28</span></div>
+							</div>
+							<div class="sourceVote clearfix">
+								<div class="sourceItem">
+									<div class="circle"></div>
+									<div class="sourceNam">浏览数：<span>55</span></div>
+								</div>
+							</div>
+							<div class="sourceItem">
+								<div class="circle"></div>
+								<div class="sourceNam">下载数：<span>35</span></div>
+							</div>
+
+						</div>
+						<div class="commSourDetaiR">
+							<div class="erwmWrap"><img src="../img/erweima.png" /></div>
+							<div class="btnWrap">
+								<span class="handType">扫码分享</span>
+							</div>
+						</div>
+					</div>
+					<!--资源介绍结束-->
+				</div>
+				<div class="commMicroMusicRWrap">
+					<div class="messageWrap">
+						<div class="messageNum messageNum2">21424</div>
+						<div class="messageNum">1980</div>
+						<div class="messagePerson">
+							作者：<span>尽量尽量</span>
+						</div>
+					</div>
+					<div class="messageBox">
+						<ul>
+							<li>
+								<span class="mesageName">李本玲：</span><span>这回听明白了？</span>
+							</li>
+							<li>
+								<span class="mesageName">张宇</span><span class="huifu">回复</span><span class="mesageName">李本玲：</span><span>这回听明白这回听明白了？</span>
+							</li>
+							<li>
+								<span class="mesageName">李本玲：</span><span>这回听明白了？</span>
+							</li>
+							<li>
+								<span class="mesageName">张宇</span><span class="huifu">回复</span><span class="mesageName">李本玲：</span><span>这回听明白这回听明白了？</span>
+							</li>
+							<li>
+								<span class="mesageName">李本玲：</span><span>这回听明白了？</span>
+							</li>
+							<li>
+								<span class="mesageName">张宇</span><span class="huifu">回复</span><span class="mesageName">李本玲：</span><span>这回听明白这回听明白了？</span>
+							</li>
+						</ul>
+						<div class="moreHf handType">查看更多回复</div>
+						<form action="" method="post" id="messageForm">
+							<textarea class="messageContent"></textarea>
+							<input type="button" value="发表" class="handType"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+					
+	</body>
+</html>
+<script type="text/javascript">
+     function changeScollBar(){
+     	var w=parseInt(document.documentElement.clientWidth);
+	     if(w>=1185){
+	     	document.body.style.overflowX='hidden';
+	     }else{
+	     	document.body.style.overflowX='auto';
+	     }
+     }
+     changeScollBar();
+     window.onresize=changeScollBar;
+</script>
+
+
+
+
+
+<!--判断是否安装flash插件-->
+<script>
+	
+function flashChecker(){
+	var hasFlash=0;　　　　//是否安装了flash
+	var flashVersion=0;
+	if(document.all){
+		var swf = new ActiveXObject('ShockwaveFlash.ShockwaveFlash'); 
+		if(swf) {
+			hasFlash=1;
+			VSwf=swf.GetVariable("$version");
+			flashVersion=parseInt(VSwf.split(" ")[1].split(",")[0]); 
+		}
+	}else{
+		if (navigator.plugins && navigator.plugins.length > 0){
+			var swf=navigator.plugins["Shockwave Flash"];
+			if (swf){
+				hasFlash=1;
+		       var words = swf.description.split(" ");
+		       for (var i = 0; i < words.length; ++i){
+		         	if (isNaN(parseInt(words[i]))) continue;
+		         	flashVersion = parseInt(words[i]);
+				}
+			}
+		}
+	}
+	return {f:hasFlash,v:flashVersion};
+}
+
+$(function(){
+	var fls=flashChecker();
+	var s="";
+	if(fls.f) $('.loadFlashWrap').show();
+	else $('.loadFlashWrap').remove();
+})
+</script>
+

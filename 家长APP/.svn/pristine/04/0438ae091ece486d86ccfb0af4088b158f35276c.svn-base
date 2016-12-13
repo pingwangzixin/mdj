@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>作业查看</title>
+		<link rel="stylesheet" type="text/css" href="../css/jobIndex.all.css"/>
+		<script src="../common/jquery-1.11.2.min.js"></script>
+		<script src="../common/setviewport.js"></script>
+		<script src="../common/zepto.js"></script>	
+		<script src="../common/jquery.raty.min.js"></script>
+		<script src="../js/jobView-ceshi.js"></script>
+		<style type="text/css">
+			body.jobView article {
+			  font-size: 0.28rem;
+			}
+			body.jobView article > ul li dd span {
+				margin-top: .05rem;
+	     		width: .3rem;
+			    height: .3rem;
+			    background: url(../img/xuanze-icon.png) no-repeat;
+			    background-size: .3rem;
+			}
+			body.jobView article > ul li dd.sel span{
+				background: url(../img/xuanze-active-icon.png) no-repeat;
+		   	background-size: .3rem;
+			}
+			body.jobView article > ul.duoxuan li dd span {
+			    background: url(../img/sel-duoxuan.png) no-repeat;
+			    background-size: .3rem;
+			}
+			body.jobView article > ul.duoxuan li dd.sel span{
+				background: url(../img/sel-duoxuan-active.png) no-repeat;
+		   	background-size: .3rem;
+			}
+			body.jobView article > ul.cloze li dd > span,
+			body.jobView article > ul.tiankong li dd > span
+			{
+					background: none;
+			}
+			body.jobView article > ul li dd p {
+		    	width: 5.5rem;
+			}
+			.myAnswer{
+			    display: block;
+			    background: #ddd;
+			    border: 0;
+			    padding: .1rem;
+			    outline: 0;
+			    margin: .05rem;
+			    width: 100%;
+			    height: .9rem;
+			    border-radius: .05rem;
+			    overflow-y: auto;
+			}
+			input{
+				width: 100%;
+				border: 1px solid #B2B2B2;
+				border-radius: 5px;
+				height: .7rem;
+			}
+			.sub {
+			    width: 3.5rem;
+			    height: .58rem;
+			    line-height: .58rem;
+			    margin: .3rem auto;
+			    color: #fff;
+			    background: #FFA800;
+			    border-radius: 5px;
+			    text-align: center;
+			}
+			.question span,
+			.panduan dd button,
+			.danxuan li dd{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body class="jobView">
+		<div class="main">
+			<header>
+				<table>
+					<tr>
+						<td style="width: 1.4rem;">任务名称 : </td>
+						<td>(七年级语文下册第三单元11邓稼先)作业一 第一次</td>
+					</tr>
+					<tr>
+						<td>完成时间：</td>
+						<td>2016—03—12</td>
+					</tr>
+				</table>
+				<p>难度：<span data-score="3" class="xing"></span></p>
+				<p>满分：<span>100</span></p>
+			</header>
+			<article id="pullLoad">
+				<!--单选题-->
+				<ul class="danxuan">
+					<p>一、单选题</p>
+					<li id="1">
+						<dl>
+							<dt>1、 邓稼先是“两弹元勋”，作者却没有把重点放在他的生 平和巨大贡献上，而是以情动人，这样写的原因是什么？下 面理解错误的一项(&nbsp;B&nbsp;)</dt>
+							<dd>
+								<span></span>
+								<p>A、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd class="sel">
+								<span></span>
+								<p>B、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>C、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>D、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+						</dl>
+						
+					</li>
+				
+					<li id="2">
+						<dl>
+							<dt>1、 邓稼先是“两弹元勋”，作者却没有把重点放在他的生 平和巨大贡献上，而是以情动人，这样写的原因是什么？下 面理解错误的一项(&nbsp;C&nbsp;)</dt>
+							<dd>
+								<span></span>
+								<p>A、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd class="sel">
+								<span></span>
+								<p>B、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd >
+								<span></span>
+								<p>C、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>D、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+						</dl>
+						
+					</li>
+				</ul>
+				<!--多选-->
+				<ul class="duoxuan">
+					<p>一、多选题</p>
+					<li id="1">
+						<dl>
+							<dt>1、 邓稼先是“两弹元勋”，作者却没有把重点放在他的生 平和巨大贡献上，而是以情动人，这样写的原因是什么？下 面理解错误的一项(&nbsp;B&nbsp;)</dt>
+							<dd>
+								<span></span>
+								<p>A、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd >
+								<span></span>
+								<p>B、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>C、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>D、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+						</dl>
+						
+					</li>
+				
+					<li id="2">
+						<dl>
+							<dt>1、 邓稼先是“两弹元勋”，作者却没有把重点放在他的生 平和巨大贡献上，而是以情动人，这样写的原因是什么？下 面理解错误的一项(&nbsp;C&nbsp;)</dt>
+							<dd>
+								<span></span>
+								<p>A、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>B、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd >
+								<span></span>
+								<p>C、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+							<dd>
+								<span></span>
+								<p>D、 作者认为，写科学家应着眼于科学精神、科学态度，突       出他们的人格魅力，所以往往淡化了细节。</p>
+							</dd>
+						</dl>
+						
+					</li>
+				</ul>
+				<!--判断题-->
+				<ul class="panduan">
+					<p>二、判断题</p>
+					<li id='10'>
+						<dl>
+							<dt>1、我国最早的一部诗歌总集是《诗经》。</dt>
+							<dd><button class="active">正确</button><button>错误</button></dd>
+						</dl>
+					</li>
+				</ul>
+				<!--解答题-->
+				<ul class="jieda">
+					<p>三、解答题</p>
+					<li>
+						<dl>
+							<dt class="text-mes">5月27日，第21届全国图书交易博览会（简称“书博会”）隆重举行，并在牡丹江文化广场设臵分会场。这是一次融出版物展销、信息交流</dt>
+							<dd>2、怎样理解标题“永恒的骄傲”的含义？ </dd>
+							<dd>
+								我的答案：
+								<div class="myAnswer" contenteditable="true"/></div>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!--Cloze test-->
+				<ul class="cloze">
+					<p>四、Cloze test</p>
+					<li>
+						<dl>
+							<dt class="text-mes">
+								The Chinese Dream is a  hot topic of this year. Many Chinese young people are inspried(被鼓舞)___21___ the Chinese Dream. Everyone has their own dreams. They give us courage and confidence(自信) to keep us __22__through difficulties. Here is some advice on  __23___ to make our beautiful dreams come true. 
+Never giving up __24__ the key to make our dreams come true. We may fail from time to time, ___25__  we can learn from failure, correct our mistakes and try again until we ___26___ our goals. Our  life is like a long 
+							</dt>
+							<dd class="text-mes">
+								The Chinese Dream is a  hot topic of this year. Many Chinese young people are inspriedinspried  the Chinese Dream. Everyone has their own dreams. They give us courage and confidence(自信) to keep us through difficulties. Here is some advice on to make our beautiful dreams come true. 
+Never giving up  the key to make our dreams come true. We may fail from time to time,we can learn from failure, correct our mistakes and try again until we our goals. Our  life is like a long journey  is not all roses. It 
+							</dd>
+							<dd class="question">
+								<span>21</span>
+								<p>
+									<span>A.<b>as</b></span>
+									<span>B.<b>and</b></span>
+									<span >C.<b>but</b></span>
+									<span class="sel">D.<b>width</b></span>
+								</p>
+							</dd>
+							<dd class="question">
+								<span>22</span>
+								<p>
+									<span>A.<b>as</b></span>
+									<span class="sel">B.<b>and</b></span>
+									<span>C.<b>but</b></span>
+									<span>D.<b>width</b></span>
+								</p>
+							</dd>
+							<dd class="question">
+								<span>23</span>
+								<p>
+									<span class="sel">A.<b>as</b></span>
+									<span >B.<b>and</b></span>
+									<span>C.<b>but</b></span>
+									<span>D.<b>width</b></span>
+								</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<!--填空题-->
+				<ul class="tiankong">
+					<p>五、填空题</p>
+					<li>
+						<dl>
+							<dt>
+								3、对邓稼先功绩给予高度评价的词语是： 
+							</dt>
+							<dd>
+								<input type="" name="" id="" value="" />
+							</dd>
+							<dd>
+								<input type="" name="" id="" value="" />
+							</dd>
+							<dd>
+								<input type="" name="" id="" value="" />
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<ul class="tiankong">
+					<p>六、Reading comprehension</p>
+					<li>
+						<dl>
+							<dt class="text-mes">
+								The Chinese Dream is a  hot topic of this year. Many Chinese young people are inspriedinspried  the Chinese Dream. Everyone has their own dreams. They give us courage and confidence(自信) to keep us through difficulties. Here is some advice on to make our beautiful dreams come true. 
+Never giving up  the key to make our dreams come true. We may fail from time to time,we can learn from failure, correct our mistakes and try again until we our goals. Our  life is like a long journey  is not all roses. It 
+							</dt>
+							<dd class="text-mes">
+								The Chinese Dream is a  hot topic of this year. Many Chinese young people are inspriedinspried  the Chinese Dream. Everyone has their own dreams. They give us courage and confidence(自信) to keep us through difficulties. Here is some advice on to make our beautiful dreams come true. 
+Never giving up  the key to make our dreams come true. We may fail from time to time,we can learn from failure, correct our mistakes and try again until we our goals. Our  life is like a long journey  is not all roses. It 
+							</dd>
+							<dd>
+								<span>
+									1、
+								</span>
+								<p>
+									Volunteers are going to set up <span class="_line">A</span> for street  childre
+								</p>
+							</dd>
+							<dd class="question">
+								<p>
+									<span class="sel">A.<b>as</b></span>
+									<span>B.<b>and</b></span>
+									<span>C.<b>but</b></span>
+									<span>D.<b>width</b></span>
+								</p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<div class="sub">提交</div>
+			</article>
+		</div>
+	</body>
+</html>

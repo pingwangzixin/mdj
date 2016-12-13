@@ -1,0 +1,79 @@
+body{min-width:1200px;}
+.boxShadow{-webkit-box-shadow: 0 0 10px #ccc;-moz-box-shadow: 0 0 10px #ccc;-ms-box-shadow: 0 0 10px #ccc;box-shadow: 0 0 10px #ccc;}
+/*全科班级均分================================================================================*/
+.topBar{background:#fff;border-radius:5px;color:#000;font-size:1.4rem;padding:0 15px 0 15px;margin-bottom:15px;}
+.nianji{line-height:48px;}
+.nianjiBack{height:48px;line-height:48px;cursor:pointer;}
+.nianjiBack img{display:inline-block;margin:13px 7px 0 0;}
+/*subjects---------------------------------------*/
+
+.subjectsWrap span{float:left;min-width:51px;height:28px;margin-right:20px;padding:0 5px;line-height:28px;text-align:center;margin-top:9px;cursor:pointer;border-radius:3px;}
+.subjectsWrap span:hover{background:#eee;}
+.subjectsWrap span.cur{color:#fff;background:#5093e1;}
+.subjectsWrap .subject{float:left;line-height:48px;}
+/*ichartWrap-------------------------------------*/
+.ichartWrap{background:#fff;border-radius:5px;padding-top:11px;margin-top:13px;overflow:hidden;}
+.ichatTitWrap{height:35px;border-left:3px solid #5093e1;margin-bottom:15px;}
+.icharTit{font-size:1.6rem;line-height:35px;padding-left:10px;display:inline-block;color:#333;font-weight:bold;}
+.chakan{padding-right:12px;font-size:1.4rem;color:#000;line-height:1.4rem;cursor:pointer;}
+.chakan img{display:inline-block;padding:0 6px;}
+/*ichart--------------*/
+.bigWrap_wrap{padding:0 100px;position:fixed;width:100%;box-sizing:border-box;left:0;top:50%;z-index:99999;}
+.bigChart.float{background:#fff;border-radius:7px;position:relative;border-radius:0 0 7px 7px;}
+.closeZX{position:absolute;padding:10px;right:-20px;top:-20px;cursor:pointer;}
+.ichartTits{margin-bottom:15px;}
+.ichartTits li{width:25%;box-sizing:border-box;float:left;border-top:0 none;border-right:0 none;background:#f5f5f5;text-align:center;height:45px;line-height:45px;font-size:1.4rem;cursor:pointer;}
+.ichartTits li.cur{background:none;border-bottom:0 none;border-top:2px solid #5093e1;}
+.icharts li{width:100%;}
+
+/*注释--------------------------*/
+.notesWrap{background:#f5f5f5;line-height:18px;font-size:1.2rem;padding:11px 18px 11px 18px;color:#666;}
+/*考试列表------------------*/
+.testListTit{margin:0;}
+.testListWrap li{height:100px;border-bottom:1px solid #ccc;padding:15px 0 0 22px;box-sizing:border-box;}
+.listLeft{width:9%;}
+.listRight{width:75%;color:#606060;}
+.listR_top{height:18px;padding-top:8px;font-size:1.4rem;}
+.listR_top_tit{font-size:1.6rem;color:#000;}
+.listR_top div.fr{margin-right:54px;}
+.listR_bottom{padding-top:21px;height:23px;}
+.listR_bottom .score{width:16%;margin-right:3%;font-size:1.4rem;color:#606060;float:left;white-space:nowrap;}
+.listR_bottom .score:nth-child(3),.listR_bottom .score:nth-child(5){width:20%;}
+.listR_bottom .score:last-child{margin-right:0;}
+.listR_bottom .score .dengjiImg{display:inline-block;vertical-align:middle;}
+.listR_bottom .score .red{color:#f16083;}
+.chakanfenxi{float:right;width:80px;height:24px;margin-top:23px;background:#5093e1;color:#fff;border-radius:5px;text-align:center;line-height:24px;margin-right:22px;font-size:1.4rem;}
+.listR_bottom .score  span img{margin:2px 6px 0 6px;display:inline-block;}
+/*更多--------------------*/
+.loadMore{cursor:pointer;padding-bottom:10px;}
+.loadMore p{color:#5093e1;font-size:1.4rem;text-align:center;padding-bottom:4px;}
+.loadMore img{margin:0 auto;display:block;}
+/*全科均分查看页====================================================================================*/
+.testDetail_main{width:100%;box-sizing:border-box;padding:50px 100px 116px 100px;margin:0 auto;min-width:1200px;}
+/*头部右边---*/
+.testDel_topTitlR span{color:#5093e1;line-height:48px;height:48px;}
+.testDetail_ichartTits{height:44px;background:#f5f5f5;border-bottom:1px solid #d6d6d6;}
+.testDel_topTitlR .testDetail_ichartTit{background:#f5f5f5;}
+.testDetail_ichartTits li{border:0 none;border-right:1px solid #d6d6d6;border-bottom:1px solid #d6d6d6;background:#f5f5f5;}
+.testDetail_ichartTits li.cur{background:#fff;border-bottom:0 none;border-right:1px solid #d6d6d6;border-top:2px solid #5093e1;}
+/*统计表----------------*/
+.testDelIchartWrap{padding-top:13px;}
+.testDetTJBtit{text-align:center;color:#333;}
+.tabelTit{padding-bottom:9px;font-size:1.6rem;}
+#table_id_wrapper{border:1px solid #ccc;border-right:0 none;border-bottom:0 none;}
+table.dataTable.no-footer {border-bottom:0 none;}
+.table_border{padding:0 15px 20px;}
+table.dataTable thead th, table.dataTable tfoot th{font-weight:normal;}
+table.dataTable thead th{border-bottom:0 none;}
+table.dataTable  thead th,table td{text-align:center;color:#000;height:42px;line-height:42px;box-sizing:border-box;border:1px solid #ccc;border-top:0 none;border-left:0 none;}
+table.dataTable.display tbody tr.odd {background:none;}
+table  th{font-size:1.6rem;background:#f5f5f5;}
+table td{font-size:1.4rem;}
+table td .tdImg img{display:inline-block;height:auto;vertical-align:middle;}
+
+table td img{height:11px;vertical-align:inherit;display:inline-block;}
+
+
+/*加载图片===================*/
+.loadingWrap{width:100%;height:400px;}
+.loadingImg{display:block;vertical-align:middle;margin:0 auto;}

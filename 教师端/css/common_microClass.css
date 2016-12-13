@@ -1,0 +1,67 @@
+html{font:normal normal 62.5% "Microsoft YaHei";color:#222222;}/*加上是--1rem等于10px*/
+body{min-width:1200px;}
+.handType{cursor:pointer;}
+.commMicroWrap{width:100%;padding:15px 15px 0px;box-sizing:border-box;}
+.commMicroMusicBox{width:100%;padding:0 104px 130px 108px;background:#fff;box-sizing:border-box;border-radius:5px 5px 0 0;overflow:hidden;box-shadow: 0 0 10px #ccc;-webkit-box-shadow: 0 0 10px #ccc;-ms-box-shadow: 0 0 10px #ccc;-moz-box-shadow: 0 0 10px #ccc;-o-box-shadow: 0 0 10px #ccc;}
+/*音乐开始左半部分-------------------------------------*/
+.commMicroMusicLWrap{float:left;overflow:hidden;width:67%;}
+.musicTitle{height:50px;line-height:50px;font-size:1.6rem;color:#333;}
+
+.commMusic{width:100%;height:500px;background:#ecf2fa;border:1px solid #e2e9f3;position:relative;box-sizing:border-box;overflow:auto;font-size: 16px;text-align: center;}
+.commMusic a{color:red;}
+#showplayer{font-size: 16px;text-align: center;}
+#showplayer a{color:red;}
+
+.commMusic img{width:100%;margin:80px auto 80px;display:block;}
+
+#quanping{position:absolute;right:2px;bottom:3px;}
+.downWrap{padding-top:16px;}
+.down,.collection{height:35px;}
+.commSourDetaiL{width:66%;font-size:1.4rem;line-height:26px;color:#6c6c6c;padding:5px 0 6px 0;box-sizing:border-box;float:left;}
+.sourceTit{font-size:1.6rem;color:#333;padding-bottom:4px;}
+.sourceItem{overflow:hidden;padding-left:2px;line-height: 30px;}
+.commSourDetailWrap{width:100%;overflow:hidden;}
+.commSourDetaiL .circle{width:5px;height:5px;border:1px solid #333;border-radius:3px;float:left;margin-top:10px;}
+.sourceItem .sourceNam{padding-left:16px;}
+.sourceVote .sourceItem{float:left;}
+.sourceVote .sourceItem:nth-child(2){margin-left:28px;}
+.sourceVote .sourceNam{display:inline-block;padding-left:10px;}
+/*右边二维码---------*/
+.commSourDetaiR{width:34%;padding-top:15px;float:right;}
+.commSourDetaiR .erwmWrap{width:100%;height:120px;margin-bottom:20px;}
+.commSourDetaiR img{height:120px;margin:0 auto;display:block;}
+.commSourDetaiR  .btnWrap{width:100%;overflow:hidden;text-align:center;}
+.commSourDetaiR  .btnWrap span{display:inline-block;width:45%;height:30px;background:#5093e1;color:#fff;font-size:1.4rem;line-height:30px;text-align:center;margin:0 2% 0 2%;border-radius:5px;}
+
+/*回复开始----------------------------------*/
+.commMicroMusicRWrap{float:right;width:30%;}
+.messageWrap{height:50px;width:100%;overflow:auto;line-height:50px;font-size:1.4rem;color:#333;}
+.messagePerson{padding-left:14%;float:right;}
+.messageNum{float:right;padding-left:7%;background:url(../img/eye.png) no-repeat left center;margin-left:6%;color:#5093e1;}
+.messageNum2{background-image:url(../img/xiaz.png);background-position:left 16px;background-size:16px;color:#50c14e;}
+.messageBox{border:1px solid #eee;border-radius:2px;position:relative;padding-bottom:46px;}
+.messageBox ul{max-height:400px;overflow:auto;min-height:100px;}
+.messageBox li{line-height:28px;font-size:1.4rem;color:#333;padding:0 8px;}
+.messageBox li .huifu{padding:0 2px 0 5px;}
+.messageBox li .mesageName{color:#5093e1;white-space:nowrap;word-wrap:break-word;cursor:pointer;}
+.messageBox li .content{word-break:break-all;word-wrap:break-word;}
+.moreHf{font-size:1.4rem;color:#5093e1;line-height:28px;padding-right:8px;text-align:right;padding-bottom:17px;}
+/*留言内容------------*/
+#messageForm{padding:0 8px;}
+.messageContent{box-sizing:border-box;width:100%;height:100px;overflow:auto;outline:none;border:0 none;background:#f5f5f5;line-height:20px;font-size:1.4rem;color:#333;padding:7px 9px 0 9px;}
+#messageForm input{position:absolute;right:8px;bottom:8px;width:68px;height:30px;background:#5093e1;color:#fff;font-size:1.4rem;text-align:center;line-height:30px;border-radius:5px;border:none;outline:none;}
+.commMusic>p{margin: 10px 0; text-align: center; color: #5093e1; cursor: pointer;}
+.commMusic>p i{display: inline-block; font-style: normal; width: 16px; height: 12px; background: url(../img/xiangxia.png) no-repeat center;}
+
+
+.loadFlashWrap{width:400px;height:136px;margin-left:-200px;overflow:hidden;position:absolute;left:50%;top:115px;font-size:14px;display:none;}
+.loadFlashWrap>img{display:block;margin:0 auto;}
+.loadFlashWrap>p{color:#8b8b8b;line-height:14px;text-align:center;padding:16px 0 14px;}
+.loadFlashWrap>a{display:block;color:#fff!important;width:85px;height:27px;background:#5093e1;margin:0 auto;border-radius:3px;line-height:27px;}
+
+
+.collection{margin-right:40px;}
+.down{float:left;margin-right:40px;margin-left:0;}
+.zan{background-image:url(../img/zan.png);padding-left:32px;}
+.zanWrap{line-height:28px;border:1px solid #dee6f1;margin-top:8px;background:#ecf2fa;padding-left:6px;font-size:14px;min-height:28px;}
+.zana{float:left;height:24px;width:24px;border-radius:50%;background:#fff url(../img/zan.png) no-repeat center;background-size:16px;margin:2px 10px 0 0;}

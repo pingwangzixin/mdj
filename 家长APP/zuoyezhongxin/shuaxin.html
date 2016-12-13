@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>作业中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/jobIndex.all.css"/>
+		<script src="../common/jquery-1.11.2.min.js"></script>
+		<script src="../common/setviewport.js"></script>
+		<script src="../common/jquery.raty.min.js"></script>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			.main{
+				background: #0078A5;
+				width: 90%;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loading reload" ><span>正在刷新...</span></div>
+		<div class="main">
+			abccc
+		</div>
+		<div class="loading bottoLoading" ><span>正在加载...</span></div>
+		<script type="text/javascript">
+			//node 节点  
+			//orientations  1水平   
+		    function Move(node,orientations){
+		    	var _this = this;
+		    	_this.moveXNums = 0;
+		    	_this.moveYNums = 0;
+		    	_this.doNums = 1; //确认触发    次数限制
+		    	//1 为水平
+		    	_this.moveOrientations=arguments[1] || 'moveOrientationsY';//方向
+		    	_this.moveOrientationsX='';//方向
+			    _this.moveOrientationsY='';//方向
+		    	$(node).on('touchstart',touchStart);
+		        $(node).on('touchmove',touchMove);
+		        $(node).on('touchend',touchEnd);
+		        function init(){
+		        	_this.moveXNums = 0;
+			    	_this.moveYNums = 0;
+			    	_this.doNums = 1; //确认触发    次数限制
+			    	_this.moveOrientationsX='';//方向
+			    	_this.moveOrientationsY='';//方向
+		        }
+		        function touchStart(e){
+		        	_this.y = e.originalEvent.targetTouches[0].pageY;
+		        	_this.x = e.originalEvent.targetTouches[0].pageX;
+		        	_this.startY = e.originalEvent.targetTouches[0].pageY;
+		        	_this.startX = e.originalEvent.targetTouches[0].pageX;
+		        }
+		        function touchMove(e){
+		        	_this.endY = e.originalEvent.targetTouches[0].pageY;
+		        	_this.endX = e.originalEvent.targetTouches[0].pageX;
+		       		getDirection();
+		       		moveDoing();
+	        		_this.y = e.originalEvent.targetTouches[0].pageY;
+	        	    _this.x = e.originalEvent.targetTouches[0].pageX;
+		        }
+		        function touchEnd(){
+		        	console.log(_this);
+		        	moveDoing();
+		        }
+		        //方向判断
+		        function getDirection(){
+		        	//  + 左上    - 右下
+		        	_this.moveY = _this.y - _this.endY;
+		        	_this.moveX = _this.x - _this.endX;
+		        	_this.moveAllY = _this.startY - _this.endY;
+		        	_this.moveAllX = _this.startX - _this.endX;
+		        	//移动小于5px 过滤
+		        	var moveLengthPx = 5; 
+		        	if(Math.abs(_this.moveY)>moveLengthPx){
+			        	if(_this.moveY>0){
+			        		_this.moveYNums ++;
+			        		if(_this.moveYNums==_this.doNums){
+			        			_this.moveOrientationsY='up';
+			        		}
+			        	}else{
+			        		_this.moveYNums --;
+			        		if(_this.moveYNums==-_this.doNums){
+			        			_this.moveOrientationsY='down';
+			        		}
+			        	}	
+		        	}
+		        	
+		        	if(Math.abs(_this.moveX)>moveLengthPx){
+		        		if(_this.moveX>0){
+			        		_this.moveXNums ++;
+			        		if(_this.moveXNums==_this.doNums){
+			        			_this.moveOrientationsX='left';
+			        		}
+			        	}else{
+			        		_this.moveXNums --;
+			        		if(_this.moveXNums==-_this.doNums){
+			        			_this.moveOrientationsX='right';
+			        		}
+			        	}
+		        	}
+		        }
+		        //滑动处理
+		        function moveDoing(){
+		        	console.log(_this);
+		        	var status = _this.moveXNums;
+		        	var html = '';
+		        	$.each(_this,function(k,v){
+						html += '<div style="color:block"><span>'+k+'::::</span><span>'+v+'</span></div>' 	        		
+		        	});
+		        	$('.main').html(html);
+		        	
+		        	switch (_this[_this.moveOrientations]){
+		        		case 'left':
+		        		    funDoing(_this.left);
+		        			break;
+		        		case 'right':
+		        			funDoing(_this.right);
+		        			break;
+		        		case 'up':
+		        			funDoing(_this.up);
+		        			break;
+		        		case 'down':
+		        			funDoing(_this.down);
+		        			break;
+		        		default:
+		        			break;
+		        	}
+		        }
+		        function funDoing(fun){
+		        	if(typeof fun ==='function') fun();
+		        	init();
+		        }
+		    }
+		    var glide = new Move('body');
+		    glide.down=function(){
+		    	$(".bottoLoading").show();
+		    }
+		    
+			
+		</script>
+	</body>
+</html>

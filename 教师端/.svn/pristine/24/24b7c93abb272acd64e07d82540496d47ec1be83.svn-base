@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="renderer" content="webkit">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+	    <meta name="format-detection" content="telephone=no" />
+	    
+		<title>作业中心-批改作业</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" href="../css/tanceng.css" />
+		<link rel="stylesheet" href="../css/tsakCenter.css" charset="utf-8"/>
+		
+		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/Highcharts/js/highcharts.js"></script>
+		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/tsakCenter.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 头部 -->
+		<div  class="header clearfix"></div>
+		<div class="main clearfix">
+			<div class="job clearfix">
+				<div class="but fl">
+					<a href="correct_task.html"  class="but_active">批改作业</a>
+					<!--<a href="#">编辑任务</a>-->
+				</div>
+				<a href="taskCenter_list.html">
+					<div class="back fr">
+						<img src="../img/back.png" alt="" />
+						<!--<span>返回</span>-->
+					</div>
+				</a>
+			</div>
+			<div class="edit_task preview marking">
+				<div class="edit_tit clearfix">
+					<div class="fl">
+						<p>作业名称： <span> (初一 数学下册 第三单元  数据的手机、整理与描述)  抽样调查  第一次</span></p>
+						<ul class="clearfix">
+							<li>完成时间：<span>2016-6-15 10:00</span></li>
+							<li>
+								难易程度：
+								<img src="../img/star-on.png" alt="" />
+								<img src="../img/star-off.png" alt="" />
+								<img src="../img/star-off.png" alt="" />
+								<img src="../img/star-off.png" alt="" />
+								<img src="../img/star-off.png" alt="" />
+							</li>
+							<li>满分：<span>100</span>分</li>
+						</ul>
+					</div>
+					<div class="edit_btn fr">
+						<span class="blue">提交</span>
+					</div>
+				</div>
+				<div class="marking_box clearfix">
+					<div class="mark_left fl">
+						<select>
+							<option>二年级一班</option>
+							<option>二年级三班</option>
+						</select>
+						<h2>已提交</h2>
+						<ul class="clearfix green">
+							<li class="green_bg">高天泽</li>
+							<li class="green_bg">高天泽</li>
+							<li class="green_bg">高天泽</li>
+							<li class="green_bg">高天泽</li>
+							<li class="blue_shadow">高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+						</ul>
+						<h2 class="orange_h2">未提交</h2>
+						<ul class="clearfix orange">
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+							<li>高天泽</li>
+						</ul>
+					</div>
+					<div class="mark_right fr">
+						<p class="name">
+							<em>郭子仪</em>
+							<span>答题用时：20分15秒 </span>
+							<span>得分  : &nbsp;<small>80分 </small></span>
+							<i></i>
+						</p>
+						<!-- 各种题型  -->
+						<!--单选题 -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">一、单选题（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">1. </i>关于力的概念，下列说法中错误的是（A）</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<ul class="question_daan clearfix">
+									<li><input type="radio" checked="checked"/>A.力是物体对物体的作用</li>
+									<li><input type="radio" disabled="disabled"/>B.力是物体对物体的作用</li>
+									<li><input type="radio" disabled="disabled"/>C.力是物体对物体的作用</li>
+									<li><input type="radio" disabled="disabled"/>D.力是物体对物体的作用</li>
+								</ul>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<!--判断题 -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">二、判断题（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">1. </i>我国最早的一部诗歌总集是《诗经》。</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<ul class="question_daan question_panduan clearfix">
+									<li><span class="judge">正确</span></li>
+									<li><span>错误</span></li>
+								</ul>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<!--填空题 -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">三、填空题（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<h3 class="question_tit">
+									<span class="tit font14">
+										<i class="num">1. </i>蒹葭苍苍，白露为霜。所谓伊人，<i class="underline">在水一方</i>。（《诗经·蒹葭》）
+									</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<!--口语交际及综合性学习 -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">四、口语交际及综合性学习（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<p class="font14 tigan">5月27日，第21届全国图书交易博览会（简称“书博会”）隆重举行，并在牡丹江文化广场设臵分会场。这是一次融出版物展销、信息交流和倡导全民阅读等功能为一体的文化盛事。如果你被选为本届“书博会”的小志愿者，参与服务工作，请完成以下活动。</p>
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">1. </i>请你为本届“书博会”的会场设计一条宣传标语。</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<div class="question_daan clearfix">
+									<p class="fl font14">答案:</p>
+									<h5 class="fr">书博会</h5>
+								</div>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">2. </i>在会场服务时，你发现有位叔叔在书籍展位旁吸烟。你应该如何劝阻他？</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<div class="question_daan clearfix">
+									<p class="fl font14">答案:</p>
+									<h5 class="fr">书博会</h5>
+								</div>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<!--Cloze test -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">五、Cloze test（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<p class="font14 tigan">The Chinese Dream is a  hot topic of this year. Many Chinese young people are inspried(被鼓舞)___21___ the Chinese Dream. Everyone has their own dreams. They give us courage and confidence(自信) to keep us __22__through difficulties. Here is some advice on  __23___ to make our beautiful dreams come true。
+								</p>
+								<p class="font14 tigan">Never giving up __24__ the key to make our dreams come true. We may fail from time to time, ___25__  we can learn from failure, correct our mistakes and try again until we ___26___ our goals. Our  life is like a long journey ___27___ is not all roses. It ___28___ has wind and rain. We believe rainbows (彩虹) ___29___ after storms。
+								</p>
+								<p class="font14 tigan">Cooperation(合作)is also ___30__. Everyone likes a person who is good at cooperating with __31__. Besides, in our society, most problems ___32__ be solved by one person alone. Cooperation is becoming one of __33__  ways for people living in the developing society。 
+								</p>
+								<p class="font14 tigan">At the same time, we should learn to examine our abilities because __34__ helps us not only know our advantages and disadvaags, but also get a full control of ourselves. Then we may be 。 
+								</p>
+								<h3 class="question_tit clearfix">
+									<span class="tit font14 clearfix fl">
+										<i class="num fl">1.</i>
+										<ul class="question_daan fl clearfix">
+											<li><input type="radio" checked="checked"/>A.in </li>
+											<li><input type="radio" disabled="disabled"/>B.with  </li>
+											<li><input type="radio" disabled="disabled"/>C.by</li>
+											<li><input type="radio" disabled="disabled"/>D.as</li>
+										</ul>
+									</span>
+									<span class="grade font14 fl">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+								<h3 class="question_tit clearfix">
+									<span class="tit font14 clearfix fl">
+										<i class="num fl">2.</i>
+										<ul class="question_daan fl clearfix">
+											<li><input type="radio" checked="checked"/>A.in </li>
+											<li><input type="radio" disabled="disabled"/>B.with  </li>
+											<li><input type="radio" disabled="disabled"/>C.by</li>
+											<li><input type="radio" disabled="disabled"/>D.as</li>
+										</ul>
+									</span>
+									<span class="grade font14 fl">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<!--Reading comprehension -->
+						<div class="question">
+							<h3 class="question_tit">
+								 <strong class="font14">六、Reading comprehension（每题2分，共 2*5=10分）</strong>
+								 <span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+							</h3>
+							<div class="question_con">
+								<p class="font14 tigan">
+									Once upon a time there was a boy who liked drawing, but he was too poor to buy a brush. One night he said to  himself,"If only I had a brush, I could draw pictures for the poor people in my village." Suddenly an old man with a long white beard(胡须）appeared. He said, "Here is a brush for you. But you must only draw prictures for poor people with it."
+								</p>
+								<p class="font14 tigan"> 
+									Ma Liang began to draw a hen, and as he did so, it changed into a real hen. "Wow!"he said, "this brush must be magic!" Then he drew an axe（斧头) for a poor woman and it changed into a real one.
+								</p>
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">1. </i>Volunteers are going to set up _______ for street children from Salvador.</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<ul class="question_daan clearfix">
+									<li>A.houses</li>
+									<li>B.schools </li>
+									<li>C.hotels</li>
+									<li>D.home</li>
+								</ul>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+								<h3 class="question_tit">
+									<span class="tit font14"><i class="num">2. </i>Volunteers are going to set up _______ for street children from Salvador.</span>
+									<span class="grade font14">得分  : &nbsp;<input type="text">&nbsp;分</span>
+								</h3>
+								<ul class="question_daan clearfix">
+									<li>A.houses</li>
+									<li>B.schools </li>
+									<li>C.hotels</li>
+									<li>D.home</li>
+								</ul>
+								<div class="question_pizhu clearfix">
+									<p class="fl font14">批注:</p>
+									<textarea class="fr"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="speak clearfix">
+							<p class="fl">评语：</p>
+							<textarea class="fl"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="edit_task chengji">
+				<h3><span>作业成绩</span></h3>
+				<div id="chengji_box" style="margin-top: 20px;"></div>
+			</div>
+		</div>
+		
+		<!-- 得分率弹层 -->
+		<div class="del_down deifenlv" style="display: none">
+			<div class="hide"></div>
+		    <div class="con clearfix">
+		    	<img class="close hand fr" src="../img/task_close.png"/>
+		    	<div class="con_con">
+		    		<h3><span>作业中心统计结果</span></h3>
+		    		<div id="deifenlv_box" style="width:844px;height:434px; margin-top: 16px;"></div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	
+		
+	<!-- 柱状图统计表  -->
+	<script type="text/javascript">
+		$(function () {
+			//动态赋值高度
+		    var _Num=20;//学生的个数
+		    $('#chengji_box').css('minHeight','150px');
+		    $('#chengji_box').css('height',_Num*50+'px');
+			
+		     $('#chengji_box').highcharts({
+		        chart: {
+		            type: 'bar',
+		            plotBorderColor: '#ccc',
+		            plotBorderWidth: 1
+		        },
+		        title: {
+		            text: null
+		        },
+		        subtitle: {
+		            text: null
+		        },
+		        
+		        xAxis: {
+		            categories: ['学生1', '学生2', '学生3', '学生4', '学生5','学生6', '学生7', '学生8', '学生9', '学生10', '学生11', '学生12', '学生13', '学生14','学生15','学生16', '学生17', '学生18', '学生19', '学生20'],
+		            title: {
+		                text: null
+		            }
+		        },
+		        yAxis: {
+		            min: 0,
+		            max:100,
+		            title: {
+		                text: null,
+		            }
+		        },
+		        tooltip: {
+		            valueSuffix: '分'
+		        },
+		        plotOptions: {
+		            bar: {
+		                dataLabels: {
+		                    enabled: true
+		                }
+		            }
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        series: [{
+		            name: '分数',
+		            data: [100,90,85,43,20,60,78,54,86,92,73,58,60,65,20,100,90,85,43,20]
+		        }]
+		    });
+		});
+	</script>
+	
+	<!-- 折线图统计表  -->
+	<script type="text/javascript">
+		$(function(){
+			//点击得分率弹层
+			$('.name i').on('click',function(){
+				$('.deifenlv').show();
+			})
+			$('.deifenlv .close').on('click',function(){
+				$('.deifenlv').hide();
+			})
+			//折线图
+			Highcharts.setOptions({ 
+			    colors: ['#29cd80','#5093e1'] 
+			}); 
+			$('#deifenlv_box').highcharts({
+		        chart: {
+		            type: 'line',
+		            plotBorderColor: '#ccc',
+		            plotBorderWidth: 1
+		        },
+		        title: {
+		            text: null
+		        },
+		        subtitle: {
+		            text: null
+		        },
+		        
+		        xAxis: {
+		            categories: ['选择题', '判断题', '简答题', '填空题', '大题'],
+		            plotLines: [{
+		                color: '#222'
+		            }]
+		        },
+		        yAxis: {
+		            min: 0,
+		            max:100,
+		            title: {
+		                text: '得分率',
+		            },
+		            tickInterval:10,
+		            labels: {
+		                formatter: function () {
+		                    return this.value + '%';
+		                }
+		            }
+		        },
+		        tooltip: {
+		            valueSuffix: '%'
+		        },
+		        plotOptions: {
+		            bar: {
+		                dataLabels: {
+		                    enabled: true
+		                }
+		            }
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        series: [{
+		            name: '个人得分率',
+		            data: [100,90.0,85.2,43.5,20.00]
+		        }, {
+		            name: '班级平均得分率',
+					data: [10.33,40.2,85.2,3,20]
+		        }]
+		    });
+		    $('#deifenlv_box').highcharts().reflow();
+		});
+	</script>
+</html>

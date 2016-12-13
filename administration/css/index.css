@@ -1,0 +1,111 @@
+html{font-family:"Microsoft YaHei";}
+.main{width:100%;background-color: #edf1f2;}
+body{ margin:0; height:100%}
+html{ height:100%} /*兼容firefox的div高度100%*/
+
+.main_left{ position:fixed; top:0; left:0; bottom:0;width:238px; height:100%; background-color:#1d2b36;}
+.main_right{ margin-left:238px; height:100%; background-color:#edf1f2;padding: 0 34px;}
+
+.main_left h3{
+	width: 238px;
+	height: 100px;
+	font-size: 19px;
+	color:#fff;
+	line-height: 100px;
+	text-align: center;
+}
+
+.main_left .left_list li{
+	width: 186px;
+	height: 60px;
+	/*padding-top: 40px;
+	padding-left: 52px;*/
+	color:#fff;
+	font-size: 18px;
+	margin-bottom: 50px;
+	cursor: pointer;
+}
+
+.main_left .left_list a{display:block;width: 186px;
+	height: 60px;
+	padding-top: 40px;
+	padding-left: 52px;
+	color:#fff;
+	font-size: 18px;
+	margin-bottom: 50px;
+	cursor: pointer;
+}
+
+
+.main_left .left_list a.list_active{
+	border-left:4px solid #1ab394 ;
+	width: 182px;
+	background: #0f1922;
+}
+
+.main_left .left_list li em{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/left_list.png);
+	background-repeat: no-repeat;
+	position: relative;
+	top:-24px;
+	left:50px;
+}
+.main_left .left_list li:nth-child(1) em{background-position:  0px 0px;}
+
+.main_right .right_head{height: 34px;padding-top: 34px;}
+.main_right .right_head p{font-size: 18px;color:#222;}
+.main_right .right_head .btn em{font-size: 14px;color:#4dbd73;}
+.main_right .right_head .btn span{color:#868686;font-size: 14px;margin-left: 16px;}
+
+
+.main_right .right_sort{
+	background: #fff;
+	font-size: 14px;
+	color:#222;
+	padding: 15px;
+	border-radius: 10px;
+	margin-bottom: 24px;
+}
+.main_right .right_sort li{line-height: 42px;}
+.main_right .right_sort li em{width: 1px;border-right:1px solid #222;height: 14px;margin: 0 7px;}
+.main_right .right_sort .sub_l{
+	width: 78px;
+	text-align: left;
+}
+.main_right .right_sort .sub_r{
+	text-align: left;
+}
+.main_right .right_sort .sub_r span{
+	padding: 3px 7px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.main_right .right_sort .sub_r span.sub_active{
+	background: #4dbd73;
+	color:#fff;
+}
+.main_right .right_con{
+	height: 710px;
+	background: #ccc;
+	border-radius: 10px;
+}
+.main_right .right_footer{
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 12px;
+	color:#545454;
+}
+.main_right .right_footer li{line-height: 26px;}
+.main_right .right_footer li span{margin-right: 55px;}
+
+
+
+
+
+
+
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>单次考试分析</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/analysis.css"/>
+		<script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../common/zepto.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../common/dataTimes/mui.min.js"></script>
+		<script src="../common/zyx.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	
+	<body id="pullLoad">
+		<!--返回顶部-->
+		<a href="javascript:scroll(0,0)" class="scrollTop"></a>	
+			
+		<!--highcharts-->
+		<div class="situation">
+			<img  class="situation_close" src="../img/close_black.png"/>
+			<!--表头切换-->
+			<div class="graph-tabs clearfix">
+				<a href="javascript:;" data-name="1" data-url="" class="active fl">班级均分</a>
+				<a href="javascript:;" data-name="2" data-url="" class="fr">年级均分</a>
+			</div>
+			
+			<!--折线图 -->
+			<div  class="tabcon" data-name="1" style="display: block;">
+				
+				<div class="chart-column-line-global">
+					<!--数据表-->
+				    <div class="chart-line-change charts-btb"  style="height:3.8rem; display: block;" ></div>
+				    <!--无数据-->
+				    <div class="chart_wu" style="display: none;">
+				    	<img src="../img/nobody.png"/>
+				    </div>
+				    <div class="parallel-change series-div-box">
+		                <a href="javascript:;"class="scale_big">点击查看大图<img src="../img/enlarge.png"/></a>
+				    </div>
+				</div>
+				
+				<!--注释-->
+				<ul class="graph-comments">
+				    <li>注释：本图表明学生全科及各科在历次考试中与班级平均分的对比变化情况；点击可放大查看；</li>
+				</ul>
+				<!--js-->
+				<script>
+	                
+	                $LAB
+	                    .script('../common/highcharts.js')
+	                    .script('../common/highcharts-functions.js')
+	                    .wait(function(){
+	                        var chart_column_data_3 = {"categories":["\u603b\u5206","\u8bed\u6587","\u6570\u5b66","\u82f1\u8bed","\u7269\u7406"],"ytitle":"","units":"%","data":[{"data":[-1,-0.25,-2,-0.6,-1.6]}]};
+	                        chart_columns('.chart-line-change', chart_column_data_3.title, chart_column_data_3.categories, chart_column_data_3.ytitle, chart_column_data_3.data, chart_column_data_3.units, null, false, false);
+	                        $('.highcharts-legend').remove();
+	                });
+            
+	            </script>
+			</div>
+			
+			<!--优良率柱状图 -->
+			<div  class="tabcon" data-name="2">						
+				<!--数据表-->
+				<div class="white-box chart-column-line-global">
+					<!--数据表-->
+					<div class="chart-column-stack-1 charts-btb" style="height:3.8rem; display: block;"></div>
+					<!--无数据-->
+				    <div class="chart_wu" style="display: none;">
+				    	<img src="../img/nobody.png"/>
+				    </div>
+					<div class="parallel-change series-div-box scale_big">
+		                <a href="javascript:;">点击查看大图<img src="../img/enlarge.png"/></a>
+				  	</div>
+				</div>
+				<!--注释-->
+				<ul class="graph-comments">
+				     <li>注释：本图表明学生全科及各科在历次考试中与班级平均分的对比变化情况；点击可放大查看；</li>
+				</ul>
+		    	<!--js-->
+				<script>
+	                
+	                $LAB
+	                    .script('../common/highcharts.js')
+	                    .script('../common/highcharts-functions.js')
+	                    .wait(function(){
+	                        var chart_column_data_3 = {"categories":["\u603b\u5206","\u8bed\u6587","\u6570\u5b66","\u82f1\u8bed","\u7269\u7406"],"ytitle":"","units":"%","data":[{"data":[1,0.25,-1,0.6,1]}]};
+	                        chart_columns('.chart-column-stack-1', chart_column_data_3.title, chart_column_data_3.categories, chart_column_data_3.ytitle, chart_column_data_3.data, chart_column_data_3.units, null, false, false);
+	                        $('.highcharts-legend').remove();
+	                });
+            
+	            </script>
+			</div>
+		</div>	
+			
+		<!-- 内容 -->
+		<div class="main" >
+			<!--考试列表-->
+			<div class="examsLine">
+				<h3 class="tit">各科目考试成绩统计表</h3>
+				<div class="table_box" style="display: block;">
+					<table cellspacing="0" cellpadding="0" class="Table">
+						<thead>
+							<tr>
+								<th>考试科目</th>
+								<th>得分</th>
+								<th>分档</th>
+								<th>班级评分</th>
+								<th>年级均分</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>数学</td>
+								<td>234</td>
+								<td><img src="../img/icon-a.png" alt="" /></td>
+								<td class="green">77.8</td>
+								<td class="green">77.8</td>
+							</tr>
+							<tr>
+								<td>数学</td>
+								<td>234</td>
+								<td><img src="../img/icon-b.png" alt="" /></td>
+								<td class="green">77.8</td>
+								<td class="green">77.8</td>
+							</tr>
+							<tr>
+								<td>数学</td>
+								<td>234</td>
+								<td><img src="../img/icon-c.png" alt="" /></td>
+								<td class="green">77.8</td>
+								<td class="green">77.8</td>
+							</tr>
+							<tr>
+								<td>数学</td>
+								<td>234</td>
+								<td><img src="../img/icon-d.png" alt="" /></td>
+								<td class="green">77.8</td>
+								<td class="green">77.8</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 无内容 -->	
+				<div class="line_wu" style="display: none;">
+					<img src="../img/nobody.png" alt="" />
+				</div>
+			</div>
+			
+		</div>
+	</body>
+
+	
+	<script>
+	    $LAB
+	        .script('../common/highcharts.js')
+	        .script('../common/highcharts-functions.js')
+	
+	        .wait(function(){
+	            $('.graph-tabs > a').on('click',function (){
+	                var obj = $(this),
+	                    url = obj.attr("data-url"),
+	                    showid = obj.attr("data-name"),  
+	                    p = obj.closest('.situation');
+	
+	                obj.siblings().removeClass('active');
+	                obj.addClass('active');
+	                $('.tabcon[data-name]').hide();
+	                
+				
+					
+	                if ( $('.tabcon[data-name="'+showid+'"]').length == 1 ) {
+	                    $('.tabcon[data-name="'+showid+'"]').show();
+	                    doReflow(p);
+	                } 
+	            });
+	            
+	     
+				$('.scale_big').on('click',function(){
+	                horizontalScreen('.charts-btb');
+		        	$('.situation_close').show();
+		        	$('.graph-tabs').hide();
+		        	$('.graph-comments').hide();
+		        	$('.parallel-change').hide();
+		        	$('.main').hide();
+		        	$('.top_head').hide();
+		        	$('.chart_wu').css('margin-top','50%');
+		        	$('.tabcon').css('margin-top',0);
+		        	highcharts_btb($(this).closest('.situation'), doReflow);
+	            });
+	
+	            $('.situation_close').on('tap',function(){
+	                fnEnd('.charts-btb');
+		        	$('.graph-tabs').show();
+		        	$('.graph-comments').show();
+		        	$('.parallel-change').show();
+		        	$('.main').show();
+		        	$('.top_head').show();
+		        	$('.situation_close').hide();
+		        	$('.chart_wu').css('margin-top',0);
+		        	$('.tabcon').css('margin-top','1rem');
+		        	highcharts_btb($(this).closest('.situation'), doReflow);
+	            });
+	
+	            
+	            $(function () {
+	                $('.graph-tabs > a:first').trigger('click');
+	            });
+	            
+	            
+
+				function horizontalScreen(className){  
+				    // transform 强制横屏  
+				    var conW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;  
+				    var conH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;    
+				      
+				    $(className).css({  
+				        "transform":"rotate(90deg) translate("+((conH-conW)/2)+"px,"+((conH-conW)/2)+"px)",  
+				        "width":conH+"px",  
+				        "height":conW+"px", 
+				        "transform-origin":"center center",  
+				        "-webkit-transform-origin": "center center"  
+				    });  
+				} 
+				function fnEnd(className){
+					// transform 强制竖屏  
+				    var conW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;  
+				    var conH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;   
+				      
+				    $(className).css({  
+				        "transform":"rotate(0deg)",  
+				        "width":conW+"px",  
+				        "height":3.8+"rem", 
+				        "transform-origin":"center center",  
+				        "-webkit-transform-origin": "center center"  
+				    });  
+				};
+	            
+	        });
+	        
+	</script>
+</html>

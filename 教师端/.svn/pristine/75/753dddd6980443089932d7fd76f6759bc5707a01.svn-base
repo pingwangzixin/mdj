@@ -1,0 +1,433 @@
+.main .main_right{
+	width:97%;
+	margin:0 auto;
+}
+.main_right .task_list{
+	width:100%;
+	box-sizing:border-box;
+	background-color: #fff;
+    min-height: 600px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #ccc;
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    -o-box-shadow: 0 0 10px #ccc;
+    -ms-box-shadow: 0 0 10px #ccc;
+}
+
+
+/*2016.11.29 zy*/
+.main_right .list_tit li{
+    width: 9%;
+    float: left;
+}
+.main_right .list_tit li a.list_tit_active{
+    border-bottom: 2px solid #5093e1;
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 2px;
+    cursor: pointer;
+    color: #222;
+}
+
+.main_right .nav_top{
+	width:99%;
+}
+.nav_top ul.list_tit{
+	width:90%;
+	float:left;
+	margin-top: 12px;
+}
+.nav_top a.back{
+	display: block;
+	float:right;
+	width:38px;
+	height:25px;
+	margin-top:12px;
+	line-height: 25px;
+	padding-left:22px;
+	font-size: 14px;
+	color:#6ca1e3;
+	text-align: center;
+	background: url(../img/back.png) no-repeat left center;
+}
+
+
+.tasl_list_tit{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.tasl_list_tit ul li{
+	font-size: 14px;
+	float:left;
+}
+.tasl_list_tit ul li a{
+	display: block;
+	padding:0 5px;
+	height:29px;
+	color:#5093e1;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.classTable{
+	padding:15px 0;
+}
+
+.classTableBox{
+	width:100%;
+}
+.classTable table{
+	width:100%;
+	border-collapse: collapse;
+	border:1px solid #ccc;
+}
+.classTable table thead th{
+	height:44px;
+	text-align: center;
+	font-size: 14px;
+	color:#222;
+	background: #f9f9f9;
+	border:1px solid #ccc;
+}
+.classTable table tbody td{
+	height:40px;
+	text-align: center;
+	font-size: 14px;
+	color:#222;
+	border:1px solid #ccc;
+}
+.classTable table tbody td a.clock{
+	margin-right:10px;
+	padding-left:22px;
+	color:#51c14e;
+	background: url(../img/chakan.png) no-repeat left center;
+}
+.classTable table tbody td a.dow{
+	margin-left:10px;
+	padding-left:22px;
+	color:#5193e0;
+	background: url(../img/xiazai.png) no-repeat left center;
+}
+.classTable table tbody td a.rec{
+	color:#5193e0;
+}
+
+
+/*学生状态样式*/
+.studentsBox .classTable table tbody td{
+	height:44px
+}
+.studentsBox table tr td strong{
+	font-weight: normal;
+	margin:0 4px;
+}
+.studentsBox table tr td strong.names{
+	width:60px;
+	text-align: right;
+	display: inline-block;
+}
+.studentsBox table tr td strong i{
+	display: inline-block;
+	font-style: normal;
+	padding:2px 10px;
+	background: #ebebeb;
+	border-radius: 12px;
+	margin:0 4px;
+	cursor: pointer;
+}
+.studentsBox table tr td strong i.best{
+	color:#fff;
+	background: #5193e0;
+}
+.studentsBox table tr td strong i.good{
+	color:#fff;
+	background: #51c14e;
+}
+.studentsBox table tr td strong i.bad{
+	color:#fff;
+	background: #f65077;
+}
+.studentsBox table tr td span{
+	padding:2px 10px;
+	background: #ebebeb;
+	border-radius: 12px;
+	cursor: pointer;
+}
+.studentsBox table tr td span.current{
+	background: #ff9600;
+	color:#fff; 
+}
+
+
+
+
+/*课堂记录查看老师 弹框*/
+.clock_teacher .con{
+	width:838px;
+	height:485px;
+	background: #fff;
+	border-radius: 10px;
+}
+.clock_teacher .con .close{
+	padding:14px;
+}
+.clock_teacher .clock_con{
+	padding:15px 15px 0;
+}
+.clock_teacher .clock_con_title{
+	height:48px;
+	line-height: 48px;
+	font-size: 16px;
+	color:#333;
+	text-align: left;
+}
+.clock_con_concent{
+	height:410px;
+	overflow: hidden;
+}
+.clock_con_concent .video{
+	width:506px;
+	height:408px;
+	float:left;
+	border:1px solid #dee6f1;
+	background: #ecf2fa;
+}
+
+.clock_con_concent .postReply{
+	width:280px;
+	height:408px;
+	border:1px solid #e5e5e5;
+	float:right;
+}
+.clock_con_concent .dialogueBox{
+	height:252px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.clock_con_concent .dialogueBox ul{
+	height:211px;
+	overflow: auto;
+}
+.clock_con_concent .dialogueBox ul li{
+	padding:4px 8px;
+	overflow: hidden;
+}
+.clock_con_concent .dialogueBox ul li  strong{
+	float:left;
+	color:#5093e1;
+	font-weight: normal;
+	text-align: left;
+	font-size: 14px;
+}
+.clock_con_concent .dialogueBox ul li  span{
+	padding:0 5px;
+	float:left;
+	color:#222;
+	text-align: left;
+}
+.clock_con_concent .dialogueBox ul li  p{
+	/*float:left;*/
+	word-break: break-all;
+	color:#222;
+	font-size: 14px;
+	text-align: left;
+}
+.clock_con_concent .dialogueBox a.more{
+	padding:8px;
+	float:right;
+	font-size: 14px;
+	color:#5093e1;
+}
+
+
+
+.clock_con_concent .publicationBox{
+	padding:0 8px;
+}
+.clock_con_concent .publicationBox textarea{
+	width:100%;
+	height:103px;
+	box-sizing:border-box;
+	padding-left:5px;
+	background: #f5f5f5;
+	font-size: 14px;
+	color:#333;
+	line-height: 24px;
+	border:none;
+}
+.clock_con_concent .publicationBox .btn{
+	width:264px;
+	height:30px;
+	margin-top:9px;
+}
+.clock_con_concent .publicationBox .btn button{
+	width:68px;
+	height:30px;
+	border:none;
+	border-radius: 5px;
+	text-align: center;
+	float:right;
+	font-size: 14px;
+	color:#fff;
+	background: #5093e1;
+	cursor: pointer;
+	outline: none;
+}
+
+.clock_con_concent .publicationBox .btn span.codes{
+	float:left;
+}
+
+
+/*互动记录及评价*/
+.interactiveEvaluation .con{
+	width:990px;
+	height:504px;
+	background: #fff;
+	border-radius: 10px;
+}
+.interactiveEvaluation .con .close{
+	position: absolute;
+	padding:14px;
+	top:0;
+	right:0;
+}
+.interactiveBox{
+	padding:0 20px;
+}
+.interactiveBox h4{
+	height:45px;
+	line-height: 45px;
+}
+.interactiveBox h4 strong{
+	float:left;
+	font-size: 16px;
+	color:#5093e1;
+	padding-right:15px;
+	font-weight: normal;
+}
+.interactiveBox h4 span{
+	float:left;
+	font-size: 14px;
+	color:#333;
+}
+.interactiveBox h4 i{
+	height:21px;
+	line-height: 21px;
+	float:left;
+	padding:0 12px;
+	font-style: normal;
+	font-size: 14px;
+	color:#333;
+	background: #5093e1;
+	border-radius: 10px;
+	margin-top:12px;
+	color:#fff;
+}
+.interactiveBox h4 i.best{
+	color:#fff;
+	background: #5193e0;
+}
+.interactiveBox h4 i.good{
+	color:#fff;
+	background: #51c14e;
+}
+.interactiveBox h4 i.bad{
+	color:#fff;
+	background: #f65077;
+}
+
+.commentBox{
+	height:142px;
+}
+.commentBox p{
+	height:30px;
+	line-height: 30px;
+	font-size: 14px;
+	color:#333;
+	text-align: left;
+}
+.commentBox textarea{
+	width:100%;
+	height:100px;
+	padding-left:5px;
+	box-sizing:border-box;
+	border:1px solid #e5e5e5;
+	background: #f5f5f5;
+	font-size: 14px;
+	color:#333;
+	line-height: 24px;
+}
+.interactiveBox .btn{
+	height:30px;
+	width:300px;
+	margin:0 auto;
+}
+.interactiveBox .btn a{
+	width:110px;
+	height:30px;
+	box-sizing: border-box;
+	float:left;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.interactiveBox .btn a.cancel{
+	border:1px solid #e5e5e5;
+	color:#333;
+	float:right;
+}
+.interactiveBox .btn a.cancel:hover{
+	background: #f5f5f5;
+}
+.interactiveBox .btn a.save{
+	background: #dfecfa;
+	color:#5093e1;
+	float:left;
+}
+.interactiveBox .btn a.save:hover{
+	background: #a5c7f1;
+}
+
+
+
+/* 互动记录中的查看弹框  显示视频和图片 */
+.videoBox .con{
+	width:990px;
+	height:504px;
+	padding:10px;
+	box-sizing: border-box;
+}
+.videoBox .con .close{
+	position: absolute;
+	padding:14px;
+	top:0;
+	right:0;
+}
+.videoBox .con .videoCon{
+	width:97%;
+	height:100%;
+	border:1px solid #fff;
+	background: #ecf2fa;
+	overflow: auto;
+}
+.videoBox .con .videoCon img{
+	width:100%;
+}
+
+/*下载提示*/
+.dowPromptBox img{
+	display: block;
+    width: 47px;
+    margin: 40px auto 16px;
+}
+.dowPromptBox .text-text{
+	font-size: 16px;
+}

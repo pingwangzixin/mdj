@@ -1,0 +1,6 @@
+@media (max-width:1320px){
+    .cont-body header dl span {margin:0 2px 5px;padding: 0 8px;}
+    .down_num,.click_num{width:48%;}
+    .down_num{padding:0;} 
+    .down, .collection{margin-left:6%;}
+} 

@@ -1,0 +1,51 @@
+html, body{padding: 0; margin: 0; height: 98.5%;}
+.main{
+	width:97%;
+	height:88%;
+	min-width:1200px;
+	min-height:592px;
+	background: #fff;;
+	margin:0 auto;
+	margin-top:1.5%;
+	border-radius: 5px;;
+}
+.prompt{
+	width:750px;
+	height:260px;
+	margin:0 auto;
+	padding-top:130px;
+}
+.prompt_main{
+	width:475px;
+	height:195px;
+	padding-top:65px;
+	padding-left:275px;
+	background: url(../img/tihsi_img.png) no-repeat left center;
+}
+.prompt_main h2{
+	font-size: 24px;
+	color:#000;
+	height:44px;
+	line-height: 44px;
+}
+.prompt_main p{
+	font-size: 1.4rem;
+	color:#555;
+	height:32px;
+	line-height: 32px;
+}
+.prompt_main a{
+	display: block;
+	margin-top:10px;
+	width:186px;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 24px;
+	color:#fff;
+	border-radius: 25px;
+	background: #5093e1;
+}
+.prompt_main a:hover{
+	background: #a5c7f1;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>课程管理</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/kechengguanli.css">
+	<script type="text/javascript" src="common/js/jquery.1.8.2.min.js"></script>
+	<script src="common/My97DatePicker/WdatePicker.js"></script>
+</head>
+
+<body>
+	<!-- 外层框架  -->
+	<div class="mian">
+		<div class="main_left">
+			<h3>宜宾智慧教育平台</h3>
+			<ul class="left_list">
+				<a href="resource.html"><li><em></em>资源管理</li></a>
+				<a href="jiaocaiguanli.html"><li><em></em>教材管理</li></a>
+				<a class="list_active" href="kechengguanli.html"><li><em></em>课程管理</li></a>
+				<a href="shebeiguanli.html"><li><em></em>设备管理</li></a>
+			</ul>
+		</div>
+		<div class="main_right">
+			<div class="right_head clearfix">
+				<p class="fl">资源管理//Resource management</p>
+				<div class="btn fr">
+					<em>张燕霞</em>
+					<img src="img/xia_green.png" alt="" />
+					<span>[已登录]</span>
+				</div>
+			</div>
+			<div class="right_sort">
+				<span>全部</span>
+				<div class="clearfix">
+					<ul class="fl sub_l">
+						<li>市级:</li>
+						<li>区县级：</li>
+						<li>校级：</li>
+					</ul>
+					<ul class="fl sub_r">
+						<li><span class="sub_active">宜宾市资源库</span></li>
+						<li class="quxian">
+							<span class="sub_active">翠屏区资源库</span><em></em>
+							<span>翠屏区资源库</span><em></em>
+							<span>翠屏区资源库</span><em></em>
+							<span>翠屏区资源库</span><em></em>
+							<span>翠屏区资源库</span><em></em>
+							<span>翠屏区资源库</span>
+						</li>
+						<li class="xiaoji">
+							<span class="sub_active">钟灵街小学</span><em></em>
+							<span>钟灵街小学</span><em></em>
+							<span>钟灵街小学</span><em></em>
+							<span>钟灵街小学</span><em></em>
+							<span>钟灵街小学</span><em></em>
+							<span>钟灵街小学</span>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right_con">
+				<div class="classroom_head clearfix">
+					<h3 class="fl">您已经选择：<span>钟灵街小学</span></h3>
+					<span class="fr btn saveinfo">保存信息</span>
+				</div>
+				<div class="classroom_time clearfix">
+					<div class="time fl">
+						<p class="tit">夏季作息时间</p>
+						<div class="time_box">
+							<div class="time_border">
+								<ul class="box_input">
+									<li>
+										<span>选择开始时间：</span>
+										<input type="text" class="Wdate" onclick="WdatePicker()">
+									</li>
+									<li>
+										<span>选择结束时间：</span>
+										<input type="text" class="Wdate" onclick="WdatePicker()">
+									</li>
+								</ul>
+								<div class="add_border">
+									<!--课程表上传成功-->
+									<div class="upsuccess xjup">
+										<table class="uptable">
+											<thead>
+												<tr>
+													<td>导入时间</td>
+													<td>信息名称</td>
+													<td>操作项</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2015年02月26日</td>
+													<td>课程时间信息表</td>
+													<td><a href="javascript:;" id="seekcb">查看&nbsp;</a><a href="#">下载&nbsp;</a><a href="javascript:;" id="xgxjkcb">修改&nbsp;</a><a href="">删除&nbsp;</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--上传按钮-->
+									<div class="add_box zuobox">
+										<label class="btn kcbupload xjupload" for="xFile"></label>
+										<form action="#" method="post" enctype="multipart/form-data">
+											<input class="ofile" type="file" id="xFile" accept=".xls,.xlsx">
+										</form>
+										<p>导入课程表时间</p>
+									</div>
+								</div>
+								<!--上传下载课程模板-->
+								<div class="showkcb">
+									<div class="lessonmb">
+										<img src="img/lessonmb.png" alt="" />
+										<p>课程信息表模板</p>
+									</div>
+									<div class="showlesson cklesson xjckls">
+										<img src="./img/chakan.png" alt="">查看
+									</div>
+									<div class="showlesson xzlesson">
+										<img src="./img/xiazai.png" alt="">下载
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="time fr">
+						<p class="tit">冬季作息时间</p>
+						<div class="time_box">
+							<div class="time_border">
+								<ul class="box_input">
+									<li>
+										<span>选择开始时间：</span>
+										<input type="text" class="Wdate" onclick="WdatePicker()">
+									</li>
+									<li>
+										<span>选择结束时间：</span>
+										<input type="text" class="Wdate" onclick="WdatePicker()">
+									</li>
+								</ul>
+								<div class="add_border">
+									<!--课程表上传成功-->
+									<div class="upsuccess djup">
+										<table class="uptable">
+											<thead>
+												<tr>
+													<td>导入时间</td>
+													<td>信息名称</td>
+													<td>操作项</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2015年02月26日</td>
+													<td>课程时间信息表</td>
+													<td><a href="">查看&nbsp;</a><a href="">下载&nbsp;</a><a href="">修改&nbsp;</a><a href="">删除&nbsp;</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--冬季上传按钮-->
+									<div class="add_box youbox">
+										<label class="btn kcbupload djupload" for="xFile"></label>
+										<form action="" method="post" enctype="multipart/form-data">
+											<input class="ofile" type="file" id="dFile" accept=".xls,.xlsx">
+										</form>
+										<p>导入课程表时间</p>
+									</div>
+								</div>
+								<!--上传下载课程模板-->
+								<div class="showkcb">
+									<div class="lessonmb">
+										<img src="img/lessonmb.png" alt="" />
+										<p>课程信息表模板</p>
+									</div>
+									<div class="showlesson cklesson ckdj">
+										<img src="./img/chakan.png" alt="">查看
+									</div>
+									<div class="showlesson xzlesson xzdj">
+										<img src="./img/xiazai.png" alt="">下载
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="right_footer">
+				<li>
+					<span>主办：宜宾市教育体育局</span>
+					<span>承办：宜宾市新宜集团</span>
+					<span>技术支持：有限公司宜宾市科信教育投资股份</span>
+				</li>
+				<li>
+					<span>@2016  宜宾市智慧教育云平台</span>
+					<span>联系电话：0831—83500071</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!--保存成功弹窗-->
+	<div id="tcdui">
+		<p>保存成功</p>
+		<img src="./img/duihao.png" alt="" />
+	</div>
+
+	<!--查看课程表弹窗-->
+	<div class="seelesson xiajikc">
+		<h1>夏季作息时间表</h1>
+		<table class="seedjkcb" cellpadding="0" cellspacing="0">
+			<tr class="thead">
+				<td colspan="2">课/时</td>
+				<td>星期一</td>
+				<td>星期二</td>
+				<td>星期三</td>
+				<td>星期四</td>
+				<td>星期五</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="bold">早读</td>
+				<td>6:40-7:50</td>
+				<td>6:40-7:50</td>
+				<td>6:40-7:50</td>
+				<td>6:40-7:50</td>
+				<td>6:40-7:50</td>
+			</tr>
+			<tr class="bggay">
+				<td rowspan="4" class="bold">上午</td>
+				<td class="kechengnum">1</td>
+				<td>8:20-9:00</td>
+				<td>8:20-9:00</td>
+				<td>8:20-9:00</td>
+				<td>8:20-9:00</td>
+				<td>8:20-9:00</td>
+			</tr>
+			<tr class="bggay">
+				<td class="kechengnum">2</td>
+				<td>9:10-9:50</td>
+				<td>9:10-9:50</td>
+				<td>9:10-9:50</td>
+				<td>9:10-9:50</td>
+				<td>9:10-9:50</td>
+
+			</tr>
+			<tr class="bggay">
+				<td class="kechengnum">3</td>
+				<td>10:20-10:50</td>
+				<td>10:20-10:50</td>
+				<td>10:20-10:50</td>
+				<td>10:20-10:50</td>
+				<td>10:20-10:50</td>
+			</tr>
+			<tr class="bggay">
+				<td class="kechengnum">4</td>
+				<td>11:05-11:35</td>
+				<td>11:05-11:35</td>
+				<td>11:05-11:35</td>
+				<td>11:05-11:35</td>
+				<td>11:05-11:35</td>
+			</tr>
+			<tr>
+				<td rowspan="3" class="bold">下午</td>
+				<td class="kechengnum">5</td>
+				<td>2:40-3:25</td>
+				<td>2:40-3:25</td>
+				<td>2:40-3:25</td>
+				<td>2:40-3:25</td>
+				<td>2:40-3:25</td>
+			</tr>
+			<tr>
+				<td class="kechengnum">6</td>
+				<td>3:35-4:20</td>
+				<td>3:35-4:20</td>
+				<td>3:35-4:20</td>
+				<td>3:35-4:20</td>
+				<td>3:35-4:20</td>
+			</tr>
+			<tr>
+				<td class="kechengnum">7</td>
+				<td>4:50-5:40</td>
+				<td>4:50-5:40</td>
+				<td>4:50-5:40</td>
+				<td>4:50-5:40</td>
+				<td>4:50-5:40</td>
+			</tr>
+		</table>
+		<button class="kcbbbtn savelesson">确定</button>
+		<button class="kcbbbtn exit">取消</button>
+	</div>
+
+</body>
+<script type="text/javascript" src="common/js/index.js"></script>
+<script type="text/javascript" src="common/js/kechengguanli.js"></script>
+
+</html>

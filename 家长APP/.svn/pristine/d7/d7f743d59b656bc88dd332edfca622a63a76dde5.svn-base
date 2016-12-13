@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, target-densityDpi=device-dp" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>品德发展水平</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/zhpj.css" />
+		<script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/dataTimes/mui.min.js"></script>
+		<script src="../common/dataTimes/mui.picker.min.js"></script>
+		<style>
+			.bottoLoading{background:none;}
+		</style>
+	</head>
+	<body id="refreshContainer" class="mui-content mui-scroll-wrapper">
+		<div>
+			<!--内容开始-->
+			<div class="pjrenwu">
+				<ul>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jinxing"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第三次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jinxing"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第五次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="jieshurenwu">
+				<p class="licirenwu mbot ml">历次评价任务列表</p>
+				<ul>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jieshu"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第三次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jieshu"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第五次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jieshu"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第五次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jieshu"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第五次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+					<li class="mbot">
+						<a href="./xueyepingjia.html">
+							<span class="jieshu"></span>
+							<div class="renwutit bdbottom"><span class="rebiaoti fl">第五次评价任务</span><span class="rwjssj fr">任务结束时间：2016-06-12<img src="../img/rightgo.png" alt="" class="ml"/></span></div>
+							<div class="renwulistcon ml mt">
+								<p>发布者：班主任教师</p>
+								<span>评价方式：</span><span class="shiping">师评</span><span class="jiaping">家评</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+	</body>
+	
+	<script>
+	    //默认初始化--不需要修改
+		mui.init({
+		  pullRefresh : {
+		    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+		    down : {
+		      height:50,//可选,默认50.触发下拉刷新拖动距离,
+		      auto: false,//可选,默认false.自动下拉刷新一次
+		      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+		      callback :pullfresh//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		    },
+		    
+		  } 
+		});
+		
+		
+		//下拉刷新
+		function pullfresh() {
+		     //业务逻辑代码，比如通过ajax从服务器获取新数据；
+		     //注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后\n
+		     setTimeout(function(){
+			     mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+		     },1000)
+	
+		};
+		mui('body').on('tap','a',function(){document.location.href=this.href;});
+	</script>
+	
+</html>

@@ -1,0 +1,334 @@
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="wap-font-scale" content="no">
+        <title></title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/common_center-mui.css" />
+        <script src="../common/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <!--==========日历插件===============-->
+        <link rel="stylesheet" href="../common/dataTimes/mui.min.css">
+        <link rel="stylesheet" type="text/css" href="../common/dataTimes/mui.picker.min.css">
+        <script src="../common/dataTimes/mui.min.js"></script>
+        <script src="../common/dataTimes/mui.picker.min.js"></script>
+        <script src="../common/setviewport.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="../js/common_center.js"></script>
+    </head>
+    <style>
+    	
+    	.mui-pull-top-pocket{top:1.5rem;}
+    </style>
+    
+    <body>
+<div style="position:fixed;width:100%;z-index:9;top:0;">
+	<!--加载条-->
+	<div class="loading topLoading" ><span>正在加载...</span></div>
+    <header class="allHeadWrap clearfix">
+        <div><span class="active" id="allSource">全部资源</span></div>
+        <div><span id="weike">微课大赛</span></div>
+        <div><span id="jingpin">精品资源</span></div>
+    </header>
+    <div class="loadDetailWrap">
+    	<span class="clickNum voteNum fr" style="display:none;">投票量</span>
+        <span class="clickNum fr">点击量</span>
+        <span class="uploadNum fr">上传时间</span>
+    </div>
+</div>
+<!--===================上拉加载下拉刷新=======-->
+<div id="refreshContainer" class="mui-content mui-scroll-wrapper"><!--添加id和class-->
+	<div class="mui-scroll"><!--添加class-->
+		<div class="mui-table-view mui-table-view-chevron"><!--添加class-->    	
+
+	    	
+	        <div class="item_listWrap" id="pullLoad" style="margin-top:1.5rem;">
+	            <ul>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li onclick="Jump();AndJump();">
+	                    <div class="listTitle">资源名称：秋天的雪读后感秋天的雪</div>
+	                    <div class="item_list clearfix">
+	                        <div class="itemLeft fl">
+	                            <img src="../img/line_pic.jpg"/>
+	                        </div>
+	                        <div class="itemCenter fl">
+	                            <div class="itemTxt">
+	                                <span>所属学校：</span><span>海淀区第二中学第</span>
+	                            </div>
+	                            <div class="itemTxt">
+	                                <span>上传时间：</span><span>2016-03-12</span>
+	                            </div>
+	                            <div class="visitNumWrap">
+	                                <span class="visitNum">1,262</span>
+	                                <span class="starNum">1,262</span>
+	                                <span class="vtNum" style="display:none;">1,262</span>
+	                            </div>
+	                        </div>
+	                        <div class="itemRight fr">
+	                            <div class="itemR_text">
+	                                <span>作者：</span><span>李小三</span>
+	                            </div>
+	                            <div class="itemR_text">
+	                                <span>文件大小：</span><span>12.01M</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	            </ul>
+	            <!--加载条-->
+	        	<div class="loading bottoLoading" ><span>正在加载...</span></div>
+	        </div>
+	        <!--<div class="allNoresult">
+	        	<img src="../img/noResultAll.png" />
+	        	<p>木有内容哦~</p>
+	        </div>-->
+	        
+		</div>
+	</div>
+</div>  
+
+
+<!--返回顶部-->
+<a href="javascript:scroll(0,0)" class="scrollTop"></a>
+    </body>
+	<script type="text/javascript">
+	//默认初始化--不需要修改
+		mui.init({
+		  pullRefresh : {
+		    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+		    down : {
+		      height:50,//可选,默认50.触发下拉刷新拖动距离,
+		      auto: false,//可选,默认false.自动下拉刷新一次
+		      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+		      callback :pullfresh//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		    },
+		    up : {
+		      height:50,//可选.默认50.触发上拉加载拖动距离
+		      auto:false,//可选,默认false.自动上拉加载一次
+		      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+		      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+		      callback :pullfresh2 //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		    }
+		  } 
+		});
+		
+		//上拉加载
+		var count = 0
+		function pullfresh2() {
+		    //业务逻辑代码，比如通过ajax从服务器获取新数据；
+		    setTimeout(function() {
+		     	mui('#refreshContainer').pullRefresh().endPullupToRefresh(false);
+			     //注意：
+			     //1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
+			     //2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
+		     },1000)
+		}
+		
+		//下拉刷新
+		function pullfresh() {
+	     //业务逻辑代码，比如通过ajax从服务器获取新数据；
+	     //注意，加载完新数据后，必须执行如下代码，注意：若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后\n
+	     setTimeout(function(){
+		     mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+	     },1000 )
+	
+		};
+</script>
+
+	<script>
+		//列表跳转详情
+		$(document).on('tap','.item_listWrap ul li:first-child',function(){
+			window.location.href='../gonggongziyuan/viewResource.html';
+		});
+		
+		//IOS跳转
+		var log = new Function();
+		function Jump(){
+			alert(1)
+    		var str = 'http://4.zyx1988.applinzi.com/gonggongziyuan/viewResource.html';
+       		if(typeof(log) == 'function'){
+       			log(str);
+       		}
+    	}
+		//安卓跳转
+    	function AndJump() {
+    	 	alert(2)
+    		var str = 'http://4.zyx1988.applinzi.com/gerenziyuan/viewResource.html';
+			android.AndJump(str);
+		}
+		
+	/*点击全部资源，微课大赛，精品资源切换效果=======================================*/	
+		var obj='<img src="../img/gifts-icon.png" class="boutique">';
+		$('.item_listWrap ul li').each(function(i,item){
+			if(i%2==1)$(this).append(obj);
+		})
+	
+		
+		$('#allSource').on('tap',function(){
+			$('.voteNum,.vtNum').hide();
+			$('.item_listWrap ul li .boutique').remove();
+			$('.format .swipeLeft>div').text('文件格式：');
+			var obj='<img src="../img/gifts-icon.png" class="boutique">';
+			$('.item_listWrap ul li').each(function(i,item){
+				if(i%2==1)$(this).append(obj);
+			})
+		})
+		$('#weike').on('tap',function(){
+			$('.voteNum,.vtNum').show();
+			$('.item_listWrap ul li .boutique').remove();
+			var obj='<img src="../img/gifts-icon.png" class="boutique">'
+			$('.item_listWrap ul li').each(function(i,item){
+				if(i%3==2)$(this).append(obj);
+			})
+		})
+		$('#jingpin').on('tap',function(){
+			$('.voteNum,.vtNum').hide();
+			$('.format .swipeLeft>div').text('文件格式：');
+			$('.item_listWrap ul li').append('<img src="../img/gifts-icon.png" class="boutique">');
+		})
+	</script>
