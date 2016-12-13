@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>体质健康-首页</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"/>
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/order.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/highcharts-functions.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css"  href="css/index.css"/>
+
+</head>
+
+<body>
+	<!--头部开始-->
+	<div class="perHead"></div>
+	<!--头部结束-->
+	
+	<!--内容开始-->
+	<div class="perWrap">
+		<!--年级班级开始-->
+		<div class="gradBorder">
+			<ul class="gradWrap">
+				<li class="clearfix">
+					<div class="gradName fl">年级：</div>
+					<div class="gradItem fl">
+						<span class="active">初一</span>
+						<span>初二</span>
+						<span>初三</span>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="gradName fl">班级：</div>
+					<div class="gradItem fl clearfix">
+						<span class="active">一班</span>
+						<span>二班</span>
+						<span>三班</span>
+						<span>四班</span>
+						<span>五班</span>
+						<span>六班</span>
+						<span>七班</span>
+						<span>八班</span>
+						<span>九班</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--年级班级结束-->
+		<div class="perRight">
+			<!--图表标题   选择选项开始 -->
+			<div class="chartWrap clearfix">
+				<!--左边图表开始-->
+				<div class="leftChartWrap fl">
+					<div class="chartTitle">2015-2016初三（2）班体质健康</div>
+					<div class="chartTit"><span>综合成绩统计图</span></div>
+					
+					<!--图表-->
+					<div id="container" style="width:100%;"></div>
+					<!--图表-->
+				</div>
+				<!--左边图表结束-->
+				
+				<!--右边图表开始-->
+				<div class="rightChartWrap fl">
+					<ul class="rightSelectWrap clearfix">
+						<li>
+							<div class="selectItem clearfix">
+								<span class="fl">性别：</span>
+								<ul class="selection fl">
+									<p>男</p>
+									<ul class="opt">
+										<li>全部</li>
+										<li class="active">男</li>
+										<li>女</li>
+									</ul>
+								</ul>
+							</div>
+							
+						</li>
+						<li>
+							<div class="selectItem clearfix">
+								<span class="fl">项目：</span>
+								<ul  class="selection fl">
+									<p>BMI</p>
+									<ul class="opt">
+										<li>综合</li>
+										<li class="active">BMI</li>
+										<li>肺活量</li>
+										<li>50米跑</li>
+									</ul>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="selectItem clearfix">
+								<span class="fl">学期：</span>
+								<ul class="selection fl">
+									<p>上学期</p>
+									<ul class="opt"> 
+										<li class="active">上学期</li>
+										<li>下学期</li>
+									</ul>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div class="chartTit"><span>单项指标与权重</span></div>
+					
+					<div class="rightTable">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<th>测试对象</th>
+								<th>单项指标</th>
+								<th>权重%</th>
+							</tr>
+							<tr class="twoLine">
+								<td rowspan="2">小学一年级至高中三年级</td>  
+						        <td>　体重指数（BMI） </td>  
+						        <td>15</td> 
+							</tr>
+							<tr class="twoLine"> 
+								<td>肺活量</td>
+								<td>20</td>
+							</tr>
+							
+							<tr class="threeLine">
+								<td  rowspan="3">小学一、二年级</td>
+								<td>50米跑</td>
+								<td>20</td>
+							</tr>
+							<tr class="threeLine">
+								<td>坐位体前屈</td>
+								<td>30</td>
+							</tr>
+							<tr class="threeLine">
+								<td>1分钟跳绳</td>
+								<td>20</td>
+							</tr>
+							
+							<tr class="fourLine">
+								<td rowspan="4">小学三、四年级</td>
+								<td>50米跑</td>
+								<td>20</td>
+							</tr>
+							<tr class="fourLine">
+								<td>坐位体前屈</td>
+								<td>20</td>
+							</tr>
+							<tr class="fourLine">
+								<td>1分钟跳绳</td>
+								<td>20</td>
+							</tr>
+							<tr class="fourLine">
+								<td>1分钟仰卧起坐</td>
+								<td>20</td>
+							</tr>
+							
+							<tr class="fiveLine">
+								<td rowspan="5">小学五、六年级</td>
+								<td>50米跑</td>
+								<td>20</td>
+							</tr>
+							<tr class="fiveLine">
+								<td>坐位体前屈</td>
+								<td>20</td>
+							</tr>
+							<tr class="fiveLine">
+								<td>1分钟跳绳</td>
+								<td>20</td>
+							</tr>
+							<tr class="fiveLine">
+								<td>1分钟仰卧起坐</td>
+								<td>20</td>
+							</tr>
+							<tr class="fiveLine">
+								<td>50米×8往返跑</td>
+								<td>20</td>
+							</tr>
+							
+							<tr class="sixLine">
+								<td rowspan="5">小学五、六年级</td>
+								<td>50米跑</td>
+								<td>20</td>
+							</tr>
+							<tr class="sixLine">
+								<td>坐位体前屈</td>
+								<td>20</td>
+							</tr>
+							<tr class="sixLine">
+								<td>1分钟跳绳</td>
+								<td>20</td>
+							</tr>
+							<tr class="sixLine">
+								<td>1分钟仰卧起坐</td>
+								<td>20</td>
+							</tr>
+							<tr class="sixLine">
+								<td>50米×8往返跑</td>
+								<td>20</td>
+							</tr>
+						</table>
+					</div>
+					<div class="luru">
+						<span class="write">成绩录入</span>
+						<span>导出成绩表格</span>
+					</div>
+				</div>
+				<!--右边图表结束-->
+				
+				
+		<script>
+		/*控制左边图表宽度=========================*/
+		$(function(){
+			var w=$('.leftChartWrap').width();
+			$('#container').height(w);
+		})
+		
+		/*饼状图*/
+		$(function () {
+		    // Build the chart
+		    var name1 = '综合成绩统计图';
+		    var name2 = '班级：1班';
+		    var name3 = '人数：3人';
+		    var name4 = '总人数：30人';
+		    
+		    $('#container').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title: {
+		            style: {
+		                display: 'none',
+		                fontWeight: 'bold'
+		            }
+		        },
+		        credits: {
+		            	text: '',
+		            	href: ''
+		        },
+		        tooltip: {
+					formatter: function() {
+		                return '<strong>'+ name1 +'</strong><br>'+
+		                '<strong>'+ name2 +'</strong><br>'+
+		                '<strong>'+ name3 +'</strong><br>'+
+		                '<strong>'+ name4 +'</strong>';
+		                  
+		            }
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                    },
+		                    connectorColor: 'silver'
+		                }
+		            }
+		        },
+		       	colors:[
+	                '#659ED5',
+	                '#f8d58a',
+	                '#64C151',
+	               	'red', 
+	            ],
+		        series: [{
+		            type: 'pie',
+		            name: '成绩',
+		            data: [
+		                ['及格',  32],
+		                ['良好',  16],
+		                ['优秀', 38],
+		                ['不及格',14]
+		            ]
+		        }]
+		    });
+		});				
+		</script>
+			</div>
+			<!--图表标题   选择选项结束-->
+			
+			<!--学生健康信息表格开始-->
+			<div class="perHealthDeltail">
+				
+				<table class="statistics_table" id="fraction_table" style="width:100%;">
+						<thead>
+							<tr>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>BMI <br />(单位:kg/㎡)</th>
+								<th>肺活量 <br />(单位:ml)</th>
+								<th>50米跑 <br />(单位:S)</th>
+								<th>坐位体前屈 <br />(单位:CM)</th>
+								<th>立定跳远 <br />(单位:CM)</th>
+								<th>引体向上/<br />仰卧起坐(次)</th>
+								<th>1000/800米跑<br />(单位:分 秒)</th>
+								<th>分数</th>
+								<th>等级</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>20150201</td>
+								<td>赵锦松</td>
+								<td>男</td>
+								<td>5.3</td>              
+								<td>5.3</td>
+								<td>5.3</td>              
+								<td>5.3</td>
+								<td>1</td>
+								<td>3.1%</td>
+								<td>4'05" </td>
+								<td>12.34</td>
+								<td>不及格</td>
+							</tr>
+							<tr>
+								<td>20150201</td>
+								<td>李超</td>
+								<td>女</td>
+								<td>未录入</td>
+								<td>36.0</td>
+								<td>36.0</td>
+								<td>36.0</td>
+								<td>1</td>
+								<td>3.1%</td>
+								<td>4'05" </td>
+								<td>12.34</td>
+								<td>未录入</td>
+							</tr>
+							<tr>
+								<td>20150201</td>
+								<td>刘美辰</td>
+								<td>男</td>
+								<td>32.34</td>
+								<td>32.34</td>
+								<td>32.34</td>
+								<td>32.34</td>
+								<td>7</td>
+								<td>6.4%</td>
+								<td>4'85" </td>
+								<td>12.34</td>
+								<td>不及格</td>
+							</tr>
+							<tr>
+								<td>20150202</td>
+								<td>郑若兰</td>
+								<td>男</td>
+								<td>567898</td>
+								<td>45.38</td>
+								<td>567898</td>
+								<td>45.38</td>
+								<td>3</td>
+								<td>6.7%</td>
+								<td>6'05" </td>
+								<td>12.34</td>
+								<td>及格</td>
+							</tr>
+							<tr>
+								<td>20150203</td>                 
+								<td>罗小小二</td>
+								<td>女</td>
+								<td>未录入</td>
+								<td>9999</td>
+								<td>162.34</td>
+								<td>300-280</td>
+								<td>6</td>
+								<td>3.6%</td>
+								<td>9'05" </td>
+								<td>17.34</td>
+								<td>优秀</td>
+							</tr>
+							<tr>
+								<td>20150204</td>
+								<td>祁意</td>
+								<td>男</td>
+								<td>78.22</td>
+								<td>32.34</td>
+								<td>42.34</td>
+								<td>300-280</td>
+								<td>6</td>
+								<td>3.1%</td>
+								<td>7'05" </td>
+								<td>18.34</td>
+								<td>良好</td>
+							</tr>
+							<tr>
+								<td>20150204</td>
+								<td>肖远康</td>
+								<td>男</td>
+								<td>98.444</td>
+								<td>98.444</td>
+								<td>98.444</td>
+								<td>98.444</td>
+								<td>6</td>
+								<td>3.1%</td>
+								<td>7'05" </td>
+								<td>18.34</td>
+								<td>良好</td>
+							</tr>
+							<tr>
+								<td>20150204</td>
+								<td>姚一璇</td>
+								<td>男</td>
+								<td>38.433</td>
+								<td>姚一璇</td>
+								<td>42.34</td>
+								<td>300-280</td>
+								<td>6</td>
+								<td>3.1%</td>
+								<td>7'05" </td>
+								<td>18.34</td>
+								<td>良好</td>
+							</tr>
+							<tr>
+								<td>20150204</td>
+								<td>徐楚怡</td>
+								<td>男</td>
+								<td>34</td>
+								<td>徐楚怡</td>
+								<td>徐楚怡</td>
+								<td>徐楚怡</td>
+								<td>6</td>
+								<td>3.1%</td>
+								<td>7'05" </td>
+								<td>18.34</td>
+								<td>良好</td>
+							</tr>
+							<tr>
+								<td>20150204</td>
+								<td>俞敏洪</td>
+								<td>男</td>
+								<td>65</td>
+								<td>32.34</td>
+								<td>王佳玥</td>
+								<td>32.34</td>
+								<td>6</td>
+								<td>3.1%</td>
+								<td>7'05" </td>
+								<td>18.34</td>
+								<td>良好</td>
+							</tr>
+						</tbody>
+					</table>
+					
+
+					<script type="text/javascript">
+					
+					
+					
+					 jQuery.fn.dataTableExt.oSort['chinese-asc'] = function(x,y) {
+					    x = String(x).replace(/<[\s\S]*?>/g, "");    //去除html标记
+				        x = x.replace(/&nbsp;/ig, "");                   //去除空格
+				        y = String(y).replace(/<[\s\S]*?>/g, "");    //去除html标记
+				        y = y.replace(/&nbsp;/ig, "");                   //去除空格
+			            //javascript自带的中文比较函数，具体用法可自行查阅了解
+				        if (x === '低体重') {
+							x = 'a'
+						}
+						if (x === '正常') {
+							x = 'b';
+						}
+						if (x === '超重') {
+							x = 'c';
+						}
+						if (x === '肥胖') {
+							x = 'd';
+						}
+						
+						if (y === '低体重') {
+							y = 'a'
+						}
+						if (y === '正常') {
+							y = 'b';
+						}
+						if (y === '超重') {
+							y = 'c';
+						}
+						if (y === '肥胖') {
+							y = 'd';
+						}
+						// javascript自带的中文比较函数，具体用法可自行查阅了解
+						if (x === '优秀') {
+							x = 'A'
+						}
+						if (x === '良好') {
+							x = 'B';
+						}
+						if (x === '及格') {
+							x = 'C';
+						}
+						if (x === '不及格') {
+							x = 'D';
+						}
+						if (x === '未录入') {
+							x = 'Z';
+						}
+				
+						if (y === '优秀') {
+							y = 'A'
+						}
+						if (y === '良好') {
+							y = 'B';
+						}
+						if (y === '及格') {
+							y = 'C';
+						}
+						if (y === '不及格') {
+							y = 'D';
+						}
+						if (y === '未录入') {
+							y = 'Z';
+						}
+				         return x.localeCompare(y);
+				     };
+				      
+				     jQuery.fn.dataTableExt.oSort['chinese-desc'] = function(x,y) {
+				     	x = String(x).replace(/<[\s\S]*?>/g, "");    //去除html标记
+				        x = x.replace(/&nbsp;/ig, "");                   //去除空格
+				        y = String(y).replace(/<[\s\S]*?>/g, "");    //去除html标记
+				        y = y.replace(/&nbsp;/ig, ""); 
+						if (x === '低体重') {
+							x = 'b'
+						}
+						if (x === '正常') {
+							x = 'c';
+						}
+						if (x === '超重') {
+							x = 'd';
+						}
+						if (x === '肥胖') {
+							x = 'e';
+						}
+						
+						if (y === '低体重') {
+							y = 'b'
+						}
+						if (y === '正常') {
+							y = 'c';
+						}
+						if (y === '超重') {
+							y = 'd';
+						}
+						if (y === '肥胖') {
+							y = 'e';
+						}
+						
+						
+						
+						if (x === '优秀') {
+							x = 'B'
+						}
+						if (x === '良好') {
+							x = 'C';
+						}
+						if (x === '及格') {
+							x = 'D';
+						}
+						if (x === '不及格') {
+							x = 'E';
+						}
+						if (x === '未录入') {
+							x = 'A';
+						}
+				
+						if (y === '优秀') {
+							y = 'B'
+						}
+						if (y === '良好') {
+							y = 'C';
+						}
+						if (y === '及格') {
+							y = 'D';
+						}
+						if (y === '不及格') {
+							y = 'E';
+						}
+						if (y === '未录入') {
+							y = 'A';
+						}
+
+				         return y.localeCompare(x);
+				     };
+				     
+				     // aTypes是插件存放表格内容类型的数组
+				     // reg赋值的正则表达式，用来判断是否是中文字符
+				     // 返回值push到aTypes数组，排序时扫描该数组，'chinese'则调用上面两个方法。返回null默认是'string'
+				     jQuery.fn.dataTableExt.aTypes.push(function(sData) {
+				         var reg =/^[\u4e00-\u9fa5]{0,}$/;
+				         if(reg.test(sData)) {
+				             return 'chinese';
+				         }
+				         return null;
+				     });
+				     
+				     
+				     
+				     jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+
+					    "defineNum-asc": function (a, b) { //正序排序引用方法
+					    	
+					    	if(a==='未录入'){
+					    		a=999999999;
+					    	}
+					    	
+					    	if(b==='未录入'){
+					    		b=999999999;
+					    	}
+					    	a=parseFloat(a);
+					    	b=parseFloat(b);
+					    	
+					        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+					    },
+					
+					    "defineNum-desc": function (a, b) {                //倒序排序引用方法
+					    	if(a==='未录入'){
+					    		a=-999999999;
+					    	}
+					    	
+					    	if(b==='未录入'){
+					    		b=-999999999;
+					    	}
+					    	a=parseFloat(a);
+					    	b=parseFloat(b);
+					        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+					    }
+					});
+					
+
+				
+					$(document).ready(function(){
+
+							$('#fraction_table').DataTable({
+								paging: false, // 不分页
+								info: false, // 不显示info
+								searching: false, // 不显示搜索框
+								language: {
+									emptyTable: "暂无数据"
+								},
+								"columnDefs": [
+					                { "type": "natural", targets: [2,4,5,6,7,8,9,10] },
+					                { "type": "chinese-string", targets: 1},
+					                {"type":"defineNum",targets: 3}
+					            ]
+
+							});
+					});
+					
+				
+					
+					</script>
+			</div>
+			<!--学生健康信息表格结束-->
+			
+		</div>
+	</div>
+	<!--内容结束-->
+</body>
+</html>
+<script>
+		/*头部加载==============================================*/
+		$('.perHead').load('head.html');
+		/*班级点击切换效果===================================*/
+		$('.gradItem span').on('click',function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+		
+		/*以下模拟select===================================================*/
+		$('.selection').on('click',function(e){
+			$(this).find('ul').toggle();
+			$(this).parents('li').siblings().find('.opt').hide();
+		})
+		
+		$('.selection>ul li').on('click',function(){
+			$(this).addClass('active')
+			.siblings().removeClass('active')
+			.parent().siblings('p').text($(this).text());
+		})
+		
+		$(document).on('click',function(e) {
+			if(e.target.parentNode.className.indexOf('selection')==-1){
+				$('.opt').hide();
+			}
+		})
+	
+</script>
