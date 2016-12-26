@@ -34,9 +34,9 @@
 				
 				<div class="chart-column-line-global">
 					<!--数据表-->
-				    <div class="chart-line-change charts-btb"  style="height:3.8rem; display: none;" ></div>
+				    <div class="chart-line-change charts-btb"  style="height:3.8rem; display: block;" ></div>
 				    <!--无数据-->
-				    <div class="chart_wu" style="display: block;">
+				    <div class="chart_wu" style="display: none;">
 				    	<img src="../img/nobody.png"/>
 				    </div>
 				    <div class="parallel-change series-div-box">
