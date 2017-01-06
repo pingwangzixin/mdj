@@ -1,0 +1,63 @@
+.main_right .task_list .zjy_test_tit{margin-bottom:14px;}
+.main_right .task_list .zjy_test_tit button{background:#5093e1;padding:0 14px; line-height:30px; font-size:14px; color: white; border:0; outline: none; cursor: pointer; border-radius: 4px;}
+.main_right .task_list .zjy_test_main th{border:1px solid #ccc; height:44px;text-align: center;}
+.main_right .task_list .zjy_test_main td{border:1px solid #ccc; height:39px;text-align: center;}
+.main_right .task_list .zjy_test_main table{width:672px; font-size:13px;float: left;}
+.main_right .task_list .zjy_test_main table input,.main_right .task_list .zjy_test_main table img{vertical-align: sub;}
+.main_right .task_list .zjy_test_main table img{margin-right:4px}
+.main_right .task_list .zjy_test_main table td .test_main_use{color:#5093e1; }
+.main_right .task_list .zjy_test_main table td .test_main_unuse{color:#999999; }
+.main_right .task_list .zjy_test_main table td .test_main_sync_unuse{color:#ff3366; }
+.main_right .task_list .zjy_test_main table td .test_check{padding-left: 21px; background: url(../img/chakan_test.png) no-repeat left center; cursor: pointer;}
+.main_right .task_list .zjy_test_main table td .test_check:hover{background: url(../img/chakan2_test.png) no-repeat left center; color: #25b923; }
+.main_right .task_list .zjy_test_main table td .test_sync i{width: 15px;height:15px; display: inline-block; background: url(../img/img.png) no-repeat 0 -27px; vertical-align:sub; margin-right:3px}
+.main_right .task_list .zjy_test_main table td .test_unsync i{width: 15px;height:15px; display: inline-block; background: url(../img/img.png) no-repeat 0 -72px; vertical-align:sub; margin-right:3px}
+.main_right .task_list .zjy_test_main table td .test_unsync{background: #EBEBEB; padding:4px 8px; border-radius: 20px;}
+.del_down .creat_test{width:509px; height:375px; padding: 11px 25px; box-shadow: 0 3px 10px #333;}
+.del_down .creat_test .create_test_tit{color:#5093e1;box-sizing: border-box; font-size: 16px; width:65px; line-height:34px; border-bottom:2px solid #e5e5e5;display: inline-block; height:34px; word-break: keep-all;}
+.del_down .creat_test h3{text-align: left; height:34px; border-bottom:1px solid #E5E5E5; }
+.del_down .creat_test h3 img{float:right}
+.task_two .con_con .btn{text-align: center;margin-top: 22px;}
+.creat_test .test_btn span{
+	display: inline-block;
+	width: 108px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 6px;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+.creat_test .test_btn span:first-of-type{
+	background-color: #dfecfa;
+	color:#5093e1;
+	margin-right: 55px;
+}
+.creat_test .test_btn span:last-of-type{
+	background-color: #fff;
+	color:#333;
+	border:1px solid #e5e5e5;
+}
+.creat_test .test_btn span:first-of-type:hover{
+	background-color: #a5c7f0;
+}
+.creat_test .test_btn span:last-of-type:hover{
+	background-color: #f0f0f0;
+}
+.creat_test .test_libie {text-align: left; color: #222;font-size: 13px; width: 330px;}
+
+.creat_test .test_libie li label{margin-right: 20px;;}
+.creat_test .test_libie li{line-height:30px; overflow: hidden;}
+.creat_test .test_libie li input{height: 28px;margin-bottom:14px;border:1px solid #e5e5e5; outline: none; border-radius: 5px; float: right;width: 238px; }
+.creat_test .test_libie li:nth-of-type(1){line-height: 48px;}
+.creat_test .test_libie li textarea{height:126px; width:238px;outline: none; border:1px solid #e5e5e5;border-radius: 5px;float: right;}
+.creat_test .test_libie li:last-of-type{margin-bottom:21px;}
+.test_datamap .test_select .test_select_tit{width:91px; line-height:28px;padding-left:15px; border:1px solid #e5e5e5; border-radius: 6px;cursor: pointer; background: url(../img/xialatou.png) no-repeat right 10px center; display: block;}
+.test_datamap{float: right; width: 410px;}
+.test_datamap .test_select{width:108px; margin:0 auto; position: relative;}
+.test_datamap .test_select .test_select_main{border:1px solid #e5e5e5; border-top:none}
+.test_datamap .test_select .test_select_main li{padding-left:15px; border-bottom:1px solid #e5e5e5; line-height: 28px; cursor: pointer;}
+.test_datamap .test_select .test_select_main li:hover{background: #00A0E9; color: white;}
+.test_datamap .test_map_content{width:410px;height:206px;margin:0 auto}
+.test_select_main{position: absolute; z-index: 10; width: 100%; background: white;}
+.main_right .task_list{min-width:1110px;}
