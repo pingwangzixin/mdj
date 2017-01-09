@@ -6,7 +6,7 @@
 	    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
 	    <meta name="format-detection" content="telephone=no" />
 	    
-		<title>作业中心-编辑作业</title>
+		<title>作业中心-编辑试卷</title>
 		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
 		<link rel="stylesheet" href="../css/tanceng.css" />
@@ -28,62 +28,7 @@
 	    <script  src="../common/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
 		<script  src="../common/ueditor/kityformula-plugin/getKfContent.js"></script>
 		<script  src="../common/ueditor/kityformula-plugin/defaultFilterFix.js"></script>
-		<!--<script type="text/javascript">
-	        $(function(){
-	        	//实例化编辑器
-	        	//单选题
-			    var ue0 = UE.getEditor('editor0');
-			    var ue1 = UE.getEditor('editor1');
-			    var ue2 = UE.getEditor('editor2');
-			    var ue3 = UE.getEditor('editor3');
-			    var ue4 = UE.getEditor('editor4');
-			    var ue5 = UE.getEditor('editor5');
-			    //判断题
-			    var ue6 = UE.getEditor('editor6');
-			    var ue7 = UE.getEditor('editor7');
-			    //填空题
-			    var ue8 = UE.getEditor('editor8');
-			    var ue9 = UE.getEditor('editor9');
-			    var ue17 = UE.getEditor('editor17');
-			    //材料题和 简单题
-			    var ue10 = UE.getEditor('editor10');
-			    var ue11 = UE.getEditor('editor11');
-			    var ue12 = UE.getEditor('editor12');
-			    //完形填空
-			    var ue13 = UE.getEditor('editor13');
-			    var ue14 = UE.getEditor('editor14');
-			    
-			    //阅读理解
-			    var ue15 = UE.getEditor('editor15');
-			    var ue16 = UE.getEditor('editor16');
-			    var ue18 = UE.getEditor('editor18');
-			    var ue19 = UE.getEditor('editor19');
-			    var ue20 = UE.getEditor('editor20');
-			    var ue21 = UE.getEditor('editor21');
-			    var ue22 = UE.getEditor('editor22');
-			    
-			    //多选题
- 				var ue23= UE.getEditor('editor23');
- 				var ue24= UE.getEditor('editor24');
- 				var ue25= UE.getEditor('editor25');
- 				var ue26= UE.getEditor('editor26');
- 				var ue27= UE.getEditor('editor27');
- 				var ue28= UE.getEditor('editor28');
- 				
- 				//材料题
- 				var ue29= UE.getEditor('editor29');
- 				var ue30= UE.getEditor('editor30');
- 				
- 				
- 				//设置高度
- 				for(var i=0;i<30;i++){
- 					eval('ue'+i).on('focus',function(){
-	 					this.setHeight(100);
-	 				});
- 				}
-
-	        });
-	    </script>-->
+		
 	    <style type="text/css">
 			div[id*='editor']{
 				width: 95%;
@@ -104,8 +49,8 @@
 		<div class="main clearfix">
 			<div class="job clearfix">
 				<div class="but fl">
-					<a href="Preview_task.html">预览作业</a>
-					<a href="Edit_task.html"  class="but_active">编辑作业</a>
+					<a href="Preview_task.html">预览试卷</a>
+					<a href="Edit_task.html"  class="but_active">编辑试卷</a>
 				</div>
 				<a href="taskCenter_list.html">
 					<div class="back fr">
@@ -119,13 +64,11 @@
 					<div class="fl">
 						<p>作业名称： <span> (初一 数学下册 第三单元  数据的手机、整理与描述)  抽样调查  第一次</span></p>
 						<ul class="clearfix">
-							<li>完成时间：<span>2016-6-15 10:00</span></li>
 							<li class="edit_star">
 								难易程度：
 								<span class="star_rate"></span>
 							</li>
 							<li>满分：<span>100</span>分</li>
-							<li>过关分：<input type="text" /></li>
 						</ul>
 					</div>
 					<div class="edit_btn fr">
