@@ -10,11 +10,19 @@
     <title>社团详情</title>
     <link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
     <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../common/zTree/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../common/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/zhpj.css" charset="utf-8" />
     <link rel="stylesheet" href="../css/tanceng.css">
+    <link rel="stylesheet" href="../css/zzsc.css">
     <link rel="stylesheet" href="../css/shetuan.css">
 
     <script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/zhpj.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/js/jquery.raty.min.js"></script>
+    <script src="../common/js/moment.min.js"></script>
+    <script src="../common/js/jquery.daterangepicker.js"></script>
     <script src="../js/shetuan.js"></script>
     
 </head>
@@ -66,12 +74,12 @@
                         <p>在多年的教学中，发现传统花鸟字的学习主要面对成人，孩子面对色彩鲜艳的花鸟字虽然非常喜欢，但其学习起来还是有较大难度的的， 儿童学习花鸟字困难的问题，同时让孩子更容易掌握这门中华传统文化艺术，经过我们长期的研究、筛选、简化，又加入了部分儿童画的元元 再反复的修改、磨合，最终形成了全新的“俊鸿龙凤字体”！（国家版权局认证：国作登字-2016-F-00217418）并完美结合现阶段教育中元 教学手段，于2015年3月，在牡丹江市立新实验小学成立“立新花鸟字社团”，是牡丹江是第一家正规培训学习花鸟字的机构，至今，已日趋 完善。</p>
                     </div>
                 </div>
-                <div class="hrxian"></div>
+                <div class="hr"></div>
                 <!--教师简介-->
                 <div class="jiaoshijj">
                     <div class="jianjieheader">
                         <span class="fleft ft-sz16 lan">教师简介</span>
-                        <span class="fright ft-sz15 lan"><span class="bianji"></span><span class="xiugaijs  pointer">编辑</span></span>
+                        <span class="fright ft-sz15 lan pointer"><span class="bianji"></span><span class="xiugaijs">编辑</span></span>
                     </div>
                     <div class="jiaoshibianji">
                        <img class="jiaoshitouxiang" src="../img/shetuan-touxiang.jpg" alt="">
@@ -88,17 +96,8 @@
 <script>
     $(function(){
         $(".xiugaijs").on("click",function(){
-            if($(this).html()=="编辑"){
-                $(this).html("保存");
-                $(this).siblings().addClass("baocun").removeClass("bianji");
-                $(".jiaoshibianji").attr("contenteditable","true").css({"background":"#ccc"});
-            }else{
-                $(this).html("编辑");
-                $(this).siblings().addClass("bianji").removeClass("baocun");
-                $(".jiaoshibianji").attr("contenteditable","false").css({"background":"#fff"})
-            }
-            
-            
+            $(this).html("保存");
+            $(".jiaoshibianji").attr("contenteditable","true").css({"background":"#ccc"})
         })
     })
 </script>

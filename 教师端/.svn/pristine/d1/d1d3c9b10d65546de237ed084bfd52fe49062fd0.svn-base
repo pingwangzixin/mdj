@@ -10,12 +10,20 @@
     <title>社团详情</title>
     <link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
     <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../common/zTree/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../common/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/zhpj.css" charset="utf-8" />
     <link rel="stylesheet" href="../css/tanceng.css">
+    <link rel="stylesheet" href="../css/zzsc.css">
     <link rel="stylesheet" href="../css/shetuan.css">
     <link rel="stylesheet" href="../css/section.css">
 
     <script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/zhpj.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/js/jquery.raty.min.js"></script>
+    <script src="../common/js/moment.min.js"></script>
+    <script src="../common/js/jquery.daterangepicker.js"></script>
     <script src="../js/shetuan.js"></script>
 
 </head>
