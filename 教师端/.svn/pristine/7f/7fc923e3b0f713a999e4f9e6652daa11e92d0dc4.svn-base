@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>社团详情</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../common/zTree/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../common/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="../css/zhpj.css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/tanceng.css">
+    <link rel="stylesheet" href="../css/zzsc.css">
+    <link rel="stylesheet" href="../css/shetuan.css">
+
+    <script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/zhpj.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/js/jquery.raty.min.js"></script>
+    <script src="../common/js/moment.min.js"></script>
+    <script src="../common/js/jquery.daterangepicker.js"></script>
+
+</head>
+
+<body>
+    <!--头部开始-->
+    <div class="header clearfix"></div>
+
+    <div class="shetuan">
+        <!--列表切换-->
+        <div class="shetuanul">
+            <ul>
+                <li><a href="./shetuanxiangqing.html">社团详情</a></li>
+                <li class="active"><a href="#">社团成员</a></li>
+            </ul>
+        </div>
+        <!--社团详情  -->
+        <div class="stxiangqing">
+            <!-- 左侧树结构-->
+            <div class="myshetuan">
+                <div class="sttreeheader">我的社团</div>
+                <div class="addst">+新建社团</div>
+                <div class="stlist">
+                    <ul>
+                        <li class="xuanzhong">花鸟字画社团</li>
+                        <li>书法社团</li>
+                        <li>剪纸社团</li>
+                        <li>武术社团</li>
+                        <li>合唱社团</li>
+                        <li>唢呐社团</li>
+                        <li>京剧社团</li>
+                        <li>表演社团</li>
+                    </ul>
+                </div>
+            </div>
+            <!--右侧详情介绍-->
+            <div class="shetuanchengyuan">
+               <div class="chengyuanlist">
+                   <ul>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-nv.png" alt="">
+                           <div class="cyname">
+                               <p>研小燕<span  class="xingbie">女</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-touxiang.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span  class="xingbie">男</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                       <li>
+                           <img class="fleft cytouxiang" src="../img/shetuanchengyuan-nv.png" alt="">
+                           <div class="cyname">
+                               <p>研讨生<span class="xingbie">女</span></p>
+                               <p>五年级一班<span class="shuxian">|</span><span>12岁</span></p>
+                           </div>
+                           <img src="../img/delete.png" alt="" class="delchengyuan">
+                       </li>
+                   </ul>
+                   <div class="addchengyuan">
+                       <img src="../img/addchengyuan.png" alt="" class="addtubiao">
+                   </div>
+               </div>
+          
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
