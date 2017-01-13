@@ -52,11 +52,8 @@ html,body{font-size: 1.4rem;}
     text-align: center;
     cursor: pointer;
 }
-.stlist ul li:hover {
-    color: #5093e1!important;
-}
 .stlist ul li.xuanzhong {
-    color: #5093e1!important;
+    color: #5093e1;
 }
 .mystjs {
     width: 82%;
@@ -218,8 +215,7 @@ span {
     top: 0;
     opacity: 0;
 }
-#jiaoshitouxiang,#jiaoshitouxiang2 {
+#jiaoshitouxiang {
     width: 127px;
-    height:127px;
-    border: 1px solid #ebebeb;
+    border: 1px solid #ebebeb
 }

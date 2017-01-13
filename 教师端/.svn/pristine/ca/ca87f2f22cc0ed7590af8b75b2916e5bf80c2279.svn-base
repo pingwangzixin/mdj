@@ -10,12 +10,7 @@ $(function(){
             $(".shetuanname").prepend("<li style='color:#999;'>双击修改社团名称</li>");
             $(".shetuanname li").removeClass("xuanzhong");
             $(".stdata").hide();
-            $(".xinjianneirong").show();
-            $(".shetuanbianji2").css({"background":"#ebebeb"}).empty().attr("contenteditable","true");
-            $(".bianjijiaoshi2").css({"background":"#ebebeb"}).empty().attr("contenteditable","true");
-            $(".xiugaijs2").html("保存").siblings().addClass("baocun").removeClass("bianji");
-            $(".bianjist2").html("保存").siblings().addClass("baocun").removeClass("bianji");
-            $("#jiaoshitouxiang2").attr("src","../img/shangchuantouxiang.png");
+            $(".xinjianneirong").show()
         })
         
         //双击修改社团名称

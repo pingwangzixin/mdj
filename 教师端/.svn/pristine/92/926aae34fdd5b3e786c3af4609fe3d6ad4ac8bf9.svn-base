@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>社团详情</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/tanceng.css">
+    <link rel="stylesheet" href="../css/shetuan.css">
+
+    <script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/shetuan.js"></script>
+
+</head>
+
+<body>
+    <!--头部开始-->
+    <div class="header clearfix"></div>
+
+    <div class="shetuan">
+        <!--列表切换-->
+        <div class="shetuanul">
+            <ul>
+                <li class="active"><a href="#">社团详情</a></li>
+                <li><a href="./shetuanchengyuan.html">社团成员</a></li>
+            </ul>
+        </div>
+        <!--社团详情  -->
+        <div class="stxiangqing">
+            <!-- 左侧树结构-->
+            <div class="myshetuan">
+                <div class="sttreeheader">我的社团</div>
+                <div class="addst">+新建社团</div>
+                <div class="stlist">
+                    <ul class="shetuanname">
+                        <li class="xuanzhong">花鸟字画社团</li>
+                        <li>书法社团</li>
+                        <li>剪纸社团</li>
+                        <li>武术社团</li>
+                        <li>合唱社团</li>
+                        <li>唢呐社团</li>
+                        <li>京剧社团</li>
+                        <li>表演社团</li>
+                    </ul>
+                </div>
+            </div>
+            <!--右侧详情介绍-->
+            <div class="mystjs">
+                <!--社团简介-->
+                <div class="stjianjie">
+                    <div class="jianjieheader">
+                        <span class="fleft ft-sz16 lan">社团简介</span>
+                        <span class="fright ft-sz15 lan pointer"><span class="bianji"></span><span class="bianjist">编辑</span></span>
+                    </div>
+                    <div class="shetuanbianji">
+                        
+                    </div>
+                </div>
+                <div class="hrxian"></div>
+                <!--教师简介-->
+                <div class="jiaoshijj">
+                    <div class="jianjieheader">
+                        <span class="fleft ft-sz16 lan">教师简介</span>
+                        <span class="fright ft-sz15 lan"><span class="bianji"></span><span class="xiugaijs  pointer">编辑</span></span>
+                    </div>
+                    <div class="jiaoshibianji">
+                        <a href="javascript:;" class="file fleft"><img id="jiaoshitouxiang" src="../img/shangchuantouxiang.png" alt="">
+                            <input type="file" name="" id="file" accept="image/jpeg">
+                        </a>
+                        <div class="bianjijiaoshi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function(){
+        
+        
+        //编辑和保存社团简介
+        $(".bianjist").on("click",function(){
+            if($(this).html()=="编辑"){
+                $(this).html("保存");
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $(".shetuanbianji").attr("contenteditable","true").css({"background":"#ebebeb"});
+            }else{
+                $(this).html("编辑");
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $(".shetuanbianji").attr("contenteditable","false").css({"background":"#fff"});
+            }
+        })
+
+        //编辑和保存教师简介
+        $(".xiugaijs").on("click",function(){
+            if($(this).html()=="编辑"){
+                $(this).html("保存");
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $(".bianjijiaoshi").attr("contenteditable","true").css({"background":"#ebebeb"});
+            }else{
+                $(this).html("编辑");
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $(".bianjijiaoshi").attr("contenteditable","false").css({"background":"#fff"});
+            }
+        });
+        
+        
+        
+        //上传和更换头像
+        $("#file").change(function(e){
+            var f=document.getElementById('file').files[0];
+            var src = window.URL.createObjectURL(f);
+            document.getElementById('jiaoshitouxiang').src = src;
+        });
+        
+    })
+</script>
+
+</html>

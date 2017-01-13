@@ -1,5 +1,5 @@
 /*社团详情页面css*/
-html,body{font-size: 1.4rem;}
+
 .shetuan {
     width: 97%;
     margin: 20px auto;
@@ -52,11 +52,8 @@ html,body{font-size: 1.4rem;}
     text-align: center;
     cursor: pointer;
 }
-.stlist ul li:hover {
-    color: #5093e1!important;
-}
 .stlist ul li.xuanzhong {
-    color: #5093e1!important;
+    color: #5093e1;
 }
 .mystjs {
     width: 82%;
@@ -89,16 +86,9 @@ html,body{font-size: 1.4rem;}
 .ft-sz15 {
     font-size: 15px;
 }
-.shetuanbianji {
-    min-height: 200px;
-    background: #fff;
-    text-indent: 30px;
-    line-height: 30px;
-}
-.shetuanbianji div {
-    text-indent: 30px;
-    line-height: 30px;
-}
+
+.shetuanbianji{min-height:200px;background:#fff;text-indent: 30px;line-height: 30px;}
+.shetuanbianji div{text-indent: 30px;line-height: 30px;}
 .hrxian {
     background: #ddd;
     width: 100%;
@@ -108,24 +98,14 @@ html,body{font-size: 1.4rem;}
     float: left;
     margin-right: 10px;
 }
-.jiaoshibianji {
-    min-height: 200px;
-    background: #fff;
-    text-indent: 30px;
-    line-height: 30px;
-}
-.jiaoshibianji div {
-    text-indent: 30px;
-    line-height: 30px;
-}
+.jiaoshibianji{min-height:200px;background:#fff;text-indent: 30px;line-height: 30px;}
+.jiaoshibianji div{text-indent: 30px;line-height: 30px;}
 .jiaoshibianji p,
 .shetuanbianji p {
     text-indent: 30px;
     line-height: 30px;
 }
-.bianjijiaoshi {
-    min-height: 200px;
-}
+.bianjijiaoshi{min-height:200px;}
 span {
     display: inline-block;
 }
@@ -201,25 +181,22 @@ span {
 .addtubiao {
     margin-top: 15px;
 }
+
 .file {
-    position: relative;
-    display: inline-block;
-    padding: 4px 12px;
-    overflow: hidden;
-    color: #1E88C7;
-    text-decoration: none;
-    text-indent: 0;
-    line-height: 20px;
-}
-.file input {
-    position: absolute;
-    font-size: 100px;
-    right: 0;
-    top: 0;
-    opacity: 0;
-}
-#jiaoshitouxiang,#jiaoshitouxiang2 {
-    width: 127px;
-    height:127px;
-    border: 1px solid #ebebeb;
-}
+            position: relative;
+            display: inline-block;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+        }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+#preview{width:100px;}

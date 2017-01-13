@@ -81,16 +81,16 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="mystjs xinjianneirong" style="display:none">
                 <!--社团简介-->
                 <div class="stjianjie">
                     <div class="jianjieheader">
                         <span class="fleft ft-sz16 lan">社团简介</span>
-                        <span class="fright ft-sz15 lan"><span class="baocun"></span><span class="bianjist2  pointer">保存</span></span>
+                        <span class="fright ft-sz15 lan pointer"><span class="baocun"></span><span class="bianjist">保存</span></span>
                     </div>
-                    <div class="shetuanbianji shetuanbianji2" contenteditable="true" style="background:#ebebeb">
-
+                    <div class="shetuanbianji">
+                        
                     </div>
                 </div>
                 <div class="hrxian"></div>
@@ -98,112 +98,64 @@
                 <div class="jiaoshijj">
                     <div class="jianjieheader">
                         <span class="fleft ft-sz16 lan">教师简介</span>
-                        <span class="fright ft-sz15 lan"><span class="baocun"></span><span class="xiugaijs2  pointer">保存</span></span>
+                        <span class="fright ft-sz15 lan"><span class="baocun"></span><span class="xiugaijs  pointer">保存</span></span>
                     </div>
                     <div class="jiaoshibianji">
-                        <a href="javascript:;" class="file fleft"><img id="jiaoshitouxiang2" src="../img/shangchuantouxiang.png" alt="">
-                            <input type="file" name="" id="file2" accept="image/jpeg">
+                        <a href="javascript:;" class="file fleft"><img id="jiaoshitouxiang" src="../img/shangchuantouxiang.png" alt="">
+                            <input type="file" name="" id="file" accept="image/jpeg">
                         </a>
-                        <div class="bianjijiaoshi bianjijiaoshi2" contenteditable="true" style="background:#ebebeb">
-
+                        <div class="bianjijiaoshi">
+                           
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
+            
+            
+            
         </div>
     </div>
 </body>
 
 <script>
-    $(function() {
-
-
+    $(function(){
+        
+        
         //编辑和保存社团简介
-        $(".bianjist").on("click", function() {
-            if ($(this).html() == "编辑") {
+        $(".bianjist").on("click",function(){
+            if($(this).html()=="编辑"){
                 $(this).html("保存");
                 $(this).siblings().addClass("baocun").removeClass("bianji");
-                $(".shetuanbianji").attr("contenteditable", "true").css({
-                    "background": "#ebebeb"
-                });
-            } else {
+                $(".shetuanbianji").attr("contenteditable","true").css({"background":"#ebebeb"});
+            }else{
                 $(this).html("编辑");
                 $(this).siblings().addClass("bianji").removeClass("baocun");
-                $(".shetuanbianji").attr("contenteditable", "false").css({
-                    "background": "#fff"
-                });
+                $(".shetuanbianji").attr("contenteditable","false").css({"background":"#fff"});
             }
         })
 
         //编辑和保存教师简介
-        $(".xiugaijs").on("click", function() {
-            if ($(this).html() == "编辑") {
+        $(".xiugaijs").on("click",function(){
+            if($(this).html()=="编辑"){
                 $(this).html("保存");
                 $(this).siblings().addClass("baocun").removeClass("bianji");
-                $(".bianjijiaoshi").attr("contenteditable", "true").css({
-                    "background": "#ebebeb"
-                });
-            } else {
+                $(".bianjijiaoshi").attr("contenteditable","true").css({"background":"#ebebeb"});
+            }else{
                 $(this).html("编辑");
                 $(this).siblings().addClass("bianji").removeClass("baocun");
-                $(".bianjijiaoshi").attr("contenteditable", "false").css({
-                    "background": "#fff"
-                });
+                $(".bianjijiaoshi").attr("contenteditable","false").css({"background":"#fff"});
             }
         });
-
-        //新建社团编辑和保存社团简介
-        $(".bianjist2").on("click", function() {
-            if ($(this).html() == "编辑") {
-                $(this).html("保存");
-                $(this).siblings().addClass("baocun").removeClass("bianji");
-                $(".shetuanbianji").attr("contenteditable", "true").css({
-                    "background": "#ebebeb"
-                });
-            } else {
-                $(this).html("编辑");
-                $(this).siblings().addClass("bianji").removeClass("baocun");
-                $(".shetuanbianji").attr("contenteditable", "false").css({
-                    "background": "#fff"
-                });
-            }
-        })
-
-        //新建社团编辑和保存教师简介
-        $(".xiugaijs2").on("click", function() {
-            if ($(this).html() == "编辑") {
-                $(this).html("保存");
-                $(this).siblings().addClass("baocun").removeClass("bianji");
-                $(".bianjijiaoshi").attr("contenteditable", "true").css({
-                    "background": "#ebebeb"
-                });
-            } else {
-                $(this).html("编辑");
-                $(this).siblings().addClass("bianji").removeClass("baocun");
-                $(".bianjijiaoshi").attr("contenteditable", "false").css({
-                    "background": "#fff"
-                });
-            }
-        });
-
-
+        
+        
+        
         //上传和更换头像
-        $("#file").change(function(e) {
-            var f = document.getElementById('file').files[0];
+        $("#file").change(function(e){
+            var f=document.getElementById('file').files[0];
             var src = window.URL.createObjectURL(f);
             document.getElementById('jiaoshitouxiang').src = src;
         });
-
-        //上传和更换头像
-        $("#file2").change(function(e) {
-            var f = document.getElementById('file2').files[0];
-            var src = window.URL.createObjectURL(f);
-            document.getElementById('jiaoshitouxiang2').src = src;
-        });
-
+        
     })
 </script>
 
