@@ -189,14 +189,12 @@
         $(".xiugaijs2").on("click", function() {
             if ($(this).html() == "编辑") {
                 $(this).html("保存");
-                $("#file2").attr("disabled",false);
                 $(this).siblings().addClass("baocun").removeClass("bianji");
                 $(".bianjijiaoshi").attr("contenteditable", "true").css({
                     "background": "#ebebeb"
                 });
             } else {
                 $(this).html("编辑");
-                $("#file2").attr("disabled",true);
                 $(this).siblings().addClass("bianji").removeClass("baocun");
                 $(".bianjijiaoshi").attr("contenteditable", "false").css({
                     "background": "#fff"
