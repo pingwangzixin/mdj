@@ -9,6 +9,7 @@
 
     <title>社团详情</title>
     <link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/tanceng.css">
     <link rel="stylesheet" href="../css/public.css" />
     <link rel="stylesheet" href="../css/tanceng.css">
     <link rel="stylesheet" href="../css/shetuan.css">
@@ -246,6 +247,15 @@
 
     <!--本页面写的公用的灰色遮罩-->
 	<div class="wx_huise" style="display:none;"></div>
+   
+   <!--成功弹窗-->
+	<div class="del_down del_down2" style="display:none">
+		<div class="hide"></div>
+		<div class="con">
+			<img src="../img/success.png">
+			<p class="text-text"></p>
+		</div>
+	</div>
     
 </body>
 
@@ -335,6 +345,8 @@
             $(".wx_xinjianqunzu").hide();
             $(".wx_huise").hide();
         })
+        
+        
 
 	});
 </script>
