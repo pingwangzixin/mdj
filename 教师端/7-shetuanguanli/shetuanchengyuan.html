@@ -160,7 +160,7 @@
 			</div>
 			<div class="path-right wx_path">
 				<form action="">
-					<input placeholder="输入学生信息" type="text" />
+					<input placeholder="输入学生信息" type="text" maxlength="50"/>
 					<span class="sousuo wx_sousuotb"></span>
 				</form>
 			</div>
@@ -350,7 +350,8 @@
             $(".wx_huise").hide();
         })
         
-        
+        var height=$(".shetuanchengyuan").height();
+        $(".myshetuan").height(height);
 
 	});
 </script>
