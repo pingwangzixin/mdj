@@ -144,13 +144,13 @@ span {
 .bianji {
     width: 16px;
     height: 16px;
-    background: url(../../img/bianji.png)no-repeat;
+    background: url(../img/bianji.png)no-repeat;
     margin-right: 5px;
 }
 .baocun {
     width: 16px;
     height: 16px;
-    background: url(../../img/baocun.png)no-repeat;
+    background: url(../img/baocun.png)no-repeat;
     margin-right: 5px;
 }
 .pointer {
