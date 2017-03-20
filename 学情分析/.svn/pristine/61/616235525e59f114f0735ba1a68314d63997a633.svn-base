@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <title>校领导组</title>
+	    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+	    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+	    <script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script>
+		    $LAB.setGlobalDefaults({
+		        CacheBust: true // 是否加上尾巴(清缓存)，true 加尾巴无缓存
+		    });
+		</script>
+	</head>
+	<body>
+		<header  class="header clearfix"></header>
+		<div class="main clearfix">
+			<div class="left fl"></div>
+			<div class="main_right fr">
+				<div class="research  researchGroup">
+					
+					<h3 class="tit clearfix">
+						<strong>考试列表</strong>
+						<div class="seach fr"> 
+							<img src="../img/seach.png"/>
+							<input type="text" placeholder="考试号或姓名" />
+						</div>
+					</h3>
+					
+					<div class="research_con" style="display: block;">
+						<div class="clearfix exam-list-item" data-url="" data-id="">
+		                  	<img src="../img/examTit.png" class="examTit fl"/>
+	                        <div class="exam-info fl">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		参考学校：
+		                        		<strong style="color:#fb5252">23</strong>所
+		                        	</span>
+		                        	<span>
+		                        		参考学生：
+		                        		<strong style="color:#fb5252">9778</strong>人
+		                        	</span>
+		                        </div>
+		                        <div class="exam-score gray">
+		                        	<span>
+		                        		发布人：
+		                        		<strong>李小军</strong>
+		                        	</span>
+		                        	<span>
+		                        		考试时间：
+		                        		<strong>2017年02月22日</strong>
+		                        	</span>
+		                        </div>
+	                        </div>
+	                        <div class="edit_del fr">
+	                        	<a href="research_release1.html">
+	                        		<img src="../img/edit.png"/>编辑
+	                        	</a>
+		                        <a>
+		                        	<img src="../img/delete.png"/>删除
+		                        </a>	
+		                    </div>
+	                   </div>
+	                   <div class="clearfix exam-list-item" data-url="" data-id="">
+		                  	<img src="../img/examTit.png" class="examTit fl"/>
+	                        <div class="exam-info fl">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		参考学校：
+		                        		<strong style="color:#fb5252">23</strong>所
+		                        	</span>
+		                        	<span>
+		                        		参考学生：
+		                        		<strong style="color:#fb5252">9778</strong>人
+		                        	</span>
+		                        </div>
+		                        <div class="exam-score gray">
+		                        	<span>
+		                        		发布人：
+		                        		<strong>李小军</strong>
+		                        	</span>
+		                        	<span>
+		                        		考试时间：
+		                        		<strong>2017年02月22日</strong>
+		                        	</span>
+		                        </div>
+	                        </div>
+	                        <div class="edit_del fr">
+	                        	<a href="research_release1.html">
+	                        		<img src="../img/edit.png"/>编辑
+	                        	</a>
+		                        <a>
+		                        	<img src="../img/delete.png"/>删除
+		                        </a>	
+		                    </div>
+	                   </div>
+	                   <div class="clearfix exam-list-item" data-url="" data-id="">
+		                  	<img src="../img/examTit.png" class="examTit fl"/>
+	                        <div class="exam-info fl">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		参考学校：
+		                        		<strong style="color:#fb5252">23</strong>所
+		                        	</span>
+		                        	<span>
+		                        		参考学生：
+		                        		<strong style="color:#fb5252">9778</strong>人
+		                        	</span>
+		                        </div>
+		                        <div class="exam-score gray">
+		                        	<span>
+		                        		发布人：
+		                        		<strong>李小军</strong>
+		                        	</span>
+		                        	<span>
+		                        		考试时间：
+		                        		<strong>2017年02月22日</strong>
+		                        	</span>
+		                        </div>
+	                        </div>
+	                        <div class="edit_del fr">
+	                        	<a href="research_release1.html">
+	                        		<img src="../img/edit.png"/>编辑
+	                        	</a>
+		                        <a>
+		                        	<img src="../img/delete.png"/>删除
+		                        </a>	
+		                    </div>
+	                   </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
