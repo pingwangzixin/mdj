@@ -29,15 +29,15 @@
         <!--列表切换-->
         <div class="shetuanul">
             <ul>
-                <li><a href="./shetuanxiangqing.html">社团详情</a></li>
-                <li class="active"><a href="#">社团成员</a></li>
+                <li><a href="./shetuanxiangqing.html">校本课程详情</a></li>
+                <li class="active"><a href="#">校本课程成员</a></li>
             </ul>
         </div>
         <!--社团详情  -->
         <div class="stxiangqing">
             <!-- 左侧树结构-->
             <div class="myshetuan">
-                <div class="sttreeheader">我的社团</div>
+                <div class="sttreeheader">我的校本课程</div>
 <!--                <div class="addst">+新建社团</div>-->
                 <div class="stlist">
                     <ul class="shetuanname">
@@ -55,7 +55,7 @@
             <!--右侧详情介绍-->
             <div class="shetuanchengyuan">
               <!--    解散社团按钮   -->
-               <span class="jiesanshetuan">退出社团</span>
+               <span class="jiesanshetuan">退出校本课程</span>
                <div class="hrxian" style="clear:both;margin-bottom:10px;"></div>
                
                <div class="chengyuanlist">
@@ -326,30 +326,26 @@
 		    })
 	    }
         
-        //确认删除弹窗显示
-        $(document).on("click",".delchengyuan",function(){
-            $(".wx_qrshanchule").show();
-            $(".wx_huise").show();
-        })
         
-        //确认删除弹窗关闭
-        $(document).on("click",".delClose,.wx_upqxsc",function(){
-            $(".wx_qrshanchule").hide();
-            $(".wx_huise").hide();
-        })
-        
-        //添加成员弹窗显示
-        $(".addchengyuan").on("click",function(){
-            $(".wx_xinjianqunzu").show();
-            $(".wx_huise").show();
-        })
-        
-        //添加成员弹窗隐藏
-        $(document).on("click",".wx_gbqunzu,.wx_qunzuquxiao",function(){
-            $(".wx_xinjianqunzu").hide();
-            $(".wx_huise").hide();
-        })
-        
+        // 显示/隐藏弹框
+		function tc(ele,shhi,sele,sele2){
+        	$(document).on("click",ele,function(){
+        		if(shhi=="1"){
+        			$(sele).show();
+        			$(sele2).show();
+        		}
+        		if(shhi=="0"){
+        			$(sele).hide();
+        			$(sele2).hide();
+        		}
+        	})
+        }
+
+        tc(".delchengyuan","1",".wx_qrshanchule",".wx_huise");//确认删除弹窗显示
+        tc(".addchengyuan","1",".wx_qrshanchule",".wx_huise");//添加成员弹窗显示
+		tc(".delClose,.wx_upqxsc","0",".wx_qrshanchule",".wx_huise");//确认删除弹窗关闭
+        tc(".wx_gbqunzu,.wx_qunzuquxiao","0",".wx_xinjianqunzu",".wx_huise");//添加成员弹窗隐藏
+
         var height=$(".shetuanchengyuan").height();
         $(".myshetuan").height(height);
 

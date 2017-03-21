@@ -90,10 +90,10 @@
             </div>
 
             <div class="mystjs xinjianneirong" style="display:none">
-                <!--校本课程简介-->
+                <!--社团简介-->
                 <div class="stjianjie">
                     <div class="jianjieheader">
-                        <span class="fleft ft-sz16 lan">校本课程简介</span>
+                        <span class="fleft ft-sz16 lan">社团简介</span>
                         <span class="fright ft-sz15 lan"><span class="baocun"></span><span class="bianjist2  pointer">保存</span></span>
                     </div>
                     <div class="shetuanbianji shetuanbianji2" contenteditable="true" style="background:#ebebeb">
@@ -138,33 +138,84 @@
 
 <script>
     $(function() {
-    	
-    	function addst(ele,ele2){
-    		$(ele).on("click",function(){
-    			if ($(this).html() == "编辑") {
-	                $(this).html("保存");
-	                $("#file").attr("disabled","false")
-	                $(this).siblings().addClass("baocun").removeClass("bianji");
-	                $(ele2).attr("contenteditable", "true").css({
-	                    "background": "#ebebeb"
-	                });
-	            } else {
-	                $(this).html("编辑");
-	                $(this).siblings().addClass("bianji").removeClass("baocun");
-	                $(ele2).attr("contenteditable", "false").css({
-	                    "background": "#fff"
-	                });
-	                
-	                var height=$(".mystjs").height();
-	        		$(".myshetuan").height(height);
-	            }
-    		})
-    	}
-    	
-    	addst(".bianjist",".shetuanbianji");//编辑和保存社团简介
-    	addst(".xiugaijs",".bianjijiaoshi");//编辑和保存教师简介
-        addst(".bianjist2",".shetuanbianji");//新建社团编辑和保存社团简介
-		addst(".xiugaijs2",".bianjijiaoshi");//新建社团编辑和保存教师简介
+        //编辑和保存社团简介
+        $(".bianjist").on("click", function() {
+            if ($(this).html() == "编辑") {
+                $(this).html("保存");
+                $("#file").attr("disabled","false")
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $(".shetuanbianji").attr("contenteditable", "true").css({
+                    "background": "#ebebeb"
+                });
+            } else {
+                $(this).html("编辑");
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $(".shetuanbianji").attr("contenteditable", "false").css({
+                    "background": "#fff"
+                });
+                
+                var height=$(".mystjs").height();
+        		$(".myshetuan").height(height);
+            }
+        })
+
+        //编辑和保存教师简介
+        $(".xiugaijs").on("click", function() {
+            if ($(this).html() == "编辑") {
+                $(this).html("保存");
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $("#file").attr("disabled",false)
+                $(".bianjijiaoshi").attr("contenteditable", "true").css({
+                    "background": "#ebebeb"
+                });
+            } else {
+                $(this).html("编辑");
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $("#file").attr("disabled",true)
+                $(".bianjijiaoshi").attr("contenteditable", "false").css({
+                    "background": "#fff"
+                });
+                
+                var height=$(".mystjs").height();
+        		$(".myshetuan").height(height);
+            }
+        });
+
+        //新建社团编辑和保存社团简介
+        $(".bianjist2").on("click", function() {
+            if ($(this).html() == "编辑") {
+                $(this).html("保存");
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $(".shetuanbianji").attr("contenteditable", "true").css({
+                    "background": "#ebebeb"
+                });
+            } else {
+                $(this).html("编辑");
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $(".shetuanbianji").attr("contenteditable", "false").css({
+                    "background": "#fff"
+                });
+            }
+        })
+
+        //新建社团编辑和保存教师简介
+        $(".xiugaijs2").on("click", function() {
+            if ($(this).html() == "编辑") {
+                $(this).html("保存");
+                $("#file2").attr("disabled",false);
+                $(this).siblings().addClass("baocun").removeClass("bianji");
+                $(".bianjijiaoshi").attr("contenteditable", "true").css({
+                    "background": "#ebebeb"
+                });
+            } else {
+                $(this).html("编辑");
+                $("#file2").attr("disabled",true);
+                $(this).siblings().addClass("bianji").removeClass("baocun");
+                $(".bianjijiaoshi").attr("contenteditable", "false").css({
+                    "background": "#fff"
+                });
+            }
+        });
 
 
         //上传和更换头像
