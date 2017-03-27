@@ -20,10 +20,11 @@
 	<div  class="left fl"></div>
 	
     <!--右侧-->
-    <div class="main_right fr Res_step">
+    <div class="main_right fr">
 		<div class="exam_release">
 			<div class="exam_tab">
-				<a href="" class="active">发布考试</a>
+				<a href="release1.html" class="active">发布考试</a>
+				<a href="admin.html" class="bor_rig">管理考试</a>
 			</div>
 			
 			<!--发布考试步骤-->
@@ -43,13 +44,11 @@
 				<!--已选择 详情-->
 				<div class="pri_details">
 					<p>考试名称：<span>2014-2015（上）学年二年级入学考试</span></p>	
+					<p>考试科目：<span>全科</span></p>
+					<p>考察科目：<span>音乐&nbsp;&nbsp;2014-2015（上）&nbsp;&nbsp;期中考试</span></p>
 					<div class="clearfix">
 						<p class="fl">学年：<span>2014-2015（上）</span></p>
 						<p class="fl">年级：<span>一年级</span></p>
-					</div>
-					<p>归属区域：<span>市直属&nbsp;&nbsp;牡丹江市长安小学&nbsp;&nbsp;牡丹江市第三小学&nbsp;&nbsp;牡丹江市高级中学&nbsp;&nbsp;东安区</span></p>
-					<div class="clearfix">
-						<p class="fl">考试日期：<span>2014-04-05</span></p>
 						<p class="fl">考试类型：<span>入学考试</span></p>
 						<p class="fl">考试日期：<span>2014-04-05</span></p>
 					</div>
@@ -85,6 +84,7 @@
 							<td>
 								<input type="text" value="" name="pass_score" class="pass_score">
 							</td>
+
 						</tr>
 						
 						
@@ -96,8 +96,8 @@
 					
 			<!--上一步下一步-->
 			<div class="step">
-				<a href="research_release1.html" class="step_btn prev">上一步</a>
-				<a href="research_release2.html" class="step_btn next next_two">确认提交</a>
+				<a href="step1.html" class="step_btn prev">上一步</a>
+				<a href="javascript:;" class="step_btn next next_two">确认提交</a>
 			</div>
 		</div>
 		
@@ -119,14 +119,14 @@
 						n=1;
 					}
 				});
-				
+
 				
 				if(n){
 					$('.warn').show();
 					$('.text-text').text('请正确填写分数！');
-					/*setTimeout(function (){
+					setTimeout(function (){
 						$('.warn').hide();
-					},1000);*/
+					},1000);
 				}else{
 					alert("成功");
 				}

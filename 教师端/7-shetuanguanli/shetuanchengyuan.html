@@ -328,23 +328,26 @@
         
         
         // 显示/隐藏弹框
-		function tc(ele,shhi,sele,sele2){
+		function tc(ele,shhi,sele){
         	$(document).on("click",ele,function(){
-        		if(shhi=="1"){
-        			$(sele).show();
-        			$(sele2).show();
+        		if(shhi=="show"){
+                    for(var i=0;i<sele.length;i++){
+                        $(sele[i]).show()
+                    }
         		}
-        		if(shhi=="0"){
-        			$(sele).hide();
-        			$(sele2).hide();
+        		if(shhi=="hide"){
+        			for(var i=0;i<sele.length;i++){
+                        $(sele[i]).hide()
+                    }
         		}
         	})
         }
+        
 
-        tc(".delchengyuan","1",".wx_qrshanchule",".wx_huise");//确认删除弹窗显示
-        tc(".addchengyuan","1",".wx_qrshanchule",".wx_huise");//添加成员弹窗显示
-		tc(".delClose,.wx_upqxsc","0",".wx_qrshanchule",".wx_huise");//确认删除弹窗关闭
-        tc(".wx_gbqunzu,.wx_qunzuquxiao","0",".wx_xinjianqunzu",".wx_huise");//添加成员弹窗隐藏
+        tc(".delchengyuan","show",['.wx_qrshanchule', '.wx_huise']);//确认删除弹窗显示
+        tc(".addchengyuan","show",['.wx_qrshanchule', '.wx_huise']);//添加成员弹窗显示
+		tc(".delClose,.wx_upqxsc","hide",['.wx_qrshanchule', '.wx_huise']);//确认删除弹窗关闭
+        tc(".wx_gbqunzu,.wx_qunzuquxiao","hide",['.wx_xinjianqunzu','.wx_huise']);//添加成员弹窗隐藏
 
         var height=$(".shetuanchengyuan").height();
         $(".myshetuan").height(height);

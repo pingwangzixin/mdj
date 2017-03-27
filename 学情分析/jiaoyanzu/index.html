@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-	    <title>校领导组</title>
+	    <title>教研组</title>
 	    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
 	    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
 	    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
@@ -33,7 +33,41 @@
 					</h3>
 					
 					<div class="research_con" style="display: block;">
-						<div class="clearfix exam-list-item" data-url="" data-id="">
+						<div class="clearfix exam-list-item">
+		                  	<img src="../img/examTit.png" class="examTit fl"/>
+	                        <div class="exam-info fl">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		参考学校：
+		                        		<strong style="color:#fb5252">23</strong>所
+		                        	</span>
+		                        	<span>
+		                        		参考学生：
+		                        		<strong style="color:#fb5252">9778</strong>人
+		                        	</span>
+		                        </div>
+		                        <div class="exam-score gray">
+		                        	<span>
+		                        		发布人：
+		                        		<strong>李小军</strong>
+		                        	</span>
+		                        	<span>
+		                        		考试时间：
+		                        		<strong>2017年02月22日</strong>
+		                        	</span>
+		                        </div>
+	                        </div>
+	                        <div class="edit_del fr">
+	                        	<a href="research_release1.html">
+	                        		<img src="../img/edit.png"/>编辑
+	                        	</a>
+		                        <a>
+		                        	<img src="../img/delete.png"/>删除
+		                        </a>	
+		                    </div>
+	                    </div>
+	                    <div class="clearfix exam-list-item">
 		                  	<img src="../img/examTit.png" class="examTit fl"/>
 	                        <div class="exam-info fl">
 		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
@@ -67,7 +101,7 @@
 		                        </a>	
 		                    </div>
 	                   </div>
-	                   <div class="clearfix exam-list-item" data-url="" data-id="">
+	                    <div class="clearfix exam-list-item">
 		                  	<img src="../img/examTit.png" class="examTit fl"/>
 	                        <div class="exam-info fl">
 		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
@@ -101,43 +135,15 @@
 		                        </a>	
 		                    </div>
 	                   </div>
-	                   <div class="clearfix exam-list-item" data-url="" data-id="">
-		                  	<img src="../img/examTit.png" class="examTit fl"/>
-	                        <div class="exam-info fl">
-		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
-		                        <div class="exam-score">
-		                        	<span>
-		                        		参考学校：
-		                        		<strong style="color:#fb5252">23</strong>所
-		                        	</span>
-		                        	<span>
-		                        		参考学生：
-		                        		<strong style="color:#fb5252">9778</strong>人
-		                        	</span>
-		                        </div>
-		                        <div class="exam-score gray">
-		                        	<span>
-		                        		发布人：
-		                        		<strong>李小军</strong>
-		                        	</span>
-		                        	<span>
-		                        		考试时间：
-		                        		<strong>2017年02月22日</strong>
-		                        	</span>
-		                        </div>
-	                        </div>
-	                        <div class="edit_del fr">
-	                        	<a href="research_release1.html">
-	                        		<img src="../img/edit.png"/>编辑
-	                        	</a>
-		                        <a>
-		                        	<img src="../img/delete.png"/>删除
-		                        </a>	
-		                    </div>
-	                   </div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		$(".exam-list-item").click(function(){
+			location.href = "research_wholeAnalysis.html";
+		});
+	</script>
 </html>

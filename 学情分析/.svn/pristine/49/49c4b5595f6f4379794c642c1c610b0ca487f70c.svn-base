@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布考试-选择考试范围</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/exam-admin.css"/>
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="../js/exam-admin.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+
+<header class="header clearfix"></header>
+<!--中心内容-->
+<div class="main clearfix">
+    <!--左侧-->
+	<div  class="left fl"></div>
+	
+    <!--右侧-->
+    <div class="main_right fr">
+		<div class="exam_release">
+			<div class="exam_tab">
+				<a href="release1.html" class="active">发布考试</a>
+				<a href="admin.html" class="bor_rig">管理考试</a>
+			</div>
+			
+			<!--发布考试步骤-->
+			<div class="release_step">
+				<span class="active">
+					<em>填写考试名称</em>
+					<i>1</i>
+				</span>
+				<span class="active">
+					<em>选择考试范围</em>
+					<i>2</i>
+				</span>
+			</div>
+			
+			<div class="step_two">
+				
+				<!--已选择 详情-->
+				<div class="pri_details">
+					<p>考试名称：<span>2014-2015（上）学年二年级入学考试</span></p>	
+					<p>考试科目：<span>全科</span></p>
+					<p>考察科目：<span>音乐&nbsp;&nbsp;2014-2015（上）&nbsp;&nbsp;期中考试</span></p>
+					<div class="clearfix">
+						<p class="fl">学年：<span>2014-2015（上）</span></p>
+						<p class="fl">年级：<span>一年级</span></p>
+						<p class="fl">考试类型：<span>入学考试</span></p>
+						<p class="fl">考试日期：<span>2014-04-05</span></p>
+					</div>
+				</div>
+				
+				<!--考试详情表格-->
+				<div class="details_table details_table2">
+					<h3>2014-2015学年二年级入学考试</h3>
+					
+					<table class="">
+						<thead>
+						<tr>
+							<th width="80">科目</th>
+							<th width="104">总分(分)</th>
+							<th width="104">及格线(分)</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>语文</td>
+							<td>
+								<input type="text" value="" name="total_score" class="total_score">
+							</td>
+							<td>
+								<input type="text" value="" name="pass_score" class="pass_score">
+							</td>
+						</tr>
+						<tr>
+							<td>语文</td>
+							<td>
+								<input type="text" value="" name="total_score" class="total_score">
+							</td>
+							<td>
+								<input type="text" value="" name="pass_score" class="pass_score">
+							</td>
+
+						</tr>
+						
+						
+						</tbody>
+					</table>
+									
+				</div>
+			</div>
+					
+			<!--上一步下一步-->
+			<div class="step">
+				<a href="step1.html" class="step_btn prev">上一步</a>
+				<a href="javascript:;" class="step_btn next next_two">确认提交</a>
+			</div>
+		</div>
+		
+		<script>
+			//选择考试范围下一步
+			$(document).on('click','.next_two',function(){	
+		        var n=0;
+		        var reg=/^[.0]|[^0-9.]/g;
+		        
+		    	 $('.details_table2 input[name=pass_score]').each(function (){
+					var max=Number($(this).parent().siblings().find('input[name=total_score]').val());
+					if(Number($(this).val()) > max){
+						n=1;
+					}
+				});
+		        
+				$('.details_table2 input').each(function (){
+					if($.trim($(this).val()) == '' || reg.test($(this).val()) || $(this).val()>150){
+						n=1;
+					}
+				});
+
+				
+				if(n){
+					$('.warn').show();
+					$('.text-text').text('请正确填写分数！');
+					setTimeout(function (){
+						$('.warn').hide();
+					},1000);
+				}else{
+					alert("成功");
+				}
+			});
+		</script>
+		
+    </div>
+</div>
+
+<!--弹层 -->
+<!--del_down为公用clss名不要动，后面起自己控制的class-->
+<div class="del_down del warn" style="display: none;">
+    <div class="hide"></div>
+    <div class="con">
+    	<!--  写弹层的内容 -->
+    	<img src="../img/warn.png">
+        <span class="text-text"></span>
+    </div>
+</div>
+
+
+</body>
+</html>

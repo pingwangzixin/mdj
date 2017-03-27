@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布考试-填写考试名称</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../common/jquery-ui-1.12.0.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/exam-admin.css"/>
+    
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/jquery-ui-1.12.0.custom/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="../js/exam-admin.js" type="text/javascript" charset="utf-8"></script>
+  	
+</head>
+<body>
+
+<header class="header clearfix"></header>
+<!--中心内容-->
+<div class="main clearfix">
+    <!--左侧-->
+	<div  class="left fl"></div>
+	
+    <!--右侧-->
+    <div class="main_right fr Res_step">
+		<div class="exam_release">
+			<div class="exam_tab">
+				<a href="#" class="active">发布考试</a>
+			</div>
+			
+			<!--发布考试步骤-->
+			<div class="release_step">
+				<span class="active">
+					<em>填写考试名称</em>
+					<i>1</i>
+				</span>
+				<span>
+					<em>选择考试范围</em>
+					<i>2</i>
+				</span>
+			</div>
+			
+			<div class="step_one" id="step_one">
+				
+				<!--考试名称-->
+				<div class="exam_name">
+					<h3 class="fir_h3">考试名称</h3>
+					<div>
+						您正在为
+						<i class="i1">____</i>
+						学年，
+						<i class="i2">____</i> ，
+						<i class="i3">____</i>
+						新建考试
+					</div>
+					<span>注释：考试名称会根据定义的考试属性自动生成，例如：当您选择了学年【2014—2015】学期【上学期】、年级【一年级】、考试科目【语文】、考试类型【期中考试】之后，对
+应的考试名称将自动生成为【2014—2015学年上学期】一年级语文期中考试。</span>
+				</div>
+				
+				<!--学年-->
+				<div class="school_year take_h">
+					<h3>学年</h3>
+					<div class="div_same j_radio">
+						<span>2014-2015（上）</span>
+						<span>2014-2015（下）</span>
+						<i class="his">历史学年：</i>
+						<span>2013-2014（上）</span>
+						<span>2013-2014（下）</span>
+					</div>
+					<p>注释：当前学年为2015-2016（上），在录入历史学年数据时，请注意年级的选择，为当前年级的上一年级，eg：当前为三年级，录入历史学年数据时，年级选择应为二年级。</p>
+				</div>
+				
+				<!--年级-->
+				<div class="grade take_h">
+					<h3>年级</h3>
+					<div class="div_same j_radio J_radio">
+						<span>一年级</span>
+						<span>二年级</span>
+						<span>三年级</span>
+						<span>四年级</span>
+						<span>五年级</span>
+						<span>六年级</span>
+					</div>
+				</div>
+				
+				<!--归属区域-->
+				<div class="exam_sub take_h">
+					<h3>归属区域</h3>
+					<div class="div_same j_radio">
+						<span>林管局</span>
+						<span>市直属</span>
+						<span>东安区</span>
+						<span>阳明区</span>
+						<span>爱民区</span>
+						<span>西安区</span>
+						<span>东宁县</span>
+						<span>林口县</span>
+					</div>
+					<div class="classify">
+						<div class="classifyLine clearfix abc">
+							<ul class="fl all_school">
+								<li>市直属学校：</li>
+								<li> 
+									<input type="checkbox" id=""/> 
+									<label for="">全选</label>
+								</li>
+							</ul>
+							<ul class="fl line_school">
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+							</ul>
+						</div>
+						<div class="classifyLine clearfix">
+							<ul class="fl all_school">
+								<li>市直属学校：</li>
+								<li> 
+									<input type="checkbox" id=""/> 
+									<label for="">全选</label>
+								</li>
+							</ul>
+							<ul class="fl line_school">
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+							</ul>
+						</div>
+						<div class="classifyLine clearfix">
+							<ul class="fl all_school">
+								<li>市直属学校：</li>
+								<li> 
+									<input type="checkbox" id=""/> 
+									<label for="">全选</label>
+								</li>
+							</ul>
+							<ul class="fl line_school">
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+								<li>
+									<input type="checkbox" id=""/> 
+									<label for="">牡丹江市长安小学</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+				
+				<!--考察科目-->
+				<div class="test_sub">
+					<h3>考察科目</h3>
+					<div class="div_same select_box">
+						<em class="add">添加学科</em>
+						<b class="no_choose">您还没有选择年级哦~</b>
+						<p>注释：选择考察科目，将历史成绩合并对比，在导入成绩功能中导出excel模板会导出所选择的科目和考试的成绩。</p>
+					</div>
+				</div>
+				
+				<!--考试类型-->
+				<div class="exam_type take_h">
+					<h3>考试类型</h3>
+					<div class="div_sin j_radio ">
+						<div class="has_sel terming_exam">
+							<span>期中考试</span>
+							<!--期中期类型-->
+							<div class="term_date terming_date pos_div">
+								<h3>日期类型</h3>
+								<div class="div_same j_radio in_sp">
+									<span>1学期</span>
+									<span>2学期</span>
+								</div>
+							</div>	
+						</div>
+						
+						<div class="has_sel termend_exam">
+							<span>期末考试</span>
+							<!--期末期类型-->
+							<div class="term_date termend_date pos_div">
+								<h3>日期类型</h3>
+								<div class="div_same j_radio in_sp">
+									<span>1学期</span>
+									<span>2学期</span>
+								</div>
+							</div>	
+						</div>
+						
+						<div class="has_sel analog_exam ">
+							<span>摸底考试</span >
+							<!--模拟考试日期类型-->
+							<div class="analog_date pos_div">
+								<h3>日期类型</h3>
+								<div class="div_same j_radio in_sp">
+									<span>第1次</span>
+									<span>第2次</span>
+									<span>第3次</span>
+								</div>
+							</div>	
+						</div>
+						
+						<div class="no_sel">
+							<span>毕业考试</span>
+						</div>
+					</div>
+				</div>
+				
+				<!--考试日期-->
+				<div class="exam_date take_h">
+					<h3>考试日期</h3>
+					<input class="div_same date Mdate" type="text" name="year" readonly />
+				</div>
+				
+				<script>
+					//获取当前年份
+					var oDate = new Date();
+					oDate = oDate.getFullYear();
+					var backYear = oDate - 5;
+					var forwordYear = oDate + 0;
+					
+					//日历
+		            $.datepicker.regional["zh-CN"] = { 
+	            		closeText: "关闭", 
+		            	prevText: "&#x3c;上月", 
+		            	nextText: "下月&#x3e;", 
+		            	currentText: "今天", 
+		            	monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"], 
+		            	monthNamesShort: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"], 
+		            	dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"], 
+		            	dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"], 
+		            	dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"], 
+		            	weekHeader: "周", 
+		            	dateFormat: "yy-mm-dd", 
+		            	firstDay: 1, 
+		            	isRTL: !1, 
+		            	showMonthAfterYear: !0, 
+		            	yearSuffix: "年" ,
+		            	showButtonPanel:false,	//是否显示按钮面板  
+		            	changeYear:true,		//是否显示下拉年份
+		            	yearRange:backYear + ':' + forwordYear,		//下拉年份设置
+		            	changeMonth:false,		//是否显示下拉月份
+	            	 	numberOfMonths: 1,		//一次显示几个月
+		            }
+		
+		            $.datepicker.setDefaults($.datepicker.regional["zh-CN"]);
+		            var datePicker = $(".Mdate").datepicker({
+		                showOtherMonths: true,
+		                selectOtherMonths: true            
+		            });
+		            
+				</script>
+			</div>
+	
+			<!--下一步-->
+			<div class="step step_top">
+				<a href="javascript:;" class="step_btn next_one">下一步</a>
+			</div>			
+		</div>
+		
+		<script>
+			//填写考试名称下一步
+			$(document).on('click','.next_one',function (){
+				
+				//select取值
+				var arr = [];
+				var str = '';
+				$('.select_group').each(function(){
+					$(this).find('select').each(function(){
+						 str +=','+$(this).find('option:selected').val();
+					});
+					str = str.substring(1);
+					arr.push(str);
+					str = '';
+				});
+				
+				var arr2 = [];
+				var selJson = {};
+				$('.select_group').each(function(){
+					$(this).find('select').each(function(index){
+						if(index==0){
+							selJson['学年'] = $(this).find('option:selected').val();
+						}
+						if(index==1){
+							selJson['学科'] = $(this).find('option:selected').val();
+						}
+						if(index==2){
+							selJson['考试'] = $(this).find('option:selected').val();
+						}
+					});
+					arr2.push(selJson);
+					selJson = {};
+				});
+				
+//				console.log(JSON.stringify(arr));
+//				console.log(JSON.stringify(arr2));
+				
+				
+				//验证下一步  弹框文字
+				var outerH3Arr=[];
+				$('.take_h>h3').each(function (index){
+					outerH3Arr.push($(this).text());
+				});
+				var twoH3 = $('.exam_sub h3').text() + ' 或 ' + $('.test_sub h3').text();
+				outerH3Arr[2] = twoH3;
+				
+				var innerH3Arr=[];
+				$('.pos_div>h3').each(function (){
+					innerH3Arr.push($(this).text());
+				});
+				
+				
+				//判断考试科目验证条件
+				var selNum = 0;
+				var existSelect = 0;
+				$('.select_group').each(function(){
+					$(this).find('select').each(function(index){
+						console.log($(this).find('option:selected').val())
+						if(index==0 || index==1){
+							if($(this).find('option:selected').val()==''){
+								selNum = 1;
+							}
+						}
+					});
+				});
+				if($('.select_group').length==0){
+					existSelect = 1;
+				}
+				console.log(selNum);
+				console.log(existSelect);
+				
+				
+				//逐条验证
+				var n=0;
+				var m=0;
+				if($('.i1').text() == '____'){
+					n++;
+				}else if($('.i2').text() == '____'){
+					n+=2;
+				}else if((! $('.exam_sub span').hasClass('active')) && (selNum == 1 || existSelect == 1) || (selNum == 1)){
+					n+=3;
+				}else if($('.i3').text() == '____'){
+					n+=4;
+				}else if($('.has_sel ').hasClass('active') && ! $('.in_sp span').hasClass('active')){
+					m++;
+				}else if($('.exam_date input').val() == ''){
+					n+=5;
+				}else{
+					location.href='step2.html';
+				}
+				
+				
+				if(n || m){
+					$('.warn').show();
+					setTimeout(function (){
+						$('.warn').hide();
+					},1000);
+				}
+				if(n){
+					$('.text-text').text('请选择 '+outerH3Arr[n-1]+'！');
+				}else if(m){
+					$('.text-text').text('请选择 '+innerH3Arr[m-1]+'！');
+				}
+			});
+		</script>
+		
+    </div>
+</div>
+
+<!--弹层 -->
+<!--del_down为公用clss名不要动，后面起自己控制的class-->
+<div class="del_down warn" style="display: none;">
+    <div class="hide"></div>
+    <div class="con">
+    	<img src="../img/warn.png">
+        <span class="text-text"></span>
+    </div>
+</div>
+
+</body>
+</html>
