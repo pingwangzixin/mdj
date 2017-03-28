@@ -52,24 +52,31 @@ $(function () {
     */
     
     //点击查看版本册别信息弹出灰色蒙层
-    $(".chakan").click(function () {
-            $(".jiaocaiwrap").show(300);
-            $(".kcul span").hide()
-            $(".mengceng").show()
-        })
-        //点击修改版本册别信息弹出灰色蒙层
-    $(".xiugai").click(function () {
-        $(".jiaocaiwrap").show(300);
-        $(".kcul span").show()
-        $(".mengceng").show()
+     $(".chakan").Shwindow({
+        obj:".chakan",
+        state:"show",
+        ele:['.jiaocaiwrap','.mengceng']
+    })
+     
+     $(".chakan").Shwindow({
+        obj:".chakan",
+        state:"hide",
+        ele:['.kcul span']
+    })
+    
+    //点击修改版本册别信息弹出灰色蒙层
+    $(".xiugai").Shwindow({
+        obj:".xiugai",
+        state:"show",
+        ele:['.jiaocaiwrap','.kcul span','.mengceng']
     })
 
     //点击关闭查看和修改教材目录
-    $(".qxckjc").click(function () {
-        $(".jiaocaiwrap").hide(300)
-        $(".mengceng").hide()
+    $(".qxckjc").Shwindow({
+        obj:".qxckjc",
+        state:"hide",
+        ele:['.jiaocaiwrap','.mengceng']
     })
-
     
     /*
         ========删除版本模块开始=========
@@ -256,10 +263,6 @@ $(function () {
         $(".jcglul ul").append('<li><input class="checkone" id="cebie" type="checkbox" value="" name="check[]" /><label for="cebie">'+cebieval+'</label></li>')
     })
     
-    //点击添加(册别)弹窗
-    // $(".tjbanben").live("click",function(){
-    //     $(".addcebie").show(200)
-    // })
     
     //点击取消添加
     $(".verquit,.adtitr").click(function () {
