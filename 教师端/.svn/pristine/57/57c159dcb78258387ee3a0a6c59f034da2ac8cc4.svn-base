@@ -36,7 +36,17 @@ $(function () {
                 $(".zhezhao").hide();
             }, 1000)
         })
-        
+        //打分页面提交
+    $(".dafentj").on("click", function () {
+            $(".del_down").show();
+            $(".zhezhao").show();
+            $(".text-text").html("提交成功")
+            setTimeout(function () {
+                $(".del_down").hide();
+                $(".zhezhao").hide();
+                window.location.href = "./zonghepingjia.html";
+            }, 1000)
+        })
         //全选
     $(".allselect").on("click", function () {
             var gouxuan = $(".allselect").is(":checked")
@@ -60,51 +70,18 @@ $(function () {
             $(".rwonetc .rwbiaoti").html(tit)
             $(".zhezhao").show()
         })
-    
-    //封装的settimeout显示隐藏弹窗的函数
-    function timeoutwindow(opt){
-    	$(opt.obj).on("click",function(){
-    		for(var i=0;i<opt.hide.length;i++){
-    			$(opt.hide[i]).hide();
-    		}
-    		for(var i=0;i<opt.show.length;i++){
-    			$(opt.show[i]).show();
-    		}
-    		$(opt.tchtml).html(opt.html)
-    		setTimeout(function(){
-    			for(var i=0;i<opt.show.length;i++){
-    				$(opt.show[i]).hide();
-    				if(opt.href.legth>=1){
-    					window.location.href=opt.href
-    				}else{
-    				}
-    			}
-    		},opt.time)
-    	})
-    }
-    //任务弹窗确认按钮
-    timeoutwindow({
-    	obj:".rwpfsure",
-    	hide:['.rwonetc'],
-    	tchtml:".text-text",
-    	html:'提交成功',
-    	show:['.zhezhao','.del_down'],
-    	time:1000,
-    	href:''
-    })
-    
-    //打分页面提交
-    timeoutwindow({
-    	obj:".dafentj",
-    	hide:[],
-    	tchtml:".text-text",
-    	html:'提交成功',
-    	show:['.zhezhao','.del_down'],
-    	time:1000,
-    	href:'./zonghepingjia.html'
-    })
-    
-     //五角星评分
+        //任务弹窗确认按钮
+    $(".rwpfsure").on("click", function () {
+            $(".rwonetc").hide();
+            $(".del_down").show();
+            $(".zhezhao").show();
+            $(".text-text").html("提交成功")
+            setTimeout(function () {
+                $(".del_down").hide();
+                $(".zhezhao").hide();
+            }, 1000)
+        })
+        //五角星评分
     $(".wujiaodafen").raty({
         path: "../img"
         , number: 4

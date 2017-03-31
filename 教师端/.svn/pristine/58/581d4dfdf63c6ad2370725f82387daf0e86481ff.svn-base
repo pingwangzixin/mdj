@@ -74,10 +74,7 @@ $(function () {
     		setTimeout(function(){
     			for(var i=0;i<opt.show.length;i++){
     				$(opt.show[i]).hide();
-    				if(opt.href.legth>=1){
-    					window.location.href=opt.href
-    				}else{
-    				}
+    				window.location.href=opt.href
     			}
     		},opt.time)
     	})
