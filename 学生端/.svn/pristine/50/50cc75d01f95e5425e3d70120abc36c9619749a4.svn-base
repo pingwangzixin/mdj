@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="renderer" content="webkit">
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	    <meta name="format-detection" content="telephone=no" />
+		<title>学生档案</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../common/jquery-ui-1.12.0.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="../css/dossier.css"/>
+		<script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+		<script src="../common/jquery-ui-1.12.0.custom/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/dossier.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="main">
+			<!--头部-->
+			<div class="head clearfix">
+				<div><img class="logo" src="../img/logo.png"/></div>
+				<div><img class="dangan" src="../img/StudentFiles.png"/></div>
+				<div class="person">
+					<img src="../img/person.png"/> <i>李本玲</i>
+				</div>
+			</div>
+			<!--云朵-->
+			<!--<div class="cloud">
+				<img class="cloud1" src="../img/cloud.png"/>
+				<img class="cloud2" src="../img/cloud.png"/>
+				<img class="cloud3" src="../img/cloud.png"/>
+				<img class="cloud4" src="../img/cloud.png"/>
+				<img class="cloud5" src="../img/cloud.png"/>
+			</div>-->
+			<div class="Cloud">
+				<img class="cloud6" src="../img/cloud.png"/>
+				<img class="cloud7" src="../img/cloud.png"/>
+				<img class="cloud8" src="../img/cloud.png"/>
+				<img class="cloud9" src="../img/cloud.png"/>
+			</div>
+			<!--燕子-->
+			<div class="bird">
+				<img class="bird1" src="../img/bird1.png"/>
+				<img class="bird2" src="../img/bird2.png"/>
+				<img class="bird3" src="../img/bird3.png"/>
+			</div>
+			
+			<div class="page">
+				
+				
+				<!--高中-->
+				<div class="high-three" style="display: block;"> <!--高三-->
+					<div class="high-tree" ><img src="../img/high-tree3.png"/></div>
+					<div class="high-grade cursor"><img src="../img/high-three.png" /></div>
+					<div class="smallSchool cursor"><img src="../img/smallSchool.png"/></div>
+					<div class="middleSchool cursor"><img  src="../img/middleSchool.png"/></div>
+					<div class="highCircle">
+						<img class="high1 cursor" src="../img/high1.png"/>
+						<img class="high2 cursor" src="../img/high2.png"/>
+						<img class="high3 cursor" src="../img/high3.png"/>
+					</div>
+					<div class="middleCircle">
+						<img class="middle1 cursor" src="../img/middle1.png"/>
+						<img class="middle2 cursor" src="../img/middle2.png"/>
+						<img class="middle3 cursor" src="../img/middle3.png"/>
+					</div>
+					<div class="smallCircle">
+						<img class="small1 cursor" src="../img/small1.png"/>
+						<img class="small2 cursor" src="../img/small2.png"/>
+						<img class="small3 cursor" src="../img/small3.png"/>
+						<img class="small4 cursor" src="../img/small4.png"/>
+						<img class="small5 cursor" src="../img/small5.png"/>
+						<img class="small6 cursor" src="../img/small6.png"/>
+					</div>
+				</div>
+				
+				<!--科目-->
+				<div class="Subject">
+					<img class="pic1" src="../img/pic1.png"/>
+					<img class="pic2" src="../img/pic2.png"/>
+					<img class="pic3" src="../img/pic3.png"/>
+					<img class="pic4" src="../img/pic4.png"/>
+					<img class="pic5" src="../img/pic5.png"/>
+					<img class="pic6" src="../img/pic6.png"/>
+					<img class="pic7" src="../img/pic7.png"/>
+					<img class="pic8" src="../img/pic8.png"/>
+					<img class="pic9" src="../img/pic9.png"/>
+					<img class="pic10" src="../img/pic10.png"/>
+					<img class="pic11" src="../img/pic11.png"/>
+					<img class="pic12" src="../img/pic12.png"/>
+					<img class="pic13" src="../img/pic13.png"/>
+					
+					<!--时间插件-->
+					<div class="lineTime">
+						<div class="Time"></div>
+						<img class="lineGreen" src="../img/lineGreen.png"/>
+					</div>
+					<script type="text/javascript">
+						//获取当前年份
+						var oDate = new Date();
+						oDate = oDate.getFullYear();
+						var backYear = oDate - 5;
+						var forwordYear = oDate + 0;
+						
+						//日历
+			            $.datepicker.regional["zh-CN"] = { 
+		            		closeText: "关闭", 
+			            	prevText: "&#x3c;上月", 
+			            	nextText: "下月&#x3e;", 
+			            	currentText: "今天", 
+			            	monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"], 
+			            	monthNamesShort: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"], 
+			            	dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"], 
+			            	dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"], 
+			            	dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"], 
+			            	weekHeader: "周", 
+			            	dateFormat: "yy-mm-dd", 
+			            	firstDay: 1, 
+			            	isRTL: !1, 
+			            	showMonthAfterYear: !0, 
+			            	yearSuffix: "年" ,
+			            	showButtonPanel:false,	//是否显示按钮面板  
+			            	changeYear:true,		//是否显示下拉年份
+			            	yearRange:backYear + ':' + forwordYear,		//下拉年份设置
+			            	changeMonth:true,		//是否显示下拉月份
+		            	 	numberOfMonths: 1,		//一次显示几个月
+			            }
+			
+			            $.datepicker.setDefaults($.datepicker.regional["zh-CN"]);
+			            var datePicker = $(".Time").datepicker({
+			                showOtherMonths: true,
+			                selectOtherMonths: true            
+			            });
+					</script>
+				</div>
+				
+								
+			</div>
+		</div>
+	</body>
+</html>
