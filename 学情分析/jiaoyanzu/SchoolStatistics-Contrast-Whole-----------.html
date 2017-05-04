@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>学校分析</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+	    <script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header clearfix">
+				<p class="fl">考试名称：2015—2016年第二学期期末考试</p>
+				<h5 class="fr">考试时间：2016年03月22日</h5>
+			</div>
+			<div class="main">
+				<div class="mainTab">
+					<ul>
+						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
+						<li><a href="SingleAnalysis.html">单科分析</a></li>
+						<li class="current"><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
+						<li><a href="ExamList.html">成绩列表</a></li>
+						<li><a href="StudentStatistics.html">参考学生统计</a></li>
+					</ul>	
+				</div>
+				<div class="clearfix Sub">
+					<ul class="Choice fl">
+						<li class="clearfix more">
+							<p>选择区县：</p>
+							<span>市直属</span>
+							<span>东安区</span>
+							<span>爱民区</span>
+							<span>阳明区</span>
+						</li>
+						<li class="clearfix more">
+							<p>选择学校：</p>
+							<div class="local">
+								<h3>直属</h3>
+								<span>辅仁高中</span>
+								<span>梅村高中</span>
+								<span>第三高中</span>
+								<span>市北高中</span>
+								<span>第一女中</span>
+								<span>市六高中</span>
+								<span>青山高中</span>
+							</div>
+							</br>
+							<div class="local">
+								<h3>锡山区</h3>
+								<span>锡东高中</span>
+								<span>怀仁中学</span>
+								<span>天一中学</span>
+							</div>
+							</br>
+							<div class="local">
+								<h3>惠山区</h3>
+								<span>锡山高中</span>
+								<span>洛社高中</span>
+								<span>玉祁高中</span>
+							</div>
+						</li>
+						<li class="clearfix single zhibiao">
+							<p>对比指标：</p>
+							<span>全科</span>
+							<span>物理</span>
+							<span>英语</span>
+							<span>数学</span>
+							<span>语文</span>
+						</li>
+					</ul>
+					<a class="fr look" href="SchoolStatistics-Analysis.html">单校分析</a>
+				</div>
+				
+				<!--语文总分分档比较-->
+				<div class="mainTitle" style="margin-bottom: 40px;">全科总分分档比较</div>
+									
+				<!--分档比率堆积柱状图 -->
+				<div id="chart-list" class="tabcon">						
+					<!--数据表-->
+					<div class="white-box chart-column-line-global">
+						<!--数据表-->
+						<div class="chart-column-stack-1 charts-btb" style="height:350px;"></div>
+						<div class="chart-column-legend">
+					        <div class="can-choosed">可选择：</div>
+					        <span data-level="1" class="level-a"><i></i>A(81以上)</span>
+					        <span data-level="2" class="level-b"><i></i>B(59以上)</span>
+					        <span data-level="3" class="level-c"><i></i>C(11以上)</span>
+					        <span data-level="4" class="level-d"><i></i>D(11以下)</span>
+					   </div>
+					</div>
+			    	<!--js-->
+			    	<script>
+			    	$LAB
+				        .script('../common/js/highcharts.js')
+				        .script('../common/js/highcharts-functions.js')
+				        .wait(function(){
+				            var chart_column_stack_data2 = {"title":"分档比率堆积柱状图","categories":["第三中学","育才中学","第一中学","实验中学","第二重点中学","第二中学","窦店小学","昌平小学","北京小学","牡丹江中学"],"ytitle":"\u6bd4\u7387","totalName":"\u603b\u4eba\u6570","units":"\u4eba","data":[{"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":49,"class_id":52},{"y":15.38,"num":8,"count":52,"class_id":53},{"y":31.37,"num":16,"count":51,"class_id":54},{"y":7.84,"num":4,"count":51,"class_id":55},{"y":16.67,"num":8,"count":48,"class_id":56},{"y":26.53,"num":13,"count":49,"class_id":57},{"y":13.73,"num":7,"count":51,"class_id":58},{"y":16.33,"num":8,"count":49,"class_id":59},{"y":28,"num":14,"count":50,"class_id":60},{"y":3.85,"num":2,"count":52,"class_id":61}]},{"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":14.29,"num":7,"count":49,"class_id":52},{"y":13.46,"num":7,"count":52,"class_id":53},{"y":25.49,"num":13,"count":51,"class_id":54},{"y":29.41,"num":15,"count":51,"class_id":55},{"y":27.08,"num":13,"count":48,"class_id":56},{"y":34.69,"num":17,"count":49,"class_id":57},{"y":45.1,"num":23,"count":51,"class_id":58},{"y":38.78,"num":19,"count":49,"class_id":59},{"y":34,"num":17,"count":50,"class_id":60},{"y":32.69,"num":17,"count":52,"class_id":61}]},{"name":"\u53ca\u683c","color":"#fdbc2a","level":3,"data":[{"y":67.35,"num":33,"count":49,"class_id":52},{"y":30.77,"num":16,"count":52,"class_id":53},{"y":23.53,"num":12,"count":51,"class_id":54},{"y":33.33,"num":17,"count":51,"class_id":55},{"y":45.83,"num":22,"count":48,"class_id":56},{"y":22.45,"num":11,"count":49,"class_id":57},{"y":35.29,"num":18,"count":51,"class_id":58},{"y":32.65,"num":16,"count":49,"class_id":59},{"y":30,"num":15,"count":50,"class_id":60},{"y":38.46,"num":20,"count":52,"class_id":61}]},{"name":"\u4e0d\u53ca\u683c","color":"#fb5252","level":4,"data":[{"y":18.37,"num":9,"count":49,"class_id":52},{"y":40.38,"num":21,"count":52,"class_id":53},{"y":19.61,"num":10,"count":51,"class_id":54},{"y":29.41,"num":15,"count":51,"class_id":55},{"y":10.42,"num":5,"count":48,"class_id":56},{"y":16.33,"num":8,"count":49,"class_id":57},{"y":5.88,"num":3,"count":51,"class_id":58},{"y":12.24,"num":6,"count":49,"class_id":59},{"y":8,"num":4,"count":50,"class_id":60},{"y":25,"num":13,"count":52,"class_id":61}]}]};
+				            chart_column_stack('.chart-column-stack-1', chart_column_stack_data2.title, chart_column_stack_data2.categories, chart_column_stack_data2.ytitle, chart_column_stack_data2.data, chart_column_stack_data2.totalName, chart_column_stack_data2.units, false);
+				
+				            initSingleColumnChart($('.chart-column-stack-1'), chart_column_stack_data2.data);
+				
+				            $('.chart-column-legend > span').on("click",function(){
+				                legendUpdate($(this), $('.chart-column-stack-1'), chart_column_stack_data2.data, true);
+				            });
+				
+				            $('.chart-column-legend-class > span').on("click",function(){
+				            	$(this).toggleClass("active");
+				                legendUpdate($(this), $('.chart-column-stack-1'), chart_column_stack_data2.data, true);
+				            });
+				        });
+				        
+			       </script>
+				</div>
+				
+				<!--分档人数堆积柱状图-->
+				<div class="chart-column-line-global" style="margin-top: 20px;">
+					<div class="chart-bar-1 charts-btb" data-highcharts-chart="5"></div>
+	                <div class="chart-column-legends bar-1">
+	            		<div class="can-choosed">可选择：</div>
+		                <span class="btn-exam-level-a ttfu" data-level="1"></span>
+		                <span class="btn-exam-level-b ttfu" data-level="2"></span>
+		                <span class="btn-exam-level-c ttfu" data-level="3"></span>
+		                <span class="btn-exam-level-d ttfu" data-level="4"></span>
+	                </div>
+	            </div>
+	            <script>
+				    $LAB
+				    .script('../common/js/highstock.js')
+	                .script('../common/js/highcharts-functions-new.js')
+				    .wait(function(){
+				        var arr = {"target":".chart-bar-1","title":"\u5206\u6863\u4eba\u6570\u5806\u79ef\u67f1\u72b6\u56fe","categories":["\u5e02\u76f4\u5c5e","\u9521\u5c71\u533a","\u60e0\u5c71\u533a","\u6ee8\u6e56\u533a"],"ytitle":"\u4eba\u6570","stacking":"normal","units":"\u4eba","tooltip":true,"totalName":"\u603b\u4eba\u6570","data":[{"name":"A","color":"#81D470","level":1,"data":[2313,1126,1142,240]},{"name":"B","color":"#7CB5EC","level":2,"data":[1466,694,612,248]},{"name":"C","color":"#F7A35C","level":3,"data":[695,199,256,235]},{"name":"D","color":"#F15C80","level":4,"data":[160,18,32,111]}]};
+				        var t = [{"name":"A","color":"#81D470","level":1,"data":[2313,1126,1142,240]},{"name":"B","color":"#7CB5EC","level":2,"data":[1466,694,612,248]},{"name":"C","color":"#F7A35C","level":3,"data":[695,199,256,235]},{"name":"D","color":"#F15C80","level":4,"data":[160,18,32,111]}];
+				
+				        chart_column_bar(arr);
+				
+				        $('.chart-column-legends.bar-1 > span').click(function(){
+				            legendUpdate($(this), $('.chart-bar-1'), t);
+				        });
+				    });
+				</script>
+			
+				<!--分档统计表-->
+				<div class="table-title">分档统计表</div>
+				<table class="border">
+			        <thead>
+			            <tr>
+			                <th rowspan="2" style="width:20%;">学校</th>
+			                <th colspan="2" style="width:20%;">A</th>
+                            <th colspan="2" style="width:20%;">B</th>
+                            <th colspan="2" style="width:20%;">C</th>
+                            <th colspan="2" style="width:20%;">D</th>
+			            </tr>
+			            <tr>
+			                <th style="width:10%;">人数</th>
+			                <th style="width:10%;">占比(%)</th>
+			                <th style="width:10%;">人数</th>
+			                <th style="width:10%;">占比(%)</th>
+			                <th style="width:10%;">人数</th>
+			                <th style="width:10%;">占比(%)</th>
+			                <th style="width:10%;">人数</th>
+			                <th style="width:10%;">占比(%)</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+				            <td>牡丹江市第三中学</td>
+				            <td>4821</td>
+				            <td>50.50</td>
+				            <td>3020</td>
+				            <td>31.63</td>
+				            <td>1385</td>
+				            <td>14.51</td>
+				            <td>321</td>
+				            <td>3.36</td>
+			            </tr>
+			            <tr>
+			                <td>育才中学</td>
+			                <td>2313</td>
+			                <td>49.91</td>
+			                <td>1466</td>
+			                <td>31.64</td>
+			                <td>695</td>
+			                <td>15.00</td>
+			                <td>160</td>
+			                <td>3.45</td>
+			            </tr>
+			            <tr>
+				            <td>实验中学</td>
+				            <td>1126</td>
+			                <td>55.28</td>
+			                <td>694</td>
+			                <td>34.07</td>
+			                <td>199</td>
+			                <td>9.77</td>
+			                <td>18</td>
+			                <td>0.88</td>
+			            </tr>
+			        </tbody>
+			    </table>
+							
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*列表切换*/
+		$(".mainTab ul li").on("click", function() {
+			$(".mainTab ul li").removeClass("current");
+			$(this).addClass("current").siblings().removeClass("current");
+		});
+		$(".Choice  li.more span").on("click", function() {
+			if($(this).hasClass("active")){
+				$(this).removeClass("active");
+			}else{
+				$(this).addClass("active");
+			}
+		});
+		$(".Choice  li.single span").on("click", function() {
+			$(this).removeClass("active");
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+	</script>
+</html>

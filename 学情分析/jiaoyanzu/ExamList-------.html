@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
 	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
 		<script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
-		<script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+   	    <script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -20,7 +20,7 @@
 				<div class="mainTab">
 					<ul>
 						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
-						<li><a href="SingleAnalysis.html">单科分析</a></li>
+						<li><a href="javascript:;">单科分析</a></li>
 						<li><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
 						<li class="current"><a href="ExamList.html">成绩列表</a></li>
 						<li><a href="StudentStatistics.html">参考学生统计</a></li>
@@ -70,7 +70,7 @@
 							<a href="javascript:;" class="fr">导出表格</a>
 						</div>
 						<div class="gradeQuankeScollBox">
-							<table id="failed_table_t" class="failed_table_t ListTable">
+							<table id="failed_table_t" class="failed_table_t">
 								<thead>
 									<tr>
 										<th rowspan="3" style="min-width: 100px; ">考试号</th>
@@ -991,14 +991,14 @@
 										<td>—</td>
 									</tr>
 								</tbody>
-							
 							</table>
-						
+							
 						</div>
 						
 						<script>
-						    $('#failed_table_t').DataTable({
-					            paging: false,
+							//表格
+							$('#failed_table_t').DataTable({
+								paging: false,
 					            info: false,
 					            searching: false,
 					            ordering: false,
@@ -1008,10 +1008,30 @@
 					            scrollY:"600px",
 					            scrollX:true,
 					            scrollCollapse:true,
-					            fixedColumns: {
-							        leftColumns: 4
-							    }
-					        });
+					            fixedColumns:{
+					                leftColumns:4
+					            }
+							});
+							/*滚动条事件样式*/
+							tableScoll({
+								"boxName":".gradeQuankeScollBox",//外盒子宽度
+								"lengthsNmae":".gradeQuankeScollBox table thead tr:first-child th[colspan='10']",//具体的需要增加的数据
+								"boxNmae_table":".gradeQuankeScollBox table",//当前table表
+								"num":1,//设定不能超过的个数
+								"scw":990,//设定不能超过的宽度
+								"min_w":1200,//表格最小宽度
+								"tdW":700//超过部分每一个表格的宽度
+							});
+							/*table表格超出有滚动条*/
+							function tableScoll(config){
+								var boxW=$(config.boxName).width();
+								var lengths=$(config.lengthsNmae).length;
+								var boxNmae_table=$(config.boxNmae_table);
+								if(lengths>config.num && boxW>config.scw){
+									lengths-=config.num;
+									boxNmae_table.css({"width":config.min_w+lengths*config.tdW});
+								}
+							}
 						</script>
 					</div>
 				</div>
