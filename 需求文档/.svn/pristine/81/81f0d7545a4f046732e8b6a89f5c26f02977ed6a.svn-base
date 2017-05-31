@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>单科分析</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+	    <script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper single">
+			<div class="header clearfix">
+				<p class="fl">考试名称：2015—2016年第二学期期末考试</p>
+				<h5 class="fr">考试时间：2016年03月22日</h5>
+			</div>
+			<div class="main">
+				<div class="mainTab">
+					<ul>
+						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
+						<li class="current"><a href="SingleAnalysis.html">单科分析</a></li>
+						<li><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
+						<li><a href="ExamList.html">成绩列表</a></li>
+						<li><a href="StudentStatistics.html">参考学生统计</a></li>
+					</ul>	
+				</div>
+				<div class="Sub">
+					<ul class="Choice">
+						<li>
+							<span class="active">语文</span>
+							<span>数学</span>
+							<span>英语</span>
+							<span>地理</span>
+							<span>政治</span>
+							<span>历史</span>
+							<span>化学</span>
+							<span>生物</span>
+							<span>美术</span>
+							<span>音乐</span>
+							<span>电子</span>
+							<span>数学</span>
+							<span>英语</span>
+							<span>地理</span>
+							<span>政治</span>
+							<span>历史</span>
+							<span>化学</span>
+							<span>生物</span>
+							<span>美术</span>
+							<span>音乐</span>
+							<span>电子</span>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="tab_title nav-links">
+			        <a href="javascript:;" data-id="#graph1" class="active">单科综合</a>
+			        <a href="javascript:;" data-id="#graph2" class="">分数段比较</a>
+			        <a href="javascript:;" data-id="#graph3" class="">名次段比较</a>
+			        <a href="javascript:;" data-id="#graph4" class="">成绩单</a>
+			    </div>
+				
+				
+				<div class="exam-blow">
+					<!--单科综合-->
+					<div id="graph1" class="module-widget-init" style="display: block;">
+						<div class="total-score zm-global">
+							<div class="graph-tabs-single">
+								<a href="javascript:;" data-id="1" class="active">均分比较</a>
+								<a href="javascript:;" data-id="2">及格率比较</a>
+							</div>
+							<div class="chart-list">
+								<!--均分比较-->
+								<div class="tabcon" data-name="1">
+									<!--图表1-->
+								    <div class="chart-column-line-global">
+								        <div class="chart-column-stack chart-line-change charts-btb"  style="height:350px;margin-top: 10px;"></div>
+								    </div>
+								    <script>
+										$LAB
+										.script('../common/js/highstock.js')
+										.script('../common/js/highcharts-functions-new.js')
+									    .wait(function(){
+									        var arr3 = {
+												"title": "\u5747\u5206\u6bd4\u8f83\u67f1\u72b6\u56fe(\u533a\u53bf)",
+												"ytitle": "\u5e73\u5747\u5206",
+												"categories": ["\u76f4\u5c5e", "\u9521\u5c71\u533a", "\u60e0\u5c71\u533a", "\u6ee8\u6e56\u533a", "\u5e02\u5c5e"],
+												"plineName": "\u5168\u4f53\u5e73\u5747\u5206",
+												"plineValue": 90,
+												"data": {
+													"name": "\u533a\u53bf\u5e73\u5747\u5206",
+													"data": [{
+														"y": 120.95
+													}, {
+														"y": 121.05
+													}, {
+														"y": 122.67
+													}, {
+														"y": 114.96
+													}, {
+														"y": 118.71
+													}]
+												},
+												"min": 40,
+												"dashStyle":true
+											};
+									        chart_column_line('.chart-line-change', arr3.title, arr3.categories, arr3.ytitle, arr3.plineName, arr3.plineValue, arr3.data, arr3.min, false, arr3.selected, arr3.max);
+									    });
+								    </script>	
+									<!--图表2-->
+									<div class="chart-column-line-global" style="margin-top: 25px;">
+								        <div class="chart-bar2" style="min-height:360px;"></div>
+								        <div class="chart-column-legends single-avg-chart">
+								            <span class="btn-level-1"></span>
+								            <em>学校平均分</em>
+								            <span class="btn-level-2"></span>
+								            <em>全体平均分</em>
+								        </div>
+								        <!--js-->
+								        <script>
+										    $LAB
+										    .script('../common/js/highstock.js')
+									        .script('../common/js/highcharts-functions-new.js')
+										    .wait(function(){
+										        var arr4 = {
+													"target": ".chart-bar2",
+													"title": "\u5747\u5206\u6bd4\u8f83\u67f1\u72b6\u56fe(\u5b66\u6821)",
+													"categories": ["\u5747\u5206", "\u65e0\u9521\u4e00\u4e2d", "\u8f85\u4ec1\u9ad8\u4e2d", "\u6885\u6751\u9ad8\u4e2d", "\u4e09\u9ad8\u4e2d", "\u5e02\u5317\u9ad8\u4e2d", "\u4e00\u5973\u4e2d", "\u5e02\u516d\u9ad8\u4e2d", "\u9752\u5c71\u9ad8\u4e2d", "\u9521\u4e1c\u9ad8\u4e2d", "\u6000\u4ec1\u4e2d\u5b66", "\u5929\u4e00\u4e2d\u5b66", "\u7701\u9521\u4e2d", "\u6d1b\u793e\u9ad8\u4e2d", "\u7389\u7941\u9ad8\u4e2d", "\u5830\u6865\u9ad8\u4e2d", "\u592a\u6e56\u9ad8\u4e2d", "\u7acb\u4eba\u9ad8\u4e2d", "\u5927\u6865\u5b9e\u6821", "\u8fd0\u6cb3\u5b9e\u4e2d", "\u5149\u534e", "\u5916\u56fd\u8bed\u5b66\u6821", "\u91d1\u699c\u9ad8\u590d", "\u6167\u6e90\u9ad8\u590d"],
+													"ytitle": "\u5e73\u5747\u5206",
+													"data": [{
+														"data": [{
+															"y": 99.99,
+															"color": "#82D471"
+														}, {
+															"y": 106.08,
+															"color": "#7CB5EC"
+														}, {
+															"y": 101.65,
+															"color": "#7CB5EC"
+														}, {
+															"y": 104.36,
+															"color": "#7CB5EC"
+														}, {
+															"y": 99.52,
+															"color": "#7CB5EC"
+														}]
+													}],
+													"labels": true
+												};
+										        chart_column_bar(arr4);
+										    });
+										</script>
+								   	</div>								   	
+									<!--table表格--单科综合分析统计表-->
+									<div class="mainOneTable">
+										<div class="tableBox">
+											<div class="tableTitle">单科综合分析统计表</div>
+											<div class="tableTab">
+												<span data-id="1">查看全部</span>
+												<span data-id="2">查看区县</span>
+												<span data-id="3">查看学校</span>
+												<p class="fr">导出表格</p>
+											</div>
+											<table class="statistics_table" id="mainOneTable1" style="width:100%;">
+												<thead>
+													<tr>
+														<th style="width:10%;" class="name">学校</th>
+														<th>参加人数</th>
+														<th>平均分</th>
+														<th>排名</th>
+														<th>最高分</th>
+														<th>最低分</th>
+														<th>A(%)</th>
+														<th>B(%)</th>
+														<th>C(%)</th>
+														<th>D(%)</th>
+														<th>超均率</th>
+														<th>比均率</th>
+														<th>标准差</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>全体</td>
+														<td>6332</td>
+														<td>317.59</td>
+														<td>-</td>
+														<td>425</td>
+														<td>69</td>
+														<td>58.56</td>
+														<td>28.57</td>
+														<td>10.39</td>
+														<td>2.48</td>
+														<td>-</td>
+														<td>-</td>
+														<td>38.49</td>
+													</tr>
+													<tr class="area bgcolor">
+														<td>直属</td>
+														<td>2621</td>
+														<td>317.23</td>
+														<td>3</td>
+														<td>403</td>
+														<td>156</td>
+														<td>56.77</td>
+														<td>30.83</td>
+														<td>11.03</td>
+														<td>1.37</td>
+														<td>-0.11</td>
+														<td>99.89</td>
+														<td>32.82</td>
+													</tr>
+													<tr>
+														<td>无锡一中</td>
+														<td>456</td>
+														<td>339.84</td>
+														<td>4</td>
+														<td>403</td>
+														<td>250</td>
+														<td>80.70</td>
+														<td>17.54</td>
+														<td>1.75</td>
+														<td>0</td>
+														<td>7.01</td>
+														<td>107.01</td>
+														<td>26.56</td>
+													</tr>
+													<tr>
+														<td>辅仁高中</td>
+														<td>436</td>
+														<td>327</td>
+														<td>7</td>
+														<td>388</td>
+														<td>165</td>
+														<td>76.15</td>
+														<td>20.87</td>
+														<td>2.52</td>
+														<td>0.46</td>
+														<td>2.97</td>
+														<td>102.97</td>
+														<td>23.82</td>
+													</tr>
+													<tr>
+														<td>梅村高中</td>
+														<td>479</td>
+														<td>335.29</td>
+														<td>5</td>
+														<td>389</td>
+														<td>249</td>
+														<td>82.88</td>
+														<td>16.08</td>
+														<td>1.04</td>
+														<td>0</td>
+														<td>5.57</td>
+														<td>105.57</td>
+														<td>21.79</td>
+													</tr>
+													<tr>
+														<td>第三高中</td>
+														<td>252</td>
+														<td>312.02</td>
+														<td>13</td>
+														<td>368</td>
+														<td>218</td>
+														<td>48.41</td>
+														<td>40.08</td>
+														<td>11.11</td>
+														<td>0.40</td>
+														<td>-1.75</td>
+														<td>98.25</td>
+														<td>24.23</td>
+													</tr>
+													<tr>
+														<td>市北高中</td>
+														<td>386</td>
+														<td>312.19</td>
+														<td>12</td>
+														<td>374</td>
+														<td>229</td>
+														<td>47.15</td>
+														<td>45.34</td>
+														<td>6.99</td>
+														<td>0.52</td>
+														<td>-1.7</td>
+														<td>98.3</td>
+														<td>23.13</td>
+													</tr>
+													<tr>
+														<td>第一女中</td>
+														<td>126</td>
+														<td>303.98</td>
+														<td>16</td>
+														<td>357</td>
+														<td>244</td>
+														<td>26.19</td>
+														<td>61.11</td>
+														<td>12.70</td>
+														<td>0</td>
+														<td>-4.28</td>
+														<td>95.72</td>
+														<td>21.79</td>
+													</tr>
+													<tr>
+														<td>市六高中</td>
+														<td>244</td>
+														<td>281.93</td>
+														<td>18</td>
+														<td>350</td>
+														<td>177</td>
+														<td>12.30</td>
+														<td>43.03</td>
+														<td>41.39</td>
+														<td>3.28</td>
+														<td>-11.23</td>
+														<td>88.77</td>
+														<td>27.75</td>
+													</tr>
+													<tr>
+														<td>青山高中</td>
+														<td>242</td>
+														<td>277.23</td>
+														<td>19</td>
+														<td>341</td>
+														<td>156</td>
+														<td>9.92</td>
+														<td>42.15</td>
+														<td>38.43</td>
+														<td>9.50</td>
+														<td>-12.71</td>
+														<td>87.29</td>
+														<td>32.98</td>
+													</tr>
+													<tr class="area bgcolor">
+														<td>锡山区</td>
+														<td>1379</td>
+														<td>326.49</td>
+														<td>1</td>
+														<td>425</td>
+														<td>160</td>
+														<td>64.39</td>
+														<td>28.50</td>
+														<td>6.74</td>
+														<td>0.36</td>
+														<td>2.8</td>
+														<td>102.8</td>
+														<td>33.25</td>
+													</tr>
+													<tr>
+														<td>锡东高中</td>
+														<td>474</td>
+														<td>311.73</td>
+														<td>14</td>
+														<td>369</td>
+														<td>160</td>
+														<td>50.84</td>
+														<td>39.24</td>
+														<td>9.49</td>
+														<td>0.42</td>
+														<td>-1.84</td>
+														<td>98.16</td>
+														<td>25.16</td>
+													</tr>
+													<tr>
+														<td>怀仁中学</td>
+														<td>313</td>
+														<td>303.31</td>
+														<td>17</td>
+														<td>354</td>
+														<td>205</td>
+														<td>33.55</td>
+														<td>52.40</td>
+														<td>13.10</td>
+														<td>0.96</td>
+														<td>-4.49</td>
+														<td>95.51</td>
+														<td>22.52</td>
+													</tr>
+													<tr>
+														<td>天一中学</td>
+														<td>592</td>
+														<td>350.55</td>
+														<td>2</td>
+														<td>425</td>
+														<td>252</td>
+														<td>91.55</td>
+														<td>7.26</td>
+														<td>1.18</td>
+														<td>0</td>
+														<td>10.38</td>
+														<td>110.38</td>
+														<td>27.61</td>
+													</tr>
+													<tr class="area bgcolor">
+														<td>惠山区</td>
+														<td>1394</td>
+														<td>321.26</td>
+														<td>2</td>
+														<td>417</td>
+														<td>148</td>
+														<td>62.98</td>
+														<td>26.69</td>
+														<td>8.61</td>
+														<td>1.72</td>
+														<td>1.16</td>
+														<td>101.16</td>
+														<td>35.49</td>
+													</tr>
+													<tr>
+														<td>锡山高中</td>
+														<td>547</td>
+														<td>343.19</td>
+														<td>3</td>
+														<td>417</td>
+														<td>254</td>
+														<td>85.56</td>
+														<td>13.35</td>
+														<td>1.10</td>
+														<td>0</td>
+														<td>8.06</td>
+														<td>108.06</td>
+														<td>25.77</td>
+													</tr>
+													<tr>
+														<td>洛社高中</td>
+														<td>384</td>
+														<td>320.03</td>
+														<td>9</td>
+														<td>373</td>
+														<td>221</td>
+														<td>63.02</td>
+														<td>31.25</td>
+														<td>5.47</td>
+														<td>0.26</td>
+														<td>0.77</td>
+														<td>100.77</td>
+														<td>24.12</td>
+													</tr>
+													<tr>
+														<td>玉祁高中</td>
+														<td>266</td>
+														<td>314.86</td>
+														<td>10</td>
+														<td>375</td>
+														<td>241</td>
+														<td>56.02</td>
+														<td>39.85</td>
+														<td>4.14</td>
+														<td>0</td>
+														<td>-0.86</td>
+														<td>99.14</td>
+														<td>20.68</td>
+													</tr>
+													<tr>
+														<td>堰桥高中</td>
+														<td>197</td>
+														<td>271.41</td>
+														<td>20</td>
+														<td>350</td>
+														<td>148</td>
+														<td>9.64</td>
+														<td>37.06</td>
+														<td>41.62</td>
+														<td>11.68</td>
+														<td>-14.54</td>
+														<td>85.46</td>
+														<td>38.47</td>
+													</tr>
+													<tr class="area bgcolor">
+														<td>滨湖区</td>
+														<td>441</td>
+														<td>289.68</td>
+														<td>5</td>
+														<td>364</td>
+														<td>69</td>
+														<td>35.15</td>
+														<td>29.25</td>
+														<td>26.30</td>
+														<td>9.30</td>
+														<td>-8.79</td>
+														<td>91.21</td>
+														<td>45.21</td>
+													</tr>
+													<tr>
+														<td>太湖高中</td>
+														<td>318</td>
+														<td>308.92</td>
+														<td>15</td>
+														<td>364</td>
+														<td>188</td>
+														<td>48.74</td>
+														<td>34.91</td>
+														<td>15.72</td>
+														<td>0.63</td>
+														<td>-2.73</td>
+														<td>97.27</td>
+														<td>27.96</td>
+													</tr>
+													<tr>
+														<td>立人高中</td>
+														<td>123</td>
+														<td>239.95</td>
+														<td>22</td>
+														<td>312</td>
+														<td>69</td>
+														<td>0</td>
+														<td>14.63</td>
+														<td>53.66</td>
+														<td>31.71</td>
+														<td>-24.45</td>
+														<td>75.55</td>
+														<td>43.35</td>
+													</tr>
+													<tr class="area bgcolor">
+														<td>市属</td>
+														<td>497</td>
+														<td>309.21</td>
+														<td>4</td>
+														<td>400</td>
+														<td>69</td>
+														<td>60.16</td>
+														<td>21.53</td>
+														<td>8.05</td>
+														<td>10.26</td>
+														<td>-2.64</td>
+														<td>97.36</td>
+														<td>61.32</td>
+													</tr>
+													<tr>
+														<td>大桥实验</td>
+														<td>85</td>
+														<td>356.79</td>
+														<td>1</td>
+														<td>400</td>
+														<td>298</td>
+														<td>97.65</td>
+														<td>2.35</td>
+														<td>0</td>
+														<td>0</td>
+														<td>12.34</td>
+														<td>112.34</td>
+														<td>16.7</td>
+													</tr>
+													<tr>
+														<td>运河实验</td>
+														<td>29</td>
+														<td>262.83</td>
+														<td>21</td>
+														<td>315</td>
+														<td>192</td>
+														<td>3.45</td>
+														<td>27.59</td>
+														<td>55.17</td>
+														<td>13.79</td>
+														<td>-17.24</td>
+														<td>82.76</td>
+														<td>30.07</td>
+													</tr>
+													<tr>
+														<td>光华</td>
+														<td>44</td>
+														<td>149.57</td>
+														<td>23</td>
+														<td>274</td>
+														<td>69</td>
+														<td>0</td>
+														<td>0</td>
+														<td>2.27</td>
+														<td>97.73</td>
+														<td>-52.9</td>
+														<td>47.1</td>
+														<td>40.94</td>
+													</tr>
+													<tr>
+														<td>外国语学校</td>
+														<td>45</td>
+														<td>332.78</td>
+														<td>6</td>
+														<td>361</td>
+														<td>295</td>
+														<td>80.00</td>
+														<td>20.00</td>
+														<td>0</td>
+														<td>0</td>
+														<td>4.78</td>
+														<td>104.78</td>
+														<td>17.4</td>
+													</tr>
+													<tr>
+														<td>金榜高复</td>
+														<td>248</td>
+														<td>321.58</td>
+														<td>8</td>
+														<td>387</td>
+														<td>187</td>
+														<td>62.50</td>
+														<td>29.03</td>
+														<td>7.26</td>
+														<td>1.21</td>
+														<td>1.26</td>
+														<td>101.26</td>
+														<td>30.94</td>
+													</tr>
+													<tr>
+														<td>慧源高复</td>
+														<td>46</td>
+														<td>313.5</td>
+														<td>11</td>
+														<td>384</td>
+														<td>209</td>
+														<td>52.17</td>
+														<td>34.78</td>
+														<td>10.87</td>
+														<td>2.17</td>
+														<td>-1.29</td>
+														<td>98.71</td>
+														<td>34.32</td>
+													</tr>
+												</tbody>
+											</table>
+											<script>
+											    $LAB
+											        .wait(function(){
+											            $('.tableTab > span').click(function (){
+											                var obj = $(this),
+											                    data_id = obj.attr("data-id");
+											                	obj.siblings().removeClass('active');
+											                	obj.addClass('active');
+											
+											                if(data_id == 1) {
+											                    $('.statistics_table tbody tr.area').addClass('bgcolor');
+											                    $('.statistics_table tbody tr:not(.area)').show();
+											                    $('.statistics_table tbody tr.area').show();
+											                    $('.statistics_table thead th:first-child').html('区县/学校');
+											                }else if(data_id == 2) {
+											                    $('.statistics_table tbody tr.area').removeClass('bgcolor');
+											                    $('.statistics_table tbody tr:not(.area)').hide();
+											                    $('.statistics_table tbody tr:first-child').show();
+											                    $('.statistics_table tbody tr.area').show();
+											                    $('.statistics_table thead th:first-child').html('区县');
+											                }else {
+											                    $('.statistics_table tbody tr.area').hide();
+											                    $('.statistics_table tbody tr:not(.area)').show();
+											                    $('.statistics_table thead th:first-child').html('学校');
+											                }
+											
+											            });
+											            $(function () {
+											                $('.tableTab > span:first').trigger('click');
+											            });
+											        });
+											</script>
+										</div>
+									</div>
+								</div>
+																					
+								<div class="tabcon" data-name="2">
+									<!--图表1-->
+									<div class="chart-column-line-global">
+										<div class="chart-column-stack-2 charts-btb" style="height:350px;"></div>
+										<div class="chart-column-legend">
+									        <div class="can-choosed">可选择：</div>
+									        <span data-level="1" class="level-a"><i></i>及格</span>
+									        <span data-level="4" class="level-d"><i></i>不及格</span>
+									   </div>
+									</div>
+							    	<!--js-->
+							    	<script>
+							    	$LAB
+										.script('../common/js/highcharts.js')
+										.script('../common/js/highcharts-functions.js')
+								        .wait(function(){
+								            
+								            var chart_column_stack_data3 = {
+												"title": "均分比较柱状图（学校）",
+												"categories": ["市直属", "东安区", "爱民区", "明阳区"],
+												"ytitle": "\u6bd4\u7387",
+												"totalName": "\u603b\u4eba\u6570",
+												"units": "\u4eba",
+												"data": [{
+													"name": "\u53ca\u683c",
+													"color": "#32ba54",
+													"level": 1,
+													"data": [{
+														"y": 93.88,
+														"num": 46,
+														"count": 49,
+														"class_id": 0
+													}, {
+														"y": 90.38,
+														"num": 47,
+														"count": 52,
+														"class_id": 1
+													}, {
+														"y": 90.2,
+														"num": 46,
+														"count": 51,
+														"class_id": 2
+													}, {
+														"y": 80.39,
+														"num": 41,
+														"count": 51,
+														"class_id": 3
+													}]
+												}, {
+													"name": "\u4e0d\u53ca\u683c",
+													"color": "#fb5252",
+													"level": 4,
+													"data": [{
+														"y": 6.12,
+														"num": 3,
+														"count": 49,
+														"class_id": 0
+													}, {
+														"y": 9.62,
+														"num": 5,
+														"count": 52,
+														"class_id": 1
+													}, {
+														"y": 9.8,
+														"num": 5,
+														"count": 51,
+														"class_id": 2
+													}, {
+														"y": 19.61,
+														"num": 10,
+														"count": 51,
+														"class_id": 3
+													}]
+												}]
+											};
+								            
+								           chart_column_stack('.chart-column-stack-2', chart_column_stack_data3.title, chart_column_stack_data3.categories, chart_column_stack_data3.ytitle, chart_column_stack_data3.data, chart_column_stack_data3.totalName, chart_column_stack_data3.units, false);
+								
+								            initSingleColumnChart($('.chart-column-stack-2'), chart_column_stack_data3.data);
+								
+								          
+								           $('.chart-column-legend span').on("click",function(){
+								            	//$(this).toggleClass('active');
+								            	legendUpdate($(this), $('.chart-column-stack-2'), chart_column_stack_data3.data, true);
+								            });
+								        });
+							       </script>
+							       <!--图表2-->
+									<div class="chart-column-line-global" style="margin-top: 20px;">
+										<div class="chart-column-stack-3 charts-btb" style="height:350px;"></div>
+										<div class="chart-column-legend-1">
+									        <div class="can-choosed">可选择：</div>
+									        <span data-level="1" class="level-a"><i></i>及格</span>
+									        <span data-level="4" class="level-d"><i></i>不及格</span>
+									   </div>
+									</div>
+							    	<!--js-->
+							    	<script>
+							    	$LAB
+										.script('../common/js/highcharts.js')
+										.script('../common/js/highcharts-functions.js')
+								        .wait(function(){
+								           	var chart_column_stack_data = {
+												"title": "均分比较柱状图（学校）",
+												"categories": ["牡丹江市第一高级中学", "牡丹江市第二高级中学", "牡丹江市第三高级中学", "牡丹江市第四高级中学"],
+												"ytitle": "\u6bd4\u7387",
+												"totalName": "\u603b\u4eba\u6570",
+												"units": "\u4eba",
+												"data": [{
+													"name": "\u53ca\u683c",
+													"color": "#32ba54",
+													"level": 1,
+													"data": [{
+														"y": 10.88,
+														"num": 46,
+														"count": 49,
+														"class_id": 0
+													}, {
+														"y": 90.38,
+														"num": 47,
+														"count": 52,
+														"class_id": 1
+													}, {
+														"y": 90.2,
+														"num": 46,
+														"count": 51,
+														"class_id": 2
+													}, {
+														"y": 80.39,
+														"num": 41,
+														"count": 51,
+														"class_id": 3
+													}]
+												}, {
+													"name": "\u4e0d\u53ca\u683c",
+													"color": "#fb5252",
+													"level": 4,
+													"data": [{
+														"y": 26.12,
+														"num": 3,
+														"count": 49,
+														"class_id": 0
+													}, {
+														"y": 9.62,
+														"num": 5,
+														"count": 52,
+														"class_id": 1
+													}, {
+														"y": 69.8,
+														"num": 5,
+														"count": 51,
+														"class_id": 2
+													}, {
+														"y": 19.61,
+														"num": 10,
+														"count": 51,
+														"class_id": 3
+													}]
+												}]
+											};
+								            
+								            chart_column_stack('.chart-column-stack-3', chart_column_stack_data.title, chart_column_stack_data.categories, chart_column_stack_data.ytitle, chart_column_stack_data.data, chart_column_stack_data.totalName, chart_column_stack_data.units, false);
+								
+								            initSingleColumnChart($('.chart-column-stack-3'), chart_column_stack_data.data);
+								
+								          
+								           $('.chart-column-legend-1 span').on("click",function(){
+								            	//$(this).toggleClass('active');
+								            	legendUpdate($(this), $('.chart-column-stack-3'), chart_column_stack_data.data, true);
+								            });
+								        });
+							        </script>
+									<!--table表格--单科综合分析统计表-->
+									<div class="mainOneTable">
+										<div class="tableBox">
+											<div class="tableTitle">单科综合分析统计表</div>
+											<div class="tableTab">
+												<span class="active">查看全部</span>
+												<span>查看区县</span>
+												<span>查看学校</span>
+												<p class="fr">导出表格</p>
+											</div>
+											<table class="statistics_table" id="mainOneTable2" style="width:100%;">
+												<thead>
+													<tr>
+														<th style="width:10%;" class="name">学校</th>
+														<th>参加人数</th>
+														<th>平均分</th>
+														<th>排名</th>
+														<th>最高分</th>
+														<th>最低分</th>
+														<th>A(%)</th>
+														<th>B(%)</th>
+														<th>C(%)</th>
+														<th>D(%)</th>
+														<th>及格率</th>
+														<th>超均率</th>
+														<th>比均率</th>
+														<th>标准差</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>全体</td>
+														<td>272.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+													</tr>
+													<tr>
+														<td>市直属</td>
+														<td>2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+													</tr>
+													<tr>
+														<td>第三中学</td>
+														<td>100</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+														<td>22.2</td>
+													</tr>
+												</tbody>
+											</table>
+											<!--<script>
+												$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+													$('#mainOneTable2').DataTable({
+														paging: false,
+														info: false,
+														searching: false, 
+														language: {
+															emptyTable: "暂无数据"
+														},
+														columnDefs: [{
+															targets: [0], 
+															orderable: false
+														}]
+													});
+												});
+											</script>-->
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+						<script>
+						    $LAB
+						    	.script('../common/js/highcharts.js')
+								.script('../common/js/highcharts-functions.js')
+						        .wait(function(){
+						            function exam_chat_show(obj) {
+						                var url = obj.attr("data-url");
+						                $.ajax({
+						                    //
+						                }).done(function (response) {
+						                    $('.total-score .chart-list').append(response);
+						                });
+						            }
+						
+						            $('.total-score .graph-tabs-single > a').click(function (){
+						                var obj = $(this),
+						                    data_id = obj.attr("data-id");
+						                    obj.siblings().removeClass('active');
+						                    obj.addClass('active');
+						                    p = obj.closest('.main');
+						
+						                $('.tabcon[data-name]').hide();
+						                if ( $('.tabcon[data-name="'+data_id+'"]').length == 1 ) {
+						                    $('.tabcon[data-name="'+data_id+'"]').show();
+						                }else{
+						                    exam_chat_show($(this));
+						                }
+						                
+		            					doReflow(p);
+																					
+						            });
+						
+						            $(function () {
+						                $('.total-score .graph-tabs-single > a:first').trigger('click');
+						            });
+						        });
+						</script>
+					</div>
+				
+					<!--分数段比较-->
+					<div id="graph2" class="module-widget-init">
+						<!--图表-->
+						<div class="fractionMap charts-btb" style="margin-top: 15px;"></div>
+						<script type="text/javascript">
+							$LAB
+								.script('../common/js/highcharts.js')
+								.script('../common/js/highcharts-functions.js')
+								.wait(function() {
+									var chart_column_data = {
+										"title": "分数段分布图",
+										"categories": ["100-95", "95-90", "90-85", "85-80", "80-75", "75-70", "70-65", "65-60", "60-55", "55-50", "50-45", "45-40", "40-35", "35-30", "30-25", "25-20", "20-15", "15-10", "10-5", "5-0"],
+										"ytitle": "\u4eba\u6570",
+										"units": "\u4eba",
+										"data": [{
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 9,
+											"color": "#32ba54"
+										}, {
+											"y": 108,
+											"color": "#32ba54"
+										}, {
+											"y": 176,
+											"color": "#32ba54"
+										}, {
+											"y": 133,
+											"color": "#32ba54"
+										}, {
+											"y": 57,
+											"color": "#32ba54"
+										}, {
+											"y": 5,
+											"color": "#32ba54"
+										}, {
+											"y": 7,
+											"color": "#32ba54"
+										}, {
+											"y": 7,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}, {
+											"y": 0,
+											"color": "#32ba54"
+										}]
+									};
+									chart_column('.fractionMap', chart_column_data.title, chart_column_data.categories, chart_column_data.ytitle, chart_column_data.data, chart_column_data.units, 0, true);
+								});
+						</script>
+						<!--table表格-->	
+						<div class="mainOneTable">
+							<div class="tableBox">
+								<div class="tableTitle">分数段统计表</div>
+								<div class="clearfix" style="margin: 10px 0;">
+									<div class="fl" style="color:#000;">   
+										<span>参考人数：3227</span>
+										<span>最高分：171.0</span>
+										<span>最低分：3.0</span>
+										<span>平均分：120.40</span>
+									</div>
+									<a href="javascript:;" class="fr" style="color:#5093e1;">查看分数段汇总</a>
+								</div>
+								<table class="statistics_table" id="mainOneTable3" style="width:100%;">
+									<thead>
+										<tr>
+											<th style="width:20%;">分段</th>
+											<th style="width:20%;">人数</th>
+											<th style="width:20%;">比率</th>
+											<th style="width:20%;">累计人数</th>
+											<th style="width:20%;">累计比率</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>300-280</td>
+											<td>1</td>
+											<td>22%</td>
+											<td>22.2</td>
+											<td>125%</td>
+										</tr>
+										<tr>
+											<td>280-260</td>
+											<td>1</td>
+											<td>22%</td>
+											<td>22.2</td>
+											<td>125%</td>
+										</tr>
+										<tr>
+											<td>260-240</td>
+											<td>1</td>
+											<td>22%</td>
+											<td>22.2</td>
+											<td>125%</td>
+										</tr>
+									</tbody>
+								</table>
+								<!--<script>
+									$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+										$('#mainOneTable3').DataTable({
+											paging: false, 
+											info: false, 
+											searching: false, 
+											language: {
+												emptyTable: "暂无数据"
+											},
+											columnDefs: [{
+												targets: [0], 
+												orderable: false
+											}]
+										});
+									});
+								</script>-->
+							</div>
+						</div>
+					</div>
+					
+					<!--名次段比较-->
+					<div id="graph3" class="module-widget-init">
+						<div class="mainOneTable">
+							<div class="tableBox">
+								<div class="tableTitle">名次段统计表</div>
+								<div class="tableTab-mcbj">
+									<span  data-id="1" class="active">查看全部</span>
+									<span  data-id="2">查看区县</span>
+									<span  data-id="3">查看学校</span>
+									<p class="fr">导出表格</p>
+								</div>
+								<table class="statistics_table tabmc" id="mainOneTable4" style="width:100%;">
+									<thead>
+										<tr>
+											<th style="width:10%;" class="name">学校</th>
+											<th>前10名</th>
+											<th>前30名</th>
+											<th>前50名</th>
+											<th>前100名</th>
+											<th>前200名</th>
+											<th>前300名</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="all strong region">
+											<td>直属</td>
+											<td>1</td>
+											<td>5</td>
+											<td>12</td>
+											<td>41</td>
+											<td>80</td>
+											<td>115</td>
+										</tr>
+										<tr class="school">
+											<td>无锡一中</td>
+											<td>1</td>
+											<td>1</td>
+											<td>4</td>
+											<td>11</td>
+											<td>26</td>
+											<td>34</td>
+										</tr>
+										<tr class="school">
+											<td>辅仁高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>1</td>
+											<td>5</td>
+											<td>16</td>
+											<td>23</td>
+										</tr>
+										<tr class="school">
+											<td>青山高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="school">
+											<td>梅村高中</td>
+											<td>0</td>
+											<td>4</td>
+											<td>6</td>
+											<td>24</td>
+											<td>36</td>
+											<td>49</td>
+										</tr>
+										<tr class="school">
+											<td>市北高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>1</td>
+											<td>4</td>
+										</tr>
+										<tr class="school">
+											<td>第一女中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>1</td>
+											<td>1</td>
+											<td>1</td>
+											<td>3</td>
+										</tr>
+										<tr class="school">
+											<td>第三高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>2</td>
+										</tr>
+										<tr class="school">
+											<td>市六高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="all strong region">
+											<td>锡山区</td>
+											<td>6</td>
+											<td>10</td>
+											<td>14</td>
+											<td>32</td>
+											<td>52</td>
+											<td>69</td>
+										</tr>
+										<tr class="school">
+											<td>天一中学</td>
+											<td>6</td>
+											<td>10</td>
+											<td>14</td>
+											<td>30</td>
+											<td>47</td>
+											<td>57</td>
+										</tr>
+										<tr class="school">
+											<td>锡东高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>2</td>
+											<td>5</td>
+											<td>11</td>
+										</tr>
+										<tr class="school">
+											<td>怀仁中学</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>1</td>
+										</tr>
+										<tr class="all strong region">
+											<td>惠山区</td>
+											<td>5</td>
+											<td>11</td>
+											<td>17</td>
+											<td>30</td>
+											<td>65</td>
+											<td>100</td>
+										</tr>
+										<tr class="school">
+											<td>锡山高中</td>
+											<td>4</td>
+											<td>10</td>
+											<td>16</td>
+											<td>28</td>
+											<td>56</td>
+											<td>84</td>
+										</tr>
+										<tr class="school">
+											<td>洛社高中</td>
+											<td>1</td>
+											<td>1</td>
+											<td>1</td>
+											<td>1</td>
+											<td>4</td>
+											<td>8</td>
+										</tr>
+										<tr class="school">
+											<td>玉祁高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>1</td>
+											<td>5</td>
+											<td>8</td>
+										</tr>
+										<tr class="school">
+											<td>堰桥高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="all strong region">
+											<td>滨湖区</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>3</td>
+											<td>5</td>
+										</tr>
+										<tr class="school">
+											<td>太湖高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>3</td>
+											<td>5</td>
+										</tr>
+										<tr class="school">
+											<td>立人高中</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="all strong region">
+											<td>市属</td>
+											<td>0</td>
+											<td>5</td>
+											<td>7</td>
+											<td>10</td>
+											<td>17</td>
+											<td>28</td>
+										</tr>
+										<tr class="school">
+											<td>大桥实验</td>
+											<td>0</td>
+											<td>4</td>
+											<td>6</td>
+											<td>9</td>
+											<td>11</td>
+											<td>15</td>
+										</tr>
+										<tr class="school">
+											<td>光华</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="school">
+											<td>运河实验</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="school">
+											<td>外国语学校</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>2</td>
+											<td>3</td>
+										</tr>
+										<tr class="school">
+											<td>金榜高复</td>
+											<td>0</td>
+											<td>1</td>
+											<td>1</td>
+											<td>1</td>
+											<td>4</td>
+											<td>10</td>
+										</tr>
+										<tr class="school">
+											<td>慧源高复</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+									</tbody>
+								</table>
+								<script type="text/javascript">
+									$('.tableTab-mcbj span').click(function (){
+								        var obj = $(this),
+								            data_id = obj.attr("data-id");
+								       	 	obj.siblings().removeClass('active');
+								        	obj.addClass('active');
+								
+								        if(data_id == 1){
+								            $('.tabmc tbody').find('tr').show();
+								            $('.tabmc tbody').find('tr.region').addClass('all');
+								            $('.tabmc tbody').find('tr.region').addClass('strong');
+								            $('.tabmc thead tr th:first-child').html('区县/学校');
+								        }else if(data_id ==2){
+								            $('.tabmc tbody').find('tr').show();
+								            $('.tabmc tbody').find('tr.region').removeClass('all');
+								            $('.tabmc tbody').find('tr.region').removeClass('strong');
+								            $('.tabmc tbody').find('tr.school').hide();
+								            $('.tabmc thead tr th:first-child').html('区县');
+								        }else{
+								            $('.tabmc tbody').find('tr').show();
+								            $('.tabmc tbody').find('tr.region').hide();
+								            $('.tabmc thead tr th:first-child').html('学校');
+								        }
+								    });
+								</script>
+							</div>
+						</div>
+					</div>
+					
+					<!--成绩单-->
+					<div id="graph4" class="module-widget-init">
+						<div class="table-title">
+							<div class="export clearfix" style="margin-bottom: 15px;">
+								<a href="javascript:;" class="fl">共380条信息</a>
+								<a href="javascript:;" class="fr">导出表格</a>
+							</div>
+							<div class="gradeQuankeScollBox">
+	
+								<table id="failed_table_t" class="border single-cjb">
+									<thead>
+										<tr>
+											<th rowspan="3" style="min-width: 100px; ">考试号</th>
+											<th rowspan="3" style="min-width: 100px; ">姓名</th>
+											<th rowspan="3" style="min-width: 100px; ">区县</th>
+											<th rowspan="3" style="min-width: 180px;">学校</th>
+											<th colspan="5">排名</th>
+										</tr>
+										<tr>
+											<th rowspan="2">得分</th>
+											<th rowspan="2">分档</th>
+											<th colspan="3">排名</th>
+										</tr>
+										<tr>
+											<th>全体</th>
+											<th>区域</th>
+											<th>学校</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+										<tr>
+											<td style="min-width: 100px; ">720311114</td>
+											<td style="min-width: 100px; ">居浩成</td>
+											<td style="min-width: 100px; ">锡山区</td>
+											<td style="min-width: 180px; ">天一中学</td>
+								
+											<td>351.0</td>
+											<td><span class="btn-exam-level-a ttfu"></span></td>
+											<td>1025</td>
+											<td>245</td>
+											<td>245</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*列表切换*/
+		$(".mainTab ul li").on("click", function() {
+			$(".mainTab ul li").removeClass("current");
+			$(this).addClass("current").siblings().removeClass("current");
+		});
+		$(".Choice  li span").on("click", function() {
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+		$(".tab_title a").on("click", function() {
+			$(this).addClass("active").siblings().removeClass("active");
+			var DataId = $(this).attr("data-id");
+			$(".module-widget-init").hide();
+			$(DataId).show();
+			var p_reflow = $(this).closest('.main');
+			function doReflow(obj) {
+			    if (obj.find('.charts-btb').length) {
+			        obj.find('.charts-btb').each(function () {
+			            $(this).highcharts().reflow();
+			        });
+			    }
+			}
+			doReflow(p_reflow);
+			
+			//表格
+			$('#failed_table_t').DataTable({
+				paging: false,
+	            info: false,
+	            searching: false,
+	            ordering: false,
+	            language: {
+	                emptyTable: '暂无数据'
+	            },
+	            scrollY: "600px"
+			});
+
+		});
+	</script>
+</html>

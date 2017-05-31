@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>学生成绩对比-任课老师</title>
+	<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css"/>
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+   	<script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<!--返回顶部-->
+	<a href="#" class="scrollTop"></a>
+	
+	<!--<header  id="A1" ng-app="app1" ng-include="'../head.html'" class="header clearfix"></header>-->
+	<!--中心内容-->
+	<div class="main">
+	    <div class="wrapper">
+			<div class="dh_banji clearfix">
+				<div class="fl">
+					<div class="dhkaishi">
+						六年级（1）班 
+						<img src="../img/daohang.png" alt=""  class="sanjiao"/>
+						全科 
+						<img src="../img/daohang.png" alt=""  class="sanjiao"/>   
+						历史成绩学生对比
+					</div>
+				</div>
+				<!--<a class="fr back" href="../shouye/class_single.html">
+					<img src="../img/back.png"/>
+					返回
+				</a>-->
+			</div>
+			<div class="xueke_select">
+				<div class="selectks" style="margin: 0;">
+					<div class="clearfix">
+						<p class="fl">学期：</p>
+						<p class="fl" style="width: 96%;">
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span class="active">2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+						</p>
+					</div>
+					<div class="clearfix">
+						<p class="fl">考试：</p>
+						<p class="fl" style="width: 96%;">
+							<a href="#"><span>期中考试</span></a>
+							<a href="#"><span class="active">第一次月考</span></a>
+							<a href="#"><span>十月份月考</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="mainTab">
+				<ul>
+					<li><a href="../xueshengchengjiduibi/single_chengjiduibi.html">考试分析</a></li>
+					<li  class="current"><a href="../xueshengchengjiduibi/List.html">成绩列表</a></li>
+				</ul>
+			</div>
+			<div class="wrap">
+				<div class="tableBox">
+					<div class="export"><a href="#">导出表格</a></div>
+					<table id="failed_table_t">
+						<thead>
+							<tr>
+								<th style="width:15%;">姓名</th>
+								<th style="width:15%;">学号</th>
+								<th style="width:15%;">得分</th>
+								<th style="width:15%;">班级排名</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>22</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>李小三</td>
+								<td>G1301120033300003333</td>
+								<td>84.3</td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					
+					</table>
+					<script type="text/javascript">
+						//表格
+						$('#failed_table_t').DataTable({
+							paging: false, // 不分页
+							info: false, // 不显示info
+							searching: false, // 不显示搜索框
+							language: {
+								emptyTable: "暂无数据"
+							},
+							columnDefs: [{
+								targets: [0], //设置不需要排序的列，从0开始
+								orderable: false
+							}]
+						});
+					</script>
+				</div>
+			</div>
+	    </div>
+	</div>	
+</body>
+<script type="text/javascript">
+	var app1 = angular.module("app1",[]);
+	var app2 = angular.module("app2",[]);
+	angular.bootstrap(document.getElementById("A1"),['app1']);
+	angular.bootstrap(document.getElementById("A2"),['app2']);
+</script>
+<script type="text/javascript">
+	$(function(){
+		//学期，考试点击事件
+		$(document).on('click','.selectks span',function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+		/*考试分析成绩列表切换*/
+		$(".mainTab ul li a").on("click", function() {
+			$(this).parent("li").addClass("current").siblings().removeClass("current");
+		});
+		/*返回顶部*/
+		$(window).scroll(function(){
+			var _Height=$(window).height();
+			if($(document).scrollTop() > _Height){
+				$("a.scrollTop").show();
+			}else{
+				$("a.scrollTop").hide();
+			}
+		});
+		$(document).on("click","a.scrollTop",function(){
+			$("html,body").stop().animate({scrollTop:0},200);
+		});
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

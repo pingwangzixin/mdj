@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>学生成绩对比-任课老师</title>
+	<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css"/>
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+    <script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		table.dataTable thead th{
+			border-bottom: 0;
+			text-align: center;
+			border:2px solid #ccc;
+			border-bottom: 0;
+			border-right:0;
+			background-color: #F1F1F1;
+		}
+	</style>
+</head>
+<body>
+	<!--<header  class="header clearfix"></header>-->
+	<!--中心内容-->
+	<div class="main">
+	    <div class="wrapper">
+			<div class="dh_banji clearfix">
+				<div class="fl">
+					<div class="dhkaishi">
+						六年级（1）班 
+						<img src="../img/daohang.png" alt=""  class="sanjiao"/>
+						全科 
+						<img src="../img/daohang.png" alt=""  class="sanjiao"/>   
+						历史成绩学生对比
+					</div>
+				</div>
+				<!--<a class="fr back" href="../shouye/class_single.html">
+					<img src="../img/back.png"/>
+					返回
+				</a>-->
+			</div>
+			<div class="xueke_select">
+				<div class="selectks" style="margin: 0;">
+					<div class="clearfix">
+						<p class="fl">学期：</p>
+						<p class="fl" style="width: 96%;">
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span class="active">2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+							<a href="#"><span>2013-2014学年（上）</span></a>
+						</p>
+					</div>
+					<div class="clearfix">
+						<p class="fl">考试：</p>
+						<p class="fl" style="width: 96%;">
+							<a href="#"><span>期中考试</span></a>
+							<a href="#"><span class="active">第一次月考</span></a>
+							<a href="#"><span>十月份月考</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+							<a href="#"><span>期末考试</span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="mainTab">
+				<ul>
+					<li class="current"><a href="../xueshengchengjiduibi/single_chengjiduibi.html">考试分析</a></li>
+					<li><a href="../xueshengchengjiduibi/List.html">成绩列表</a></li>
+				</ul>
+			</div>
+			<div class="xuesheng_select no_shadow">
+				<div class="xueshengwrap">
+					<div class="tit clearfix">
+						<span class="fl biaoti">2014-2015一年级（2班）全科考试统计</span>
+						<span class="fr quanping">
+							<span class="daochu look_paiming" style="margin-right: 16px;"><img src="../img/tit_eye.png" alt="" />查看排名列表</span>
+							<span class="daochu"><img src="../img/daochu.png" alt="" />导出PNG</span>
+						</span>
+					</div>
+					<div class="students-list student clearfix ">
+                   		<a href="javascript:;" data-index="0" >01陈聪陈聪</a>
+		                <a href="javascript:;" data-index="1" >02陈瑛</a>
+		                <a href="javascript:;" data-index="2" >03丁超</a>
+		                <a href="javascript:;" data-index="3" >04谷宗元</a>
+		                <a href="javascript:;" data-index="4" >05何成健</a>
+		                <a href="javascript:;" data-index="5" >06黄河</a>
+		                <a href="javascript:;" data-index="6" >07季万林</a>
+		                <a href="javascript:;" data-index="7" >08姜跃松</a>
+		                <a href="javascript:;" data-index="8" >09劳兴荣</a>
+		                <a href="javascript:;" data-index="9" >10李祥</a>
+		                <a href="javascript:;" data-index="10" >11刘欢</a>
+		                <a href="javascript:;" data-index="11" >12刘晶晶</a>
+		                <a href="javascript:;" data-index="12" >13刘连枝</a>
+		                <a href="javascript:;" data-index="13" >14吕杰</a>
+		                <a href="javascript:;" data-index="14" >15钱蓓蕾</a>
+		                <a href="javascript:;" data-index="15" >16乔长伟</a>
+		                <a href="javascript:;" data-index="16" >17邱廷军</a>
+		                <a href="javascript:;" data-index="17" >18荣振远</a>
+		                <a href="javascript:;" data-index="18" >19唐磊</a>
+		                <a href="javascript:;" data-index="19" >20宛越</a>
+		                <a href="javascript:;" data-index="20" >21王巧</a>
+		                <a href="javascript:;" data-index="21" >22高佳栋</a>
+		                <a href="javascript:;" data-index="22" >23魏华建</a>
+		                <a href="javascript:;" data-index="23" >24吴强</a>
+		                <a href="javascript:;" data-index="24" >25吴晓晟</a>
+		                <a href="javascript:;" data-index="25" >26谢凌云</a>
+		                <a href="javascript:;" data-index="26" >27徐淼斌</a>
+		                <a href="javascript:;" data-index="27" >28薛刚</a>
+		                <a href="javascript:;" data-index="28" >29叶彬彬</a>
+		                <a href="javascript:;" data-index="29" >30廖娟</a>
+		                <a href="javascript:;" data-index="30" >31张义</a>
+		                <a href="javascript:;" data-index="31" >32赵媛媛</a>
+		                <a href="javascript:;" data-index="32" >33诸晓杰</a>
+		            </div>
+				</div>
+				<div class="zhushi">
+					注：您可以通过选择不同的学生进行学生间的对比，再次点击即可取消选中
+				</div>
+			</div>
+			
+			<div class="Big_box clearfix">
+	    		<div class="box fl">
+	    			<div id="chart1"></div>
+	    			<ul class="chart_zhu">
+	    				<li>注释：</li>
+	    				<li>→图中显示不同学生在选中条件下的成绩对比情况；</li>
+	    				<li>→不同的颜色代表不同的学生成绩情况；</li>
+	    				<li>→可以通过选择不同的学生来进行</li>
+	    			<ul>
+	    		</div>
+	    		<div class="box fr">
+	    			<div id="chart2"></div>
+	    			<ul class="chart_zhu">
+	    				<li>注释：</li>
+	    				<li>→图中显示不同学生在选中条件下的成绩对比情况；</li>
+	    				<li>→不同的颜色代表不同的学生成绩情况；</li>
+	    				<li>→可以通过选择不同的学生来进行</li>
+	    			<ul>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	
+	
+		
+	<!--表格弹层-->
+	<div class="del_down Table_ceng" style="display: none;">
+	    <div class="hide"></div>
+	    <div class="con">
+	    	<img class="close" src="../img/close.png"/>
+	    	<div class="tit">
+				<span class="quanping">
+					<span class="daochu look_paiming" style="margin-right: 20px;"><img src="../img/daochu.png" alt="" />导出Excel</span>
+					<span class="daochu"><img src="../img/daochu.png" alt="" />导出PNG</span>
+				</span>
+			</div>
+			<div style="height: 20px;"></div>
+			<table id="example"  cellspacing="0" width="100%">
+		        <thead>
+		            <tr>
+		                <th>姓名</th>
+		                <th>学号</th>
+		                <th>成绩</th>
+		            </tr>
+		        </thead>
+		        <tbody class="Tbodys">
+		            <!--<tr>
+						<td>李小三</td>
+						<td>G1301120033300003333</td>
+						<td>8.3</td>
+					</tr>
+					<tr>
+						<td>李小三</td>
+						<td>G1301120033300003333</td>
+						<td>8.3</td>
+					</tr>
+					
+					<tr>
+						<td>李小三</td>
+						<td>G1301120033300003333</td>
+						<td>8.3</td>
+					</tr>-->
+		        </tbody>
+	    	</table>
+	    </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+		Highcharts.setOptions({
+		    credits: {
+		        enabled: false,
+		    },
+		    legend: {
+		        itemHiddenStyle: {
+		            color: '#888'
+		        }
+		    }
+		});
+	</script>
+	<script>
+		$(function(){
+		  
+		    $('#chart1').highcharts({
+				chart:{
+					type:'column',
+					backgroundColor: '#FFFFFF', //设置图表背景色为白色
+				},
+		        title: {
+		            text: '成绩对比柱状图',
+		            style : {
+		                'fontFamily' : '微软雅黑',
+		                'fontSize':'16px'
+		            }
+		        },
+		        legend: {
+		            align: 'center',
+		        },
+		        xAxis: {
+		            categories: ['\u59d3\u540d'],
+		            lineColor:'#FFFFFF',//设置坐标颜色
+		            tickWidth:0,//设置刻度标签宽度
+		            lineWidth:0,//设置坐标宽度
+		            labels : {
+				        enabled:false //设置刻度是否显示
+				    }
+		        },
+		        yAxis: {
+		            title: {
+		                text: '成  绩',
+		                style : {
+			                'fontFamily' : '微软雅黑'
+			            }
+		            },
+		        },
+		        tooltip: {
+		            formatter: function() {
+		                return '<strong>'+ this.series.name +':</strong>'+ this.point.score +'分';
+		            }
+		        },
+		        /*plotOptions: {
+				    column: {
+				        pointPadding: 0,
+				        borderWidth: 0,
+				        pointWidth: 15
+				    }
+				},*/
+		        series: [
+					        {
+					            name: "陈聪",
+					            id:'11111111111111111111',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "陈瑛",
+					            id:'2222',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "丁超",
+					            id:'3',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '谷宗元',
+					            id:'4',
+					            data: [{"y":24,"score":24}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "何成健",
+					            id:'5',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "黄河",
+					            id:'6',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "季万林",
+					            id:'7',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '姜跃松',
+					            id:'8',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "劳兴荣",
+					            id:'9',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "李祥",
+					            id:'10',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "刘欢",
+					            id:'11',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '刘晶晶',
+					            id:'12',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "刘连枝",
+					            id:'13',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "吕杰",
+					            id:'14',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "钱蓓蕾",
+					            id:'15',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '乔长伟',
+					            id:'16',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "邱廷军",
+					            id:'17',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "荣振远",
+					            id:'18',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "唐磊",
+					            id:'19',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '宛越',
+					            id:'20',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "王巧",
+					            id:'21',
+					            data: [{"y":90,"score":20}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "高佳栋",
+					            id:'22',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "魏华建",
+					            id:'23',
+					            data: [{"y":104,"score":104}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '吴强',
+					            id:'24',
+					            data: [{"y":154,"score":154}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "吴晓晟",
+					            id:'25',
+					            data: [{"y":110,"score":110}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "谢凌云",
+					            id:'26',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "徐淼斌",
+					            id:'27',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '薛刚',
+					            id:'28',
+					            data: [{"y":42,"score":42}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "叶彬彬",
+					            id:'29',
+					            data: [{"y":40,"score":40}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "廖娟",
+					            id:'30',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "张义",
+					            id:'31',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "赵媛媛",
+					            id:'32',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "诸晓杰",
+					            id:'33',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        }
+		                ]
+		    
+		    });
+		
+		    $('#chart2').highcharts({
+				chart:{
+					type:'column',
+					backgroundColor: '#FFFFFF', //设置图表背景色为白色
+				},
+		        title: {
+		            text: '排名对比柱状图',
+		            style : {
+		                'fontFamily' : '微软雅黑',
+		                'fontSize':'16px'
+		            }
+		        },
+		        legend: {
+		            align: 'center',
+		        },
+		        xAxis: {
+		            categories: ['\u59d3\u540d'],
+		            lineColor:'#FFFFFF',//设置坐标颜色
+		            tickWidth:0,//设置刻度标签宽度
+		            lineWidth:0,//设置坐标宽度
+		            labels : {
+				        enabled:false //设置刻度是否显示
+				    }
+		        },
+		        yAxis: {
+		            title: {
+		                text: '排   名',
+		                style : {
+			                'fontFamily' : '微软雅黑'
+			            }
+		            },
+		        },
+		        tooltip: {
+		            formatter: function() {
+		                return '<strong>'+ this.series.name +':</strong>'+ this.point.score +'分';
+		            }
+		        },
+		        /*plotOptions: {
+				    column: {
+				        pointPadding: 0,
+				        borderWidth: 0,
+				        pointWidth: 15
+				    }
+				},*/
+		        series: [
+					        {
+					            name: "陈聪",
+					            id:'11111111111111111111',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "陈瑛",
+					            id:'2222',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "丁超",
+					            id:'3',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '谷宗元',
+					            id:'4',
+					            data: [{"y":24,"score":24}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "何成健",
+					            id:'5',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "黄河",
+					            id:'6',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "季万林",
+					            id:'7',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '姜跃松',
+					            id:'8',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "劳兴荣",
+					            id:'9',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "李祥",
+					            id:'10',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "刘欢",
+					            id:'11',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '刘晶晶',
+					            id:'12',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "刘连枝",
+					            id:'13',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "吕杰",
+					            id:'14',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "钱蓓蕾",
+					            id:'15',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '乔长伟',
+					            id:'16',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "邱廷军",
+					            id:'17',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "荣振远",
+					            id:'18',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "唐磊",
+					            id:'19',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '宛越',
+					            id:'20',
+					            data: [{"y":54,"score":54}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "王巧",
+					            id:'21',
+					            data: [{"y":90,"score":20}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "高佳栋",
+					            id:'22',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "魏华建",
+					            id:'23',
+					            data: [{"y":104,"score":104}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '吴强',
+					            id:'24',
+					            data: [{"y":154,"score":154}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "吴晓晟",
+					            id:'25',
+					            data: [{"y":110,"score":110}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "谢凌云",
+					            id:'26',
+					            data: [{"y":50,"score":50}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "徐淼斌",
+					            id:'27',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: '薛刚',
+					            id:'28',
+					            data: [{"y":42,"score":42}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "叶彬彬",
+					            id:'29',
+					            data: [{"y":40,"score":40}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "廖娟",
+					            id:'30',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "张义",
+					            id:'31',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "赵媛媛",
+					            id:'32',
+					            data: [{"y":10,"score":10}],
+					            visible: false,
+					            showInLegend: false
+					        },
+					        {
+					            name: "诸晓杰",
+					            id:'33',
+					            data: [{"y":17,"score":17}],
+					            visible: false,
+					            showInLegend: false
+					        }
+		                ]
+		    });
+		    
+			var chart1 = $('#chart1').highcharts(),
+                chart2 = $('#chart2').highcharts();
+		    $('.students-list a').click(function(){
+		        var obj = $(this)
+		            seriesIndex = obj.attr('data-index');
+		        if( obj.hasClass('active') ){
+		            obj.removeClass('active');
+		            chart1.series[seriesIndex].hide();
+		            chart1.series[seriesIndex].update({showInLegend:false});
+		            chart2.series[seriesIndex].hide();
+		            chart2.series[seriesIndex].update({showInLegend:false});
+		        } else {
+		            obj.addClass('active');
+		            chart1.series[seriesIndex].show();
+		            chart1.series[seriesIndex].update({showInLegend:true});
+		            chart2.series[seriesIndex].show();
+		            chart2.series[seriesIndex].update({showInLegend:true});
+		        }
+		    });
+		    $('#chart1').highcharts().reflow();
+		    $('#chart2').highcharts().reflow();
+		    
+			
+			
+			
+			
+			$(document).on('click','.selectks span',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			});
+			/*考试分析成绩列表切换*/
+			$(".mainTab ul li a").on("click", function() {
+				$(this).parent("li").addClass("current").siblings().removeClass("current");
+			});
+			
+			//查看排名
+			$('.look_paiming').on('click',function(){	
+				var Len = $('.student a.active').length;
+				var _html = '';
+				var arr = [];
+					
+				$('.student a.active').each(function(index,obj){
+					var obj1 = chart2.series[$(obj).attr('data-index')];
+					var arr2 = [];
+					arr2.push(obj1.name);
+					arr2.push(obj1.options.id);
+					arr2.push(obj1.data[0].score);
+					arr.push(arr2);
+				});
+				console.log(arr);
+				$('.Table_ceng').show();
+				$('#example').dataTable( {
+					data:arr,
+				    paging: false, // 不分页
+					info: false, // 不显示info
+					searching: false, // 不显示搜索框
+					language: {
+						emptyTable: "暂无数据"
+					},
+					columnDefs: [{
+						targets: [0], //设置不需要排序的列，从0开始
+						orderable: false
+					}],
+					scrollY: "420px",
+				    scrollCollapse: "true",
+				    bDestroy: true
+				});
+			});
+			
+			
+			//关闭
+			$('.Table_ceng .close').on('click',function(){
+				$('.Table_ceng').hide();
+			});
+				
+		});
+	</script>
+	
+	
+	
+	
+
+	<script type="text/javascript">
+		var app1 = angular.module("app1",[]);
+		angular.bootstrap(document.getElementById("A1"),['app1']);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

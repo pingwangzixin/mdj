@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>班级单科--不及格统计表</title>
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+		<script src="../common/js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--我的样式-->
+		<link rel="stylesheet" type="text/css" href="../css/classAnalysis.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="header">考试名称：2015—2016年第二学期期末考试</div>
+			<div class="main">
+				<div class="mainTitle">不及格统计表</div>
+				<div class="tableBox">
+					<table class="statistics_table">
+						<thead>
+								<tr>
+									<th style="width:33.3%;">学生序号</th>
+									<th style="width:33.3%;">姓名</th>
+									<th style="width:33.3%;">语文</th>
+								</tr>
+							</thead>
+						<tbody>
+								<tr>
+									<td>130370</td>
+									<td>张宇</td>
+									<td class="red">78</td>
+								</tr>
+								<tr>
+									<td>130370</td>
+									<td>张宇</td>
+									<td>79</td>
+								</tr>
+							</tbody>
+					</table>
+					<script type="text/javascript">
+						window.onload=function(){
+							$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+							
+								$('.statistics_table').DataTable({
+									paging: false, // 不分页
+									info: false, // 不显示info
+									searching: false, // 不显示搜索框
+									language: {
+										emptyTable: "暂无数据"
+									},
+									columnDefs: [{
+										targets: [0,1,2], //设置不需要排序的列，从0开始
+										orderable: false
+									}],
+									order: [[ 0, "asc" ]]//跟数组下标一样，第一列从0开始，这里表格初始化时，第1列默认降序
+									
+
+								});
+
+							});
+							
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>学校分析</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+	    <script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header clearfix">
+				<p class="fl">考试名称：2015—2016年第二学期期末考试</p>
+				<h5 class="fr">考试时间：2016年03月22日</h5>
+			</div>
+			<div class="main">
+				<div class="mainTab">
+					<ul>
+						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
+						<li><a href="SingleAnalysis.html">单科分析</a></li>
+						<li class="current"><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
+						<li><a href="ExamList.html">成绩列表</a></li>
+						<li><a href="StudentStatistics.html">参考学生统计</a></li>
+					</ul>	
+				</div>
+				<div class="clearfix Sub">
+					<ul class="Choice fl">
+						<li class="clearfix">
+							<p>选择区县：</p>
+							<span class="active">市直属</span>
+							<span>东安区</span>
+							<span>爱民区</span>
+							<span>阳明区</span>
+						</li>
+						<li class="clearfix">
+							<p>选择学校：</p>
+							<div class="local">
+								<h3>市直属</h3>
+								<span class="active">牡丹江市第三中学</span>
+								<span>育才中学</span>
+								<span>牡丹江市第三中学</span>
+								<span>育才中学</span>
+							</div>
+							</br>
+							<div class="local">
+								<h3>市直属</h3>
+								<span class="active">牡丹江市第三中学</span>
+								<span>育才中学</span>
+								<span>牡丹江市第三中学</span>
+								<span>育才中学</span>
+							</div>
+						</li>
+						<li class="clearfix">
+							<p>对比指标：</p>
+							<span>全科</span>
+							<span class="active">物理</span>
+							<span>英语</span>
+							<span>数学</span>
+							<span>语文</span>
+						</li>
+					</ul>
+					<a class="fr look" href="SchoolStatistics-Analysis.html">单校分析</a>
+				</div>
+				
+				<!--语文总分分档比较-->
+				<div class="mainTitle" style="margin-bottom: 40px;">语文总分分档比较</div>
+									
+				<!--分档比率堆积柱状图 -->
+				<div id="chart-list" class="tabcon">						
+					<!--数据表-->
+					<div class="white-box chart-column-line-global">
+						<!--数据表-->
+						<div class="chart-column-stack-1 charts-btb" style="height:350px;"></div>
+						<div class="chart-column-legend">
+					        <div class="can-choosed">可选择：</div>
+					        <span data-level="1" class="level-a"><i></i>A(81以上)</span>
+					        <span data-level="2" class="level-b"><i></i>B(59以上)</span>
+					        <span data-level="3" class="level-c"><i></i>C(11以上)</span>
+					        <span data-level="4" class="level-d"><i></i>D(11以下)</span>
+					   </div>
+					</div>
+			    	<!--js-->
+			    	<script>
+			    	$LAB
+				        .script('../common/js/highcharts.js')
+				        .script('../common/js/highcharts-functions.js')
+				        .wait(function(){
+				            var chart_column_stack_data2 = {"title":"分档比率堆积柱状图","categories":["第三中学","育才中学","第一中学","实验中学","第二重点中学","第二中学","窦店小学","昌平小学","北京小学","牡丹江中学"],"ytitle":"\u6bd4\u7387","totalName":"\u603b\u4eba\u6570","units":"\u4eba","data":[{"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":49,"class_id":52},{"y":15.38,"num":8,"count":52,"class_id":53},{"y":31.37,"num":16,"count":51,"class_id":54},{"y":7.84,"num":4,"count":51,"class_id":55},{"y":16.67,"num":8,"count":48,"class_id":56},{"y":26.53,"num":13,"count":49,"class_id":57},{"y":13.73,"num":7,"count":51,"class_id":58},{"y":16.33,"num":8,"count":49,"class_id":59},{"y":28,"num":14,"count":50,"class_id":60},{"y":3.85,"num":2,"count":52,"class_id":61}]},{"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":14.29,"num":7,"count":49,"class_id":52},{"y":13.46,"num":7,"count":52,"class_id":53},{"y":25.49,"num":13,"count":51,"class_id":54},{"y":29.41,"num":15,"count":51,"class_id":55},{"y":27.08,"num":13,"count":48,"class_id":56},{"y":34.69,"num":17,"count":49,"class_id":57},{"y":45.1,"num":23,"count":51,"class_id":58},{"y":38.78,"num":19,"count":49,"class_id":59},{"y":34,"num":17,"count":50,"class_id":60},{"y":32.69,"num":17,"count":52,"class_id":61}]},{"name":"\u53ca\u683c","color":"#fdbc2a","level":3,"data":[{"y":67.35,"num":33,"count":49,"class_id":52},{"y":30.77,"num":16,"count":52,"class_id":53},{"y":23.53,"num":12,"count":51,"class_id":54},{"y":33.33,"num":17,"count":51,"class_id":55},{"y":45.83,"num":22,"count":48,"class_id":56},{"y":22.45,"num":11,"count":49,"class_id":57},{"y":35.29,"num":18,"count":51,"class_id":58},{"y":32.65,"num":16,"count":49,"class_id":59},{"y":30,"num":15,"count":50,"class_id":60},{"y":38.46,"num":20,"count":52,"class_id":61}]},{"name":"\u4e0d\u53ca\u683c","color":"#fb5252","level":4,"data":[{"y":18.37,"num":9,"count":49,"class_id":52},{"y":40.38,"num":21,"count":52,"class_id":53},{"y":19.61,"num":10,"count":51,"class_id":54},{"y":29.41,"num":15,"count":51,"class_id":55},{"y":10.42,"num":5,"count":48,"class_id":56},{"y":16.33,"num":8,"count":49,"class_id":57},{"y":5.88,"num":3,"count":51,"class_id":58},{"y":12.24,"num":6,"count":49,"class_id":59},{"y":8,"num":4,"count":50,"class_id":60},{"y":25,"num":13,"count":52,"class_id":61}]}]};
+				            chart_column_stack('.chart-column-stack-1', chart_column_stack_data2.title, chart_column_stack_data2.categories, chart_column_stack_data2.ytitle, chart_column_stack_data2.data, chart_column_stack_data2.totalName, chart_column_stack_data2.units, false);
+				
+				            initSingleColumnChart($('.chart-column-stack-1'), chart_column_stack_data2.data);
+				
+				            $('.chart-column-legend > span').on("click",function(){
+				                legendUpdate($(this), $('.chart-column-stack-1'), chart_column_stack_data2.data, true);
+				            });
+				
+				            $('.chart-column-legend-class > span').on("click",function(){
+				            	$(this).toggleClass("active");
+				                legendUpdate($(this), $('.chart-column-stack-1'), chart_column_stack_data2.data, true);
+				            });
+				        });
+				        
+			       </script>
+				</div>
+				
+				<!--均分比较柱状图（学校）-->
+				<div class="white-box  data-highcharts-chart" style="margin-top: 25px;">
+			        <div class="chart-bar2" style="min-height:360px;"></div>
+			        <div class="chart-column-legends single-avg-chart">
+			            <span class="btn-level-1"></span>
+			            <em>学校平均分</em>
+			            <span class="btn-level-2"></span>
+			            <em>全体平均分</em>
+			        </div>
+			        <!--js-->
+			        <script>
+					    $LAB
+					    .script('../common/js/highstock.js')
+				        .script('../common/js/highcharts-functions-new.js')
+					    .wait(function(){
+					        var arr4 = {"target":".chart-bar2","title":"\u5747\u5206\u6bd4\u8f83\u67f1\u72b6\u56fe(\u5b66\u6821)","categories":["\u5747\u5206","\u65e0\u9521\u4e00\u4e2d","\u8f85\u4ec1\u9ad8\u4e2d","\u6885\u6751\u9ad8\u4e2d","\u4e09\u9ad8\u4e2d","\u5e02\u5317\u9ad8\u4e2d","\u4e00\u5973\u4e2d","\u5e02\u516d\u9ad8\u4e2d","\u9752\u5c71\u9ad8\u4e2d","\u9521\u4e1c\u9ad8\u4e2d","\u6000\u4ec1\u4e2d\u5b66","\u5929\u4e00\u4e2d\u5b66","\u7701\u9521\u4e2d","\u6d1b\u793e\u9ad8\u4e2d","\u7389\u7941\u9ad8\u4e2d","\u5830\u6865\u9ad8\u4e2d","\u592a\u6e56\u9ad8\u4e2d","\u7acb\u4eba\u9ad8\u4e2d","\u5927\u6865\u5b9e\u6821","\u8fd0\u6cb3\u5b9e\u4e2d","\u5149\u534e","\u5916\u56fd\u8bed\u5b66\u6821","\u91d1\u699c\u9ad8\u590d","\u6167\u6e90\u9ad8\u590d"],"ytitle":"\u5e73\u5747\u5206","data":[{"data":[{"y":99.99,"color":"#82D471"},{"y":106.08,"color":"#7CB5EC"},{"y":101.65,"color":"#7CB5EC"},{"y":104.36,"color":"#7CB5EC"},{"y":99.52,"color":"#7CB5EC"},{"y":100.24,"color":"#7CB5EC"},{"y":97.08,"color":"#7CB5EC"},{"y":91.2,"color":"#7CB5EC"},{"y":92.98,"color":"#7CB5EC"},{"y":98.31,"color":"#7CB5EC"},{"y":96.56,"color":"#7CB5EC"},{"y":106.36,"color":"#7CB5EC"},{"y":104.84,"color":"#7CB5EC"},{"y":100.47,"color":"#7CB5EC"},{"y":98.67,"color":"#7CB5EC"},{"y":91.54,"color":"#7CB5EC"},{"y":99.46,"color":"#7CB5EC"},{"y":86.85,"color":"#7CB5EC"},{"y":107.62,"color":"#7CB5EC"},{"y":91.65,"color":"#7CB5EC"},{"y":60.47,"color":"#7CB5EC"},{"y":102.73,"color":"#7CB5EC"},{"y":101.05,"color":"#7CB5EC"},{"y":99.86,"color":"#7CB5EC"}]}],"labels":true};
+					        chart_column_bar(arr4);
+					    });
+					</script>
+			    </div>
+				
+				<!--及格率堆积柱状图 -->
+				<div id="chart-list" class="tabcon" style="margin-top: 25px;">
+					<!--数据表-->
+					<div class="white-box chart-column-line-global">
+						<div class="chart-column-stack-2 charts-btb" style="height:350px;"></div>
+						<div class="chart-column-legend">
+					        <div class="can-choosed">可选择：</div>
+					        <span data-level="1" class="level-a"><i></i>及格</span>
+					        <span data-level="4" class="level-d"><i></i>不及格</span>
+					   </div>
+					</div>
+			    	<!--js-->
+			    	<script>
+			    	$LAB
+						.script('../common/js/highcharts.js')
+						.script('../common/js/highcharts-functions.js')
+				        .wait(function(){
+				            var chart_column_stack_data3 = {"title":"及格率堆积柱状图","categories":["(1)\u73ed","(2)\u73ed","(3)\u73ed","(4)\u73ed","(5)\u73ed","(6)\u73ed","(7)\u73ed","(8)\u73ed","(9)\u73ed","(10)\u73ed"],"ytitle":"\u6bd4\u7387","totalName":"\u603b\u4eba\u6570","units":"\u4eba","data":[{"name":"\u53ca\u683c","color":"#32ba54","level":1,"data":[{"y":93.88,"num":46,"count":49,"class_id":52},{"y":90.38,"num":47,"count":52,"class_id":53},{"y":90.2,"num":46,"count":51,"class_id":54},{"y":80.39,"num":41,"count":51,"class_id":55},{"y":93.75,"num":45,"count":48,"class_id":56},{"y":93.88,"num":46,"count":49,"class_id":57},{"y":98.04,"num":50,"count":51,"class_id":58},{"y":93.88,"num":46,"count":49,"class_id":59},{"y":94,"num":47,"count":50,"class_id":60},{"y":86.54,"num":45,"count":52,"class_id":61}]},{"name":"\u4e0d\u53ca\u683c","color":"#fb5252","level":4,"data":[{"y":6.12,"num":3,"count":49,"class_id":52},{"y":9.62,"num":5,"count":52,"class_id":53},{"y":9.8,"num":5,"count":51,"class_id":54},{"y":19.61,"num":10,"count":51,"class_id":55},{"y":6.25,"num":3,"count":48,"class_id":56},{"y":6.12,"num":3,"count":49,"class_id":57},{"y":1.96,"num":1,"count":51,"class_id":58},{"y":6.12,"num":3,"count":49,"class_id":59},{"y":6,"num":3,"count":50,"class_id":60},{"y":13.46,"num":7,"count":52,"class_id":61}]}]};
+				            chart_column_stack('.chart-column-stack-2', chart_column_stack_data3.title, chart_column_stack_data3.categories, chart_column_stack_data3.ytitle, chart_column_stack_data3.data, chart_column_stack_data3.totalName, chart_column_stack_data3.units, false);
+				
+				            initSingleColumnChart($('.chart-column-stack-2'), chart_column_stack_data3.data);
+				
+				            $('.chart-column-legend > span').on("click",function(){
+				            	$(this).toggleClass("active");
+				            	legendUpdate($(this), $('.chart-column-stack-2'), chart_column_stack_data3.data, true);
+				            });
+				        });
+			       </script>
+				</div>
+					
+				<!--单科综合分析统计表-->
+				<div class="mainOneTable">
+					<div class="tableBox">
+						<div class="tableTitle">单科综合分析统计表</div>
+						<table class="statistics_table" id="mainOneTable_0" style="width:100%;">
+							<thead>
+								<tr>
+									<th style="width:14%;">学校</th>
+									<th>参加人数</th>
+									<th>平均分</th>
+									<th>排名</th>
+									<th>最高分</th>
+									<th>最低分</th>
+									<th>A(%)</th>
+									<th>B(%)</th>
+									<th>C(%)</th>
+									<th>D(%)</th>
+									<th>及格率</th>
+									<th>超均率</th>
+									<th>比均率</th>
+									<th>标准差</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>第三中学校</td>
+									<td>3334</td>
+									<td>120.40</td>
+									<td>22</td>
+									<td>104.0</td>
+									<td>11</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>0.14</td>
+									<td>100.14</td>
+									<td>13.17</td>
+								</tr>
+								<tr>
+									<td>第三中学校</td>
+									<td>1000</td>
+									<td>120.40</td>
+									<td>22</td>
+									<td>104.0</td>
+									<td>11</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>54.76</td>
+									<td>0.14</td>
+									<td>100.14</td>
+									<td>13.17</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--<script>
+							$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+								$('#mainOneTable_0').DataTable({
+									paging: false,
+									info: false, 
+									searching: false, 
+									language: {
+										emptyTable: "暂无数据"
+									},
+									columnDefs: [{
+										targets: [0], 
+										orderable: false
+									}]
+								});
+							});
+						</script>-->
+					</div>
+				</div>
+
+				<!--单科得分分析统计表-->
+				<div class="mainOneTable">
+					<div class="tableBox">
+						<div class="tableTitle">单科综合分析统计表</div>
+						<table class="statistics_table" id="mainOneTable_1" style="width:100%;">
+							<thead>
+								<tr>
+									<th style="width:8%;">题号</th>
+									<th style="width:8%;">人数</th>
+									<th style="width:8%;">最大值</th>
+									<th style="width:8%;">最小值</th>
+									<th style="width:8%;">平均值</th>
+									<th style="width:8%;">标准差</th>
+									<th style="width:8%;">得分率</th>
+									<th style="width:8%;">满分率</th>
+									<th style="width:8%;">零分率</th>
+									<th style="width:8%;">难度</th>
+									<th style="width:8%;">区分度</th>
+									<th style="width:8%;">对比分析</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td>1</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>2</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!--<script>
+							$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+								$('#mainOneTable_1').DataTable({
+									paging: false,
+									info: false,
+									searching: false,
+									language: {
+										emptyTable: "暂无数据"
+									},
+									columnDefs: [{
+										targets: [0], 
+										orderable: false
+									}]
+								});
+							});
+						</script>-->
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*列表切换*/
+		$(".mainTab ul li").on("click", function() {
+			$(".mainTab ul li").removeClass("current");
+			$(this).addClass("current").siblings().removeClass("current");
+		});
+		$(".Choice  li span").on("click", function() {
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+	</script>
+	<script type="text/javascript">
+		$LAB
+        .script('../common/js/highcharts.js')
+        .script('../common/js/highcharts-functions.js')
+
+        .wait(function(){
+            $('.graph-tabs > a').click(function (){
+                var obj = $(this),
+                    showid = obj.attr("data-name"),
+                    p = obj.closest('.btb-chart');
+
+                obj.siblings().removeClass('active');
+                obj.addClass('active');
+                $('.tabcon[data-name]').hide();
+                
+				$('.tabcon[data-name="'+showid+'"]').show();
+                doReflow(p);
+            });
+            
+
+            $('.btb-chart .icon-close').click(function(){
+                highcharts_btb($(this).closest('.btb-chart'), doReflow);
+            });
+
+            
+            $(function () {
+                $('.graph-tabs > a:first').trigger('click');
+            });
+        });
+	</script>
+</html>

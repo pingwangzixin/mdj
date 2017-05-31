@@ -1,0 +1,1023 @@
+
+body{
+	background: #ececec;
+}
+.wrapper{
+	width:90%;
+	min-width:1200px;
+	margin:50px auto 50px;	
+	box-sizing:border-box;
+}
+.header{
+	height:50px;
+	padding-left:17px;
+	background: #fff;
+	border-radius: 5px;
+	line-height: 50px;
+	font-size: 1.6rem;
+	color:#000;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+
+}
+.main{
+	min-height:500px;
+	background: #fff;
+	border-radius: 5px;
+	padding-top:9px;
+	padding-bottom: 20px;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+	margin-top:15px;
+}
+.mainTitle{
+	height:24px;
+	line-height: 24px;
+	font-size: 1.6rem;
+	color:#000;
+	padding-left:10px;
+	border-left:3px solid #5093e1;
+}
+.mainTitle span{
+	padding-left:10px;
+	font-size: 1.4rem;
+	color:#666;
+}
+
+.switingImg{
+	width:100%;
+	height:50px;
+	margin:10px auto;
+}
+.switingImg img{
+	width:47px;
+	height:43px;
+	display: block;
+	margin:0 auto;
+}
+
+
+
+.tableBox{
+	padding:20px 25px 0;overflow-x:auto;
+
+}
+.tableBox table{
+	width:100%;
+	box-sizing: border-box;
+	border-collapse: collapse;
+	border:1px solid #ccc;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+.tableBox table thead th{
+	padding:0;
+	border:1px solid #ccc;
+	height:48px;
+	background: #f6f6f6;
+	text-align: center;
+	font-weight: normal;
+}
+.tableBox table tbody td{
+	padding:5px;
+	border:1px solid #ccc;
+	text-align: center;
+	height:54px;
+}
+.tableBox table tbody td.red{
+	color:#ff3333;
+}
+
+.tableBox table tbody td i.icon-down-arrow{
+	padding:10px;
+	background: url(../img/icon-down-arrow.png) no-repeat center center;
+}
+.tableBox table tbody td i.icon-up-arrow{
+	padding:10px;
+	background: url(../img/icon-up-arrow.png) no-repeat center center;
+}
+.tableBox table tbody td i.icon-wu-arrow{
+	padding:10px;
+	background: url(../img/icon-wu-arrow.png) no-repeat center center;
+}
+
+.tableBox .statistics_table tr.ex-table-show{
+	display: none;
+}
+.tableBox .statistics_table tr td.col span{
+	float:left;
+	display: block;
+	height:50px;
+	padding:0 40px;
+	font-size: 1.4rem;
+	color: #838383;
+	line-height: 50px;
+}
+.tableBox .statistics_table tr td i.icon-down-open{
+	width:20px;
+	height:20px;
+	display: inline-block;
+	color: #D8D8D8;
+	font-style: normal;
+	cursor: pointer;
+	background: url(../img/table_down_bg.png) no-repeat center center;
+}
+.tableBox .statistics_table tr td.expand i.icon-down-open{
+	color: #4A90E2;
+	background: url(../img/table_up_bg.png) no-repeat center center;
+}
+
+.tableBox table.statistics_table tbody td span.names{
+	padding:5px 15px;
+	float:left;
+}
+
+
+
+
+
+
+
+
+/*成绩列表*/
+.tabBox{
+	min-height:102px;
+	border-radius: 5px;
+	background: #fff;
+	margin-top:15px;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+}
+.tabBox p{
+	/*min-height:50px;*/
+	border-bottom: 1px solid #f1f1f1;
+	padding:11px 0 3px 67px;
+}
+.tabBox p:last-child{
+	border:none;
+}
+.tabBox p strong{
+	float:left;
+	height:28px;
+	line-height: 28px;
+	font-size: 1.6rem;
+	color:#000;
+	font-weight: normal;
+	margin-left:-50px;
+}
+.tabBox p a{
+	display: block;
+    float: left;
+    min-width: 51px;
+    padding: 0 5px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 1.6rem;
+    color: #000;
+    text-align: center;
+    margin: 0px 3px 8px;
+    border-radius: 2px;
+}
+.tabBox p a:hover{
+	background: #eee;
+}
+.tabBox p a.current{
+	color:#fff;
+	background: #5093e1;
+}
+
+.mainTab{
+	height:45px;
+	background: #f5f5f5;
+	border-bottom: 1px solid #ccc;
+}
+.mainTab ul li{
+	width:110px;
+	height:45px;
+	float:left;
+}
+.mainTab ul li a{
+	display: block;
+	height:43px;
+	line-height: 45px;
+	border-top:2px solid #f5f5f5;
+	border-left: 1px solid #f5f5f5;
+	border-right: 1px solid #ccc;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#666666;
+}
+.mainTab ul li:first-child a{
+	border-left: 1px solid #f5f5f5;
+}
+.mainTab ul li.current a{
+	background: #fff;
+	border-left: 1px solid #f5f5f5;
+	border-right: 1px solid #ccc;
+	border-top:2px solid #5093e1;
+	border-bottom: 1px solid #fff;
+	color:#000;
+}
+.mainTab ul li.current:first-child a{
+	border-left: 1px solid #fff;
+}
+.tableBox .export{
+	height:26px;
+	padding:5px 0;
+}
+.tableBox .export a{
+	display: block;
+	float:right;
+	padding:0 10px;
+	font-size: 1.4rem;
+	color:#5093e1;
+}
+
+.tableBox .gradeQuankeScollBox{
+	width:100%;
+	overflow-x: auto;
+}
+
+.statistics_table  tbody tr td  i.dj{
+	font-size: 1.2rem;
+	color:#fff;
+	width:15px;
+	height:15px;
+	line-height: 15px;
+	display: inline-block;
+	font-style: normal;
+	text-align: center;
+	margin:0 8px;
+}
+.statistics_table  tbody tr td  i.dj-a{
+	background: #32ba54;
+}
+.statistics_table  tbody tr td  i.dj-b{
+	background: #2da8e3;
+}
+.statistics_table  tbody tr td  i.dj-c{
+	background: #ffcc18;
+}
+.statistics_table  tbody tr td  i.dj-d{
+	background: #fb5252;
+}
+
+#gradeQuanke thead th{
+	height:30px;
+}
+
+
+
+/*考试分析*/
+.rankingBox{
+	padding:10px 25px 0;
+}
+.rankingBox table{
+	width:100%;
+	border-collapse: collapse;
+	border:1px solid #cfcfcf;
+}
+.rankingBox table thead th{
+	height:33px;
+	font-size: 1.6rem;
+	color:#fff;
+	text-align: center;
+}
+.rankingBox table tbody td{
+	width:20%;
+	height:32px;
+	text-align: center;
+	font-size: 1.4rem;
+	color:#666;
+}
+.rankingBox .classBox{
+	min-height:130px;
+	margin-bottom: 30px;
+}
+.rankingBox .gradeBox{
+	min-height:130px;
+	margin-bottom: 30px;
+}
+.rankingBox .agoTable{
+	width:38%;
+	min-width:370px;
+	float:left;
+	margin-right:30px;
+}
+.rankingBox .agoTable table th{
+	height:33px;
+	background: #32ba54;
+}
+.rankingBox .agoTable table tbody tr:first-child td{
+	font-size: 1.6rem;
+	color:#32ba54;
+}
+.rankingBox .rearTable{
+	width:38%;
+	min-width:370px;
+	float:left;
+}
+.rankingBox .rearTable table th{
+	height:33px;
+	background: #ff6666;
+}
+.rankingBox .rearTable table tbody tr:first-child td{
+	font-size: 1.6rem;
+	color:#ff6666;
+}
+.rankingBox .average{
+	width:21%;
+	float:left;
+	min-width:182px;
+	padding-top:28px;
+	text-align: center;
+}
+.rankingBox .average p{
+	height:30px;
+	line-height: 30px;
+	font-size: 1.6rem;
+	color:#333;
+}
+.rankingBox .average span{
+	padding-left:20px;
+	height:30px;
+	line-height: 30px;
+	font-size: 1.4rem;
+	color:#f66;
+	background: url(../img/behind_bg.png) no-repeat left center;
+}
+.rankingBox .average span.lh{
+	padding-left:20px;
+	height:16px;
+	line-height: 16px;
+	font-size: 1.4rem;
+	color:#32BA54;
+	background: url(../img/up.png) no-repeat left center;
+}
+
+/*折线图饼状图柱状图部分*/
+.chartBox{
+	height:365px;
+	padding:0 25px;
+}
+.chartBox .excellent{
+	float:left;
+	width:50%;
+	height:365px;
+	box-sizing:border-box;
+}
+#containerChart{
+	padding-right:20px;
+	height:280px;
+	margin:0 auto;
+}
+
+.excellent .chart-column-legend{
+	height:40px;
+	line-height: 40px;
+	font-size: 1.4rem;
+	color:#000;
+	text-align: center;
+}
+.excellent .chart-column-legend .can-choosed{
+	display: inline-block;
+    color: #9B9B9B;
+}
+.excellent .chart-column-legend span{
+	display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.excellent .chart-column-legend span i{
+	width:12px;
+	height:12px;
+	margin:0 5px;
+	display: inline-block;
+}
+.excellent .chart-column-legend span.level-a i{
+	background: #32ba54;
+}
+.excellent .chart-column-legend span.level-b i{
+	background: #3598db;
+}
+.excellent .chart-column-legend span.level-c i{
+	background: #fdbc2a;
+}
+.excellent .chart-column-legend span.level-d i{
+	background: #fb5252;
+}
+
+
+
+
+.chartBox .passing{
+	float:right;
+	width:50%;
+	height:365px;
+	box-sizing:border-box;
+}
+.chartBox  h3{
+	height:45px;
+	line-height: 45px;
+	font-size: 1.6rem;
+	color:#333;
+	text-align: center;
+	font-weight: bold;
+}
+.passingContent{
+	height:280px;
+	padding:20px 0;
+}
+
+
+.chart-pie-66{
+	float:left;
+	width:55%;
+	height:220px;
+	border-left:1px solid #ccc;
+	box-sizing: border-box;
+}
+.passingSeries{
+	float:right;
+	width:45%;
+	padding-top:70px;
+}
+.passingSeries ul li{
+	height:22px;
+	line-height: 22px;
+	font-size: 1.4rem;
+	color:#333;
+}
+.passingSeries ul li:first-child{
+	padding:5px 0;
+}
+.passingSeries ul li span{
+	width:12px;
+	height:12px;
+	display: inline-block;
+	margin-right:3px;
+}
+.passingSeries ul li.leve-a span{
+	background: #2da8e3;
+}
+.passingSeries ul li.leve-b span{
+	background: #fe524e;
+}
+
+
+
+/*压线生统计表*/
+.statisticsBox{
+	padding-bottom: 15px;
+}
+.statisticsBox h3{
+	height:48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+	background: #f5f5f5;
+}
+.statisticsInfo{
+	padding:10px 20px;
+}
+.statisticsInfo ul li{
+	overflow: hidden;
+	padding-left:172px;
+}
+.statisticsInfo ul li strong{
+	height:100%;
+	min-height:30px;
+	line-height: 30px;
+	font-size: 1.4rem;
+	color:#333;
+	float:left;
+	font-weight: normal;
+	margin-left:-172px;
+}
+.statisticsInfo ul li strong span{
+	font-size: 1.6rem;
+	font-weight: bold;
+	padding-right:5px;
+	color:#000;
+}
+.statisticsInfo ul li p{
+	min-height:30px;
+	line-height: 30px;
+	font-size: 1.4rem;
+	color:#333;
+}
+
+.statisticsFooter{
+	padding:10px 20px;
+	background: #f5f5f5;
+}
+.statisticsFooter ul li{
+	padding-left:16px;
+	background: url(../img/dot_bg.png) no-repeat left 12px;
+	min-height: 30px;
+	line-height: 30px;
+	font-size: 1.4rem;
+	color:#666;
+}
+/*异常学生*/
+.abnormal .statisticsInfo ul li{
+	padding-left:80px;
+}
+.abnormal .statisticsInfo ul li strong{
+	margin-left:-80px;
+}
+.abnormal  ul li  i.down{
+	padding:10px;
+	background: url(../img/icon-down-arrow.png) no-repeat center center;
+}
+.abnormal  ul li  i.up{
+	padding:10px;
+	background: url(../img/icon-up-arrow.png) no-repeat center center;
+}
+
+.abnormal  ul li  i.dj{
+	font-size: 1.2rem;
+	color:#fff;
+	width:15px;
+	height:15px;
+	line-height: 15px;
+	display: inline-block;
+	font-style: normal;
+	text-align: center;
+}
+.abnormal  ul li  i.dj-a{
+	background: #32ba54;
+}
+.abnormal  ul li  i.dj-b{
+	background: #2da8e3;
+}
+.abnormal  ul li  i.dj-c{
+	background: #ffcc18;
+}
+.abnormal  ul li  i.dj-d{
+	background: #fb5252;
+}
+
+.abnormal  ul li  em.km{
+	font-size: 1.2rem;
+	width:13px;
+	height:13px;
+	line-height: 13px;
+	display: inline-block;
+	font-style: normal;
+	text-align: center;
+}
+.abnormal  ul li  em.km-a{
+	border:1px solid #32ba54;
+	color:#32ba54;
+}
+.abnormal  ul li  em.km-b{
+	border:1px solid #2da8e3;
+	color:#2da8e3;
+}
+.abnormal  ul li  em.km-g{
+	border:1px solid #ccc;
+	color:#ccc;
+}
+.abnormal  ul li  em.km-c{
+	border:1px solid #ffcc18;
+	color:#ffcc18;
+}
+.abnormal  ul li  em.km-d{
+	border:1px solid #fb5252;
+	color:#fb5252;
+}
+
+/*第二部分   均分优良率及格率统计*/
+.mainOne{
+	/*margin-top:20px;*/
+}
+.graph-tabs{
+	padding:17px 0px;
+	width:756px;
+	height:36px;
+	margin:0 auto;
+}
+.graph-tabs a{
+	float:left;
+	
+	height:36px;
+	margin:0 76px;
+	display: block;
+	box-sizing:border-box;
+	line-height: 36px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+.graph-tabs a.active{
+	color:#32ba54;border-bottom:2px solid #32ba54;
+}
+
+.student .jz{
+	width:50px;
+	margin:10px auto;
+}
+
+
+
+.mainOneMapBox{
+	
+}
+.mainOneMapBox .histogram{
+	display: none;
+}
+.mainOneMapBox .histogramNote{
+	padding:10px 18px;
+	background: #f5f5f5;
+	margin-top:10px;
+}
+.mainOneMapBox .histogramNote p{
+	font-size: 1.4rem;
+	color:#666;
+	line-height: 24px;
+}
+.histogramMapFooter{
+	min-height:40px;
+	line-height: 40px;
+	font-size: 1.6rem;
+	color:#000;
+	text-align: center;
+}
+/*均分图*/
+.mainOneMapBox .histogram .splitMap{
+	width:100%;
+	box-sizing:border-box;
+	padding:0 20px;
+	height:310px;
+	margin:0 auto;
+}
+.mainOneMapBox .histogram .splitMapFooter{
+	min-height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+.mainOneMapBox .histogram .yaxis-vertical-title{
+	width: 14px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.chart-column-line-global .chart-line-change .plotline-label{
+	height: 20px;
+    padding: 0 5px;
+    color: #fff;
+    background: #fb5252;
+    font-size: 14px;
+    line-height: 20px;
+}
+.chart-column-legend-class{
+	min-height:40px;
+	line-height: 40px;
+	font-size: 1.4rem;
+	color:#000;
+	text-align: center;
+}
+.chart-column-legend-class div.can-choosed{
+	display: inline-block;
+	color:#9B9B9B;
+}
+.chart-column-legend-class span{
+	margin-right:15px;
+	cursor: pointer;
+	color:#9B9B9B;
+}
+.chart-column-legend-class span.active{
+	color: #000;
+}
+
+
+.chart-column-legend{
+	height:40px;
+	line-height: 40px;
+	font-size: 1.4rem;
+	color:#000;
+	text-align: center;
+}
+.chart-column-legend .can-choosed{
+	display: inline-block;
+    color: #9B9B9B;
+}
+.chart-column-legend span{
+	display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.chart-column-legend span i{
+	width:12px;
+	height:12px;
+	margin:0 5px;
+	display: inline-block;
+}
+.chart-column-legend span.level-a i{
+	background: #32ba54;
+}
+.chart-column-legend span.level-b i{
+	background: #3598db;
+}
+.chart-column-legend span.level-c i{
+	background: #fdbc2a;
+}
+.chart-column-legend span.level-d i{
+	background: #fb5252;
+}
+
+
+.chart-column-legend span.active{
+	color:#9b9b9b;
+}
+.chart-column-legend span.active i{
+	background:#9b9b9b;
+}
+
+
+/*优良率图*/
+.mainOneMapBox .histogram .goodMap{
+	width:100%;
+	min-width:1200px;
+	margin:0 auto;
+	box-sizing:border-box;
+	padding:0 20px;
+	height:270px;
+}
+.goodMapFooter{
+	height:22px;
+	width:750px;
+	margin:0 auto;
+}
+.goodMapFooter p{
+	height:22px;
+	line-height: 22px;
+	/*width:100px;*/
+	margin:0 15px;
+	float:left;
+	cursor: pointer;
+	font-size: 1.6rem;
+	color:#333;
+	overflow: hidden;
+}
+.goodMapFooter p span{
+	float:left;
+	width:12px;
+	height:12px;
+	margin-right:5px;
+	margin-top:6px;
+	display: inline-block;
+}
+.goodMapFooter p span.yx{
+	background: #32ba54;
+}
+.goodMapFooter p span.lh{
+	background: #3598db;
+}
+.goodMapFooter p span.zd{
+	background: #ffa518;
+}
+.goodMapFooter p span.gz{
+	background: #fb5252;
+}
+/*及格率图*/
+.mainOneMapBox .histogram .passingRateMap{
+	width:100%;
+	box-sizing:border-box;
+	padding:0 20px;
+	height:270px;
+	min-width:1200px;
+	margin:0 auto;
+}
+.passingRateMapFooter{
+	height:22px;
+	width:175px;
+	margin:0 auto;
+}
+.passingRateMapFooter p{
+	height:22px;
+	line-height: 22px;
+	/*width:100px;*/
+	margin:0 15px;
+	float:left;
+	cursor: pointer;
+	font-size: 1.6rem;
+	color:#333;
+	overflow: hidden;
+}
+.passingRateMapFooter p span{
+	float:left;
+	width:12px;
+	height:12px;
+	margin-right:5px;
+	margin-top:6px;
+	display: inline-block;
+}
+.passingRateMapFooter p span.jg{
+	background: #3598db;
+}
+.passingRateMapFooter p span.bjg{
+	background: #fb5252;
+}
+
+
+/*三种统计表样式*/
+.mainOneTable .tableBox{
+	padding-top:0;
+}
+.mainOneTable .tableTitle{
+	height:45px;
+	line-height: 45px;
+	font-size: 1.6rem;
+	color:#000;
+	text-align: center;
+}
+
+
+/*table*/
+table.dataTable tbody tr {font-size:1.4rem!important;}
+
+
+
+
+
+
+
+/*返回箭头=======================*/
+#backArrow{opacity:0.9;position:fixed;bottom:60px;right:20px;display:none;cursor:pointer;}
+
+
+
+
+
+
+/*第三部分   分数段统计*/
+.mainTwo{
+	
+}
+.mainTwo .yaxis-vertical-title{
+	width: 14px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.mainTwo .mainTitle a{
+	float:right;
+	font-size: 1.4rem;
+	color:#5093e1;
+	margin-right:30px;
+}
+.mainTwo .fractionBox{
+}
+.mainTwo .fractionMap{
+	height:355px;
+	padding:0 20px;
+}
+.mainTwo .fractionNote{
+	padding:10px 18px;
+	background: #f5f5f5;
+}
+.mainTwo .fractionNote p{
+	height:24px;
+	font-size: 1.4rem;
+	color:#666;
+}
+.mainTwo .tableBox{
+	padding-top:0;
+}
+.mainTwo .tableBox .tableTitle{
+	height:48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+
+
+
+
+.chart-column-line-global{
+	padding:0 20px;
+}
+
+/*学科均分统计*/
+
+
+.mainThree{
+	
+}
+.mainThree .yaxis-vertical-title{
+	width: 14px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.mainThreeMapBox{
+	padding:0 0px;
+}
+.mainThreeMapBox .xuekeSplitMap{
+	padding:0 20px;
+}
+.mainThreeMapBox .xuekeSplitMapFooter{
+	min-height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+.mainThreeMapBox .histogramNote{
+	padding:10px 18px;
+	background: #f5f5f5;
+	margin-top:10px;
+}
+.mainThreeMapBox .histogramNote p{
+	font-size: 1.4rem;
+	color:#666;
+	line-height: 24px;
+}
+
+.graph-comments{
+	padding:10px 18px;
+	background: #f5f5f5;
+	margin-top:10px;
+}
+.graph-comments li{
+	font-size: 1.4rem;
+	color:#666;
+	line-height: 24px;
+}
+.splitMapFooter{
+	min-height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.6rem;
+	color:#000;
+}
+
+
+
+
+
+
+
+/*翻页样式*/
+.pageBox{
+	width:500px;
+	height:22px;
+	margin:0 auto;
+	padding:20px 0 15px;
+}
+.pageBox a{
+	width:22px;
+	height:22px;
+	display: block;
+	margin:0 3px;
+	float:left;
+	border-radius: 3px;
+	line-height: 22px;
+	text-align: center;
+	font-size: 1.4rem;
+	color:#666;
+}
+.pageBox a[data-pag=page]:hover{
+	background: #eee;
+}
+
+.pageBox a[data-pag=page].current{
+	background: #5093e1;
+	color:#fff;
+}
+
+.pageBox a.previous{
+	background: url(../img/previous_bg.png) no-repeat center center;
+}
+.pageBox a.next{
+	background: url(../img/next_bg.png) no-repeat center center;
+}
+
+
+/*加载旋转*/
+.jz{
+	height: 350px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+
+
+
+
+
+

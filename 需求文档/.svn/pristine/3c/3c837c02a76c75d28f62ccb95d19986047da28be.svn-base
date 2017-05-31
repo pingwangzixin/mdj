@@ -1,0 +1,86 @@
+/*课堂评测主页面css*/
+.wx_fl{float: left;}
+.wx_fr{float: right;}
+.wx_content_left{width:65%!important;}
+.content_right .tit_btn a{
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+	color: #3598db;
+	font-size: 14px;
+	background-color: #e3eefa;
+}
+
+/*课堂列表*/
+.wx_fanhui{cursor: pointer;margin-right:20px;}
+.wx_ft16 img{
+	vertical-align: middle;
+}
+.wx_ft16 span{font-size:16px}
+.wx_ft16 span:hover{background:none!important;}
+.content_left{width:100%;}
+
+.kt_list{width:96%;border:1px solid #ccc;margin:0 auto;}
+.kt_list thead{background:#f9f9f9;}
+.kt_list thead tr{height:46px;}
+.kt_list thead tr th{height:46px;text-align: center;font-size: 14px;}
+.kt_list tbody tr{height:40px;}
+.kt_list tbody tr td{text-align: center;font-size: 14px;}
+
+.wx_fenye{margin-top:20px;position: relative;height:50px;}
+/*table栏切换 分页*/
+
+.investment_paging {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.pagination-clean {
+    height: 25px;
+    margin: 0 auto ;
+    align-content: center;
+}
+.pagination-clean li{
+    min-width: 22px;
+    height: 22px;
+    float: left;
+    font-size:14px;
+    margin: 0 2px;
+}
+.pagination-clean a{
+    display: block;
+    min-width: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #4F93E0;
+    padding:0 4px;
+    border-radius: 5px;
+}
+.pagination-clean li, .pagination-clean a img{margin-top:1px;}
+
+.pagination-clean .active{
+    background: #4F92E0;
+    color: #fff;
+}
+.yeshu {
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+    color: #212121;
+    font-size: 14px;
+}
+
+/*成绩对比*/
+.Big_box .box {
+	border-top:2px solid #5093e1;
+	width: 100%!important;
+	background-color: #fff;
+	/*height: 400px;*/
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	-ms-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
+	border-radius: 6px;
+	margin-bottom: 20px;
+}

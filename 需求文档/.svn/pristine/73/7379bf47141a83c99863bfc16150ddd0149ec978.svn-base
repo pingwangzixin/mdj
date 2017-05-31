@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>考试管理</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/exam-admin.css"/>
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="../js/exam-admin.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+
+<header  class="header clearfix"></header>
+<!--中心内容-->
+<div class="main clearfix">
+    <!--右侧-->
+    <div class="main_right fr">
+		<div class="exam_release">
+			<div class="exam_tab">
+				<a href="release1.html">发布考试</a>
+				<a href="#" class="active">管理考试</a>
+			</div>
+			
+			<!--学年筛选-->
+			<div class="screen_year">
+				<h3>学年:</h3>
+				<div class="div_same j_radio">
+					<span>2014-2015</span>
+					<span>2014-2015</span>
+					<span>2013-2014</span>
+					<span>2013-2014</span>
+					<span>2013-2014</span>
+					<span>2014-2015</span>
+				</div>
+			</div>
+			
+			<!--考试管理内容-->
+			<div class="release_list">
+			
+				<!--考试管理详细--条-->
+				<div class="release_details">
+					
+					<div class="sub_tit clearfix">
+						<h3 class="fl">考试名称：2014—2015学年上学期语文期中考试</h3>
+						<span class="fr">创建考试时间：<i>2016-05-05</i></span>
+					</div>
+					
+					<div class="sub clearfix">
+						<div class="sub_white fl">
+							<span class="fl">考试科目</span>
+							
+							<div class="scr_box fl">
+								<i class="prev_i fl"></i>
+								<div class="outter_box fl">
+									<ul class="sub_list clearfix">
+										<li class="fl">
+											<img src="../img/chinese.png"/>
+											语文
+										</li>
+										<li class="fl">
+											<img src="../img/math.png"/>
+											数学
+										</li>
+										<li class="fl">
+											<img src="../img/english.png"/>
+											英语
+										</li>
+										<li class="fl">
+											<img src="../img/physics.png"/>
+											物理
+										</li>
+										
+									</ul>
+									
+								</div>
+								<i class="next_i fr"></i>
+							</div>
+							
+						</div>
+						<div class="oper_btn fr">
+							
+							<a href="release1.html"><span class="edit_btn">编辑</span></a>
+							<i><span class="del_btn">删除</span></i>
+						</div>
+					</div>
+					
+				</div>
+
+				<!--考试管理详细--条-->
+				<div class="release_details">
+					
+					<div class="sub_tit clearfix">
+						<h3 class="fl">考试名称：2014—2015学年上学期语文期中考试</h3>
+						<span class="fr">创建考试时间：<i>2016-05-05</i></span>
+					</div>
+					
+					<div class="sub clearfix">
+						<div class="sub_white fl">
+							<span class="fl">考试科目</span>
+							
+							<div class="scr_box fl">
+								<i class="prev_i fl"></i>
+								<div class="outter_box fl">
+									<ul class="sub_list clearfix">
+										<li class="fl">
+											<img src="../img/chinese.png"/>
+											语文
+										</li>
+										<li class="fl">
+											<img src="../img/math.png"/>
+											数学
+										</li>
+										<li class="fl">
+											<img src="../img/english.png"/>
+											英语
+										</li>
+										<li class="fl">
+											<img src="../img/physics.png"/>
+											物理
+										</li>
+										<li class="fl">
+											<img src="../img/chemistry.png"/>
+											化学
+										</li>
+										<li class="fl">
+											<img src="../img/biology.png"/>
+											生物
+										</li>
+										<li class="fl">
+											<img src="../img/politics.png"/>
+											政治
+										</li>
+										<li class="fl">
+											<img src="../img/dili.png"/>
+											地理
+										</li>
+										<li class="fl">
+											<img src="../img/lishi.png"/>
+											历史
+										</li>
+										<li class="fl">
+											<img src="../img/meishu.png"/>
+											美术
+										</li>
+										<li class="fl">
+											<img src="../img/tiyu.png"/>
+											体育
+										</li>
+										<li class="fl">
+											<img src="../img/yinyue.png"/>
+											音乐
+										</li>
+										<li class="fl">
+											<img src="../img/biology.png"/>
+											生物
+										</li>
+										<li class="fl">
+											<img src="../img/politics.png"/>
+											政治
+										</li>
+										<li class="fl">
+											<img src="../img/caikuai.png"/>
+											财会
+										</li>
+										<li class="fl">
+											<img src="../img/xumushouyi.png"/>
+											畜牧兽医
+										</li>
+										<li class="fl">
+											<img src="../img/difangke.png"/>
+											地方课
+										</li>
+										<li class="fl">
+											<img src="../img/diangongdianzi.png"/>
+											电工电子
+										</li>
+										<li class="fl">
+											<img src="../img/dianzishangwu.png"/>
+											电子商务
+										</li>
+										<li class="fl">
+											<img src="../img/hanjie.png"/>
+											焊接
+										</li>
+										<li class="fl">
+											<img src="../img/jixiejiagong.png"/>
+											机械加工
+										</li>
+										<li class="fl">
+											<img src="../img/jishu.png"/>
+											技术
+										</li>
+										<li class="fl">
+											<img src="../img/kexue.png"/>
+											科学
+										</li>
+										<li class="fl">
+											<img src="../img/laoji.png"/>
+											劳技
+										</li>
+										<li class="fl">
+											<img src="../img/lvyou.png"/>
+											旅游
+										</li>
+										<li class="fl">
+											<img src="../img/mucaijiagong.png"/>
+											木材加工
+										</li>
+										<li class="fl">
+											<img src="../img/nongyejixiehua.png"/>
+											农业机械化
+										</li>
+										<li class="fl">
+											<img src="../img/nongyi.png"/>
+											农艺
+										</li>
+										<li class="fl">
+											<img src="../img/pindefazhan.png"/>
+											品德发展
+										</li>
+										<li class="fl">
+											<img src="../img/pindeyushehui.png"/>
+											品德与社会
+										</li>
+										<li class="fl">
+											<img src="../img/qixiu.png"/>
+											汽修
+										</li>
+										<li class="fl">
+											<img src="../img/renwen.png"/>
+											人文
+										</li>
+										<li class="fl">
+											<img src="../img/renwenyushehui.png"/>
+											人文与社会
+										</li>
+										<li class="fl">
+											<img src="../img/shenxinfazhan.png"/>
+											身心发展
+										</li>
+										<li class="fl">
+											<img src="../img/shengmingjiaoyu.png"/>
+											生命教育
+										</li>
+										<li class="fl">
+											<img src="../img/shukong.png"/>
+											数控
+										</li>
+										<li class="fl">
+											<img src="../img/sixiangpinde.png"/>
+											思想品德
+										</li>
+										<li class="fl">
+											<img src="../img/tongyongjishu.png"/>
+											通用技术
+										</li>
+										<li class="fl">
+											<img src="../img/xiaobenkecheng.png"/>
+											校本课程
+										</li>
+										<li class="fl">
+											<img src="../img/xinli.png"/>
+											心理
+										</li>
+										<li class="fl">
+											<img src="../img/xinxijishu.png"/>
+											信息技术
+										</li>
+										<li class="fl">
+											<img src="../img/xingquyangcheng.png"/>
+											兴趣养成
+										</li>
+										<li class="fl">
+											<img src="../img/zongheshijian.png"/>
+											综合实践
+										</li>
+									</ul>
+									
+								</div>
+								<i class="next_i fr"></i>
+							</div>
+							
+						</div>
+						<div class="oper_btn fr">
+							
+							<a href="release1.html"><span class="edit_btn">编辑</span></a>
+							<i><span class="del_btn">删除</span></i>
+						</div>
+					</div>
+					
+				</div>
+				
+				<!--考试管理详细--条-->
+				<div class="release_details">
+					
+					<div class="sub_tit clearfix">
+						<h3 class="fl">考试名称：2014—2015学年上学期语文期中考试</h3>
+						<span class="fr">创建考试时间：<i>2016-05-05</i></span>
+					</div>
+					
+					<div class="sub clearfix">
+						<div class="sub_white fl">
+							<span class="fl">考试科目</span>
+							
+							<div class="scr_box fl">
+								<i class="prev_i fl"></i>
+								<div class="outter_box fl">
+									<ul class="sub_list clearfix">
+										<li class="fl">
+											<img src="../img/chinese.png"/>
+											语文
+										</li>
+										<li class="fl">
+											<img src="../img/math.png"/>
+											数学
+										</li>
+										<li class="fl">
+											<img src="../img/english.png"/>
+											英语
+										</li>
+										<li class="fl">
+											<img src="../img/physics.png"/>
+											物理
+										</li>
+										<li class="fl">
+											<img src="../img/chemistry.png"/>
+											化学
+										</li>
+										<li class="fl">
+											<img src="../img/biology.png"/>
+											生物
+										</li>
+										<li class="fl">
+											<img src="../img/politics.png"/>
+											政治
+										</li>
+										<li class="fl">
+											<img src="../img/dili.png"/>
+											地理
+										</li>
+										<li class="fl">
+											<img src="../img/lishi.png"/>
+											历史
+										</li>
+										<li class="fl">
+											<img src="../img/meishu.png"/>
+											美术
+										</li>
+										<li class="fl">
+											<img src="../img/tiyu.png"/>
+											体育
+										</li>
+										<li class="fl">
+											<img src="../img/yinyue.png"/>
+											音乐
+										</li>
+										<li class="fl">
+											<img src="../img/biology.png"/>
+											生物
+										</li>
+										<li class="fl">
+											<img src="../img/politics.png"/>
+											政治
+										</li>
+										<li class="fl">
+											<img src="../img/caikuai.png"/>
+											财会
+										</li>
+										<li class="fl">
+											<img src="../img/xumushouyi.png"/>
+											畜牧兽医
+										</li>
+										<li class="fl">
+											<img src="../img/difangke.png"/>
+											地方课
+										</li>
+										<li class="fl">
+											<img src="../img/diangongdianzi.png"/>
+											电工电子
+										</li>
+										<li class="fl">
+											<img src="../img/dianzishangwu.png"/>
+											电子商务
+										</li>
+										<li class="fl">
+											<img src="../img/hanjie.png"/>
+											焊接
+										</li>
+										<li class="fl">
+											<img src="../img/jixiejiagong.png"/>
+											机械加工
+										</li>
+										<li class="fl">
+											<img src="../img/jishu.png"/>
+											技术
+										</li>
+										<li class="fl">
+											<img src="../img/kexue.png"/>
+											科学
+										</li>
+										<li class="fl">
+											<img src="../img/laoji.png"/>
+											劳技
+										</li>
+										<li class="fl">
+											<img src="../img/lvyou.png"/>
+											旅游
+										</li>
+										<li class="fl">
+											<img src="../img/mucaijiagong.png"/>
+											木材加工
+										</li>
+										<li class="fl">
+											<img src="../img/nongyejixiehua.png"/>
+											农业机械化
+										</li>
+										<li class="fl">
+											<img src="../img/nongyi.png"/>
+											农艺
+										</li>
+										<li class="fl">
+											<img src="../img/pindefazhan.png"/>
+											品德发展
+										</li>
+										<li class="fl">
+											<img src="../img/pindeyushehui.png"/>
+											品德与社会
+										</li>
+										<li class="fl">
+											<img src="../img/qixiu.png"/>
+											汽修
+										</li>
+										<li class="fl">
+											<img src="../img/renwen.png"/>
+											人文
+										</li>
+										<li class="fl">
+											<img src="../img/renwenyushehui.png"/>
+											人文与社会
+										</li>
+										<li class="fl">
+											<img src="../img/shenxinfazhan.png"/>
+											身心发展
+										</li>
+										<li class="fl">
+											<img src="../img/shengmingjiaoyu.png"/>
+											生命教育
+										</li>
+										<li class="fl">
+											<img src="../img/shukong.png"/>
+											数控
+										</li>
+										<li class="fl">
+											<img src="../img/sixiangpinde.png"/>
+											思想品德
+										</li>
+										<li class="fl">
+											<img src="../img/tongyongjishu.png"/>
+											通用技术
+										</li>
+										<li class="fl">
+											<img src="../img/xiaobenkecheng.png"/>
+											校本课程
+										</li>
+										<li class="fl">
+											<img src="../img/xinli.png"/>
+											心理
+										</li>
+										<li class="fl">
+											<img src="../img/xinxijishu.png"/>
+											信息技术
+										</li>
+										<li class="fl">
+											<img src="../img/xingquyangcheng.png"/>
+											兴趣养成
+										</li>
+										<li class="fl">
+											<img src="../img/zongheshijian.png"/>
+											综合实践
+										</li>
+									</ul>
+									
+								</div>
+								<i class="next_i fr"></i>
+							</div>
+							
+						</div>
+						<div class="oper_btn fr">
+							
+							<a href="release1.html"><span class="edit_btn">编辑</span></a>
+							<i><span class="del_btn">删除</span></i>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+			
+			<!--分页-->
+			<div class="page_box clearfix">
+				<a href="javascript:;" class="prev_btn"></a>
+				<a href="javascript:;" class="active" data-pag="page">1</a>
+				<a href="javascript:;" data-pag="page">2</a>
+				<a href="javascript:;" data-pag="page">3</a>
+				<a href="javascript:;" >...</a>
+				<a href="javascript:;" data-pag="page">10</a>
+				<a href="javascript:;" class="next_btn"></a>
+			</div>
+		
+		</div>
+    </div>
+</div>
+
+<!--弹层 -->
+<!--del_down为公用clss名不要动，后面起自己控制的class-->
+<div class="del_down del z_del" style="display: none;">
+    <div class="hide"></div>
+    <div class="con z_con">
+    	<!--  写弹层的内容 -->
+    	<div class="tip clearfix">
+    		<span class="fl">提示</span>
+    		<i class="fr"></i>
+    	</div>
+    	<div class="tip_img">
+    		<img src="../img/tan.png"/>
+    		确认删除此次考试
+    	</div>
+    	<div class="if_confirm">
+    		<span class="cancel_btn">取消删除</span>
+    		<span class="conf_btn">确认删除</span>
+    	</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	var app1 = angular.module("app1",[]);
+	var app2 = angular.module("app2",[]);
+	angular.bootstrap(document.getElementById("A1"),['app1']);
+	angular.bootstrap(document.getElementById("A2"),['app2']);
+</script>
+</body>
+</html>

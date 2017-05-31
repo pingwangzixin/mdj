@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>学生成绩对比-任课老师</title>
+	<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/contrast.css"/>
+    <script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../common/js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header   class="header clearfix"></header>
+	<!--中心内容-->
+	<div class="main clearfix">
+	    <!--右侧-->
+	    <div class="main_right fr">
+			<div class="dh_banji clearfix">
+				<div class="fl">
+					<div class="dhkaishi">一年级（2班）<img src="../img/daohang.png" alt=""  class="sanjiao"/>学生成绩对比</div>
+				</div>
+				<a class="fr back" href="../shouye/class_single.html">
+					<img src="../img/back.png"/>
+					返回
+				</a>
+			</div>
+			<div class="xueke_select">
+				<div class="selectks clearfix">
+					<p class="fl">学科：</p>
+					<p class="fl" style="width: 96%;">
+						<a href="#"><span class="active">语文</span></a>
+						<a href="#"><span class="active">语文</span></a>
+						<a href="#"><span class="active">语文</span></a>
+						<a href="#"><span class="active">语文</span></a>
+						<a href="#"><span class="active">语文</span></a>
+
+					</p>
+				</div>
+			</div>
+			<div class="xuesheng_select">
+				<div class="xueshengwrap">
+					<div class="tit">
+						<span class="fl biaoti">2014-2015一年级（2班）全科考试统计</span>
+						<span class="fr quanping"><span class="daochu"><img src="../img/daochu.png" alt="" />导出PNG</span> 
+					</div>
+					<div class="students-list student clearfix ">
+                   		<a href="javascript:;" data-index="1" >01陈聪陈聪陈聪陈聪陈聪陈聪</a>
+		                <a href="javascript:;" data-index="2" >02陈瑛</a>
+		                <a href="javascript:;" data-index="3" >03丁超</a>
+		                <a href="javascript:;" data-index="4" >04谷宗元</a>
+		                <a href="javascript:;" data-index="5" >05何成健</a>
+		                <a href="javascript:;" data-index="6" >06黄河</a>
+		                <a href="javascript:;" data-index="7" >07季万林</a>
+		                <a href="javascript:;" data-index="8" >08姜跃松</a>
+		                <a href="javascript:;" data-index="9" >09劳兴荣</a>
+		                <a href="javascript:;" data-index="10" >10李祥</a>
+		                <a href="javascript:;" data-index="11" >11刘欢</a>
+		                <a href="javascript:;" data-index="12" >12刘晶晶</a>
+		                <a href="javascript:;" data-index="13" >13刘连枝</a>
+		                <a href="javascript:;" data-index="14" >14吕杰</a>
+		                <a href="javascript:;" data-index="15" >15钱蓓蕾</a>
+		                <a href="javascript:;" data-index="16" >16乔长伟</a>
+		                <a href="javascript:;" data-index="17" >17邱廷军</a>
+		                <a href="javascript:;" data-index="18" >18荣振远</a>
+		                <a href="javascript:;" data-index="19" >19唐磊</a>
+		                <a href="javascript:;" data-index="20" >20宛越</a>
+		                <a href="javascript:;" data-index="21" >21王巧</a>
+		                <a href="javascript:;" data-index="22" >22高佳栋</a>
+		                <a href="javascript:;" data-index="23" >23魏华建</a>
+		                <a href="javascript:;" data-index="24" >24吴强</a>
+		                <a href="javascript:;" data-index="25" >25吴晓晟</a>
+		                <a href="javascript:;" data-index="26" >26谢凌云</a>
+		                <a href="javascript:;" data-index="27" >27徐淼斌</a>
+		                <a href="javascript:;" data-index="28" >28薛刚</a>
+		                <a href="javascript:;" data-index="29" >29叶彬彬</a>
+		                <a href="javascript:;" data-index="30" >30廖娟</a>
+		                <a href="javascript:;" data-index="31" >31张义</a>
+		                <a href="javascript:;" data-index="32" >32赵媛媛</a>
+		                <a href="javascript:;" data-index="33" >33诸晓杰</a>
+		            </div>
+				</div>
+			</div>
+			
+			<div class="Big_box">
+	    		<div class="box fl" id="chart1"></div>
+	    		<div class="box fr" id="chart2"></div>
+	    		<div class="box fl" id="chart3"></div>
+	    		<div class="box fr" id="chart4"></div>
+	    	</div>
+	    	
+	    	<script>
+				$(function(){
+				    // 下面4张表数据都是一次性生成，第一个series是班级/年级的，接着就是每个学生的
+				    $('#chart1').highcharts({
+				        title: {
+				            text: '学生考试总分趋势折线图（班级）',
+				            style : {
+				                'fontFamily' : '微软雅黑',
+				                'fontSize':'16px'
+				            }
+				        },
+				        xAxis: {
+				            categories: ["\u5165\u5b66\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u6478\u5e95\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u671f\u672b\u8003\u8bd5"],
+				            gridLineWidth: 1,
+				            gridLineColor: '#ececec',
+				            lineColor: '#ececec',
+				            tickColor: '#ececec',
+				            labels : {
+						        style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+						    }
+				        },
+				        yAxis: {
+				            title: {
+				                text: '与班级平均分比率',
+				                style : {
+					                'fontFamily' : '微软雅黑'
+					            }
+				            },
+				            gridLineColor: '#ececec'
+				        },
+				        tooltip: {
+				            formatter: function() {
+				                return '<strong>'+ this.x +'</strong><br>'+
+				                    '<strong>'+ this.series.name +'：</strong>'+ this.point.score +'分';
+				            }
+				        },
+				        plotOptions: {
+				            line: {
+				                dataLabels: {
+				                    enabled: true,
+				                    formatter: function(){
+				                        return this.point.score + ' (' + this.point.y + '%)';
+				                    }
+				                }
+				            },
+				            series: {
+				                cursor: 'pointer',
+				                point: {
+				                    events: {
+				                        click: function() {
+				                            if (typeof this.url != 'undefined') {
+				                                location = this.url;
+				                            }
+				                        }
+				                    }
+				                }
+				            }
+				        },
+				        series: [{
+				            name: '班级平均分',
+				            data: [{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"}],
+				            dataLabels: { formatter: function(){ return this.point.score+'分'; } }
+				        }
+				                , {
+				            name: "陈聪",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=1","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "陈瑛",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=2","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "丁超",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=3","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "谷宗元",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=4","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "何成健",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=5","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "黄河",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=6","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "季万林",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=7","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "姜跃松",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=8","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "劳兴荣",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=9","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "李祥",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=10","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘欢",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=11","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘晶晶",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=12","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘连枝",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=13","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吕杰",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=14","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "钱蓓蕾",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=15","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "乔长伟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=16","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "邱廷军",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=17","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "荣振远",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=18","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "唐磊",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=19","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "宛越",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=20","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "王巧",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=21","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "高佳栋",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=22","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "魏华建",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=23","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吴强",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=24","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吴晓晟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=25","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "谢凌云",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=26","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "徐淼斌",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=27","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "薛刚",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=28","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "叶彬彬",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=29","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "廖娟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=30","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "张义",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=31","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "赵媛媛",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=32","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "诸晓杰",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=97","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                ]
+				    });
+				
+				    $('#chart2').highcharts({
+				        title: {
+				            text: '学生考试总分趋势折线图（年级）',
+				            style : {
+				                'fontFamily' : '微软雅黑',
+				                'fontSize':'16px'
+				            }
+				        },
+				        xAxis: {
+				            categories: ["\u5165\u5b66\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u6478\u5e95\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u671f\u672b\u8003\u8bd5"],
+				            gridLineWidth: 1,
+				            gridLineColor: '#ececec',
+				            lineColor: '#ececec',
+				            tickColor: '#ececec',
+				            labels : {
+						        style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+						    }
+				        },
+				        yAxis: {
+				            title: {
+				                text: '与年级平均分比率',
+					            style : {
+					                'fontFamily' : '微软雅黑'
+					            }
+				            },
+				            gridLineColor: '#ececec'
+				        },
+				        tooltip: {
+				            formatter: function() {
+				                return '<strong>'+ this.x +'</strong><br>'+
+				                    '<strong>'+ this.series.name +'：</strong>'+ this.point.score +'分';
+				            }
+				        },
+				        plotOptions: {
+				            line: {
+				                dataLabels: {
+				                    enabled: true,
+				                    formatter: function(){
+				                        return this.point.score + ' (' + this.point.y + '%)';
+				                    }
+				                }
+				            },
+				            series: {
+				                cursor: 'pointer',
+				                point: {
+				                    events: {
+				                        click: function() {
+				                            if (typeof this.url != 'undefined') {
+				                                location = this.url;
+				                            }
+				                        }
+				                    }
+				                }
+				            }
+				        },
+				        series: [{
+				            name: '年级平均分',
+				            data: [{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"},{"y":0,"url":"","score":"0.00"}],
+				            dataLabels: { formatter: function(){ return this.point.score+'分'; } }
+				        }        , {
+				            name: "陈聪",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=1","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=1","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "陈瑛",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=2","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=2","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "丁超",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=3","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=3","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "谷宗元",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=4","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=4","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "何成健",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=5","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=5","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "黄河",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=6","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=6","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "季万林",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=7","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=7","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "姜跃松",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=8","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=8","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "劳兴荣",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=9","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=9","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "李祥",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=10","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=10","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘欢",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=11","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=11","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘晶晶",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=12","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=12","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "刘连枝",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=13","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=13","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吕杰",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=14","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=14","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "钱蓓蕾",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=15","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=15","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "乔长伟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=16","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=16","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "邱廷军",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=17","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=17","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "荣振远",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=18","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=18","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "唐磊",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=19","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=19","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "宛越",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=20","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=20","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "王巧",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=21","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=21","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "高佳栋",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=22","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=22","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "魏华建",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=23","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=23","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吴强",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=24","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=24","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "吴晓晟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=25","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=25","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "谢凌云",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=26","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=26","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "徐淼斌",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=27","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=27","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "薛刚",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=28","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=28","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "叶彬彬",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=29","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=29","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "廖娟",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=30","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=30","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "张义",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=31","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=31","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "赵媛媛",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=32","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=32","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                , {
+				            name: "诸晓杰",
+				            data: [{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=97","score":0},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=97","score":0}],
+				            visible: false,
+				            showInLegend: false
+				        }
+				                ]
+				    });
+				
+				    $('#chart3').highcharts({
+				        title: {
+				            text: '学生考试总分名次趋势折线图（班级）',
+				            style : {
+						            'fontFamily' : '微软雅黑',
+						            'fontSize':'16px'
+						        }
+				        },
+				        xAxis: {
+				            categories: ["\u5165\u5b66\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u6478\u5e95\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u671f\u672b\u8003\u8bd5"],
+				            gridLineWidth: 1,
+				            gridLineColor: '#ececec',
+				            lineColor: '#ececec',
+				            tickColor: '#ececec',
+				            labels : {
+						        style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+						    }
+				        },
+				        yAxis: {
+				            title: {
+				                text: '名次（班级）',
+				                style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+				            },
+				            labels: { enabled: false },
+				            gridLineColor: '#ececec'
+				        },
+				        tooltip: {
+				            formatter: function() {
+				                return '<strong>'+ this.x +'</strong><br>'+
+				                    '<strong>'+ this.series.name +'班级排名：</strong>'+ -this.y;
+				            }
+				        },
+				        plotOptions: {
+				            line: {
+				                dataLabels: {
+				                    enabled: true,
+				                    formatter: function(){
+				                        return -this.point.y + '名';
+				                    }
+				                }
+				            },
+				            series: {
+				                cursor: 'pointer',
+				                point: {
+				                    events: {
+				                        click: function() {
+				                            if (typeof this.url != 'undefined') {
+				                                location = this.url;
+				                            }
+				                        }
+				                    }
+				                }
+				            }
+				        },
+				        series: [{"name":"\u9648\u806a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=1"}],"visible":false,"showInLegend":false},{"name":"\u9648\u745b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=2"}],"visible":false,"showInLegend":false},{"name":"\u4e01\u8d85","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=3"}],"visible":false,"showInLegend":false},{"name":"\u8c37\u5b97\u5143","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=4"}],"visible":false,"showInLegend":false},{"name":"\u4f55\u6210\u5065","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=5"}],"visible":false,"showInLegend":false},{"name":"\u9ec4\u6cb3","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=6"}],"visible":false,"showInLegend":false},{"name":"\u5b63\u4e07\u6797","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=7"}],"visible":false,"showInLegend":false},{"name":"\u59dc\u8dc3\u677e","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=8"}],"visible":false,"showInLegend":false},{"name":"\u52b3\u5174\u8363","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=9"}],"visible":false,"showInLegend":false},{"name":"\u674e\u7965","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=10"}],"visible":false,"showInLegend":false},{"name":"\u5218\u6b22","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=11"}],"visible":false,"showInLegend":false},{"name":"\u5218\u6676\u6676","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=12"}],"visible":false,"showInLegend":false},{"name":"\u5218\u8fde\u679d","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=13"}],"visible":false,"showInLegend":false},{"name":"\u5415\u6770","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=14"}],"visible":false,"showInLegend":false},{"name":"\u94b1\u84d3\u857e","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=15"}],"visible":false,"showInLegend":false},{"name":"\u4e54\u957f\u4f1f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=16"}],"visible":false,"showInLegend":false},{"name":"\u90b1\u5ef7\u519b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=17"}],"visible":false,"showInLegend":false},{"name":"\u8363\u632f\u8fdc","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=18"}],"visible":false,"showInLegend":false},{"name":"\u5510\u78ca","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=19"}],"visible":false,"showInLegend":false},{"name":"\u5b9b\u8d8a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=20"}],"visible":false,"showInLegend":false},{"name":"\u738b\u5de7","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=21"}],"visible":false,"showInLegend":false},{"name":"\u9ad8\u4f73\u680b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=22"}],"visible":false,"showInLegend":false},{"name":"\u9b4f\u534e\u5efa","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=23"}],"visible":false,"showInLegend":false},{"name":"\u5434\u5f3a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=24"}],"visible":false,"showInLegend":false},{"name":"\u5434\u6653\u665f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=25"}],"visible":false,"showInLegend":false},{"name":"\u8c22\u51cc\u4e91","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=26"}],"visible":false,"showInLegend":false},{"name":"\u5f90\u6dfc\u658c","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=27"}],"visible":false,"showInLegend":false},{"name":"\u859b\u521a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=28"}],"visible":false,"showInLegend":false},{"name":"\u53f6\u5f6c\u5f6c","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=29"}],"visible":false,"showInLegend":false},{"name":"\u5ed6\u5a1f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=30"}],"visible":false,"showInLegend":false},{"name":"\u5f20\u4e49","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=31"}],"visible":false,"showInLegend":false},{"name":"\u8d75\u5a9b\u5a9b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=32"}],"visible":false,"showInLegend":false},{"name":"\u8bf8\u6653\u6770","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=97"}],"visible":false,"showInLegend":false}]    });
+				
+				    $('#chart4').highcharts({
+				        title: {
+				            text: '学生考试总分名次趋势折线图（年级）',
+				            style : {
+						            'fontFamily' : '微软雅黑',
+						            'fontSize':'16px'
+						        }
+				        },
+				        xAxis: {
+				            categories: ["\u5165\u5b66\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u6478\u5e95\u8003\u8bd5","\u5165\u5b66\u8003\u8bd5","\u671f\u672b\u8003\u8bd5"],
+				            gridLineWidth: 1,
+				            gridLineColor: '#ececec',
+				            lineColor: '#ececec',
+				            tickColor: '#ececec',
+				            labels : {
+						        style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+						    }
+				        },
+				        yAxis: {
+				            title: {
+				                text: '名次（年级）',
+				                style : {
+						            'fontFamily' : '微软雅黑'
+						        }
+				            },
+				            labels: { enabled: false },
+				            gridLineColor: '#ececec'
+				        },
+				        tooltip: {
+				            formatter: function() {
+				                return '<strong>'+ this.x +'</strong><br>'+
+				                    '<strong>'+ this.series.name +'年级排名：</strong>'+ -this.y;
+				            }
+				        },
+				        plotOptions: {
+				            line: {
+				                dataLabels: {
+				                    enabled: true,
+				                    formatter: function(){
+				                        return -this.point.y + '名';
+				                    }
+				                }
+				            },
+				            series: {
+				                cursor: 'pointer',
+				                point: {
+				                    events: {
+				                        click: function() {
+				                            if (typeof this.url != 'undefined') {
+				                                location = this.url;
+				                            }
+				                        }
+				                    }
+				                }
+				            }
+				        },
+				        series: [{"name":"\u9648\u806a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=1"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=1"}],"visible":false,"showInLegend":false},{"name":"\u9648\u745b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=2"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=2"}],"visible":false,"showInLegend":false},{"name":"\u4e01\u8d85","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=3"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=3"}],"visible":false,"showInLegend":false},{"name":"\u8c37\u5b97\u5143","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=4"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=4"}],"visible":false,"showInLegend":false},{"name":"\u4f55\u6210\u5065","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=5"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=5"}],"visible":false,"showInLegend":false},{"name":"\u9ec4\u6cb3","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=6"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=6"}],"visible":false,"showInLegend":false},{"name":"\u5b63\u4e07\u6797","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=7"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=7"}],"visible":false,"showInLegend":false},{"name":"\u59dc\u8dc3\u677e","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=8"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=8"}],"visible":false,"showInLegend":false},{"name":"\u52b3\u5174\u8363","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=9"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=9"}],"visible":false,"showInLegend":false},{"name":"\u674e\u7965","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=10"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=10"}],"visible":false,"showInLegend":false},{"name":"\u5218\u6b22","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=11"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=11"}],"visible":false,"showInLegend":false},{"name":"\u5218\u6676\u6676","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=12"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=12"}],"visible":false,"showInLegend":false},{"name":"\u5218\u8fde\u679d","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=13"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=13"}],"visible":false,"showInLegend":false},{"name":"\u5415\u6770","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=14"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=14"}],"visible":false,"showInLegend":false},{"name":"\u94b1\u84d3\u857e","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=15"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=15"}],"visible":false,"showInLegend":false},{"name":"\u4e54\u957f\u4f1f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=16"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=16"}],"visible":false,"showInLegend":false},{"name":"\u90b1\u5ef7\u519b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=17"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=17"}],"visible":false,"showInLegend":false},{"name":"\u8363\u632f\u8fdc","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=18"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=18"}],"visible":false,"showInLegend":false},{"name":"\u5510\u78ca","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=19"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=19"}],"visible":false,"showInLegend":false},{"name":"\u5b9b\u8d8a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=20"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=20"}],"visible":false,"showInLegend":false},{"name":"\u738b\u5de7","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=21"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=21"}],"visible":false,"showInLegend":false},{"name":"\u9ad8\u4f73\u680b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=22"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=22"}],"visible":false,"showInLegend":false},{"name":"\u9b4f\u534e\u5efa","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=23"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=23"}],"visible":false,"showInLegend":false},{"name":"\u5434\u5f3a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=24"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=24"}],"visible":false,"showInLegend":false},{"name":"\u5434\u6653\u665f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=25"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=25"}],"visible":false,"showInLegend":false},{"name":"\u8c22\u51cc\u4e91","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=26"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=26"}],"visible":false,"showInLegend":false},{"name":"\u5f90\u6dfc\u658c","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=27"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=27"}],"visible":false,"showInLegend":false},{"name":"\u859b\u521a","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=28"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=28"}],"visible":false,"showInLegend":false},{"name":"\u53f6\u5f6c\u5f6c","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=29"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=29"}],"visible":false,"showInLegend":false},{"name":"\u5ed6\u5a1f","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=30"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=30"}],"visible":false,"showInLegend":false},{"name":"\u5f20\u4e49","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=31"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=31"}],"visible":false,"showInLegend":false},{"name":"\u8d75\u5a9b\u5a9b","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=32"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=32"}],"visible":false,"showInLegend":false},{"name":"\u8bf8\u6653\u6770","data":[{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=5&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=4&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=7&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=6&student_id=97"},{"y":0,"url":"\/situation\/courses_student_exam\/?exam_info_id=8&student_id=97"}],"visible":false,"showInLegend":false}]    });
+					
+					var chart1 = $('#chart1').highcharts(),
+		                chart2 = $('#chart2').highcharts(),
+		                chart3 = $('#chart3').highcharts(),
+		                chart4 = $('#chart4').highcharts();
+		                
+		                $('#chart1').highcharts().reflow();
+				    	$('#chart2').highcharts().reflow();
+				    	$('#chart3').highcharts().reflow();
+				    	$('#chart4').highcharts().reflow();
+				    $('.students-list a').click(function(){
+				        var obj = $(this)
+				            seriesIndex = obj.attr('data-index');
+
+				        if( obj.hasClass('active') ){
+				            obj.removeClass('active');
+				            chart1.series[seriesIndex].hide();
+				            chart1.series[seriesIndex].update({showInLegend:false});
+				            chart2.series[seriesIndex].hide();
+				            chart2.series[seriesIndex].update({showInLegend:false});
+				            chart3.series[seriesIndex-1].hide();
+				            chart3.series[seriesIndex-1].update({showInLegend:false});
+				            chart4.series[seriesIndex-1].hide();
+				            chart4.series[seriesIndex-1].update({showInLegend:false});
+				        } else {
+				            obj.addClass('active');
+				            chart1.series[seriesIndex].show();
+				            chart1.series[seriesIndex].update({showInLegend:true});
+				            chart2.series[seriesIndex].show();
+				            chart2.series[seriesIndex].update({showInLegend:true});
+				            chart3.series[seriesIndex-1].show();
+				            chart3.series[seriesIndex-1].update({showInLegend:true});
+				            chart4.series[seriesIndex-1].show();
+				            chart4.series[seriesIndex-1].update({showInLegend:true});
+				        }
+				    });
+				});
+			</script>
+	    </div>
+	</div>
+	
+	
+	
+	
+
+	
+	<script type="text/javascript">
+		Highcharts.setOptions({
+		    credits: {
+		        enabled: false,
+		    },
+		    legend: {
+		        itemHiddenStyle: {
+		            color: '#888'
+		        }
+		    }
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$(document).on('click','.selectks span',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

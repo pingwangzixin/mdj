@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>参考学生统计</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript" src="../common/js/jquery-1.11.2.min.js"></script>
+   	    <script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header clearfix">
+				<p class="fl">考试名称：2015—2016年第二学期期末考试</p>
+				<h5 class="fr">考试时间：2016年03月22日</h5>
+			</div>
+			<div class="main">
+				<div class="mainTab">
+					<ul>
+						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
+						<li><a href="javascript:;">单科分析</a></li>
+						<li><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
+						<li class="current"><a href="ExamList.html">成绩列表</a></li>
+						<li><a href="StudentStatistics.html">参考学生统计</a></li>
+					</ul>
+				</div>
+				<div class="ExamList">
+					<ul class="select clearfix">
+						<li>
+							<p>考试分类</p>
+							<select>
+								<option value="">理科</option>
+								<option value="">文科</option>
+								<option value="">物化</option>
+							</select>
+						</li>
+						<li>
+							<p>区域选择</p>
+							<select>
+								<option value="">全体</option>
+								<option value="">文科</option>
+								<option value="">物化</option>
+							</select>
+						</li>
+						<li>
+							<p>学校选择</p>
+							<select>
+								<option value="">全体</option>
+								<option value="">文科</option>
+								<option value="">物化</option>
+							</select>
+						</li>
+						<li>
+							<p>选修分档</p>
+							<select>
+								<option value="">A</option>
+								<option value="">B</option>
+								<option value="">C</option>
+							</select>
+						</li>
+						<li>
+							<span>确定</span>
+						</li>
+					</ul>
+					<div class="tableBox">
+						<div class="export clearfix">
+							<a href="javascript:;" class="fl">共380条信息</a>
+							<a href="javascript:;" class="fr">导出表格</a>
+						</div>
+						<div class="gradeQuankeScollBox">
+							<table id="failed_table_t" class="failed_table_t">
+								<thead>
+									<tr>
+										<th rowspan="3" style="min-width: 100px; ">考试号</th>
+										<th rowspan="3" style="min-width: 100px; ">姓名</th>
+										<th rowspan="3" style="min-width: 100px; ">区县</th>
+										<th rowspan="3" style="min-width: 180px;">学校</th>
+										<th colspan="10">总分</th>
+										<th colspan="12">单科</th>
+									</tr>
+									<tr>
+										<th rowspan="2">得分</th>
+										<th rowspan="2">分档</th>
+										<th colspan="3">排名</th>
+										<th>语文</th>
+										<th>语文</th>
+										<th>数学</th>
+										<th>数学</th>
+										<th>英语</th>
+										<th colspan="2">物理</th>
+										<th colspan="2">化学</th>
+										<th colspan="2">生物</th>
+										<th colspan="2">政治</th>
+										<th colspan="2">历史</th>
+										<th colspan="2">地理</th>
+									</tr>
+									<tr>
+										<th>全体</th>
+										<th>区名</th>
+										<th>学校</th>
+										<th>得分</th>
+										<th>得分</th>
+										<th>得分</th>
+										<th>得分</th>
+										<th>得分</th>
+										<th>得分</th>
+										<th>分档</th>
+										<th>得分</th>
+										<th>分档</th>
+										<th>得分</th>
+										<th>分档</th>
+										<th>得分</th>
+										<th>分档</th>
+										<th>得分</th>
+										<th>分档</th>
+										<th>得分</th>
+										<th>分档</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="min-width: 100px; ">720311114</td>
+										<td style="min-width: 100px; ">居浩成</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>425.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+										<td>—</td>
+										<td>119.0</td>
+										<td>197.0</td>
+										<td>—</td>
+										<td>109.0</td>
+							
+										<td>102.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311039</td>
+										<td style="min-width: 100px; ">俞文奇</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>418.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>2</td>
+										<td>2</td>
+										<td>2</td>
+										<td>—</td>
+										<td>123.0</td>
+										<td>190.0</td>
+										<td>—</td>
+										<td>105.0</td>
+							
+										<td>113.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>112.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111002</td>
+										<td style="min-width: 100px; ">曹翔</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>417.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>3</td>
+										<td>1</td>
+										<td>1</td>
+										<td>—</td>
+										<td>113.0</td>
+										<td>194.0</td>
+										<td>—</td>
+										<td>110.0</td>
+							
+										<td>112.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>99.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111131</td>
+										<td style="min-width: 100px; ">许晓蓓</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>416.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>4</td>
+										<td>2</td>
+										<td>2</td>
+										<td>—</td>
+										<td>121.0</td>
+										<td>182.0</td>
+										<td>—</td>
+										<td>113.0</td>
+							
+										<td>102.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>113.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311152</td>
+										<td style="min-width: 100px; ">周昕仪</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>414.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>5</td>
+										<td>3</td>
+										<td>3</td>
+										<td>—</td>
+										<td>136.0</td>
+										<td>176.0</td>
+										<td>—</td>
+										<td>102.0</td>
+							
+										<td>96.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>95.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311099</td>
+										<td style="min-width: 100px; ">张洗月</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>411.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>6</td>
+										<td>4</td>
+										<td>4</td>
+										<td>—</td>
+										<td>118.0</td>
+										<td>187.0</td>
+										<td>—</td>
+										<td>106.0</td>
+							
+										<td>110.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>96.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111084</td>
+										<td style="min-width: 100px; ">姚制恒</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>411.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>6</td>
+										<td>3</td>
+										<td>3</td>
+										<td>—</td>
+										<td>115.0</td>
+										<td>195.0</td>
+										<td>—</td>
+										<td>101.0</td>
+							
+										<td>105.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>97.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311137</td>
+										<td style="min-width: 100px; ">薛骋远</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>410.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>8</td>
+										<td>5</td>
+										<td>5</td>
+										<td>—</td>
+										<td>109.0</td>
+										<td>192.0</td>
+										<td>—</td>
+										<td>109.0</td>
+							
+										<td>116.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>115.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311145</td>
+										<td style="min-width: 100px; ">张石然</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>409.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>9</td>
+										<td>6</td>
+										<td>6</td>
+										<td>—</td>
+										<td>117.0</td>
+										<td>187.0</td>
+										<td>—</td>
+										<td>105.0</td>
+							
+										<td>96.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>93.0</td>
+										<td><span class="btn-exam-level-b up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311122</td>
+										<td style="min-width: 100px; ">孟一霖</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>409.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>9</td>
+										<td>6</td>
+										<td>6</td>
+										<td>—</td>
+										<td>120.0</td>
+										<td>183.0</td>
+										<td>—</td>
+										<td>106.0</td>
+							
+										<td>96.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111260</td>
+										<td style="min-width: 100px; ">卜坤朗</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>405.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>11</td>
+										<td>4</td>
+										<td>4</td>
+										<td>—</td>
+										<td>113.0</td>
+										<td>189.0</td>
+										<td>—</td>
+										<td>103.0</td>
+							
+										<td>104.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>88.0</td>
+										<td><span class="btn-exam-level-b up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311084</td>
+										<td style="min-width: 100px; ">王恒为</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>405.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>11</td>
+										<td>8</td>
+										<td>8</td>
+										<td>—</td>
+										<td>119.0</td>
+										<td>183.0</td>
+										<td>—</td>
+										<td>103.0</td>
+							
+										<td>107.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>105.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">710111054</td>
+										<td style="min-width: 100px; ">陆宇衡</td>
+										<td style="min-width: 100px; ">直属</td>
+										<td style="min-width: 100px; ">无锡一中</td>
+							
+										<td>403.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>13</td>
+										<td>1</td>
+										<td>1</td>
+										<td>—</td>
+										<td>110.0</td>
+										<td>193.0</td>
+										<td>—</td>
+										<td>100.0</td>
+							
+										<td>108.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>101.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111100</td>
+										<td style="min-width: 100px; ">范淼淼</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>403.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>13</td>
+										<td>5</td>
+										<td>5</td>
+										<td>—</td>
+										<td>117.0</td>
+										<td>186.0</td>
+										<td>—</td>
+										<td>100.0</td>
+							
+										<td>87.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>100.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311128</td>
+										<td style="min-width: 100px; ">孙子寒</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>403.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>13</td>
+										<td>9</td>
+										<td>9</td>
+										<td>—</td>
+										<td>117.0</td>
+										<td>182.0</td>
+										<td>—</td>
+										<td>104.0</td>
+							
+										<td>104.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>95.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311047</td>
+										<td style="min-width: 100px; ">周立人</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>402.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>16</td>
+										<td>10</td>
+										<td>10</td>
+										<td>—</td>
+										<td>116.0</td>
+										<td>184.0</td>
+										<td>—</td>
+										<td>102.0</td>
+							
+										<td>97.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>108.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311045</td>
+										<td style="min-width: 100px; ">仲新玥</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>401.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>17</td>
+										<td>11</td>
+										<td>11</td>
+										<td>—</td>
+										<td>116.0</td>
+										<td>176.0</td>
+										<td>—</td>
+										<td>109.0</td>
+							
+										<td>93.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">725411001</td>
+										<td style="min-width: 100px; ">王境庐</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>401.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>17</td>
+										<td>11</td>
+										<td>11</td>
+										<td>—</td>
+										<td>125.0</td>
+										<td>172.0</td>
+										<td>—</td>
+										<td>104.0</td>
+							
+										<td>108.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>109.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311126</td>
+										<td style="min-width: 100px; ">沈啸霆</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>401.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>17</td>
+										<td>11</td>
+										<td>11</td>
+										<td>—</td>
+										<td>116.0</td>
+										<td>184.0</td>
+										<td>—</td>
+										<td>101.0</td>
+							
+										<td>87.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311074</td>
+										<td style="min-width: 100px; ">刘恩萌</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>401.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>17</td>
+										<td>11</td>
+										<td>11</td>
+										<td>—</td>
+										<td>121.0</td>
+										<td>176.0</td>
+										<td>—</td>
+										<td>104.0</td>
+							
+										<td>104.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>104.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311051</td>
+										<td style="min-width: 100px; ">朱笑妍</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>400.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>21</td>
+										<td>15</td>
+										<td>15</td>
+										<td>—</td>
+										<td>129.0</td>
+										<td>165.0</td>
+										<td>—</td>
+										<td>106.0</td>
+							
+										<td>105.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">711011001</td>
+										<td style="min-width: 100px; ">査可扬</td>
+										<td style="min-width: 100px; ">市属</td>
+										<td style="min-width: 100px; ">大桥实验</td>
+							
+										<td>400.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>21</td>
+										<td>1</td>
+										<td>1</td>
+										<td>—</td>
+										<td>113.0</td>
+										<td>185.0</td>
+										<td>—</td>
+										<td>102.0</td>
+							
+										<td>100.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>103.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311115</td>
+										<td style="min-width: 100px; ">李佳卫</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>399.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>23</td>
+										<td>16</td>
+										<td>16</td>
+										<td>—</td>
+										<td>119.0</td>
+										<td>179.0</td>
+										<td>—</td>
+										<td>101.0</td>
+							
+										<td>84.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>97.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311100</td>
+										<td style="min-width: 100px; ">章启航</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>17</td>
+										<td>17</td>
+										<td>—</td>
+										<td>110.0</td>
+										<td>177.0</td>
+										<td>—</td>
+										<td>111.0</td>
+							
+										<td>99.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>97.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311031</td>
+										<td style="min-width: 100px; ">唐昱杰</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>17</td>
+										<td>17</td>
+										<td>—</td>
+										<td>112.0</td>
+										<td>181.0</td>
+										<td>—</td>
+										<td>105.0</td>
+							
+										<td>87.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>110.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311106</td>
+										<td style="min-width: 100px; ">范思艺</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>17</td>
+										<td>17</td>
+										<td>—</td>
+										<td>114.0</td>
+										<td>174.0</td>
+										<td>—</td>
+										<td>110.0</td>
+							
+										<td>99.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>95.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311008</td>
+										<td style="min-width: 100px; ">丁锐</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>17</td>
+										<td>17</td>
+										<td>—</td>
+										<td>120.0</td>
+										<td>175.0</td>
+										<td>—</td>
+										<td>103.0</td>
+							
+										<td>93.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>93.0</td>
+										<td><span class="btn-exam-level-b up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">730111045</td>
+										<td style="min-width: 100px; ">朱铭昱</td>
+										<td style="min-width: 100px; ">惠山区</td>
+										<td style="min-width: 100px; ">锡山高中</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>6</td>
+										<td>6</td>
+										<td>—</td>
+										<td>113.0</td>
+										<td>177.0</td>
+										<td>—</td>
+										<td>108.0</td>
+							
+										<td>101.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>109.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+									<tr>
+										<td style="min-width: 100px; ">720311018</td>
+										<td style="min-width: 100px; ">李星颖</td>
+										<td style="min-width: 100px; ">锡山区</td>
+										<td style="min-width: 100px; ">天一中学</td>
+							
+										<td>398.0</td>
+										<td><span class="btn-exam-level-a ttfu"></span></td>
+										<td>24</td>
+										<td>17</td>
+										<td>17</td>
+										<td>—</td>
+										<td>120.0</td>
+										<td>172.0</td>
+										<td>—</td>
+										<td>106.0</td>
+							
+										<td>98.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>98.0</td>
+										<td><span class="btn-exam-level-a up"></span></td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+										<td>—</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+						
+						<script>
+							//表格
+							$('#failed_table_t').DataTable({
+								paging: false,
+					            info: false,
+					            searching: false,
+					            ordering: false,
+					            language: {
+					                emptyTable: '暂无数据'
+					            },
+					            scrollY:"600px",
+					            scrollX:true,
+					            scrollCollapse:true,
+					            fixedColumns:{
+					                leftColumns:4
+					            }
+							});
+							/*滚动条事件样式*/
+							tableScoll({
+								"boxName":".gradeQuankeScollBox",//外盒子宽度
+								"lengthsNmae":".gradeQuankeScollBox table thead tr:first-child th[colspan='10']",//具体的需要增加的数据
+								"boxNmae_table":".gradeQuankeScollBox table",//当前table表
+								"num":1,//设定不能超过的个数
+								"scw":990,//设定不能超过的宽度
+								"min_w":1200,//表格最小宽度
+								"tdW":700//超过部分每一个表格的宽度
+							});
+							/*table表格超出有滚动条*/
+							function tableScoll(config){
+								var boxW=$(config.boxName).width();
+								var lengths=$(config.lengthsNmae).length;
+								var boxNmae_table=$(config.boxNmae_table);
+								if(lengths>config.num && boxW>config.scw){
+									lengths-=config.num;
+									boxNmae_table.css({"width":config.min_w+lengths*config.tdW});
+								}
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*列表切换*/
+		$(".mainTab ul li").on("click", function() {
+			$(".mainTab ul li").removeClass("current");
+			$(this).addClass("current").siblings().removeClass("current");
+		});
+		
+	</script>
+</html>

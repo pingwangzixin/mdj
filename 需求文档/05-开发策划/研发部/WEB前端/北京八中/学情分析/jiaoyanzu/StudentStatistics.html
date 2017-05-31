@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>参考学生统计</title>
+		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/research.css"/>
+	    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header clearfix">
+				<p class="fl">考试名称：2015—2016年第二学期期末考试</p>
+				<h5 class="fr">考试时间：2016年03月22日</h5>
+			</div>
+			<div class="main">
+				<div class="mainTab">
+					<ul>
+						<li><a href="wholeAnalysis.html">总分分析（全体）</a></li>
+						<li><a href="SingleAnalysis.html">单科分析</a></li>
+						<li><a href="SchoolStatistics-Analysis.html">学校分析</a></li>
+						<li><a href="ExamList.html">成绩列表</a></li>
+						<li class="current"><a href="StudentStatistics.html">参考学生统计</a></li>
+					</ul>
+				</div>
+				<div class="count">
+					<p>本次考试参考学生合计 <span>9778</span> 人，共 <span>18</span> 人有缺考科目，不计入本次统计。</p>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>考试学科</th>
+								<th>市直属</th>
+								<th>爱民区</th>
+								<th>东安区</th>
+								<th>阳明区</th>
+								<th>合计</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>语文</td>
+								<td>2564</td>
+								<td>154</td>
+								<td>56465</td>
+								<td>2514</td>
+								<td>546</td>
+							</tr>
+							<tr>
+								<td>数学</td>
+								<td>2564</td>
+								<td>154</td>
+								<td>56465</td>
+								<td>2514</td>
+								<td>546</td>
+							</tr>
+							<tr>
+								<td>英语</td>
+								<td>2564</td>
+								<td>154</td>
+								<td>56465</td>
+								<td>2514</td>
+								<td>546</td>
+							</tr>
+							<tr>
+								<td>物理</td>
+								<td>2564</td>
+								<td>154</td>
+								<td>56465</td>
+								<td>2514</td>
+								<td>546</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*列表切换*/
+		$(".mainTab ul li").on("click", function() {
+			$(".mainTab ul li").removeClass("current");
+			$(this).addClass("current").siblings().removeClass("current");
+		});
+	</script>
+</html>

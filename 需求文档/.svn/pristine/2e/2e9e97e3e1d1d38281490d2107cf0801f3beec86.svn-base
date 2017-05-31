@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>年级组</title>
+    <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    <script type="text/javascript" src="../common/js/jquery-2.2.0.min.js"></script>
+    <script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	    $LAB.setGlobalDefaults({
+	        CacheBust: true // 是否加上尾巴(清缓存)，true 加尾巴无缓存
+	    });
+	</script>
+</head>
+<body>
+
+<header  class="header clearfix"></header>
+<!--中心内容-->
+<div class="main clearfix">
+    <!--右侧-->
+    <div class="main_right fr">
+    	<!--头部年级筛选-->
+		<ul class="Head">
+			<li class="grade clearfix">
+				<strong class="fl">年级：</strong>  
+				<p class="fl">
+					<span class="active">六年级</span>
+				</p>
+			</li>
+			<li class="Class clearfix">
+				<strong class="fl">班级：</strong> 
+				<p class="fl">
+					<span class="active">(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+					<span>(1)班</span>
+				</p>
+			</li>
+			<li class="subject clearfix">
+				<strong class="fl">学科：</strong>
+				<span  class="active">全科</span>
+				<span>语文</span>
+				<span>数学</span>
+				<span>英语</span>
+			</li>
+		</ul>
+		
+		<div class="content clearfix">
+			    <!--历次考试情况-->
+			    
+				<div class="situation">
+					<h3 class="tit">
+						<strong>历次考试情况</strong>
+						<!--<span>
+							<img src="../img/quanping.png"/>放大查看
+						</span>-->
+					</h3>
+					<!--表头切换-->
+					<div class="graph-tabs clearfix">
+						<a href="javascript:;" data-name="1" data-url="" class="active">均分趋势图</a>
+						<a href="javascript:;" data-name="2" data-url="">优良率趋势图</a>
+						<a href="javascript:;" data-name="3" data-url="">及格率趋势图</a>
+					</div>
+					
+					
+					<!--加载旋转-->
+				    <div class="jz" style="display: none;">
+				    	<img src="../img/xuanzhuan.gif"/>
+				    </div>
+					
+					<!--折线图 -->
+					<div id="chart-list" class="tabcon" data-name="1" style="display: block;">
+						
+						<div class="chart-column-line-global">
+							<!--数据表-->
+						    <div class="chart-line-change charts-btb"  style="height:350px;" ></div>
+						    <div class="parallel-change series-div-box">
+				                <a href="javascript:;" data-classtype="all"><img src="../img/fenxi_blue.png"/>全年级分析</a>
+						    </div>
+						</div>
+						
+						<!--注释-->
+						<ul class="graph-comments">
+							<li>注释：</li>
+						    <li>→本图表明班级各学科总分平均分在历次考试中与年级平均分的对比情况；</li>
+						    <li>→图中X轴零刻度线表示年纪总分均分线；Y轴为均分比例，表示每次考试班级总分均分与年纪总分均分的绝对差，以正负值进行表示；</li>
+						    <li>→横向可以选择不同次考试进行查看，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据；</li>
+						    <li>→可以通过切换类型和选择班级进行多维度角度的分析对比；</li>
+						</ul>
+						<!--js-->
+						<script>
+	                        $LAB
+	                            .script('../common/js/highcharts.js')
+	                            .script('../common/js/highcharts-functions.js')
+	                            .wait(function(){
+                                 var chart_line_change_data = {"title":"","categories":["2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u4e2d\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u672b\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5","2015-2016<br>\u521d\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5"],"ytitle":"\u6bd4\u7387","data":[],"all":[{"name":"(1)\u73ed","class_id":52,"data":[{"y":5.2,"score":87},{"y":-4.2,"score":65},{"y":0.8,"score":69},{"y":1.2,"score":80}]},{"name":"(2)\u73ed","class_id":53,"data":[{"y":11.1,"score":92},{"y":7.2,"score":73},{"y":5.1,"score":72},{"y":-0.1,"score":80}]},{"name":"(3)\u73ed","class_id":54,"data":[{"y":14.1,"score":94},{"y":23,"score":84},{"y":36.4,"score":93},{"y":1,"score":80}]},{"name":"(4)\u73ed","class_id":55,"data":[{"y":12.9,"score":93},{"y":19.7,"score":81},{"y":18.2,"score":81},{"y":-0.2,"score":79}]},{"name":"(5)\u73ed","class_id":56,"data":[{"y":-12.9,"score":72},{"y":-16,"score":57},{"y":-21.2,"score":54},{"y":-0.6,"score":79}]},{"name":"(6)\u73ed","class_id":57,"data":[{"y":-7.9,"score":76},{"y":-8.7,"score":62},{"y":-8.4,"score":63},{"y":0.2,"score":80}]},{"name":"(7)\u73ed","class_id":58,"data":[{"y":-4.1,"score":79},{"y":-7.6,"score":63},{"y":-8.1,"score":63},{"y":-0,"score":80}]},{"name":"(8)\u73ed","class_id":59,"data":[{"y":-12.9,"score":72},{"y":-16.2,"score":57},{"y":-20.2,"score":54},{"y":-0.1,"score":79}]},{"name":"(9)\u73ed","class_id":60,"data":[{"y":0.7,"score":83},{"y":9.2,"score":74},{"y":2.2,"score":70},{"y":0.8,"score":80}]},{"name":"(10)\u73ed","class_id":61,"data":[{"y":0,"score":0},{"y":0,"score":0},{"y":0,"score":0},{"y":-2,"score":78}]}],"parallel":[]};
+            						chart_line('.chart-line-change', chart_line_change_data.title, chart_line_change_data.categories, chart_line_change_data.ytitle, chart_line_change_data.data);
+            						
+            						var class_change_data;
+            						class_change_data={'all':{series:[{name:'(1)班',visible:false,data:[{"y":5.2,"score":87},{"y":-4.2,"score":65},{"y":0.8,"score":69},{"y":1.2,"score":80}]},{name:'(2)班',visible:false,data:[{"y":11.1,"score":92},{"y":7.2,"score":73},{"y":5.1,"score":72},{"y":-0.1,"score":80}]},{name:'(3)班',visible:false,data:[{"y":14.1,"score":94},{"y":23,"score":84},{"y":36.4,"score":93},{"y":1,"score":80}]},{name:'(4)班',visible:true,data:[{"y":12.9,"score":93},{"y":19.7,"score":81},{"y":18.2,"score":81},{"y":-0.2,"score":79}]},{name:'(5)班',visible:false,data:[{"y":-12.9,"score":72},{"y":-16,"score":57},{"y":-21.2,"score":54},{"y":-0.6,"score":79}]},{name:'(6)班',visible:false,data:[{"y":-7.9,"score":76},{"y":-8.7,"score":62},{"y":-8.4,"score":63},{"y":0.2,"score":80}]},{name:'(7)班',visible:false,data:[{"y":-4.1,"score":79},{"y":-7.6,"score":63},{"y":-8.1,"score":63},{"y":-0,"score":80}]},{name:'(8)班',visible:false,data:[{"y":-12.9,"score":72},{"y":-16.2,"score":57},{"y":-20.2,"score":54},{"y":-0.1,"score":79}]},{name:'(9)班',visible:false,data:[{"y":0.7,"score":83},{"y":9.2,"score":74},{"y":2.2,"score":70},{"y":0.8,"score":80}]},{name:'(10)班',visible:false,data:[{"y":0,"score":0},{"y":0,"score":0},{"y":0,"score":0},{"y":-2,"score":78}]},]},};
+            						
+            						$('.series-div-box a').click(function(){
+						                editLineChart($(this), $('.chart-line-change'), class_change_data);
+						            });
+						            
+						            $('.series-div-box a:first').trigger('click');
+						           
+                               });
+				       </script>
+					</div>
+					
+					
+					<!--优良率柱状图 -->
+					<div id="chart-list" class="tabcon" data-name="2" style="display: none;">						
+						<!--数据表-->
+						<div class="white-box chart-column-line-global">
+							<!--数据表-->
+							<div class="chart-column-stack-1 charts-btb" style="height:350px;"></div>
+							<div class="chart-column-legend">
+						        <div class="can-choosed">可选择：</div>
+						        <span data-level="1" class="level-a">优秀</span>
+						        <span data-level="2" class="level-b">良好</span>
+						        <span data-level="3" class="level-c">中等</span>
+						        <span data-level="4" class="level-d">关注</span>
+						    </div>
+						    <div id="chart-class-type1" class="chart-column-legend-class aa">
+						        <div class="can-choosed">可选择：</div>
+				                    <span data-classid="0">全年级</span>
+				                    <span data-classid="52">(1)班</span>
+				                    <span data-classid="53">(2)班</span>
+				                    <span data-classid="54">(3)班</span>
+				                    <span class="active" data-classid="55">(4)班</span>
+				                    <span data-classid="56">(5)班</span>
+				                    <span data-classid="57">(6)班</span>
+				                    <span data-classid="58">(7)班</span>
+				                    <span data-classid="59">(8)班</span>
+				                    <span data-classid="60">(9)班</span>
+				                    <span data-classid="61">(10)班</span>
+						        </div>
+						</div>
+						<!--注释-->
+						<ul class="graph-comments">
+							<li>注释：</li>
+				            <li>→本图表明年级或班级全科优良率在历次考试中的对比情况；</li>
+				            <li>→图中X轴表示不同次考试的名称；Y轴为每次考试的优良率人数分布情况，表示每次考试年级或班级各能级段的人数情况；</li>
+				            <li>→横向可以选择不同次考试进行查看，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据；</li>
+				            <li>→可以通过切换类型和选择班级进行多维度角度的分析对比；</li>
+				    	</ul>
+				    	<!--js-->
+				    	<script>
+	                        $LAB
+	                            .script('../common/js/highcharts.js')
+	                            .script('../common/js/highcharts-functions.js')
+	                            .wait(function(){
+                                 var chart_column_stack_data={"title":"","categories":["2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u4e2d\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u672b\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5","2015-2016<br>\u521d\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5"],"ytitle":"\u6bd4\u7387","totalName":"\u603b\u4eba\u6570","units":"\u4eba","data":[{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":14.94,"num":72,"count":482},{"y":15.27,"num":73,"count":478},{"y":15.07,"num":71,"count":471},{"y":5.58,"num":28,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":30.08,"num":145,"count":482},{"y":29.71,"num":142,"count":478},{"y":29.94,"num":141,"count":471},{"y":39.04,"num":196,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":35.27,"num":170,"count":482},{"y":35.15,"num":168,"count":478},{"y":35.03,"num":165,"count":471},{"y":49.4,"num":248,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":19.71,"num":95,"count":482},{"y":19.87,"num":95,"count":478},{"y":19.96,"num":94,"count":471},{"y":5.98,"num":30,"count":502}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":13.04,"num":6,"count":46},{"y":14.89,"num":7,"count":47},{"y":14.89,"num":7,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":34.78,"num":16,"count":46},{"y":34.04,"num":16,"count":47},{"y":42.55,"num":20,"count":47},{"y":48.98,"num":24,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":39.13,"num":18,"count":46},{"y":38.3,"num":18,"count":47},{"y":34.04,"num":16,"count":47},{"y":42.86,"num":21,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":13.04,"num":6,"count":46},{"y":12.77,"num":6,"count":47},{"y":8.51,"num":4,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":31.25,"num":15,"count":48},{"y":29.79,"num":14,"count":47},{"y":25,"num":12,"count":48},{"y":0,"num":0,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":27.08,"num":13,"count":48},{"y":25.53,"num":12,"count":47},{"y":29.17,"num":14,"count":48},{"y":30.77,"num":16,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":33.33,"num":16,"count":48},{"y":36.17,"num":17,"count":47},{"y":39.58,"num":19,"count":48},{"y":65.38,"num":34,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":8.33,"num":4,"count":48},{"y":8.51,"num":4,"count":47},{"y":6.25,"num":3,"count":48},{"y":3.85,"num":2,"count":52}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":27.66,"num":13,"count":47},{"y":34.04,"num":16,"count":47},{"y":29.17,"num":14,"count":48},{"y":7.84,"num":4,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":38.3,"num":18,"count":47},{"y":31.91,"num":15,"count":47},{"y":35.42,"num":17,"count":48},{"y":35.29,"num":18,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":23.4,"num":11,"count":47},{"y":23.4,"num":11,"count":47},{"y":27.08,"num":13,"count":48},{"y":39.22,"num":20,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":10.64,"num":5,"count":47},{"y":10.64,"num":5,"count":47},{"y":8.33,"num":4,"count":48},{"y":17.65,"num":9,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":21.57,"num":11,"count":51},{"y":19.61,"num":10,"count":51},{"y":26,"num":13,"count":50},{"y":0,"num":0,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":50.98,"num":26,"count":51},{"y":50.98,"num":26,"count":51},{"y":46,"num":23,"count":50},{"y":11.76,"num":6,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":13.73,"num":7,"count":51},{"y":15.69,"num":8,"count":51},{"y":16,"num":8,"count":50},{"y":82.35,"num":42,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":13.73,"num":7,"count":51},{"y":13.73,"num":7,"count":51},{"y":12,"num":6,"count":50},{"y":5.88,"num":3,"count":51}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":9.3,"num":4,"count":43},{"y":2.33,"num":1,"count":43},{"y":11.63,"num":5,"count":43},{"y":4.17,"num":2,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":16.28,"num":7,"count":43},{"y":18.6,"num":8,"count":43},{"y":13.95,"num":6,"count":43},{"y":41.67,"num":20,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":55.81,"num":24,"count":43},{"y":55.81,"num":24,"count":43},{"y":41.86,"num":18,"count":43},{"y":54.17,"num":26,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":18.6,"num":8,"count":43},{"y":23.26,"num":10,"count":43},{"y":32.56,"num":14,"count":43},{"y":0,"num":0,"count":48}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":6.12,"num":3,"count":49},{"y":8.33,"num":4,"count":48},{"y":10.87,"num":5,"count":46},{"y":12.24,"num":6,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":18.37,"num":9,"count":49},{"y":18.75,"num":9,"count":48},{"y":19.57,"num":9,"count":46},{"y":51.02,"num":25,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":44.9,"num":22,"count":49},{"y":50,"num":24,"count":48},{"y":43.48,"num":20,"count":46},{"y":34.69,"num":17,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":30.61,"num":15,"count":49},{"y":22.92,"num":11,"count":48},{"y":26.09,"num":12,"count":46},{"y":2.04,"num":1,"count":49}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":2.04,"num":1,"count":49},{"y":6.12,"num":3,"count":49},{"y":4.26,"num":2,"count":47},{"y":7.84,"num":4,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":26.53,"num":13,"count":49},{"y":20.41,"num":10,"count":49},{"y":19.15,"num":9,"count":47},{"y":50.98,"num":26,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":38.78,"num":19,"count":49},{"y":34.69,"num":17,"count":49},{"y":44.68,"num":21,"count":47},{"y":41.18,"num":21,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":32.65,"num":16,"count":49},{"y":38.78,"num":19,"count":49},{"y":31.91,"num":15,"count":47},{"y":0,"num":0,"count":51}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":6.25,"num":3,"count":48},{"y":4.35,"num":2,"count":46},{"y":4.35,"num":2,"count":46},{"y":10.2,"num":5,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":27.08,"num":13,"count":48},{"y":26.09,"num":12,"count":46},{"y":28.26,"num":13,"count":46},{"y":36.73,"num":18,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":35.42,"num":17,"count":48},{"y":41.3,"num":19,"count":46},{"y":36.96,"num":17,"count":46},{"y":46.94,"num":23,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":31.25,"num":15,"count":48},{"y":28.26,"num":13,"count":46},{"y":30.43,"num":14,"count":46},{"y":6.12,"num":3,"count":49}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":20.41,"num":10,"count":49},{"y":22.92,"num":11,"count":48},{"y":13.04,"num":6,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":24.49,"num":12,"count":49},{"y":29.17,"num":14,"count":48},{"y":28.26,"num":13,"count":46},{"y":54,"num":27,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":38.78,"num":19,"count":49},{"y":31.25,"num":15,"count":48},{"y":36.96,"num":17,"count":46},{"y":30,"num":15,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":16.33,"num":8,"count":49},{"y":16.67,"num":8,"count":48},{"y":21.74,"num":10,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":1.92,"num":1,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":30.77,"num":16,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":55.77,"num":29,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":11.54,"num":6,"count":52}]}]};
+                                 
+								chart_column_stack('.chart-column-stack-1', chart_column_stack_data.title, chart_column_stack_data.categories, chart_column_stack_data.ytitle, [], chart_column_stack_data.totalName, chart_column_stack_data.units, false);
+								
+								var t=[{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":14.94,"num":72,"count":482},{"y":15.27,"num":73,"count":478},{"y":15.07,"num":71,"count":471},{"y":5.58,"num":28,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":30.08,"num":145,"count":482},{"y":29.71,"num":142,"count":478},{"y":29.94,"num":141,"count":471},{"y":39.04,"num":196,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":35.27,"num":170,"count":482},{"y":35.15,"num":168,"count":478},{"y":35.03,"num":165,"count":471},{"y":49.4,"num":248,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":19.71,"num":95,"count":482},{"y":19.87,"num":95,"count":478},{"y":19.96,"num":94,"count":471},{"y":5.98,"num":30,"count":502}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":13.04,"num":6,"count":46},{"y":14.89,"num":7,"count":47},{"y":14.89,"num":7,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":34.78,"num":16,"count":46},{"y":34.04,"num":16,"count":47},{"y":42.55,"num":20,"count":47},{"y":48.98,"num":24,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":39.13,"num":18,"count":46},{"y":38.3,"num":18,"count":47},{"y":34.04,"num":16,"count":47},{"y":42.86,"num":21,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":13.04,"num":6,"count":46},{"y":12.77,"num":6,"count":47},{"y":8.51,"num":4,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":31.25,"num":15,"count":48},{"y":29.79,"num":14,"count":47},{"y":25,"num":12,"count":48},{"y":0,"num":0,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":27.08,"num":13,"count":48},{"y":25.53,"num":12,"count":47},{"y":29.17,"num":14,"count":48},{"y":30.77,"num":16,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":33.33,"num":16,"count":48},{"y":36.17,"num":17,"count":47},{"y":39.58,"num":19,"count":48},{"y":65.38,"num":34,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":8.33,"num":4,"count":48},{"y":8.51,"num":4,"count":47},{"y":6.25,"num":3,"count":48},{"y":3.85,"num":2,"count":52}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":27.66,"num":13,"count":47},{"y":34.04,"num":16,"count":47},{"y":29.17,"num":14,"count":48},{"y":7.84,"num":4,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":38.3,"num":18,"count":47},{"y":31.91,"num":15,"count":47},{"y":35.42,"num":17,"count":48},{"y":35.29,"num":18,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":23.4,"num":11,"count":47},{"y":23.4,"num":11,"count":47},{"y":27.08,"num":13,"count":48},{"y":39.22,"num":20,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":10.64,"num":5,"count":47},{"y":10.64,"num":5,"count":47},{"y":8.33,"num":4,"count":48},{"y":17.65,"num":9,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":21.57,"num":11,"count":51},{"y":19.61,"num":10,"count":51},{"y":26,"num":13,"count":50},{"y":0,"num":0,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":50.98,"num":26,"count":51},{"y":50.98,"num":26,"count":51},{"y":46,"num":23,"count":50},{"y":11.76,"num":6,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":13.73,"num":7,"count":51},{"y":15.69,"num":8,"count":51},{"y":16,"num":8,"count":50},{"y":82.35,"num":42,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":13.73,"num":7,"count":51},{"y":13.73,"num":7,"count":51},{"y":12,"num":6,"count":50},{"y":5.88,"num":3,"count":51}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":9.3,"num":4,"count":43},{"y":2.33,"num":1,"count":43},{"y":11.63,"num":5,"count":43},{"y":4.17,"num":2,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":16.28,"num":7,"count":43},{"y":18.6,"num":8,"count":43},{"y":13.95,"num":6,"count":43},{"y":41.67,"num":20,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":55.81,"num":24,"count":43},{"y":55.81,"num":24,"count":43},{"y":41.86,"num":18,"count":43},{"y":54.17,"num":26,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":18.6,"num":8,"count":43},{"y":23.26,"num":10,"count":43},{"y":32.56,"num":14,"count":43},{"y":0,"num":0,"count":48}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":6.12,"num":3,"count":49},{"y":8.33,"num":4,"count":48},{"y":10.87,"num":5,"count":46},{"y":12.24,"num":6,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":18.37,"num":9,"count":49},{"y":18.75,"num":9,"count":48},{"y":19.57,"num":9,"count":46},{"y":51.02,"num":25,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":44.9,"num":22,"count":49},{"y":50,"num":24,"count":48},{"y":43.48,"num":20,"count":46},{"y":34.69,"num":17,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":30.61,"num":15,"count":49},{"y":22.92,"num":11,"count":48},{"y":26.09,"num":12,"count":46},{"y":2.04,"num":1,"count":49}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":2.04,"num":1,"count":49},{"y":6.12,"num":3,"count":49},{"y":4.26,"num":2,"count":47},{"y":7.84,"num":4,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":26.53,"num":13,"count":49},{"y":20.41,"num":10,"count":49},{"y":19.15,"num":9,"count":47},{"y":50.98,"num":26,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":38.78,"num":19,"count":49},{"y":34.69,"num":17,"count":49},{"y":44.68,"num":21,"count":47},{"y":41.18,"num":21,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":32.65,"num":16,"count":49},{"y":38.78,"num":19,"count":49},{"y":31.91,"num":15,"count":47},{"y":0,"num":0,"count":51}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":6.25,"num":3,"count":48},{"y":4.35,"num":2,"count":46},{"y":4.35,"num":2,"count":46},{"y":10.2,"num":5,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":27.08,"num":13,"count":48},{"y":26.09,"num":12,"count":46},{"y":28.26,"num":13,"count":46},{"y":36.73,"num":18,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":35.42,"num":17,"count":48},{"y":41.3,"num":19,"count":46},{"y":36.96,"num":17,"count":46},{"y":46.94,"num":23,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":31.25,"num":15,"count":48},{"y":28.26,"num":13,"count":46},{"y":30.43,"num":14,"count":46},{"y":6.12,"num":3,"count":49}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":20.41,"num":10,"count":49},{"y":22.92,"num":11,"count":48},{"y":13.04,"num":6,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":24.49,"num":12,"count":49},{"y":29.17,"num":14,"count":48},{"y":28.26,"num":13,"count":46},{"y":54,"num":27,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":38.78,"num":19,"count":49},{"y":31.25,"num":15,"count":48},{"y":36.96,"num":17,"count":46},{"y":30,"num":15,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":16.33,"num":8,"count":49},{"y":16.67,"num":8,"count":48},{"y":21.74,"num":10,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4f18\u79c0","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":1.92,"num":1,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u826f\u597d","color":"#3598db","level":2,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":30.77,"num":16,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4e2d\u7b49","color":"#ffa518","level":3,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":55.77,"num":29,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u5173\u6ce8","color":"#fb5252","level":4,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":11.54,"num":6,"count":52}]}];
+								
+									$('.chart-column-legend > span').click(function() {
+										legendUpdate($(this), $('.chart-column-stack-1'), t)
+									});
+									$('.chart-column-legend-class.aa > span').click(function() {
+										legendUpdate($(this), $('.chart-column-stack-1'), t)
+									});
+									$('.chart-column-legend-class.aa:first').show();
+									updateColumnChart($('.chart-column-stack-1'), t);
+                               });
+				       </script>
+					</div>
+					
+					
+					<!--及格率柱状图 -->
+					<div id="chart-list" class="tabcon" data-name="3" style="display: none;">
+						<!--数据表-->
+						<div class="white-box chart-column-line-global">
+							<div class="chart-column-stack-2 charts-btb" style="height:350px;"></div>
+							<div class="chart-column-legend pass-rate">
+						        <div class="can-choosed">可选择：</div>
+						        <span data-level="1" class="level-a">及格</span>
+						        <span data-level="4" class="level-d">不及格</span>
+						    </div>
+						    <div id="chart-class-type1" class="chart-column-legend-class bb">
+						        <div class="can-choosed">可选择：</div>
+					                <span data-classid="0">全年级</span>
+					                <span data-classid="52">(1)班</span>
+					                <span data-classid="53">(2)班</span>
+					                <span data-classid="54">(3)班</span>
+					                <span class="active" data-classid="55">(4)班</span>
+					                <span data-classid="56">(5)班</span>
+					                <span data-classid="57">(6)班</span>
+					                <span data-classid="58">(7)班</span>
+					                <span data-classid="59">(8)班</span>
+					                <span data-classid="60">(9)班</span>
+					                <span data-classid="61">(10)班</span>
+						        </div>
+							</div>
+						<!--注释-->
+						<ul class="graph-comments">
+							<li>注释：</li>
+				            <li>→本图表明年级或班级全科及格率在历次考试中的对比情况；</li>
+				            <li>→图中X轴表示不同次考试的名称；Y轴为每次考试的及格率比率，表示每次考试年级或班级的及格率；</li>
+				            <li>→横向可以选择不同次考试进行查看，按照时间顺序从左至右进行排列，最右侧为最新一次考试数据；</li>
+				            <li>→可以通过切换类型和选择班级进行多维度角度的分析对比；</li>
+				    	</ul>
+				    	<!--js-->
+				    	<script>
+	                        $LAB
+	                            .script('../common/js/highcharts.js')
+	                            .script('../common/js/highcharts-functions.js')
+	                            .wait(function(){
+                                var chart_column_stack_data_2 = {"title":"","categories":["2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u4e2d\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e00\u5b66\u671f\u671f\u672b\u8003\u8bd5","2014-2015<br>\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5","2015-2016<br>\u521d\u4e8c\u5e74\u7ea7\u7b2c\u4e8c\u5b66\u671f\u671f\u672b\u8003\u8bd5"],"ytitle":"\u6bd4\u7387","totalName":"\u603b\u4eba\u6570","units":"\u4eba","data":[{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":59.13,"num":285,"count":482},{"y":60.46,"num":289,"count":478},{"y":65.61,"num":309,"count":471},{"y":94.02,"num":472,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":40.87,"num":197,"count":482},{"y":39.54,"num":189,"count":478},{"y":34.39,"num":162,"count":471},{"y":5.98,"num":30,"count":502}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":67.39,"num":31,"count":46},{"y":74.47,"num":35,"count":47},{"y":80.85,"num":38,"count":47},{"y":95.92,"num":47,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":32.61,"num":15,"count":46},{"y":25.53,"num":12,"count":47},{"y":19.15,"num":9,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":68.75,"num":33,"count":48},{"y":70.21,"num":33,"count":47},{"y":77.08,"num":37,"count":48},{"y":96.15,"num":50,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":31.25,"num":15,"count":48},{"y":29.79,"num":14,"count":47},{"y":22.92,"num":11,"count":48},{"y":3.85,"num":2,"count":52}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":78.72,"num":37,"count":47},{"y":82.98,"num":39,"count":47},{"y":87.5,"num":42,"count":48},{"y":82.35,"num":42,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":21.28,"num":10,"count":47},{"y":17.02,"num":8,"count":47},{"y":12.5,"num":6,"count":48},{"y":17.65,"num":9,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":82.35,"num":42,"count":51},{"y":82.35,"num":42,"count":51},{"y":84,"num":42,"count":50},{"y":94.12,"num":48,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":17.65,"num":9,"count":51},{"y":17.65,"num":9,"count":51},{"y":16,"num":8,"count":50},{"y":5.88,"num":3,"count":51}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":41.86,"num":18,"count":43},{"y":39.53,"num":17,"count":43},{"y":51.16,"num":22,"count":43},{"y":100,"num":48,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":58.14,"num":25,"count":43},{"y":60.47,"num":26,"count":43},{"y":48.84,"num":21,"count":43},{"y":0,"num":0,"count":48}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":44.9,"num":22,"count":49},{"y":45.83,"num":22,"count":48},{"y":52.17,"num":24,"count":46},{"y":97.96,"num":48,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":55.1,"num":27,"count":49},{"y":54.17,"num":26,"count":48},{"y":47.83,"num":22,"count":46},{"y":2.04,"num":1,"count":49}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":38.78,"num":19,"count":49},{"y":38.78,"num":19,"count":49},{"y":42.55,"num":20,"count":47},{"y":100,"num":51,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":61.22,"num":30,"count":49},{"y":61.22,"num":30,"count":49},{"y":57.45,"num":27,"count":47},{"y":0,"num":0,"count":51}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":47.92,"num":23,"count":48},{"y":47.83,"num":22,"count":46},{"y":52.17,"num":24,"count":46},{"y":93.88,"num":46,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":52.08,"num":25,"count":48},{"y":52.17,"num":24,"count":46},{"y":47.83,"num":22,"count":46},{"y":6.12,"num":3,"count":49}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":59.18,"num":29,"count":49},{"y":64.58,"num":31,"count":48},{"y":63.04,"num":29,"count":46},{"y":92,"num":46,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":40.82,"num":20,"count":49},{"y":35.42,"num":17,"count":48},{"y":36.96,"num":17,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":88.46,"num":46,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":11.54,"num":6,"count":52}]}]};
+                                 
+								chart_column_stack('.chart-column-stack-2', chart_column_stack_data_2.title, chart_column_stack_data_2.categories, chart_column_stack_data_2.ytitle, []/* data 留空*/, chart_column_stack_data_2.totalName, chart_column_stack_data_2.units, false);
+								
+								var t = [{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":59.13,"num":285,"count":482},{"y":60.46,"num":289,"count":478},{"y":65.61,"num":309,"count":471},{"y":94.02,"num":472,"count":502}]},{"stack":"\u5168\u5e74\u7ea7","class_id":0,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":40.87,"num":197,"count":482},{"y":39.54,"num":189,"count":478},{"y":34.39,"num":162,"count":471},{"y":5.98,"num":30,"count":502}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":67.39,"num":31,"count":46},{"y":74.47,"num":35,"count":47},{"y":80.85,"num":38,"count":47},{"y":95.92,"num":47,"count":49}]},{"stack":"(1)\u73ed","class_id":52,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":32.61,"num":15,"count":46},{"y":25.53,"num":12,"count":47},{"y":19.15,"num":9,"count":47},{"y":4.08,"num":2,"count":49}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":68.75,"num":33,"count":48},{"y":70.21,"num":33,"count":47},{"y":77.08,"num":37,"count":48},{"y":96.15,"num":50,"count":52}]},{"stack":"(2)\u73ed","class_id":53,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":31.25,"num":15,"count":48},{"y":29.79,"num":14,"count":47},{"y":22.92,"num":11,"count":48},{"y":3.85,"num":2,"count":52}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":78.72,"num":37,"count":47},{"y":82.98,"num":39,"count":47},{"y":87.5,"num":42,"count":48},{"y":82.35,"num":42,"count":51}]},{"stack":"(3)\u73ed","class_id":54,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":21.28,"num":10,"count":47},{"y":17.02,"num":8,"count":47},{"y":12.5,"num":6,"count":48},{"y":17.65,"num":9,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":82.35,"num":42,"count":51},{"y":82.35,"num":42,"count":51},{"y":84,"num":42,"count":50},{"y":94.12,"num":48,"count":51}]},{"stack":"(4)\u73ed","class_id":55,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":17.65,"num":9,"count":51},{"y":17.65,"num":9,"count":51},{"y":16,"num":8,"count":50},{"y":5.88,"num":3,"count":51}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":41.86,"num":18,"count":43},{"y":39.53,"num":17,"count":43},{"y":51.16,"num":22,"count":43},{"y":100,"num":48,"count":48}]},{"stack":"(5)\u73ed","class_id":56,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":58.14,"num":25,"count":43},{"y":60.47,"num":26,"count":43},{"y":48.84,"num":21,"count":43},{"y":0,"num":0,"count":48}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":44.9,"num":22,"count":49},{"y":45.83,"num":22,"count":48},{"y":52.17,"num":24,"count":46},{"y":97.96,"num":48,"count":49}]},{"stack":"(6)\u73ed","class_id":57,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":55.1,"num":27,"count":49},{"y":54.17,"num":26,"count":48},{"y":47.83,"num":22,"count":46},{"y":2.04,"num":1,"count":49}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":38.78,"num":19,"count":49},{"y":38.78,"num":19,"count":49},{"y":42.55,"num":20,"count":47},{"y":100,"num":51,"count":51}]},{"stack":"(7)\u73ed","class_id":58,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":61.22,"num":30,"count":49},{"y":61.22,"num":30,"count":49},{"y":57.45,"num":27,"count":47},{"y":0,"num":0,"count":51}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":47.92,"num":23,"count":48},{"y":47.83,"num":22,"count":46},{"y":52.17,"num":24,"count":46},{"y":93.88,"num":46,"count":49}]},{"stack":"(8)\u73ed","class_id":59,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":52.08,"num":25,"count":48},{"y":52.17,"num":24,"count":46},{"y":47.83,"num":22,"count":46},{"y":6.12,"num":3,"count":49}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":59.18,"num":29,"count":49},{"y":64.58,"num":31,"count":48},{"y":63.04,"num":29,"count":46},{"y":92,"num":46,"count":50}]},{"stack":"(9)\u73ed","class_id":60,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":40.82,"num":20,"count":49},{"y":35.42,"num":17,"count":48},{"y":36.96,"num":17,"count":46},{"y":8,"num":4,"count":50}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u5408\u683c","color":"#32ba54","level":1,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":88.46,"num":46,"count":52}]},{"stack":"(10)\u73ed","class_id":61,"name":"\u4e0d\u5408\u683c","color":"#fb5252","level":4,"data":[{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":0,"num":0,"count":0},{"y":11.54,"num":6,"count":52}]}];
+								
+									$('.chart-column-legend.pass-rate > span').click(function(){
+										$(this).toggleClass("active");
+						                legendUpdate($(this), $('.chart-column-stack-2'), t);
+						            });
+						
+						            $('.chart-column-legend-class.bb > span').click(function(){
+						                legendUpdate($(this), $('.chart-column-stack-2'), t);
+						            });
+						
+						            $('.series-div-box-column a').click(function(){
+						                parallelUpdate($(this), $('.chart-column-stack-2'), t);
+						            });
+						
+						            if ($('.series-div-box-column').length) {
+						                $('.series-div-box-column a:first').trigger('click');
+						            } else {
+						                $('.chart-column-legend-class.bb:first').show();
+						                updateColumnChart($('.chart-column-stack-2'), t);
+						            }
+                               });
+				       </script>
+					</div>
+				
+				</div>
+				
+				
+				<!--单次考试分析-->
+				<div class="research">
+					<h3 class="tit">
+						<strong>单次考试分析</strong>
+						<a	href="../chengjihuizong/quannianji_quanke.html" target="_blank">
+							<img src="../img/huizong_black.png"/>成绩汇总
+						</a>
+					</h3>
+					<!--无内容-->
+					<div class="wu" style="display: none;">
+						<img src="../img/none.png"/>
+					</div>
+					
+					<div class="research_con" style="display: block;">
+						<!--1-->
+						<div class="clearfix exam-list-item" data-url="" data-id="">
+		                    <script>
+		                        $LAB
+		                            .script('../common/js/highcharts.js')
+		                            .script('../common/js/highcharts-functions.js')
+		                            .wait(function(){
+	                                    var pie_data_66 = {"title":"","subtitle":"","data":[{"y":10,"color":"#32ba54"},{"y":16,"color":"#3598db"},{"y":15,"color":"#ffa518"},{"y":10,"color":"#fb5252"}]};
+	                                    chart_pie_with_innertitle('.chart-pie-66', pie_data_66.title, pie_data_66.subtitle, pie_data_66.data);
+	                                });
+		                    </script>
+							<div class="chart-pie-66 fl" style="width:80px;height:80px;margin: 15px 15px;"></div>
+	                        <div class="exam-info">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-subject">
+		                        	考试学科：
+		                        	<span>语文</span>
+		                        	<span>数学</span>
+		                        	<span>外语</span>
+		                        	<span>物理</span>
+		                        	<span>化学</span>
+		                        	<span>生物</span>
+		                        </div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		<img src="../img/time.png"/>
+		                        		考试创建时间：
+		                        		<strong>2016-05-09</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级平均分：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级及格率：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        </div>
+		                        <a href="../kaoshifenxi/gradeQk_examinationAnalysis.html" class="exam-look" target="_blank">查看分析</a>
+	                        </div>
+	                    </div>
+						<!--2-->
+						<div class="clearfix exam-list-item" data-url="" data-id="">
+	                        <script>
+	                            $LAB
+	                                .script('../common/js/highcharts.js')
+		                            .script('../common/js/highcharts-functions.js')
+	                                .wait(function(){
+	                                    var pie_data_3 = {"title":"","subtitle":"","data":[{"y":10,"color":"#32ba54"},{"y":26,"color":"#3598db"},{"y":9,"color":"#ffa518"},{"y":5,"color":"#fb5252"}]};
+	                                    chart_pie_with_innertitle('.chart-pie-3', pie_data_3.title, pie_data_3.subtitle, pie_data_3.data);
+	                                });
+	                        </script>
+	
+	                        <div class="chart-pie-3 fl" style="width:80px;height:80px;margin: 15px 15px;"></div>
+	                        <div class="exam-info">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-subject">
+		                        	考试学科：
+		                        	<span>语文</span>
+		                        	<span>数学</span>
+		                        	<span>外语</span>
+		                        	<span>物理</span>
+		                        	<span>化学</span>
+		                        	<span>生物</span>
+		                        </div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		<img src="../img/time.png"/>
+		                        		考试创建时间：
+		                        		<strong>2016-05-09</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级平均分：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级及格率：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        </div>
+		                        <a href="../kaoshifenxi/gradeQk_examinationAnalysis.html" class="exam-look" target="_blank">查看分析</a>
+	                        </div>
+	               		</div>
+	               		<!--3-->
+						<div class="clearfix exam-list-item" data-url="" data-id="">
+	                        <script>
+	                            $LAB
+	                                .script('../common/js/highcharts.js')
+		                            .script('../common/js/highcharts-functions.js')
+	                                .wait(function(){
+	                                    var pie_data_1 = {"title":"","subtitle":"","data":[{"y":14,"color":"#32ba54"},{"y":24,"color":"#3598db"},{"y":6,"color":"#ffa518"},{"y":7,"color":"#fb5252"}]};
+	                                    chart_pie_with_innertitle('.chart-pie-1', pie_data_1.title, pie_data_1.subtitle, pie_data_1.data);
+	                                });
+	                        </script>
+	
+	                        <div class="chart-pie-1 fl" style="width:80px;height:80px;margin: 15px 15px;"></div>
+	                        <div class="exam-info">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-subject">
+		                        	考试学科：
+		                        	<span>语文</span>
+		                        	<span>数学</span>
+		                        	<span>外语</span>
+		                        	<span>物理</span>
+		                        	<span>化学</span>
+		                        	<span>生物</span>
+		                        </div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		<img src="../img/time.png"/>
+		                        		考试创建时间：
+		                        		<strong>2016-05-09</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级平均分：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        	<span>
+		                        		<img src="../img/pjf.png"/>
+		                        		年级及格率：
+		                        		<strong>78.2</strong>
+		                        	</span>
+		                        </div>
+		                        <a href="../kaoshifenxi/gradeQk_examinationAnalysis.html" class="exam-look" target="_blank">查看分析</a>
+	                        </div>
+	               		</div>	               	
+		            	
+						<!--灰色无数据-->
+						<div class="clearfix exam-list-item" data-url="" data-id="">
+	                        <div class="chart-pie-2 fl" style="width:80px;height:80px;margin: 15px 15px;">
+	                        	<img src="../img/gray_circle.png" alt="" />
+	                        </div>
+	                        <div class="exam-info">
+		                        <div class="exam-title">2015-2016年期末考试成绩分析成绩分析分析</div>
+		                        <div class="exam-subject">
+		                        	考试学科：
+		                        	<span>语文</span>
+		                        	<span>数学</span>
+		                        	<span>外语</span>
+		                        	<span>物理</span>
+		                        	<span>化学</span>
+		                        	<span>生物</span>
+		                        </div>
+		                        <div class="exam-score">
+		                        	<span>
+		                        		<img src="../img/time.png"/>
+		                        		考试创建时间：
+		                        		<strong>2016-05-09</strong>
+		                        	</span>
+		                        </div>
+		                        <a href="../kaoshifenxi/classDk_examinationAnalysis.html" class="exam-look" target="_blank">查看分析</a>
+	                        </div>
+	               		</div>
+					</div>
+		            <div class="more">
+	                	<img src="../img/more.png"/>
+	                </div>
+				</div>
+			
+		</div>
+    </div>
+</div>
+<script>
+    $LAB
+    	.script('../common/js/teacher-list.js')
+        .script('../common/js/highcharts.js')
+        .script('../common/js/highcharts-functions.js')
+
+        .wait(function(){
+            $('.graph-tabs > a').click(function (){
+                var obj = $(this),
+                    url = obj.attr("data-url"),
+                    showid = obj.attr("data-name"),
+                    p = obj.closest('.situation');
+
+                obj.siblings().removeClass('active');
+                obj.addClass('active');
+                $('.tabcon[data-name]').hide();
+
+                if ( $('.tabcon[data-name="'+showid+'"]').length == 1 ) {
+                    $('.tabcon[data-name="'+showid+'"]').show();
+                    doReflow(p);
+                } else {
+                    /*$.ajax({
+                        url: url,
+                        dataType: 'html',
+                        beforeSend: function(){
+                            $('.situation .exam-chart').append('<div id="chart-list" class="tabcon" data-name="'+showid+'"></div>');
+                            $('.tabcon[data-name="'+showid+'"]').html('<div style="padding: 50px 0px;text-align: center"><i class="icon-spin5 animate-spin"></i></div>');
+                        }
+                    }).done(function(html){
+                        //提交成功
+                        $('.tabcon[data-name="'+showid+'"]').html(html);
+                        doReflow(p);
+                    });*/
+                }
+
+            });
+            
+            $(function () {
+                $('.graph-tabs > a:first').trigger('click');
+            });
+
+            
+        });
+</script>
+
+
+
+<!--弹层 -->
+<!--del_down为公用clss名不要动，后面起自己控制的class-->
+<div class="del_down warn" style="display: none;">
+    <div class="hide"></div>
+    <div class="con">
+    	<!--  写弹层的内容 -->
+    </div>
+</div>
+
+<!--<script src="../common/js/jquery.pjax.js"></script>-->
+<!--<script src="../common/js/nprogress.js" ></script>-->
+<!--<script src="../common/js/global.js"></script>-->
+
+</body>
+</html>

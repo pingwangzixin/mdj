@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>年级全科--成绩列表</title>
+		<!--公共样式-->
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../common/dataTable/jquery.dataTables.css" />
+		<script src="../common/js/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/dataTable/datatables.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/LAB.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--我的样式-->
+		<link rel="stylesheet" type="text/css" href="../css/classAnalysis.css" />
+		<script src="../js/classAnalysis.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="header">考试名称：2015—2016年第二学期期末考试</div>
+			<div class="tabBox">
+				<p class="clearfix">
+					<strong>班级：</strong>
+					<a href="JavaScript:;" class="current">全年级</a>
+					<a href="JavaScript:;">(1)班</a>
+					<a href="JavaScript:;">(2)班</a>
+				</p>
+				<p class="clearfix">
+					<strong>学科：</strong>
+					<a href="JavaScript:;" class="current">全科</a>
+					<a href="JavaScript:;">语文</a>
+					<a href="JavaScript:;">数学</a>
+					<a href="JavaScript:;">外语</a>
+				</p>
+			</div>
+			<div class="main" style="padding-top:0;">
+				<!--<div class="title">不及格统计表</div>-->
+				<div class="mainTab">
+					<ul>
+						<li><a href="gradeQk_examinationAnalysis.html">考试分析</a></li>
+						<li class="current"><a href="gradeQk_scoreList.html">成绩列表</a></li>
+					</ul>
+				</div>
+				<div class="tableBox"  >
+					<div class="export"><a href="">导出表格</a></div>
+						<div class="gradeQuankeScollBox">
+						
+						<table class="statistics_table" id="gradeQuanke">
+							<thead>
+								<tr>
+									<th rowspan="2">姓名</th>
+									<th rowspan="2" style="width:240px;">学号</th>
+									<th rowspan="2">班级</th>
+									<th rowspan="2">全科</br>得分</th>
+									<th rowspan="2">等级</th>
+									<th colspan="2">班级</th>
+									<th colspan="2">年级</th>
+									<th rowspan="2">班级</br>均分</th>
+									<th rowspan="2">年级</br>均分</th>
+									<th colspan="5">语文</th>
+									
+									<th colspan="5">数学</th>
+									<th colspan="5">英语</th>
+								</tr>
+								<tr>
+									<th style="width:80px;">排名</th>
+									<th style="width:80px;">变化</th>
+									<th style="width:80px;">排名</th>
+									<th style="width:80px;">变化</th>
+									<th>得分</th>
+									<th>班级</br>排名</th>
+									<th>变化</th>
+									<th>年级</br>排名</th>
+									<th>变化</th>
+									
+									<th>得分</th>
+									<th>班级</br>排名</th>
+									<th>变化</th>
+									<th>年级</br>排名</th>
+									<th>变化</th>
+									
+									<th>得分</th>
+									<th>班级</br>排名</th>
+									<th>变化</th>
+									<th>年级</br>排名</th>
+									<th>变化</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-a">A</i></td>
+									<td>22</td>
+									<td>1<i class='icon-down-arrow'></i></td>
+									<td>88</td>
+									<td>1<i class='icon-down-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>12</td>
+									<td>11<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>2</td>
+									<td>41<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>5</td>
+									<td>53<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-b">B</i></td>
+									<td>22</td>
+									<td>---</td>
+									<td>88</td>
+									<td>116<i class='icon-down-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-c">C</i></td>
+									<td>12</td>
+									<td>23<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>99</td>
+									<td>78<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>63</td>
+									<td>44<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-c">C</i></td>
+									<td>22</td>
+									<td>102<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>115<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>121</td>
+									<td>1145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>11</td>
+									<td>102<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>17</td>
+									<td>1.8<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+								
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>147<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>2<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+								<tr>
+									<td>李小三</td>
+									<td>G1301120033300003333</td>
+									<td>10班</td>
+									<td>245.5</td>
+									<td><i class="dj dj-d">D</i></td>
+									<td>22</td>
+									<td>145<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>3<i class='icon-up-arrow'></i></td>
+									<td>362.5</td>
+									<td>362.5</td>
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>112</td>
+									<td>1.4<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									
+									
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>125</td>
+									<td>178<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									<td>221<i class='icon-up-arrow'></i></td>
+									<td>-1.6</td>					
+									<td>88<i class="dj dj-b">B</i></td>
+									<td>152</td>
+									<td>143<i class='icon-up-arrow'></i></td>
+									<td>88</td>
+									
+								</tr>
+							</tbody>
+						
+						</table>
+							
+						</div>
+
+						<img src="../img/backArrow.png" id="backArrow" />
+						
+					<script>
+						
+						
+						$LAB.script('../common/dataTable/datatables.min.js').wait(function() {
+							
+							$('#gradeQuanke').DataTable({
+								paging: false, // 不分页
+								info: false, // 不显示info
+								searching: false, // 不显示搜索框
+								language: {
+									emptyTable: "暂无数据"
+								},
+								columnDefs: [{
+									targets: [0,2,3,4,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25], //设置不需要排序的列，从0开始
+									orderable: false
+								}],
+								order: [[ 1, "asc" ]],//跟数组下标一样，第一列从0开始，这里表格初始化时，第1列默认降序
+							});
+
+						});
+							
+							
+							
+						/*滚动条事件样式*/
+						tableScoll({
+							"boxName":".gradeQuankeScollBox",//外盒子宽度
+							"lengthsNmae":".gradeQuankeScollBox table thead tr:first-child th[colspan='5']",//具体的需要增加的数据
+							"boxNmae_table":".gradeQuankeScollBox table",//当前table表
+							"num":1,//设定不能超过的个数
+							"scw":990,//设定不能超过的宽度
+							"min_w":1200,//表格最小宽度
+							"tdW":352//超过部分每一个表格的宽度
+						});
+					</script>
+				</div>
+			
+			</div>
+		</div>
+
+	</body>
+
+</html>
