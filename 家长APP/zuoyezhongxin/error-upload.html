@@ -72,7 +72,12 @@
 			}
 			.Yuploaded{width: 4.45rem; height: 4.45rem; position: relative; margin: 0 auto; display: none;}
 			.Yuploaded img{position: absolute; top: 0; right: 0;}
-			
+			.zyx-name:nth-of-type(1){margin-bottom: 0.4rem;}
+			.upload_popup .foot_note li{float:left; width:1.08rem;  margin-top:0.2rem; font-size:0.24rem; text-align: left; height: 0.8rem; ; overflow: hidden; /* text-overflow: ellipsis;*/ display: -webkit-box;  -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-height: 0.4rem; padding-right:0.2rem ; }
+			.upload_popup .foot_note li:nth-of-type(6n){width:0.8rem; padding-right:0.2rem}
+			.upload_popup .foot_note{position:fixed; width:100%; z-index: 102; padding:0.28rem 0.2rem 0;  bottom:0; left:0; overflow:hidden;background:white;}
+			.upload_popup .foot_note ul{width:100%; overflow-y: scroll;  max-height: 5.6rem; }
+			.upload_popup .foot_note li.active{color:#25bfff}
 		</style>
 	</head>
 	<body>
@@ -81,6 +86,11 @@
 				<span>*</span>
 				<label for="weiketitle">题目名称 :</label>
 				<p><input type="text" name="" id="weiketitle" placeholder="请输入名称" maxlength="15"/></p>
+			</div>
+			<div class="zyx-name">
+				<span>*</span>
+				<label for="weiketitle">选择年级 :</label>
+				<p><input type="text" readonly="readonly" class="errUploadInp" placeholder="选择年级"/></p>
 			</div>
 			<div class="zyx-file">
 				<div class="Ytemplate">
@@ -97,6 +107,34 @@
 				保存
 			</div>
 		</div>
-		
+		<div class="del_down upload_popup clearfix" style="display: none;">
+		    <div class="hide"></div><!-- 这个是黑色遮罩 -->
+				<div class="foot_note" id="grade">
+			    	<ul class="clearfix">
+			    		<li class="active">一年级</li>
+			    		<li>二年级</li>
+			    		<li>三年级</li>
+			    		<li>四年级</li>
+			    		<li>五年级</li>
+			    		<li>六年级</li>
+			    		<li>七年级</li>
+			    		<li>八年级</li>
+			    		<li>九年级</li>
+			    		<li>十年级</li>
+			    	</ul>
+			    </div>
+		    </div>
+	    </div>
+	    <script type="text/javascript">
+	    	$('.errUploadInp').on('click',function(){
+	    		$('.upload_popup').show();
+	    	});
+	    	$('.upload_popup li').on('click',function(){
+	    		var gradeVal = $(this).text();
+	    		$('.errUploadInp').val(gradeVal);
+	    		$(this).addClass('active').siblings().removeClass('active');
+	    		$('.upload_popup').hide();
+	    	});
+	    </script>
 	</body>
 </html>

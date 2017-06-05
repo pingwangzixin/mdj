@@ -18,10 +18,16 @@ $(document).ready(function(){
     
     
     /*2017.05.26 zy*/
+    //查看学生回传资源详情弹框
    	$(document).on('click','.YstudentsList li',function (){
    		$('.Ydetail').show(); 
    	});
-   
+    //关闭学生已回传资源详情窗口
+   	$('.Ydetail .con>img').on('click',function (){
+   		$('.Ydetail').hide(); 
+   	});
+   	
+   	
    	//取消回传确认弹框
    	$(document).on('click','.YcancelReturn',function (){
    		$('.delSureDel').show();
@@ -31,11 +37,6 @@ $(document).ready(function(){
    		$('.delSureDel').hide();
    	});
    	
-   	
-  	 //关闭学生已回传资源详情窗口
-   	$('.Ydetail .con>img').on('click',function (){
-   		$('.Ydetail').hide(); 
-   	});
    	
 
 });

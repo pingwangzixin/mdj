@@ -292,9 +292,9 @@ $(document).ready(function(){
 		var gouxuan = $(this).is(':checked');
 		var con = $(this).parents('.question');
 		
-		var _img = $('.edit_question ._img').html();
+		var _img = $('.edit_question ._img:first').clone(true);
 		var cons = con.clone();
-		console.log(cons.html());
+		console.log(_img);
 		if(gouxuan){
 			cons.find('.grade').html(_img);
 			cons.find('.gouxuan_add').remove();

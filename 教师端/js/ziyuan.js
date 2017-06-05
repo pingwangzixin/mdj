@@ -267,5 +267,14 @@ $(document).ready(function(){
 	$(document).on('click',function (){
 		$('.class_screen ul').hide();
 	});
+	
+	//查看学生回传资源详情弹框
+   	$(document).on('click','.YstudentResources',function (){
+   		$('.Ydetail').show(); 
+   	});
+   	//关闭学生已回传资源详情窗口
+   	$('.Ydetail .con>img').on('click',function (){
+   		$('.Ydetail').hide(); 
+   	});
     
 });

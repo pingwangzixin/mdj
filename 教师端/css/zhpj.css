@@ -70,7 +70,7 @@ table thead th{border:1px solid #ccc}
 .dafencon .dfbanji select{width:106px;height:30px;margin:10px 20px;border:1px solid #5093e1;border-radius:5px;outline:none;}
 .wancheng{color:#57c045}
 .yiwan{margin-top:20px;}
-.yiwan button{font-size:14px;width:36%;height:auto;border:1px solid #57c045;border-radius:5px;margin:5px;cursor:pointer;}
+.yiwan button{font-size:14px;width:36%;height:auto;border:1px solid #57c045;border-radius:5px;margin:5px;cursor:pointer;text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
 .ywbtn{border-radius:5px;border:none;background:#c8e8c3;color:#222;width:36%;height:auto;margin:5px}
 .ingwan{margin: 5px;border: 1px solid #a4c6ed;background-color: #a4c6ed;width: 36%;height:auto;border-radius: 5px;}
 .willwan{background:none;}
