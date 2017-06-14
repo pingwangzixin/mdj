@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no" />
     <title>教研活动</title>
     <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/tanceng.css">
     <link rel="stylesheet" href="../css/public.css" />
     <link rel="stylesheet" type="text/css" href="../css/section.css" />
     <script src="../common/js/jquery-1.11.2.min.js"></script>
@@ -27,8 +26,8 @@
     </div>
    <div class="zyx-sk clearfix">
    		<div class="zyx-tab"> 
-        	<span class="active">我的晒课</span> 
-        	<span>晒课中心</span> 
+        	<span class="active" onclick="test(0)">我的晒课</span> 
+        	<span  onclick="test(1)">晒课中心</span> 
         	<em class="fr">新建晒课</em>
         </div>
         <div class="zyx-select clearfix">
@@ -363,7 +362,19 @@
 </body>
 
 <script type="text/javascript">
+    
+    var page=sessionStorage.getItem("id")
+    $(".zyx-tab span").eq(page).addClass("active").siblings("span").removeClass("active");
+    
+    
+    function test(flag){
+        sessionStorage.setItem("id",flag)
+    }
+    
 	$(function(){
+        
+        
+        
 		$('.zyx-tab span').click(function(){
 			$(this).addClass('active').siblings().removeClass('active');
 			if($(this).text()=='晒课中心'){

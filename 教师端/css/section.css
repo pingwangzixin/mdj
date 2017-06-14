@@ -1535,6 +1535,10 @@ table.weeks_table tbody td a.dow {
 	background-color: #f5f5f5;
 }
 
+.zyx-list ul li a div.text p{
+    white-space: nowrap;text-overflow: ellipsis;overflow: hidden;
+}
+
 /*上传按钮-弹层*/
 .up_box .uploadzy {
     width: 720px;
@@ -1542,12 +1546,16 @@ table.weeks_table tbody td a.dow {
     border-radius: 10px;
     font-size: 14px;
     position: fixed;
+/*
     transform: translate3d(-50%,-50%,0) scale(1);
     -webkit-transform: translate3d(-50%,-50%,0) scale(1);
+*/
     top: 50%;
     left: 50%;
     z-index: 1116;
     background: #fff;
+    margin-left:-360px;
+    margin-top:-185px;
 }
 .up_box .upcon {
     width: 680px;
@@ -1646,9 +1654,9 @@ table.weeks_table tbody td a.dow {
 .clock_con_concent .dialogueBox ul li {
     padding: 4px 8px;
     overflow: hidden;
+    text-align: left;
 }
 .clock_con_concent .dialogueBox ul li strong {
-    float: left;
     color: #5093e1;
     font-weight: normal;
     text-align: left;
@@ -1743,6 +1751,7 @@ table.weeks_table tbody td a.dow {
     border: 1px solid #5093e1;
     border-radius: 3px;
     color: #5093e1;
+    width:130px;
     max-width: 108px;
     position: absolute;
     top: 23px;

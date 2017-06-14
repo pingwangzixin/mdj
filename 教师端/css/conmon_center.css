@@ -144,7 +144,7 @@ ul.ziyuan .ziyuan-item > span {
     border-bottom: 10px solid transparent;
     border-right: 16px solid #fff;
 }
-ul.ziyuan .ziyuan-item .ziyuan-dl-wrap {
+ul.ziyuan .ziyuan-item .ziyuan-dl-wrap{
   margin-left: 9px;
   background-color: #FFFFFF;
   border: 1px #EFEFEF solid;
@@ -153,6 +153,7 @@ ul.ziyuan .ziyuan-item .ziyuan-dl-wrap {
   -moz-box-shadow: 0 0 5px #666;
   -ms-box-shadow: 0 0 5px #666;
   box-shadow: 0 0 5px #666;
+  min-height: 300px;
 }
 ul.ziyuan .ziyuan-item .ziyuan-dl-wrap dl{padding-top:10px;padding-right:16px;box-sizing:border-box;}
 ul.ziyuan .ziyuan-item dl span {
@@ -396,7 +397,7 @@ ul.ziyuan .ziyuan-item dd span.active {
 .collection{
 	background:url(../img/shoucang.png) no-repeat;
 }
-.down{
+.downWrap .down{
 	background:url(../img/xiaz.png) no-repeat;float:right;
 }
 .title{

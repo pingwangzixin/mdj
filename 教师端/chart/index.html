@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>到效率统计</title>
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/highcharts.js"></script>
+    <script src="./js/highcharts-functions.js"></script>
+    <style>
+        body{background: #ebebeb;}
+        .bingchart{width:500px;background:#fff;vertical-align:top;display: inline-block;}
+        .bingchart .test{display: inline-block;height:250px;}
+        .zhexianchart{width:600px;background:#fff;display: inline-block;height:250px;}
+    </style>
+</head>
+<body>
+        <div class="bingchart" style="height:250px">
+            <div id="container" class="test" style="width:30%;min-width:15%;height:200px"></div>
+            <div id="container2" class="test"  style="width:30%;min-width:15%;height:200px"></div>
+            <div id="container3"  class="test" style="width:30%;min-width:15%;height:200px"></div>
+        </div>
+        <div class="zhexianchart">
+            <div id="deifenlv_box" style="height:250px"></div>
+        </div>
+</body>
+
+<script>
+    /*饼状图*/
+		$(function () {
+		    // Build the chart
+		    $('#container').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title:{
+                    text:'在校学生',
+                    verticalAlign:'bottom'
+                },
+                colors: ['#67e2aa','#f98484'],
+		        credits: {
+		            	text: '',
+		            	href: ''
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: false,
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#67e2aa'
+		                    },
+		                    connectorColor: 'silver'
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: '人数',
+		            data: [
+		                ['迟到学生', 3],
+		                ['到校学生',  9],
+		            ]
+		        }]
+		    });
+            // Build the chart
+		    $('#container2').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title:{
+                    text:'迟到学生',
+                    verticalAlign:'bottom'
+                },
+                colors: ['#ccc'],
+		        credits: {
+		            	text: '',
+		            	href: ''
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: false,
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                    },
+		                    connectorColor: 'silver'
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: '人数',
+		            data: [
+		                ['迟到学生', 1],
+		            ]
+		        }]
+		    });
+            // Build the chart
+		    $('#container3').highcharts({
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title:{
+                    text:'离校学生',
+                    verticalAlign:'bottom'
+                },
+                colors: ['#67e2aa', '#7ab8fe'],
+		        credits: {
+		            	text: '',
+		            	href: ''
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: false,
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                    },
+		                    connectorColor: 'silver'
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: '人数',
+		            data: [
+		                ['迟到学生', 3],
+		                ['到校学生',  9],
+		            ]
+		        }]
+		    });
+		});				
+		</script>
+    
+
+
+
+<!-- 折线图统计表  -->
+    <script type="text/javascript">
+        $(function () {
+                //折线图
+            Highcharts.setOptions({
+                colors: ['#67e2aa', '#61aee4','#f98484']
+            });
+            $('#deifenlv_box').highcharts({
+                chart: {
+                    type: 'line'
+                    , plotBorderColor: '#ccc'
+                    , plotBorderWidth: 1
+                }
+                , title: {
+                    text: null
+                }
+                , xAxis: {
+                    categories: ['周一', '周二', '周三', '周四', '周五','周六','周日']
+                    , plotLines: [{
+                        color: '#222'
+		            }]
+                }
+                , yAxis: {
+                    min: 0
+                    , max: 100
+                    , title: {
+                        text: '得分率',
+                        style:{
+                            display:'none',
+                        }
+                    , }
+                    , tickInterval: 20
+                    , labels: {
+                        formatter: function () {
+                            return this.value + '%';
+                        }
+                    }
+                }
+                , tooltip: {
+                    valueSuffix: '%'
+                }
+                , plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                }
+                , credits: {
+                    enabled: false
+                }
+                , series: [{
+                    name: '学生到效率'
+                    , data: [100, 90.0, 85.2, 43.5, 20.00,20.00,20.00]
+		        }, {
+                    name: '学生迟到率'
+                    , data: [7, 40.2, 85.2, 3, 20,20.00,84]
+		        }, {
+                    name: '学生早退率'
+                    , data: [8, 46, 80, 49,3, 20,20.00]
+		        }]
+            });
+            $('#deifenlv_box').highcharts().reflow();
+        });
+    </script>
+    
+</html>

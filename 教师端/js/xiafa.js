@@ -28,15 +28,13 @@ $(document).ready(function(){
    	});
    	
    	
-   	//取消回传确认弹框
-   	$(document).on('click','.YcancelReturn',function (){
-   		$('.delSureDel').show();
+   	//取消回传、学生回传切换
+   	$(document).on('click','.Ylssuedbtn',function (){
+   		if($(this).hasClass('YcancelReturn')){
+   			$(this).removeClass('YcancelReturn').addClass('YstudentReturn').children('img').attr('src','../img/YstudentReturn.png').siblings('i').text('学生回传');
+   		}else{
+   			$(this).removeClass('YstudentReturn').addClass('YcancelReturn').children('img').attr('src','../img/YcancelReturn.png').siblings('i').text('取消回传');
+   		}
    	});
-   	//关闭取消回传确认弹框
-   	$('.delClose, .delSureDel .upqxsc').on('click',function (){
-   		$('.delSureDel').hide();
-   	});
-   	
-   	
 
 });

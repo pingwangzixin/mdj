@@ -9,13 +9,13 @@
 		<title>作业中心-创建试题</title>
 		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/tanceng.css"/>
 		<link rel="stylesheet" href="../css/tsakCenter.css" charset="utf-8"/>
 		
 		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../common/js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/tsakCenter.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 文本编辑 -->
 		<script src="../common/ueditor/ueditor.config.js"></script>
 	    <script src="../common/ueditor/ueditor.all.js"></script>
@@ -76,15 +76,28 @@
  				var ue30= UE.getEditor('editor30');
  				
  				
- 				/*var ue = {};
- 				$('.editor_box').each(function (index,ele){
- 					$(this).attr('id','editor'+index);
-   					//ue.push('ue' + index);
-					console.log($(this).attr('id'))
-					ue['ue'+index] = UE.getEditor($(this).attr('id'));
+ 				//唯一的随机id
+				function Yrandom(){
+					function S4() {
+					   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+					}
+					function guid() {
+					   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+					}
+					return myID = guid();
+				}
+				
+				//创建编辑器id和设置高度
+				var ue = {};
+ 				$('.Z-editor').each(function (index,ele){
+ 					$(this).attr('id','Zeditor-'+Yrandom());
+ 					var ueNUm = $(this).attr('id');
+					ue['ue'+ueNUm]=UE.getEditor(ueNUm);
+					
+					eval(ue['ue'+ueNUm]).on('focus',function(){
+	 					this.setHeight(100);
+	 				});
  				});
-				console.log(ue)
-				console.log(JSON.stringify(ue))*/
 
 
 			
@@ -95,14 +108,7 @@
 	 				});
  				}
  				
- 				//设置img宽度
- 				/*for(var i=0;i<30;i++){
- 					eval('ue'+i).addListener( 'selectionchange', function( editor )){
-	 					this.find('p').css({'background':'green','display':'inline'});
-	 					this.find('img').css({'width':'90%','display':'inline'});
-	 				});
- 				}*/
- 				
+ 			
  				
  				callbackZjy = function(e,me){
    					var domStr = $(''+e.path[2].innerHTML+'');
@@ -144,7 +150,14 @@
 		 		max-height: 100px;
 		 		overflow: hidden;
 		 	}
-		 	
+		 	div[id*='Zeditor']{
+				width: 94%;
+				min-height: 100px;
+			}
+			div[id*='Zeditor'] > div:first-of-type > div.edui-editor-iframeholder{
+		 		max-height: 100px;
+		 		overflow: hidden;
+		 	}
 	   </style>
 	</head>
 	<body>
@@ -170,503 +183,850 @@
 				</div>
 				<div class="edit_task">
 					<div class="create_box">
-						<h3 class="create_tit clearfix">
-							<span class="fl creat">创建试题</span>
-							<!--按钮 -->
-				    		<div class="create_btn fr">
-								<span class="Yes">保存</span>
-								<span class="No">清除</span>
-							</div>
-						</h3>
-			    		
-		    			<ul class="libie">
-			    			<li>
-			    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
-			    				题型：&nbsp; &nbsp;  
-			    				<select>
-			    					<option>第一节</option>
-			    					<option>一年级</option>
-			    					<option>一年级</option>
-			    				</select>
-			    			</li>
-			    			<li>
-			    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
-			    				课题：&nbsp; &nbsp;  
-			    				<select>
-			    					<option>第一节第一节第第一节第一节第</option>
-			    					<option>一年级</option>
-			    					<option>一年级</option>
-			    				</select>
-			    				<select>
-			    					<option>第一节</option>
-			    					<option>一年级</option>
-			    					<option>一年级</option>
-			    				</select>
-			    				<select>
-			    					<option>第一节</option>
-			    					<option>一年级</option>
-			    					<option>一年级</option>
-			    				</select>
-			    				<select>
-			    					<option>第一节</option>
-			    					<option>一年级</option>
-			    					<option>一年级</option>
-			    				</select>
-			    			</li>
-			    			<li>
-			    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
-			    				关键字： <input type="text" class="CreateKeyWord" maxlength="50" placeholder="请输入关键字，多个关键字请用分号隔开"/>
-			    				<span style="color: red;margin-left:10px; display: none;">关键字不能超过50个字!</span>
-			    			</li>
-			    		</ul>
-			    		<p class="Course">
-			    			<span>Word文档创建试题教程</span>
-			    			<span>批量上传图片</span>
-			    		</p>
-			    		
-			    		<!-- 单选题 -->
-				    	<div style="display: block;" class="Single">
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3>题干</h3>
-				    			<div id="editor0"></div>
-				    		</div>
-				    		<div class="stem stem1 clearfix">
-				    			<h3 class="clearfix">选项
-				    				<span class="j_delRA fr hand">删除选项</span>
-				    				<span class="j_addRA fr hand">+增加选项</span>
-				    			</h3>
-			    			<!--<div class="clearfix">
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="A"/>
-					    					<label for="A" class="hand">A</label>
-					    				</h4>
-					    				<div id="editor1"></div>
-					    			</div>
-					    			<div class="radios fr">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="B"/>
-					    					<label for="B" class="hand">B</label>
-					    				</h4>
-					    				<div id="editor2"></div>
-					    			</div>
-				    			</div>-->
-				    			<div class="optionsRA clearfix">
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="A"/>
-					    					<label for="A" class="hand">A</label>
-					    				</h4>
-					    				<div id="editor1"></div>
-					    			</div>
-					    			<div class="radios fl">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="B"/>
-					    					<label for="B" class="hand">B</label>
-					    				</h4>
-					    				<div id="editor2"></div>
-					    			</div>
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="C"/>
-					    					 <label for="C" class="hand">C</label>
-					    				</h4>
-					    				<div id="editor3"></div>
-					    			</div>
-					    			<div class="radios fl">
-					    				<h4>
-					    					<input type="radio" name="name" class="hand" id="D"/>
-					    					 <label for="D" class="hand">D</label>
-					    				</h4>
-					    				<div id="editor4"></div>
-					    			</div>
-				    			</div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor5"></div>
-				    		</div>
-			    		</div>
-			    		
+						<div class="createTop">
+							<h3 class="create_tit clearfix">
+								<span class="fl creat">创建试题</span>
+								<!--按钮 -->
+					    		<div class="create_btn fr">
+									<span class="Yes">保存</span>
+									<span class="No">清除</span>
+								</div>
+							</h3>
+				    		
+			    			<ul class="libie">
+				    			<li>
+				    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
+				    				题型：&nbsp; &nbsp;  
+				    				<select>
+				    					<option>综合</option>
+				    					<option>一年级</option>
+				    					<option>一年级</option>
+				    				</select>
+				    			</li>
+				    			<li>
+				    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
+				    				课题：&nbsp; &nbsp;  
+				    				<select>
+				    					<option>第一节第一节第第一节第一节第</option>
+				    					<option>一年级</option>
+				    					<option>一年级</option>
+				    				</select>
+				    				<select>
+				    					<option>第一节</option>
+				    					<option>一年级</option>
+				    					<option>一年级</option>
+				    				</select>
+				    				<select>
+				    					<option>第一节</option>
+				    					<option>一年级</option>
+				    					<option>一年级</option>
+				    				</select>
+				    				<select>
+				    					<option>第一节</option>
+				    					<option>一年级</option>
+				    					<option>一年级</option>
+				    				</select>
+				    			</li>
+				    			<li>
+				    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
+				    				关键字： <input type="text" class="CreateKeyWord" maxlength="50" placeholder="请输入关键字，多个关键字请用分号隔开"/>
+				    				<span style="color: red;margin-left:10px; display: none;">关键字不能超过50个字!</span>
+				    			</li>
+				    		</ul>
+				    		<p class="Course">
+				    			<span>Word文档创建试题教程</span>
+				    			<span>批量上传图片</span>
+				    		</p>
+						</div>
+			    		<div class="createBottom">
 			    			
-			    		<!-- 多选题 -->
-				    	<div style="display: block;" class="multiple">
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
-				    			<div id="editor23"></div>
-				    		</div>
-				    		<div class="stem stem1 clearfix">
-				    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项
-				    				<span class="j_delCH fr hand">删除选项</span>
-				    				<span class="j_addCh fr hand">+增加选项</span>
-				    			</h3>
-			    			<!--<div class="clearfix">
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="A"/>
-					    					<label for="A" class="hand">A</label>
-					    				</h4>
-					    				<div id="editor24"></div>
+				    		<!-- 单选题 -->
+					    	<div style="display: none;" class="Single">
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3>题干</h3>
+					    			<div id="editor0"></div>
+					    		</div>
+					    		<div class="stem stem1 clearfix">
+					    			<h3 class="clearfix">选项
+					    				<span class="j_delRA fr hand">删除选项</span>
+					    				<span class="j_addRA fr hand">+增加选项</span>
+					    			</h3>
+					    			<div class="optionsRA clearfix">
+					    				<div class="radios fl">
+						    				<h4>
+						    					<input type="radio" name="name" class="hand" id="A"/>
+						    					<label for="A" class="hand">A</label>
+						    				</h4>
+						    				<div id="editor1"></div>
+						    			</div>
+						    			<div class="radios fl">
+						    				<h4>
+						    					<input type="radio" name="name" class="hand" id="B"/>
+						    					<label for="B" class="hand">B</label>
+						    				</h4>
+						    				<div id="editor2"></div>
+						    			</div>
+					    				<div class="radios fl">
+						    				<h4>
+						    					<input type="radio" name="name" class="hand" id="C"/>
+						    					 <label for="C" class="hand">C</label>
+						    				</h4>
+						    				<div id="editor3"></div>
+						    			</div>
+						    			<div class="radios fl">
+						    				<h4>
+						    					<input type="radio" name="name" class="hand" id="D"/>
+						    					 <label for="D" class="hand">D</label>
+						    				</h4>
+						    				<div id="editor4"></div>
+						    			</div>
 					    			</div>
-					    			<div class="radios fr">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="B"/>
-					    					<label for="B" class="hand">B</label>
-					    				</h4>
-					    				<div id="editor25"></div>
-					    			</div>
-				    			</div>-->
-				    			<div class="optionsCH clearfix">
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="A"/>
-					    					<label for="A" class="hand">A</label>
-					    				</h4>
-					    				<div id="editor24"></div>
-					    			</div>
-					    			<div class="radios fl">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="B"/>
-					    					<label for="B" class="hand">B</label>
-					    				</h4>
-					    				<div id="editor25"></div>
-					    			</div>
-				    				<div class="radios fl">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="C"/>
-					    					 <label for="C" class="hand">C</label>
-					    				</h4>
-					    				<div id="editor26"></div>
-					    			</div>
-					    			<div class="radios fl">
-					    				<h4>
-					    					<input type="checkbox" name="name" class="hand" id="D"/>
-					    					 <label for="D" class="hand">D</label>
-					    				</h4>
-					    				<div id="editor27"></div>
-					    			</div>
-				    			</div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor28"></div>
-				    		</div>
-			    		</div>
-
-			    		<!-- 判断题 -->
-			    		<div style="display: none;" class="judgement">
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
-				    			<div id="editor6"></div>
-				    		</div>
-				    		<div class="daan">
-				    			<label style="color:red;margin-left: 5px;font-size: 16px">*</label> 请选择答案：
-				    			<span>
-				    				<input type="radio" name="an"  class="hand" id="ok" /> 
-				    				<label for="ok" class="hand">正确</label>
-				    			</span>
-				    			<span>
-				    				<input type="radio" name="an"  class="hand" id="no"/> 
-				    				<label for="no" class="hand">错误</label> 
-				    			</span>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor7"></div>
-				    		</div>
-			    		</div>
-			    		
-			    		<!-- 填空题 -->
-			    		<div style="display:none;" class="blanks">
-			    			<div class="daan">
-				    			<span>
-				    				<input type="radio" name="an"  class="hand" id="jingzhun" /> 
-				    				<label for="jingzhun" class="hand">精准答案</label>
-				    			</span>
-				    			<span>
-				    				<input type="radio" name="an"  class="hand" id="mohu"/> 
-				    				<label for="mohu" class="hand">模糊答案</label> 
-				    			</span>
-				    		</div>
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干&nbsp;(填空用答案加下划线表示，作答时多个答案之间用“l”隔开)
-				    				<span id="addtkx">插入填空</span>
-				    				<!--<span id="hqxxs">获取信息</span>-->
-				    			</h3>
-				    			<div id="editor8"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor5"></div>
+					    		</div>
 				    		</div>
 				    		
-				    		<div class="stem stem1">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 答案
-				    				<span id="addfgx">插入分割线</span>
-				    			</h3>
-				    			<div id="editor17"></div>
+				    		<!-- 多选题 -->
+					    	<div style="display: none;" class="multiple">
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
+					    			<div id="editor23"></div>
+					    		</div>
+					    		<div class="stem stem1 clearfix">
+					    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项
+					    				<span class="j_delCH fr hand">删除选项</span>
+					    				<span class="j_addCh fr hand">+增加选项</span>
+					    			</h3>
+				    			<!--<div class="clearfix">
+					    				<div class="radios fl">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="A"/>
+						    					<label for="A" class="hand">A</label>
+						    				</h4>
+						    				<div id="editor24"></div>
+						    			</div>
+						    			<div class="radios fr">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="B"/>
+						    					<label for="B" class="hand">B</label>
+						    				</h4>
+						    				<div id="editor25"></div>
+						    			</div>
+					    			</div>-->
+					    			<div class="optionsCH clearfix">
+					    				<div class="radios fl">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="A"/>
+						    					<label for="A" class="hand">A</label>
+						    				</h4>
+						    				<div id="editor24"></div>
+						    			</div>
+						    			<div class="radios fl">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="B"/>
+						    					<label for="B" class="hand">B</label>
+						    				</h4>
+						    				<div id="editor25"></div>
+						    			</div>
+					    				<div class="radios fl">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="C"/>
+						    					 <label for="C" class="hand">C</label>
+						    				</h4>
+						    				<div id="editor26"></div>
+						    			</div>
+						    			<div class="radios fl">
+						    				<h4>
+						    					<input type="checkbox" name="name" class="hand" id="D"/>
+						    					 <label for="D" class="hand">D</label>
+						    				</h4>
+						    				<div id="editor27"></div>
+						    			</div>
+					    			</div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor28"></div>
+					    		</div>
 				    		</div>
-				    		
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor9"></div>
-				    		</div>
-			    		</div>
-			    		<!--材料题-->
-			    		<div style="display:none;" class="ClozeTest">
 	
-							<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
-				    			<div id="editor29"></div>
+				    		<!-- 判断题 -->
+				    		<div style="display: none;" class="judgement">
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
+					    			<div id="editor6"></div>
+					    		</div>
+					    		<div class="daan">
+					    			<label style="color:red;margin-left: 5px;font-size: 16px">*</label> 请选择答案：
+					    			<span>
+					    				<input type="radio" name="an"  class="hand" id="ok" /> 
+					    				<label for="ok" class="hand">正确</label>
+					    			</span>
+					    			<span>
+					    				<input type="radio" name="an"  class="hand" id="no"/> 
+					    				<label for="no" class="hand">错误</label> 
+					    			</span>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor7"></div>
+					    		</div>
 				    		</div>
-				    		<div class="stem stem1">
-				    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项
-				    				<span class="del fr hand">删除选项</span>
-				    				<span class="add fr hand">+增加选项</span>
-				    			</h3>
-				    			<div class="options clearfix">
-				    				<h4 class="fl tit">1</h4>
-				    				<div class="clearfix" style="margin-top: 30px;">
-					    				<p class="fl tit">题干：</p>
-					    				<textarea class="fl tex"></textarea>
+				    		
+				    		<!-- 填空题 -->
+				    		<div style="display:none;" class="blanks">
+				    			<div class="daan">
+					    			<span>
+					    				<input type="radio" name="an"  class="hand" id="jingzhun" /> 
+					    				<label for="jingzhun" class="hand">精准答案</label>
+					    			</span>
+					    			<span>
+					    				<input type="radio" name="an"  class="hand" id="mohu"/> 
+					    				<label for="mohu" class="hand">模糊答案</label> 
+					    			</span>
+					    		</div>
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干&nbsp;(填空用答案加下划线表示，作答时多个答案之间用“l”隔开)
+					    				<span id="addtkx">插入填空</span>
+					    				<!--<span id="hqxxs">获取信息</span>-->
+					    			</h3>
+					    			<div id="editor8"></div>
+					    		</div>
+					    		
+					    		<div class="stem stem1">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 答案
+					    				<span id="addfgx">插入分割线</span>
+					    			</h3>
+					    			<div id="editor17"></div>
+					    		</div>
+					    		
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor9"></div>
+					    		</div>
+				    		</div>
+				    		
+				    		<!--材料题-->
+				    		<div style="display:none;" class="material">
+		
+								<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
+					    			<div id="editor29"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项
+					    				<span class="del fr hand">删除选项</span>
+					    				<span class="add fr hand">+增加选项</span>
+					    			</h3>
+					    			<div class="options clearfix">
+					    				<h4 class="fl tit">1</h4>
+					    				<div class="clearfix" style="margin-top: 30px;">
+						    				<p class="fl tit">题干：</p>
+						    				<textarea class="fl tex"></textarea>
+						    			</div>
+						    			<div class="clearfix" style="margin: 10px 0;">
+						    				<p class="fl tit">正确答案：</p>
+						    				<textarea class="fl tex"></textarea>
+						    			</div>
+						    			<div class="clearfix">
+						    				<p class="fl tit">答案解析：</p>
+						    				<textarea class="fl tex"></textarea>
+						    			</div>
 					    			</div>
-					    			<div class="clearfix" style="margin: 10px 0;">
-					    				<p class="fl tit">正确答案：</p>
-					    				<textarea class="fl tex"></textarea>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor30"></div>
+					    		</div>
+				    		</div>
+				    			
+				    		<!-- 简单题-->
+				    		<div style="display:none;" class="simple">
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
+					    			<div id="editor10"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 解答</h3>
+					    			<div id="editor11"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor12"></div>
+					    		</div>
+				    		</div>
+				    		
+				    		<!-- 完形填空 -->
+				    		<div style="display:none;" class="clozeTest">
+	
+								<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label>  题干</h3>
+					    			<div id="editor13"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label>  选项
+					    				<span class="del fr hand">删除选项</span>
+					    				<span class="add fr hand">+增加选项</span>
+					    			</h3>
+					    			<div class="options clearfix">
+					    				<h4 class="fl tit">1</h4>
+					    				<ul class="fl cons">
+					    					<li>
+					    						<span>
+					    							<input type="radio" name="option" /> &nbsp;A&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    						<span>
+					    							<input type="radio" name="option" /> &nbsp;B&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    					</li>
+					    					<li>
+					    						<span>
+					    							<input type="radio" name="option" /> &nbsp;C&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    						<span>
+					    							<input type="radio" name="option" /> &nbsp;D&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    					</li>
+					    				</ul>
 					    			</div>
-					    			<div class="clearfix">
-					    				<p class="fl tit">答案解析：</p>
-					    				<textarea class="fl tex"></textarea>
+					    			<div class="options clearfix">
+					    				<h4 class="fl tit">2</h4>
+					    				<ul class="fl cons">
+					    					<li>
+					    						<span>
+					    							<input type="radio" name="option1" /> &nbsp;A&nbsp;
+					    							<input type="text"  />
+					    						</span>
+					    						<span>
+					    							<input type="radio" name="option1" /> &nbsp;B&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    					</li>
+					    					<li>
+					    						<span>
+					    							<input type="radio" name="option1" /> &nbsp;C&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    						<span>
+					    							<input type="radio" name="option1" /> &nbsp;D&nbsp;
+					    							<input type="text" />
+					    						</span>
+					    					</li>
+					    				</ul>
 					    			</div>
-				    			</div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor14"></div>
+					    		</div>
 				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor30"></div>
-				    		</div>
-			    		</div>
-			    		<!-- 简单题-->
-			    		<div style="display:none;">
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
-				    			<div id="editor10"></div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 解答</h3>
-				    			<div id="editor11"></div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor12"></div>
-				    		</div>
-			    		</div>
-			    		
-			    		<!-- 完形填空 -->
-			    		<div style="display:none;" class="ClozeTest">
-
-							<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label>  题干</h3>
-				    			<div id="editor13"></div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label>  选项
-				    				<span class="del fr hand">删除选项</span>
-				    				<span class="add fr hand">+增加选项</span>
-				    			</h3>
-				    			<div class="options clearfix">
-				    				<h4 class="fl tit">1</h4>
-				    				<ul class="fl cons">
-				    					<li>
-				    						<span>
-				    							<input type="radio" name="option" /> &nbsp;A&nbsp;
-				    							<input type="text" />
-				    						</span>
-				    						<span>
-				    							<input type="radio" name="option" /> &nbsp;B&nbsp;
-				    							<input type="text" />
-				    						</span>
-				    					</li>
-				    					<li>
-				    						<span>
-				    							<input type="radio" name="option" /> &nbsp;C&nbsp;
-				    							<input type="text" />
-				    						</span>
-				    						<span>
-				    							<input type="radio" name="option" /> &nbsp;D&nbsp;
-				    							<input type="text" />
-				    						</span>
-				    					</li>
-				    				</ul>
-				    			</div>
-				    			<div class="options clearfix">
-				    				<h4 class="fl tit">2</h4>
-				    				<ul class="fl cons">
-				    					<li>
-				    						<span>
+				    		
+				    		<!-- 阅读理解 -->
+				    		<div style="display:none;"  class="read">
+					    		<div class="stem" style="margin-top: 10px;">
+					    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
+					    			<div id="editor15"></div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项</h3>
+					    			<div class="options clearfix">
+					    				<div class="clearfix">
+							    			<h4 class="read_tit fl">1.</h4>
+							    			<div id="editor18" class="fl"></div>
+							    		</div>
+					    				<ul class="cons">
+					    					<li>
 				    							<input type="radio" name="option1" /> &nbsp;A&nbsp;
-				    							<input type="text"  />
-				    						</span>
-				    						<span>
+				    							<input type="text" />
+					    					</li>
+					    					<li>	
 				    							<input type="radio" name="option1" /> &nbsp;B&nbsp;
 				    							<input type="text" />
-				    						</span>
-				    					</li>
-				    					<li>
-				    						<span>
+					    					</li>
+					    					<li>
 				    							<input type="radio" name="option1" /> &nbsp;C&nbsp;
 				    							<input type="text" />
-				    						</span>
-				    						<span>
+				    						</li>
+				    						<li>
 				    							<input type="radio" name="option1" /> &nbsp;D&nbsp;
 				    							<input type="text" />
-				    						</span>
-				    					</li>
-				    				</ul>
-				    			</div>
+					    					</li>
+					    				</ul>
+					    			</div>
+									<div class="options clearfix">
+					    				<div class="clearfix">
+							    			<h4 class="read_tit fl">2.</h4>
+							    			<div id="editor19" class="fl"></div>
+							    		</div>
+					    				<ul class="cons">
+					    					<li>
+				    							<input type="radio" name="option2" /> &nbsp;A&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>	
+				    							<input type="radio" name="option2" /> &nbsp;B&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>
+				    							<input type="radio" name="option2" /> &nbsp;C&nbsp;
+				    							<input type="text" />
+				    						</li>
+				    						<li>
+				    							<input type="radio" name="option2" /> &nbsp;D&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    				</ul>
+					    			</div>
+					    			<div class="options clearfix">
+					    				<div class="clearfix">
+							    			<h4 class="read_tit fl">3.</h4>
+							    			<div id="editor20" class="fl"></div>
+							    		</div>
+					    				<ul class="cons">
+					    					<li>
+				    							<input type="radio" name="option3" /> &nbsp;A&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>	
+				    							<input type="radio" name="option3" /> &nbsp;B&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>
+				    							<input type="radio" name="option3" /> &nbsp;C&nbsp;
+				    							<input type="text" />
+				    						</li>
+				    						<li>
+				    							<input type="radio" name="option3" /> &nbsp;D&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    				</ul>
+					    			</div>
+					    			<div class="options clearfix">
+					    				<div class="clearfix">
+							    			<h4 class="read_tit fl">4.</h4>
+							    			<div id="editor21" class="fl"></div>
+							    		</div>
+					    				<ul class="cons">
+					    					<li>
+				    							<input type="radio" name="option4" /> &nbsp;A&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>	
+				    							<input type="radio" name="option4" /> &nbsp;B&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>
+				    							<input type="radio" name="option4" /> &nbsp;C&nbsp;
+				    							<input type="text" />
+				    						</li>
+				    						<li>
+				    							<input type="radio" name="option4" /> &nbsp;D&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    				</ul>
+					    			</div>
+									<div class="options clearfix">
+					    				<div class="clearfix">
+							    			<h4 class="read_tit fl">5.</h4>
+							    			<div id="editor22" class="fl"></div>
+							    		</div>
+					    				<ul class="cons">
+					    					<li>
+				    							<input type="radio" name="option5" /> &nbsp;A&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>	
+				    							<input type="radio" name="option5" /> &nbsp;B&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    					<li>
+				    							<input type="radio" name="option5" /> &nbsp;C&nbsp;
+				    							<input type="text" />
+				    						</li>
+				    						<li>
+				    							<input type="radio" name="option5" /> &nbsp;D&nbsp;
+				    							<input type="text" />
+					    					</li>
+					    				</ul>
+					    			</div>
+					    		</div>
+					    		<div class="stem stem1">
+					    			<h3>解析</h3>
+					    			<div id="editor16"></div>
+					    		</div>
 				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor14"></div>
-				    		</div>
+							
+							<!-- 综合类 -->
+							<div style="display: block;" class="Zcolligate  clearfix">
+								<div class="fl">
+									<!--标题-->
+									<div class="Ztit clearfix">
+										<p class="fl">试卷</p>
+										<span class="fr" style="display: none;">上传图片</span>
+									</div>
+									<!-- 上传按钮 -->
+									<div class="ZfileBen" style="display: none;">
+										<img src="../img/fileBen.png" />
+										<p>上传图片</p>
+									</div>
+									<!--上传完的展示-->
+									<ul class="ZPic" style="display: block;">
+										<li class="clearfix">
+											<img class="Zti fl" src="../img/ti.jpg" />
+											<img class="Zdelete fr" src="../img/delete_green.png"/>
+										</li>
+										<li class="clearfix">
+											<img class="Zti fl" src="../img/ti1.jpg" />
+											<img class="Zdelete fr" src="../img/delete_green.png"/>
+										</li>
+									</ul>
+									
+								</div>
+								<div class="fr">
+									<!--标题-->
+									<div class="Ztit">
+										<p>答题卡</p>
+									</div>
+									<!-- 各类题型 -->
+									<ul class="Ztypes clearfix">
+										<li class="active">单选题</li>
+										<li>多选题</li>
+										<li>判断题</li>
+										<li>填空题</li>
+										<li>材料题</li>
+										<li>简答题</li>
+										<li>完形填空</li>
+										<li>阅读理解</li>
+									</ul>
+									<div class="Z-add">+ 添加试题</div>
+									
+									<!--单选题-->
+									<div class="Z-single Ztopic"  style="display: block;">
+										<p>一、单选题</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<ul class="clearfix fl">
+															<li>
+		  														<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!--多选题-->
+									<div class="Z-multiple Ztopic"  style="display: none;">
+										<p>一、多选题</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<ul class="clearfix fl">
+															<li>
+		  														<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+									<!--判断题-->
+									<div class="Z-judgement Ztopic"  style="display: none;">
+										<p>一、判断题</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<ul class="clearfix fl">
+															<li>
+		  														<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;正确</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;错误</label>
+															</li>
+														</ul>
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!--填空题-->
+									<div class="Z-blanks Ztopic"  style="display: none;">
+										<p>一、填空题 <span>（多个答案之间请点击插入分隔线按钮）</span></p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<span class="fl Z-cut">插入分割线</span>
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!--材料题-->
+									<div class="Z-material Ztopic"  style="display: none;">
+										<p>一、材料题</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+										
+									<!--简答题-->
+									<div class="Z-simple Ztopic"  style="display: none;">
+										<p>一、简答题</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!--完形填空-->
+									<div class="Z-clozeTest Ztopic"  style="display: none;">
+										<p>一、完形填空</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix Z-PM">
+														<span class="fl Z-plus">+ 增加选项</span>
+														<span class="fl Z-minus">- 删除选项</span>
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="Z-option">
+														<ul class="clearfix fl">
+															<h6 class="fl">1.)</h6>
+															<li>
+		  														<input type="radio" name="types" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="types" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="types" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="types" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+													</div>
+													<div class="clearfix">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!--阅读理解-->
+									<div class="Z-read Ztopic"  style="display: none;">
+										<p>一、阅读理解</p>
+										<div class="Z-Question">
+											<div class="Zlines clearfix">
+												<i class="fl Znum">1.</i>
+												<div class="fl">
+													<div class="clearfix">
+														<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+													</div>
+													<div class="Z-option clearfix">
+														<ul class="clearfix fl">
+															<h6 class="fl">1.)</h6>
+															<li>
+		  														<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+														<ul class="clearfix fl">
+															<h6 class="fl">2.)</h6>
+															<li>
+		  														<input type="radio" name="sex1" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex1" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex1" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex1" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+														<ul class="clearfix fl">
+															<h6 class="fl">3.)</h6>
+															<li>
+		  														<input type="radio" name="sex2" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex2" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex2" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex2" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+														<ul class="clearfix fl">
+															<h6 class="fl">4.)</h6>
+															<li>
+		  														<input type="radio" name="sex3" id="" />
+																<label for="">&nbsp;A</label>
+															</li>
+															<li>
+																<input type="radio" name="sex3" id="" />
+																<label for="">&nbsp;B</label>
+															</li>
+															<li>
+																<input type="radio" name="sex3" id="" />
+																<label for="">&nbsp;C</label>
+															</li>
+															<li>
+																<input type="radio" name="sex3" id="" />
+																<label for="">&nbsp;D</label>
+															</li>
+														</ul>
+													</div>
+													<div class="clearfix Z-write">
+														<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+														<div class="Z-editor fl"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
 			    		</div>
-			    		
-			    		<!-- 阅读理解 -->
-			    		<div style="display:none;"  class="read">
-				    		<div class="stem" style="margin-top: 10px;">
-				    			<h3><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 题干</h3>
-				    			<div id="editor15"></div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3 class="clearfix"><label style="color:red;margin-left: 5px;font-size: 16px">*</label> 选项</h3>
-				    			<div class="options clearfix">
-				    				<div class="clearfix">
-						    			<h4 class="read_tit fl">1.</h4>
-						    			<div id="editor18" class="fl"></div>
-						    		</div>
-				    				<ul class="cons">
-				    					<li>
-			    							<input type="radio" name="option1" /> &nbsp;A&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>	
-			    							<input type="radio" name="option1" /> &nbsp;B&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>
-			    							<input type="radio" name="option1" /> &nbsp;C&nbsp;
-			    							<input type="text" />
-			    						</li>
-			    						<li>
-			    							<input type="radio" name="option1" /> &nbsp;D&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    				</ul>
-				    			</div>
-								<div class="options clearfix">
-				    				<div class="clearfix">
-						    			<h4 class="read_tit fl">2.</h4>
-						    			<div id="editor19" class="fl"></div>
-						    		</div>
-				    				<ul class="cons">
-				    					<li>
-			    							<input type="radio" name="option2" /> &nbsp;A&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>	
-			    							<input type="radio" name="option2" /> &nbsp;B&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>
-			    							<input type="radio" name="option2" /> &nbsp;C&nbsp;
-			    							<input type="text" />
-			    						</li>
-			    						<li>
-			    							<input type="radio" name="option2" /> &nbsp;D&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    				</ul>
-				    			</div>
-				    			<div class="options clearfix">
-				    				<div class="clearfix">
-						    			<h4 class="read_tit fl">3.</h4>
-						    			<div id="editor20" class="fl"></div>
-						    		</div>
-				    				<ul class="cons">
-				    					<li>
-			    							<input type="radio" name="option3" /> &nbsp;A&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>	
-			    							<input type="radio" name="option3" /> &nbsp;B&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>
-			    							<input type="radio" name="option3" /> &nbsp;C&nbsp;
-			    							<input type="text" />
-			    						</li>
-			    						<li>
-			    							<input type="radio" name="option3" /> &nbsp;D&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    				</ul>
-				    			</div>
-				    			<div class="options clearfix">
-				    				<div class="clearfix">
-						    			<h4 class="read_tit fl">4.</h4>
-						    			<div id="editor21" class="fl"></div>
-						    		</div>
-				    				<ul class="cons">
-				    					<li>
-			    							<input type="radio" name="option4" /> &nbsp;A&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>	
-			    							<input type="radio" name="option4" /> &nbsp;B&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>
-			    							<input type="radio" name="option4" /> &nbsp;C&nbsp;
-			    							<input type="text" />
-			    						</li>
-			    						<li>
-			    							<input type="radio" name="option4" /> &nbsp;D&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    				</ul>
-				    			</div>
-								<div class="options clearfix">
-				    				<div class="clearfix">
-						    			<h4 class="read_tit fl">5.</h4>
-						    			<div id="editor22" class="fl"></div>
-						    		</div>
-				    				<ul class="cons">
-				    					<li>
-			    							<input type="radio" name="option5" /> &nbsp;A&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>	
-			    							<input type="radio" name="option5" /> &nbsp;B&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    					<li>
-			    							<input type="radio" name="option5" /> &nbsp;C&nbsp;
-			    							<input type="text" />
-			    						</li>
-			    						<li>
-			    							<input type="radio" name="option5" /> &nbsp;D&nbsp;
-			    							<input type="text" />
-				    					</li>
-				    				</ul>
-				    			</div>
-				    		</div>
-				    		<div class="stem stem1">
-				    			<h3>解析</h3>
-				    			<div id="editor16"></div>
-				    		</div>
-			    		</div>
-
 					</div>
 				</div>
 			</div>		
 		</div>
 		
-		<!--警告提示 -->
+		<!--警告提示弹层 -->
 		<div class="del_down warn" style="display: none">
 		    <div class="hide"></div>
 		    <div class="con">
@@ -675,7 +1035,7 @@
 		    </div>
 		</div>
 		
-		<!--word创建试题教程-->
+		<!--word创建试题教程弹层-->
 		<div class="del_down Course-t" style="display: none">
 		    <div class="hide"></div>
 		    <div class="Course-con">
@@ -685,8 +1045,25 @@
 			    <img src="../img/right.png" class="Course-right Course-right1"/>
 		    </div>
 		</div>
+		
+		<!-- 上传弹层 -->
+		<div class="del_down Zfile" style="display: none;">
+			<div class="hide"></div>
+		    <div class="con">
+		        <img class="close fr" src="../img/task_close.png">
+		       	<h3><span>上传图片</span></h3>
+		       	<div class="uploadsc">
+			           <div class="tuozhuai">浏览文件或把文件拖拽到这里</div>
+			    </div>
+			    <div class="tijiao">
+		           <span class="upsuresc">确认上传</span><span class="upqxsc">取消上传</span>
+		       </div>
+		    </div>
+		</div>
 	</body>
+	
 	<script type="text/javascript">
+	$(function() {
 		$('.CreateKeyWord').on('input',function() {
 			if($(this).val().length>=50) {
 				$(this).next().show()
@@ -717,6 +1094,29 @@
 			var ss=htmls.replace(reg,'<input type="text" tkt="tk" style="width:200px;border:none;border-bottom:1px solid #333;font-size:14px;text-align:center;">');
 			alert(ss);
 		});*/
+		
+		
+		//2017.6.5 -zyx
+		//拖拽置换
+		$(function(){
+			$(".ZPic").sortable();
+			$(".ZPic").disableSelection();
+			
+			//点击打开上传弹层
+			$(".ZfileBen img,.Ztit span").on("click",function(){
+				$('.Zfile').show();
+			});
+			
+			//上传图片关闭弹层
+			$(".Zfile  .close,.Zfile .upqxsc").on("click",function(){
+				$('.Zfile').hide();
+			});
+		})
+		
+		
+
+		
+	});
 	</script>
 	
 	<script type="text/javascript">

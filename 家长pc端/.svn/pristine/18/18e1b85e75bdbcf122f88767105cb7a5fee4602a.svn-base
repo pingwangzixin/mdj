@@ -1,6 +1,0 @@
-
-@media (max-width:1320px){
-    .down_num,.click_num{width:48%;}
-    .down_num{padding:0;}
-    .down, .collection{margin-left:6%;}
-} 

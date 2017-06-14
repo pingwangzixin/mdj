@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="../common/js/jquery-editable-select.min.css" />
 		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
-		<link rel="stylesheet" href="../css/tanceng.css" />
 		<link rel="stylesheet" href="../css/tsakCenter.css" charset="utf-8"/>
 		
 		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -18,6 +17,7 @@
 		<script src="../js/head_left.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../common/js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/tsakCenter.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../common/js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 		
 		<!-- 文本编辑 -->
 		<script src="../common/ueditor/ueditor.config.js"></script>
@@ -30,7 +30,7 @@
 	    <script  src="../common/ueditor/kityformula-plugin/addKityFormulaDialog.js"></script>
 		<script  src="../common/ueditor/kityformula-plugin/getKfContent.js"></script>
 		<script  src="../common/ueditor/kityformula-plugin/defaultFilterFix.js"></script>
-		<!--<script type="text/javascript">
+		<script type="text/javascript">
 	        $(function(){
 	        	//实例化编辑器
 	        	//单选题
@@ -83,9 +83,33 @@
 	 					this.setHeight(100);
 	 				});
  				}
+ 				
+ 				//综合
+ 				//唯一的随机id
+				function Yrandom(){
+					function S4() {
+					   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+					}
+					function guid() {
+					   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+					}
+					return myID = guid();
+				}
+				
+				//创建编辑器id和设置高度
+				var ue = {};
+ 				$('.Z-editor').each(function (index,ele){
+ 					$(this).attr('id','Zeditor-'+Yrandom());
+ 					var ueNUm = $(this).attr('id');
+					ue['ue'+ueNUm]=UE.getEditor(ueNUm);
+					
+					eval(ue['ue'+ueNUm]).on('focus',function(){
+	 					this.setHeight(100);
+	 				});
+ 				});
 
 	        });
-	    </script>-->
+	    </script>
 	    <style type="text/css">
 			div[id*='editor']{
 				width: 95%;
@@ -109,7 +133,7 @@
 					<a href="Preview_task.html">预览作业</a>
 					<a href="Edit_task.html"  class="but_active">编辑作业</a>
 				</div>
-				<a href="taskCenter_list_detail.html">
+				<a href="taskCenter_list.html">
 					<div class="back fr">
 						<img src="../img/back.png" alt="" />
 						<!--<span>返回</span>-->
@@ -144,10 +168,11 @@
 					<span>简单题</span>
 					<span>完形填空</span>
 					<span>阅读理解</span>
+					<span>综合</span>
 				</div>
 				<div style="position: relative;">
-					<!-- 左侧  -->				
-					<div class="edit_question">
+					<!--(其他类型题)左侧  -->				
+					<div class="edit_question" style="display: none;">
 						<!--单选题 -->
 						<div class="question">
 							<h3 class="question_tit">
@@ -163,11 +188,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="插入资源" title="插入资源">插入资源</option>
-											<option value="年费" title="年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费">年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费年费</option>
-											<option value="方式" title="方式">方式</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源插入资源插入资源插入资源插入资源" />
 											<ul>
@@ -204,11 +224,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="插入资源">插入资源</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -235,11 +250,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="插入资源">插入资源</option>
-											<option value="冯绍峰">冯绍峰</option>
-											<option value="突然">突然</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -276,11 +286,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -307,11 +312,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -338,11 +338,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -378,11 +373,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -407,11 +397,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up" src="../img/up_green.png"/>
 										<img class="next" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -448,11 +433,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -474,11 +454,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -500,11 +475,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -536,11 +506,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -560,11 +525,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -611,11 +571,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -643,11 +598,6 @@
 										<img class="delete" src="../img/delete_green.png"/>
 										<img class="up_tit" src="../img/up_green.png"/>
 										<img class="next_tit" src="../img/next_green.png"/>
-										<!--<select class="charu">
-											<option value="">插入资源</option>
-											<option value="">2</option>
-											<option value="">3</option>
-										</select>-->
 										<div class="search_drop">
 											<input type="text" name="" id="" value="插入资源" />
 											<ul>
@@ -685,11 +635,6 @@
 											<img class="delete" src="../img/delete_green.png"/>
 											<img class="up_jianda" src="../img/up_green.png"/>
 											<img class="next_jianda" src="../img/next_green.png"/>
-											<!--<select class="charu">
-												<option value="">插入资源</option>
-												<option value="">2</option>
-												<option value="">3</option>
-											</select>-->
 											<div class="search_drop">
 												<input type="text" name="" id="" value="插入资源" />
 												<ul>
@@ -717,11 +662,6 @@
 											<img class="delete" src="../img/delete_green.png"/>
 											<img class="up_jianda" src="../img/up_green.png"/>
 											<img class="next_jianda" src="../img/next_green.png"/>
-											<!--<select class="charu">
-												<option value="">插入资源</option>
-												<option value="">2</option>
-												<option value="">3</option>
-											</select>-->
 											<div class="search_drop">
 												<input type="text" name="" id="" value="插入资源" />
 												<ul>
@@ -745,12 +685,392 @@
 							</div>
 						</div>
 					</div>
+					
+					<!--综合左侧-->
+					<div class="Z-synthetical Z-task" style=" display: block;">
+						<span class="add_blue">+ 添加试题</span>
+						<div class="Z-top clearfix">
+							<p class="fl">一、试卷</p>
+							<div class="fr btn">
+								<img class="delete" src="../img/delete_green.png">
+							</div>
+						</div>
+						<div class="clearfix Z-bottom">
+							<ul class="fl clearfix Z-left">
+								<li><img class="Zti" src="../img/ti.jpg" /></li>
+								<li><img class="Zti" src="../img/ti1.jpg" /></li>
+								<li><img class="Zti" src="../img/ti.jpg" /></li>
+								<li><img class="Zti" src="../img/ti1.jpg" /></li>
+							</ul>
+							<div class="fr Z-right">
+								<!--单选题-->
+								<div class="my-single">
+									<strong class="Z-tit">一、单选题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--多选题-->
+								<div class="my-multiple">
+									<strong class="Z-tit  M26">二、多选题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--判断题-->
+								<div class="my-judgement">
+									<strong class="Z-tit  M26">三、判断题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<span class="active">正确</span>
+												<span>错误</span>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<span class="active">正确</span>
+												<span>错误</span>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--填空题-->
+								<div class="my-blanks">
+									<strong class="Z-tit  M26">四、填空题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<p class="fl">床前明月光</p>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--材料题-->
+								<div class="my-material">
+									<strong class="Z-tit  M26">五、材料题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<div class="fl textarea">毛主席教育我们，要以党委为荣</div>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--完形填空-->
+								<div class="my-simple">
+									<strong class="Z-tit M26">六、完形填空（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!--阅读理解-->
+								<div class="my-read">
+									<strong class="Z-tit M26">七、阅读理解（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+										<div class="search_drop fl">
+											<input type="text" name="" id="" value="插入资源" />
+											<ul>
+												<li>大风车</li>
+												<li>吹呀吹呀吹呀吹</li>
+												<li>熊大和熊二</li>
+												<li>你是谁呀谁谁你</li>
+												<li>啦啦啦啦呀啦呀啦啦啦啦ni速度快几十块啦啦啦啦啦啦啦啦啦啦啦啦</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="question_btn">
+							<div style="display: inline-block;text-align: center;margin: 15px 0;">
+								<img class="fl" src="../img/left_btn.png">
+								<span class="question_btn_active">1</span>
+								<span>2</span>
+								<span>3</span>
+								<span>4</span>
+								<span>5</span>
+								<span>6</span>
+								<img class="fl" src="../img/right_btn.png">
+							</div>
+						</div>
+					</div>
+					
 					<!-- 右侧  -->
 					<div class="right_box">
 						<div class="right_tit clearfix">
 							<span class="right_tit_active fl">我的题库</span>
 							<span class="fl">公共题库</span>
 							<img class="close hand fr" src="../img/task_close.png"/>
+						</div>
+						<div class="Z-genre">
+							<span class="active">课本</span>
+							<span>其他</span>
 						</div>
 						<ul class="search_create clearfix">
 							<li class="search fl">
@@ -760,7 +1080,7 @@
 							<li class="create fr"><a href="create.html" style="color:#fff;">创建试题</a></li>
 						</ul>
 						<!--我的题库-->
-						<div class="person" >
+						<div class="person" style="display: none;" >
 							<!--单选题 -->
 							<div class="question">
 								<div class="question_con">
@@ -935,7 +1255,6 @@
 			
 						</div>
 						
-				
 						<!--公共题库-->
 						<div class="puble" style="display: none;">						
 							<!--单选题 -->
@@ -1109,6 +1428,253 @@
 							</div>
 		
 						</div>
+						
+						<!--综合题库-->
+						<div class="Colligate" style="display: block;">
+							<div class="Z-checkbox clearfix">
+								<div class="fl">
+									<input type="checkbox" id='name'/>
+									<label for="name">试卷一</label>
+								</div>
+								<div class="fr grade">
+									<em class="em1">修改</em><em class="em2">删除</em><em class="em3">公开</em>
+								</div>
+							</div>
+							<p>试题:</p>
+							<ul class="clearfix Z-left">
+								<li><img class="Zti" src="../img/ti.jpg" /></li>
+								<li><img class="Zti" src="../img/ti1.jpg" /></li>
+								<li><img class="Zti" src="../img/ti.jpg" /></li>
+								<li><img class="Zti" src="../img/ti1.jpg" /></li>
+							</ul>
+							<p>答案:</p>
+							<div class="Z-right">
+								<!--单选题-->
+								<div class="my-single">
+									<strong class="Z-tit">一、单选题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="single" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="single1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--多选题-->
+								<div class="my-multiple">
+									<strong class="Z-tit  M26">二、多选题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="multiple1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--判断题-->
+								<div class="my-judgement">
+									<strong class="Z-tit  M26">三、判断题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<span class="active">正确</span>
+												<span>错误</span>
+											</li>
+										</ul>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<span class="active">正确</span>
+												<span>错误</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--填空题-->
+								<div class="my-blanks">
+									<strong class="Z-tit  M26">四、填空题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<p class="fl">床前明月光</p>
+									</div>
+								</div>
+								<!--材料题-->
+								<div class="my-material">
+									<strong class="Z-tit  M26">五、材料题（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<div class="fl textarea">毛主席教育我们，要以党委为荣</div>
+									</div>
+								</div>
+								<!--完形填空-->
+								<div class="my-simple">
+									<strong class="Z-tit M26">六、完形填空（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="simple" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="simple1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--阅读理解-->
+								<div class="my-read">
+									<strong class="Z-tit M26">七、阅读理解（每题<input type="text">分，共 <em>2</em>*<i>5</i>=10分）</strong>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">1.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="read" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+									<div class="Zlines clearfix">
+										<i class="fl Znum">2.</i>
+										<ul class="clearfix fl">
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;A</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;B</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;C</label>
+											</li>
+											<li>
+												<input type="radio" name="read1" id="" />
+												<label for="">&nbsp;D</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--翻页按钮-->
 						<div class="question_btn">
 							<div style="display: inline-block;text-align: center;">
 								<img class="fl" src="../img/left_btn.png"/>
@@ -1145,7 +1711,7 @@
 		    </div>
 		</div>
 		
-		<!-- 修改弹层  -->
+		<!-- (其他题型)修改弹层  -->
 		<div class="del_down task_two edit" style="display:none;">
 			<div class="hide"></div>
 		    <div class="con clearfix " style="overflow-y: auto;">
@@ -1606,6 +2172,448 @@
 		    </div>
 		</div>
 	
-	
+		<!--(综合)修改弹层-->
+		<div class="del_down Z-edit" style="display: none;">
+			<div class="hide"></div>
+			<div class="con clearfix">
+				<h3 class="tit_fixed clearfix">
+	    			<span class="edit_head">修改试题</span>
+	    			<img class="close hand fr" src="../img/task_close.png"/>
+	    		</h3>
+	    		<div class="clearfix  Zcolligate">
+	    			<div class="fl">
+						<!--标题-->
+						<div class="Ztit clearfix">
+							<p class="fl">试卷</p>
+							<span class="fr" style="display: block;">上传图片</span>
+						</div>
+						<!-- 上传按钮 -->
+						<div class="ZfileBen" style="display: none;">
+							<img src="../img/fileBen.png" />
+							<p>上传图片</p>
+						</div>
+						<!--上传完的展示-->
+						<ul class="ZPic" style="display: block;">
+							<li class="clearfix">
+								<img class="Zti fl" src="../img/ti.jpg" />
+								<img class="Zdelete fr" src="../img/delete_green.png"/>
+							</li>
+							<li class="clearfix">
+								<img class="Zti fl" src="../img/ti1.jpg" />
+								<img class="Zdelete fr" src="../img/delete_green.png"/>
+							</li>
+						</ul>
+					</div>
+					<div class="fr">
+						<!--标题-->
+						<div class="Ztit">
+							<p style="padding-left: 10px;">答题卡</p>
+						</div>
+						<!-- 各类题型 -->
+						<ul class="Ztypes clearfix">
+							<li class="active">单选题</li>
+							<li>多选题</li>
+							<li>判断题</li>
+							<li>填空题</li>
+							<li>材料题</li>
+							<li>简答题</li>
+							<li>完形填空</li>
+							<li>阅读理解</li>
+						</ul>
+						<div class="Z-add">+ 添加试题</div>
+						
+						<!--单选题-->
+						<div class="Z-single Ztopic"  style="display: block;">
+							<p>一、单选题</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<ul class="clearfix fl">
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--多选题-->
+						<div class="Z-multiple Ztopic"  style="display: none;">
+							<p>一、多选题</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<ul class="clearfix fl">
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<!--判断题-->
+						<div class="Z-judgement Ztopic"  style="display: none;">
+							<p>一、判断题</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<ul class="clearfix fl">
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;正确</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;错误</label>
+												</li>
+											</ul>
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--填空题-->
+						<div class="Z-blanks Ztopic"  style="display: none;">
+							<p>一、填空题 <span>（多个答案之间请点击插入分隔线按钮）</span></p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<span class="fl Z-cut">插入分割线</span>
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--材料题-->
+						<div class="Z-material Ztopic"  style="display: none;">
+							<p>一、材料题</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							
+						<!--简答题-->
+						<div class="Z-simple Ztopic"  style="display: none;">
+							<p>一、简答题</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">答案:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--完形填空-->
+						<div class="Z-clozeTest Ztopic"  style="display: none;">
+							<p>一、完形填空</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix Z-PM">
+											<span class="fl Z-plus">+ 增加选项</span>
+											<span class="fl Z-minus">- 删除选项</span>
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="Z-option">
+											<ul class="clearfix fl">
+												<h6 class="fl">1.)</h6>
+												<li>
+													<input type="radio" name="types" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="types" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="types" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="types" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+										</div>
+										<div class="clearfix">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!--阅读理解-->
+						<div class="Z-read Ztopic"  style="display: none;">
+							<p>一、阅读理解</p>
+							<div class="Z-Question">
+								<div class="Zlines clearfix">
+									<i class="fl Znum">1.</i>
+									<div class="fl">
+										<div class="clearfix">
+											<img class="fr Z-editorDelete hand" src="../img/delete_green.png"/>
+										</div>
+										<div class="Z-option clearfix">
+											<ul class="clearfix fl">
+												<h6 class="fl">1.)</h6>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+											<ul class="clearfix fl">
+												<h6 class="fl">2.)</h6>
+												<li>
+													<input type="radio" name="sex1" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex1" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex1" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex1" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+											<ul class="clearfix fl">
+												<h6 class="fl">3.)</h6>
+												<li>
+													<input type="radio" name="sex2" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex2" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex2" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex2" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+											<ul class="clearfix fl">
+												<h6 class="fl">4.)</h6>
+												<li>
+													<input type="radio" name="sex3" id="" />
+													<label for="">&nbsp;A</label>
+												</li>
+												<li>
+													<input type="radio" name="sex3" id="" />
+													<label for="">&nbsp;B</label>
+												</li>
+												<li>
+													<input type="radio" name="sex3" id="" />
+													<label for="">&nbsp;C</label>
+												</li>
+												<li>
+													<input type="radio" name="sex3" id="" />
+													<label for="">&nbsp;D</label>
+												</li>
+											</ul>
+										</div>
+										<div class="clearfix Z-write">
+											<p class="fl Z-editorFont">解析:&nbsp;&nbsp;&nbsp;</p>
+											<div class="Z-editor fl"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	    		</div>
+				<div class="btn">
+	    			<span class="Yes">确认</span>
+	    			<span class="No">取消</span>
+	    		</div>
+			</div>
+		</div>
+		
+		<!--综合-公开弹层-->
+		<div class="del_down Z-open" style="display: none;">
+			<div class="hide"></div>
+			<div class="con">
+				<h3 class="tit_fixed clearfix">
+	    			<span class="edit_head">修改课题</span>
+	    			<img class="close hand fr" src="../img/task_close.png"/>
+	    		</h3>
+	    		<ul>
+	    			<li>
+	    				<label style="color:red;margin-left: 5px;font-size: 16px">*</label>
+	    				课题：&nbsp; &nbsp;  
+	    				<select>
+	    					<option>其他</option>
+	    					<option>一年级</option>
+	    				</select>
+	    				<select>
+	    					<option>请选择学科</option>
+	    					<option>一年级</option>
+	    				</select>
+	    				<select>
+	    					<option>请选择章节</option>
+	    					<option>一年级</option>
+	    				</select>
+	    				<select>
+	    					<option>请选择节点</option>
+	    					<option>一年级</option>
+	    				</select>
+	    			</li>
+	    		</ul>
+	    		<div class="btn">
+	    			<span class="Yes">确认</span>
+	    			<span class="No">取消</span>
+	    		</div>
+			</div>
+		</div>
+		
+		<!-- 上传图片弹层 -->
+		<div class="del_down Zfile" style="display: none;">
+			<div class="hide"></div>
+		    <div class="con">
+		        <img class="close fr" src="../img/task_close.png">
+		       	<h3><span>上传图片</span></h3>
+		       	<div class="uploadsc">
+			           <div class="tuozhuai">浏览文件或把文件拖拽到这里</div>
+			    </div>
+			    <div class="tijiao">
+		           <span class="upsuresc">确认上传</span><span class="upqxsc">取消上传</span>
+		       </div>
+		    </div>
+		</div>
 	</body>
+	<script type="text/javascript">
+		//2017.6.5 zyx
+		$(function(){
+			//拖拽置换
+			$(".Z-left").sortable();
+			$(".Z-left").disableSelection();
+			
+			
+			//点击打开上传弹层
+			$(".Z-edit .Ztit span").on("click",function(){
+				$('.Zfile').show();
+				$('.Zfile .hide').css('z-index','1003');
+			});
+			
+			//上传图片关闭弹层
+			$(".Zfile  .close,.Zfile .upqxsc").on("click",function(){
+				$('.Zfile').hide();
+				$('.Zfile .hide').css('z-index','1002');
+			});
+			
+		});
+	</script>
 </html>

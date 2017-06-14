@@ -9,7 +9,6 @@
 		<title>作业中心-批改作业</title>
 		<link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
-		<link rel="stylesheet" href="../css/tanceng.css" />
 		<link rel="stylesheet" href="../css/tsakCenter.css" charset="utf-8"/>
 		
 		<script src="../common/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -32,7 +31,7 @@
 					<a href="correct_task.html"  class="but_active">批改作业</a>
 					<!--<a href="#">编辑任务</a>-->
 				</div>
-				<a href="taskCenter_list_detail.html">
+				<a href="taskCenter_list.html">
 					<div class="back fr">
 						<img src="../img/back.png" alt="" />
 						<!--<span>返回</span>-->
@@ -95,12 +94,14 @@
 							<li>高天泽</li>
 						</ul>
 					</div>
+					<strong class="YzoomClose"></strong>
 					<div class="mark_right fr">
 						<p class="name">
 							<em>郭子仪</em>
 							<span>答题用时：20分15秒 </span>
 							<span>得分  : &nbsp;<small>80分 </small></span>
 							<i></i>
+							<strong class="Yzoom YtaskZoom">放大查看</strong>
 						</p>
 						<!-- 各种题型  -->
 						<!--单选题 -->
@@ -332,6 +333,12 @@
 		    		<div id="deifenlv_box" style="width:844px;height:434px; margin-top: 16px;"></div>
 		    	</div>
 		    </div>
+		</div>
+		
+		
+		<!--查看放大弹层 -->
+		<div class="del_down YtaskMask" style="display: none;">
+			<div class="hide"></div>
 		</div>
 	</body>
 	

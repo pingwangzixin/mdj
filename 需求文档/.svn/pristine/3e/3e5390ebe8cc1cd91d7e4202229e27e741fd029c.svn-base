@@ -1,5 +1,0 @@
-/*可以在这里添加你自己的css*/
-img{width:90%}
-.bottomLine{
-	width:200px;height:14px;border-bottom:1px solid #333;display:inline-block;
-}

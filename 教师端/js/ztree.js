@@ -63,35 +63,37 @@
 			{ id:13113, pId:1311, name:"第三节"},
 			{ id:13114, pId:1311, name:"第四节"},
 			
-			{ id:2, pId:0, name:"其它"},
+			
+			{ id:2, pId:0, name:"初二"},
 			{ id:21, pId:2, name:"数学上册"},
-			/*{ id:211, pId:21, name:"第一单元"},
+			{ id:211, pId:21, name:"第一单元"},
 			{ id:212, pId:21, name:"第二单元"},
 			{ id:213, pId:21, name:"第三单元"},
-			{ id:214, pId:21, name:"第四单元"},*/
+			{ id:214, pId:21, name:"第四单元"},
 			{ id:22, pId:2, name:"数学下册"},
-			/*{ id:221, pId:22, name:"第一单元"},
+			{ id:221, pId:22, name:"第一单元"},
 			{ id:222, pId:22, name:"第二单元"},
 			{ id:223, pId:22, name:"第三单元"},
-			{ id:224, pId:22, name:"第四单元"},*/
+			{ id:224, pId:22, name:"第四单元"},
 			
-		
+			{ id:3, pId:0, name:"初三"},
+			{ id:31, pId:3, name:"数学上册"},
+			{ id:311, pId:31, name:"第一单元"},
+			{ id:312, pId:31, name:"第二单元"},
+			{ id:313, pId:31, name:"第三单元"},
+			{ id:314, pId:31, name:"第四单元"},
+			{ id:32, pId:3, name:"数学下册"},
+			{ id:321, pId:32, name:"第一单元"},
+			{ id:322, pId:32, name:"第二单元"},
+			{ id:323, pId:32, name:"第三单元"},
+			{ id:324, pId:32, name:"第四单元"},
+			
+			
+			{ id:4, pId:0, name:"其它"},
+			{ id:41, pId:4, name:"暂时没有数据"},
 			
 		];
 		
-		/*
-		
-		var otherData =[
-			{ "id":1, "name":"其它",
-				children: [
-				{ "id":3, "name":"test3"},
-				{ "id":4, "name":"test4"},
-				{ "id":5, "name":"test5"}
-				]
-			},
-//			{ "id":2, "name":"test2"  }
-			
-		];*/
 		
 		
 		function beforeExpand(treeId, node) {
@@ -189,6 +191,13 @@
 				$(this).parent().addClass('curSelectedNode');
 			});
 			
+		/*	$(document).on('click','a.level0',function (){
+				$('a.level0').removeClass('cur');
+				$(this).addClass('cur');
+				$(this).parent().siblings().children('ul').hide();
+				$(this).parent().siblings().children('span.button').removeClass('center_open,roots_open').addClass('roots_close');
+			});
+			*/
 			
 			$(document).on('click','.ztree .button,.ztree .node_name',function(){
 				var h=$('.content_wrap').height();

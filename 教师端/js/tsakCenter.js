@@ -151,12 +151,6 @@ $(document).ready(function(){
 	});
 
 
-	/*我的题库切换*/
-	$(".my_question .tabs li").on('click',function(){
-		$(this).addClass('tabs_active').siblings().removeClass('tabs_active');
-	});
-
-
 	/*编辑任务切换*/
 	$(".job .but a").on('click',function(){
 		$(this).addClass('but_active').siblings().removeClass('but_active');
@@ -260,7 +254,7 @@ $(document).ready(function(){
 	});
 
 	/*编辑作业--添加试题弹出*/
-	$('.question_tit .add_blue').on('click',function(){
+	$('.question_tit .add_blue,.Z-task.Z-synthetical span.add_blue').on('click',function(){
 		$('.right_box').animate({'bottom':0},500);
 	});
 	
@@ -274,6 +268,7 @@ $(document).ready(function(){
 	/*删除事件*/
 	$('.question_tit .em2,.delete').on('click',function(){
 		$('.del').show();
+		$('.del .text-text').text('确认要删除该题型吗？');
 	});
 
 	/*弹层的取消/确认按钮*/
@@ -680,9 +675,8 @@ $(document).ready(function(){
 		$(this).attr({'title' : $(this).text()});
 	});
 	$(document).on('click','.search_drop input',function (event){
-//		$(this).val('');
 		$('.search_drop ul').toggle();
-		$('.edit_question .search_drop ul').not($(this).siblings('ul')).hide();
+		$('.edit_question .search_drop ul,.Z-task.Z-synthetical .Z-bottom .Z-right .search_drop ul').not($(this).siblings('ul')).hide();
 		event.stopPropagation();
 	});
 	$(document).on('click','.search_drop ul li',function (){
@@ -758,6 +752,40 @@ $(document).ready(function(){
 	});
 	
 	
+	//2017.06.07 zy
+	
+	//浏览器窗口高度
+	var YtoBigHeight = $(window).height() - 140 + 'px';
+	$(window).resize(function (){
+		YtoBigHeight = $(window).height() - 140 + 'px';
+	});
+	
+	//点击放大查看 ---批改作业页面
+	$('.YtaskZoom').on('click',function (){
+		$('.YtaskMask').show();
+		$('.mark_right').addClass('YtoBig').css({'height':YtoBigHeight}).siblings('.YzoomClose').show();
+		$('.mark_right .name').hide();
+	});
+	//关闭放大
+	$('.YzoomClose').on('click',function (){
+		$('.YtaskMask').hide();
+		$('.mark_right').removeClass('YtoBig').siblings('.YzoomClose').hide();
+		$('.mark_right .name').show();
+		
+	});
+	
+	//点击放大查看 ---任务批改页面
+	$('.YjobZoom').on('click',function (){
+		$('.YjobMask').show();
+		$('.speak ').addClass('YtoBig').find('.YzoomClose').show();
+	});
+	//关闭放大
+	$('.YzoomClose').on('click',function (){
+		$('.YjobMask').hide();
+		$('.speak ').removeClass('YtoBig').find('.YzoomClose').hide();
+	});
+	
+	
 	//2017.04.13 zyx  导入word可编辑试题
 	//创建试题弹框	word_template.html
 	$('.create_test_btn').on('click',function (){
@@ -769,11 +797,172 @@ $(document).ready(function(){
 	});
 	
 	
-	
 	/*2017.05.15 zyx */
 	$('.zyx-filter ul li').click(function(){
 		$(this).addClass('active').siblings().removeClass('active');
 	});
+	
+	
+	//2017.06.05 ---- 综合类增加的相关页面 ---- zyx
+	//综合类（创建试题）
+	//删除
+	$('.ZPic .Zdelete').on('click',function(){
+		$(this).parents('li').remove();
+	});
+	
+	//上传展示页时出现上传按钮
+	if($('.ZPic').css('display')=='block'){
+		$('.Ztit span').show();
+	}else{
+		$('.Ztit span').hide();
+	}
+	
+	//各类题型切换
+	$('.Zcolligate .Ztypes li').on('click',function(){
+		var Text = $(this).text();
+		$(this).addClass('active').siblings().removeClass('active');
+		if(Text == '单选题'){
+			$('.Z-single').show();
+			$('.Z-multiple,.Z-judgement,.Z-clozeTest,.Z-material,.Z-simple,.Z-blanks,.Z-read').hide();
+		}else if(Text == '多选题'){
+			$('.Z-multiple').show();
+			$('.Z-single,.Z-judgement,.Z-clozeTest,.Z-material,.Z-simple,.Z-blanks,.Z-read').hide();
+		}else if(Text == '判断题'){
+			$('.Z-judgement').show();
+			$('.Z-single,.Z-multiple,.Z-clozeTest,.Z-material,.Z-simple,.Z-blanks,.Z-read').hide();
+		}else if(Text == '填空题'){
+			$('.Z-blanks').show();
+			$('.Z-multiple,.Z-judgement,.Z-single,.Z-material,.Z-simple,.Z-clozeTest,.Z-read').hide();
+		}else if(Text == '材料题'){
+			$('.Z-material').show();
+			$('.Z-multiple,.Z-judgement,.Z-clozeTest,.Z-single,.Z-simple,.Z-blanks,.Z-read').hide();
+		}else if(Text == '简答题'){
+			$('.Z-simple').show();
+			$('.Z-multiple,.Z-judgement,.Z-clozeTest,.Z-material,.Z-single,.Z-blanks,.Z-read').hide();
+		}else if(Text == '完形填空'){
+			$('.Z-clozeTest').show();
+			$('.Z-multiple,.Z-judgement,.Z-blanks,.Z-material,.Z-simple,.Z-single,.Z-read').hide();
+		}else if(Text == '阅读理解'){
+			$('.Z-read').show();
+			$('.Z-multiple,.Z-judgement,.Z-clozeTest,.Z-material,.Z-simple,.Z-blanks,.Z-single').hide();
+		}
+		
+	});
+	
+	//lebal-for
+	LebalFor();
+	function LebalFor(){
+		$('.Zlines input[type="radio"]').each(function(index, element){
+			$(this).attr("id","input"+ index +"");
+		});
+		$('.Zlines label').each(function(index, element){
+			$(this).attr("for","input"+ index +"");
+		});
+	}
+	
+	//删除编辑器
+	$('.Z-editorDelete').on('click',function(){
+		$(this).parents('.Zlines').remove();
+	});
+	
+	
+	/*添加选项*/
+	$('.Zcolligate .Ztopic .Zlines .Z-plus').on('click',function(){
+		var add_con = $(this).parents('.Z-PM').next('.Z-option').find('ul:first');
+		var clone_con = add_con.clone();
+		var app = $(this).parents('.Z-PM').next('.Z-option');
+		var len = $(this).parents('.Z-PM').next('.Z-option').find('ul').length;
+		clone_con.find('input[type="radio"]').attr('id','');
+		clone_con.find("input[type='radio']").attr('checked',false);
+		clone_con.find('label').attr('for','');
+		
+		
+		if(len>19){
+			alert('试题最多只能添加20题');
+			return false;
+		}else{
+			clone_con.find('h6').text(''+ (len+1) +'.)');
+			clone_con.find('input').attr('name','types'+(len+1));
+			
+			var htmls='<ul class="clearfix fl"><h6 class="fl">1.)</h6><li><input type="radio" name="types" id="" /><label for="">&nbsp;A</label></li><li><input type="radio" name="sex" id="" /><label for="">&nbsp;B</label></li><li><input type="radio" name="sex" id="" /><label for="">&nbsp;C</label></li><li><input type="radio" name="sex" id="" /><label for="">&nbsp;D</label></li></ul>';
+			
+			if(len){
+				app.append(clone_con);
+				LebalFor();
+			}else{
+				app.append(htmls);
+			}
+		}
+		
+	});
+	
+	/*删除选项*/
+	$(document).on('click','.Zcolligate .Ztopic .Zlines .Z-minus',function(){
+		var options = $(this).parents('.Z-PM').next('.Z-option').find('ul');
+		if(options.length > 1){
+			options.last().remove();
+		}else{
+			alert('至少保留一组选项');
+		}
+	});
+	
+	//综合类（我的题库）
+	/*我的题库切换*/
+	$(".my_question .tabs li").on('click',function(){
+		var test = $(this).text();
+		$(this).addClass('tabs_active').siblings().removeClass('tabs_active');
+		if(test == '综合'){
+			$('.Z-synthetical').show();
+			$('.Z-otherTypes').hide();
+		}else{
+			$('.Z-synthetical').hide();
+			$('.Z-otherTypes').show();
+		}
+	});
+	
+	//综合类修改弹层按钮
+	$('.Z-synthetical .Z-top .grade em.em1,.edit_task .Colligate .Z-checkbox  .grade em.em1').on('click',function(){
+		$('.Z-edit').show();
+	});
+	//关闭修改弹层按钮
+	$('.Z-edit .con .close,.Z-edit .con .btn span.No').on('click',function(){
+		$('.Z-edit').hide();
+	});
+	//综合类删除点击事件
+	$('.Z-synthetical .Z-top .grade em.em2,.edit_task .Colligate .Z-checkbox  .grade em.em2').on('click',function(){
+		$('.del').show();
+		$('.del .text-text').text('确认要删除该试卷吗？');
+	});
+			
+	//公开弹层点击
+	$('.Z-synthetical .Z-top .grade em.em3,.edit_task .Colligate .Z-checkbox  .grade em.em3').on('click',function(){
+		$('.Z-open').show();
+	});
+	
+	//公开弹层关闭点击
+	$('.Z-open .con .close,.Z-open .con .btn span.No').on('click',function(){
+		$('.Z-open').hide();
+	});
+	
+	
+	//综合-编辑任务
+	//删除弹层
+	$('.Z-task.Z-synthetical .Z-top>div.btn img').on('click',function(){
+		$('.del .text-text').text('确认要删除该试卷吗？');
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

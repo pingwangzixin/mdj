@@ -284,13 +284,15 @@ body {
     color: #212121;
     font-size: 13px;
 }
-.investment_con table tr td:last-of-type span{
-	/*padding-left: 17px;*/
+
+.investment_f table tr td:last-of-type span{
+	padding-left: 20px; 
 }
 .investment_con table tr td:last-of-type span.gongkai{
 	background: url(../img/gongkai.png) no-repeat;
 	background-size: 16px;
 	color: #5093e1;
+	
 }
 .investment_con table tr td:last-of-type span.quxiao{
 	background: url(../img/quxiaogongkai.png) no-repeat;
@@ -907,11 +909,14 @@ i.xh1{
 /*2017.05.26  zy*/
 .Ynext_oper{font-size: 14 px; margin-left: 40px; line-height: 28px;}
 .Ynext_oper>p{display: inline-block; font-size: 12px; cursor: pointer;}
-.Ynext_oper>p input{margin-right: 6px; vertical-align: -2px;}
+.Ynext_oper>p input{margin-right: 6px; vertical-align: -2px; cursor: pointer;}
+.Ynext_oper>p label{cursor: pointer;}
 .YlssuedLeft{width: 40%;}
 .YlssuedRight{width: 55%;}
+.YlssuedRight>div:first-of-type{width: 100%;}
 .Ylssuedbtn{cursor: pointer;}
 .Ylssuedbtn img{margin-top: 2px;}
+.Ylssuedbtn i{font-style: normal;}
 .YcancelReturn{color: #ff6600;}
 .YstudentReturn{color: #5093e1;}
 
@@ -922,7 +927,7 @@ i.xh1{
 
 .Ysame{}
 .Ydetail .con{width: 690px; height: 470px;}
-.Ysame .con img{position: absolute; top: 10px; right: 15px; cursor: pointer;}
+.Ysame .con>img{position: absolute; top: 10px; right: 15px; cursor: pointer;}
 .Ydetail .con p{font-size: 16px; text-align: left; padding-left: 12px; margin: 16px 0; }
 .Yvi{width: 660px; height: 396px; border: 1px solid #dee6f1; background: #ecf2fa; margin: 0 auto; overflow-y: auto;}
 .Ywarn .con{}
@@ -930,3 +935,10 @@ i.xh1{
 .YstudentsList li{cursor: pointer;}
 
 .YstudentResources{cursor: pointer;}
+
+.imageList{width: 660px; height: 400px; margin: 0 auto; overflow-y: auto;}
+.imageList>img{width:100%; margin-bottom: 5px; height: 100%;} 
+
+
+
+

@@ -10,7 +10,6 @@
     <!-- 公共模块 -->
     <link rel="stylesheet" href="../css/reset.css" charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="../css/public.css"/>
-    <link rel="stylesheet" href="../css/tanceng.css">
     <link rel="stylesheet" type="text/css" href="../css/section.css"/>
     <!--中心内容默认样式-->
     <link rel="stylesheet" href="../css/ziyuan.css"/>
@@ -61,7 +60,7 @@
                     </div>
                     <!--主题内容 右侧 table栏切换 list切换内容-->
                     <div class="investment_con">
-                        <div class="investment_con_one investment_one">
+                        <div class="investment_con_one  ">
                             <table>
                                 <tr>
                                     <th style="width:8%;" class="quanxuan">
@@ -261,6 +260,12 @@
 <div class="zhezhao" style="display:none;"></div>
 
     <script>
+        
+        var page=sessionStorage.getItem("id");
+        
+        $(".investment_title div").eq(page).addClass("on").siblings().removeClass("on");
+        $(".investment_con").children().eq(page).show().siblings().hide();
+        
     $(document).on('click','#newPlan',function(){
 		$(this).find('.list').toggle();
 	});
@@ -314,15 +319,17 @@
         
 		 //tab栏切换函数
 		    function tabs(tabTit,on,tabCon) {
-		        $(tabCon).each(function () {
-		            $(this).children().eq(0).show();
-		        });
-		        $(tabTit).each(function () {
-		            $(this).children().eq(0).addClass(on);
-		        });
+//		        $(tabCon).each(function () {
+//		            $(this).children().eq(0).show();
+//		        });
+//		        $(tabTit).each(function () {
+//		            $(this).children().eq(0).addClass(on);
+//		        });
 		        $(tabTit).children('div').click(function () {
 		            $(this).addClass(on).siblings().removeClass(on);
 		            var index = $(tabTit).children().index(this);
+                    sessionStorage.setItem("id",index)
+                    console.log(index)
 		            $(tabCon).children().eq(index).show().siblings().hide();
 		        });
 		    }

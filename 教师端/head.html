@@ -153,9 +153,15 @@
 				overflow: hidden;
 			}
 			.remind_list ul li:hover{background: #d9e7f8;}
+            .numaction{position:absolute;right:50px;bottom:-50px;font-size:20px;}
+            .numjia{color:#f00}
+            .numjian{color:#2ab528}
 		</style>
 
 		<div class="head clearfix">
+        
+		    <p class="numaction numjia">+5</p>
+		    
 			<img class="logo fl" src="../img/logo.png" alt="" />
 			<ul class="list fl">
 				<li><a href="../1-gerenziyuan/myziyuan.html" class="active">个人资源中心</a></li>
@@ -349,4 +355,28 @@
 			$(this).remove();
 			$('.remind_list').hide();
 		});*/
+        
+        function numAction(){
+            $('.numaction').show();
+			$('.numaction').animate({
+		    	opacity:'0',
+		    	fontSize:'10px',
+				right: '112px',
+				top: '-30px',
+                zIndex:100000,
+				display:'none'
+		    },1500,function(){
+		    	$(this).css({
+		    		opacity:'1',
+		    		position:'absolute',
+		    		fontSize:'20px',
+					right:'50px',
+					top:'80px',
+                    zIndex:100000,
+					display:'none'
+		    	});
+		    });
+		}
+        
+        numAction()
 	</script>
